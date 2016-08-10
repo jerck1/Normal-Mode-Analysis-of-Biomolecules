@@ -5,8 +5,11 @@ Las ecuaciones de movimiento se pueden conocer a partir de los formalismos lagra
 
 Los diversos modelos de potencial pueden ser tomados según la naturaleza del pol\'{i}mero a analizar, ver \cite{Amb1}. Sin embargo, al escoger el potencial  para hacer un an\'{a}lisis \textit{in silico} de la din\'{a}mica de una biomol\'{e}cula, debe tenerse en cuenta el costo computacional requerido, esto es, el tiempo de simulaci\'{o}n de la mol\'{e}cula y la exactitud en el movimiento de cada uno de los constituyentes de la mol\'{e}cula.
 
-Las simulaciones en las que se incluyen todos los \'{a}tomos, es decir, donde se analizan los \textit{cambios locales}, se pueden simular a un orden de magnitud de los nanosegundos en una m\'{a}quina usual; mientras que las simulaciones para observar los \textit{cambios globales} pueden ser realizadas a un orden de magnitud de los microsegundos. Ver 
+De acuerdo a los par\'{a}metros de costo y tiempo, las simulaciones de biomol\'{e}culas se pueden hacer analizando los \textit{movimientos locales} y los \textit{movimientos globales}.
+
 \subsection{Movimientos Locales}
+Hace referencia a las simulaciones en las que se incluyen todos los \'{a}tomos junto con las interacciones presentes, es decir, en las que se analizan los \textit{cambios locales}. Estas se pueden simular a un orden de magnitud de los nanosegundos en una m\'{a}quina usual, al respecto ver \cite{glo}.
+
 Como caso particular se pueden tomar los potenciales usados en \cite{Amb1} y en \cite{web:Amb2}, que siguen el modelo de Amber. El modelo de Amber tiene en cuenta las contribuciones debidas a:
  \begin{itemize}
 \item Interacciones intermoleculares: Son las producidas por los enlaces covalentes entre grupos de \'{a}tomos, las de valencia y las torsiones.
@@ -14,6 +17,9 @@ Como caso particular se pueden tomar los potenciales usados en \cite{Amb1} y en 
 \end{itemize}
 
 \subsection{Movimientos Globales}
+
+Son aqu\'{e}llas simulaciones en las que se desean conocer los \textit{cambios globales} o, el aspecto general que excibe el movimiento de una biomol\'{e}cula haciendo simplificaciones ya sea en los potenciales presentes en la biomol\'{e}cula como en el el n\'{u}mero de \'{a}tomos interconectados. Este tipo de simulaciones pueden ser realizadas a un orden de magnitud de los microsegundos, lo cual facilita su uso. Ver \cite{glo}.
+
 
 \section{Subt\'{\i}tulos nivel 2}
 Toda divisi\'{o}n o cap\'{\i}tulo, a su vez, puede subdividirse en otros niveles y s\'{o}lo se enumera hasta el tercer nivel. Los t\'{\i}tulos de segundo nivel se escriben con min\'{u}scula al margen izquierdo y sin punto final, est\'{a}n separados del texto o contenido por un interlineado posterior de 10 puntos y anterior de 20 puntos (tal y como se presenta en la plantilla).\\
