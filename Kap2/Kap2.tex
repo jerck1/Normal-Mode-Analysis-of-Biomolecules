@@ -7,7 +7,7 @@ Los diversos modelos de potencial pueden ser tomados según la naturaleza del po
 
 De acuerdo a los par\'{a}metros de costo y tiempo, las simulaciones de biomol\'{e}culas se pueden hacer analizando los \textit{movimientos locales} y los \textit{movimientos globales}.
 
-\subsection{Movimientos Locales}
+\section{Movimientos Locales}
 Hace referencia a las simulaciones en las que se incluyen todos los \'{a}tomos junto con las interacciones presentes, es decir, en las que se analizan los \textit{cambios locales}. Estas se pueden simular a un orden de magnitud de los nanosegundos en una m\'{a}quina usual, al respecto ver \cite{glo}.
 
 Como caso particular se pueden tomar los potenciales usados en \cite{Amb1} y en \cite{web:Amb2}, que siguen el modelo de Amber. El modelo de Amber tiene en cuenta las contribuciones debidas a:
@@ -16,16 +16,28 @@ Como caso particular se pueden tomar los potenciales usados en \cite{Amb1} y en 
 \item Interacciones entre pares: Lennard Jones, electrost\'{a}tico.
 \end{itemize}
 
-\subsection{Movimientos Globales}
+\section{Movimientos Globales}
 
-Son aqu\'{e}llas simulaciones en las que se desean conocer los \textit{cambios globales} o, el aspecto general que excibe el movimiento de una biomol\'{e}cula haciendo simplificaciones ya sea en los potenciales presentes en la biomol\'{e}cula como en el el n\'{u}mero de \'{a}tomos interconectados. Este tipo de simulaciones pueden ser realizadas a un orden de magnitud de los microsegundos, lo cual facilita su uso. Ver \cite{glo}.
+Son aqu\'{e}llas simulaciones en las que se desean conocer los \textit{cambios globales} o, el aspecto general que excibe el movimiento de una biomol\'{e}cula haciendo simplificaciones ya sea en los potenciales presentes en la biomol\'{e}cula como en el el n\'{u}mero de \'{a}tomos interconectados. Este tipo de simulaciones pueden ser realizadas a un orden de magnitud de los microsegundos, lo cual facilita su uso en computadores personales, ver \cite{glo}.
 
+Un conjunto de modelos que permite calcular los movimientos globales de una mol\'{e}cula son los \textit{Modelos de Redes El\'{a}sticas} (Elastic Network Models o ENM por sus siglas en ingl\'{e}s).
 
-\section{Subt\'{\i}tulos nivel 2}
-Toda divisi\'{o}n o cap\'{\i}tulo, a su vez, puede subdividirse en otros niveles y s\'{o}lo se enumera hasta el tercer nivel. Los t\'{\i}tulos de segundo nivel se escriben con min\'{u}scula al margen izquierdo y sin punto final, est\'{a}n separados del texto o contenido por un interlineado posterior de 10 puntos y anterior de 20 puntos (tal y como se presenta en la plantilla).\\
+\subsection{Modelos de Redes El\'{a}sticas (ENM)}
+Los ENM, como la palabra \textit{el\'{a}stico} lo indica, se basan en una simplificaci\'{o}n de la energ\'{i}a potencial a una energ\'{i}a potencial el\'{a}stica, es decir de tipo Hooke. Un requisito para que sea posible hacer dicha simplificaci\'{o}n, es el hecho de que sea posible \textit{minimizar} la energ\'{i}a potencial.
 
-\subsection{Subt\'{\i}tulos nivel 3}
-De la cuarta subdivisi\'{o}n en adelante, cada nueva divisi\'{o}n o \'{\i}tem puede ser se\~{n}alada con vi\~{n}etas, conservando el mismo estilo de \'{e}sta, a lo largo de todo el documento.\\
+Al simplificar el potencial, la biomol\'{e}cula original se convierte en una red cuyos nodos est\'{a}n sometidos al potencial el\'{a}stico, ver figura \ref{fig:pan}; los nodos se consideran como bloques constituyentes de la biomol\'{e}cula y no necesariamente, cada uno de los \'{a}tomos de la biomol\'{e}cula. 
+\begin{figure}
+\centering%
+\includegraphics{dibujo.pdf}%
+\caption{ (a) Vista exterior de un c\'{a}pside v\'{i}rico HK97 coloreado por cada cadena, todas las prote\'{i}nas son id\'{e}nticas. (b) Vista del arreglo prote\'{i}nico en una cara del c\'{a}pside. (c) Vista de la estructura secundaria de las prote\'{i}nas (d) Esquema de cada prote\'{i}na mostrando cada uno de sus \'{a}tomos, las aristas de cada cara son carbonos $\alpha$ unidos por lados (ligaduras el\'{a}sticas. Tomado de \cite{AG03p,AG04p}.} \label{fig:pan}
+\end{figure}
+\subsubsection{Descripci\'{o}n Mec\'{a}nica del Modelo}
+
+Consid\'{e}rese un biomol\'{e}cula con $N$ 
+Para una funci\'{o}n de energ\'{i}a potencial 
+
+\subsubsection{}
+
 
 Las subdivisiones, las vi\~{n}etas y sus textos acompa\~{n}antes deben presentarse sin sangr\'{\i}a y justificados.\\
 
