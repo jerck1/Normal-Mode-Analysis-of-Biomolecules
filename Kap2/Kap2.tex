@@ -1,9 +1,13 @@
 \chapter{Modelos Te\'{o}ricos}
-<<<<<<< HEAD
-La din\'{a}mica de una biomol\'{e}cula se determina por las ecuaciones de movimiento para cada uno de los \'{a}tomos que la constituyen. Usualmente en una biomol\'{e}cula el n\'{u}mero de mon\'{o}meros es mayor a 20, que al multiplicarlo por el n\'{u}mero de \'{a}tomos en cada mon\'{o}mero incrementa considerablemente el n\'{u}mero de ecuaciones de movimiento a resolver, de ah\'{i} que sea necesario realizar \textit{din\'{a}mica molecular} (Molecular Dynamics por sus siglas en ingl\'{e}s MD) la cual estudia mediante simulaciones computacionales el movimiento de los \'{a}tomos de acuerdo a las interacciones que presenten.\\
-=======
+\section{Relevancia}
+Es importante estudiar los movimientos de una biomol\'{e}cula ya que como es se\~{n}alado en \cite{Lezon2009ElasticViruses} y en  \cite{Rader2006TheApplications}, la din\'{a}mica de la mol\'{e}cula vincula la estructura con la funci\'{o}n de la biomol\'{e}cula. La funci\'{o}n es el papel que desempe\~{n}a la biomol\'{e}cula y que est\'{a} intimamente relacionado con las interacciones de la biomol\'{e}cula a un ligando. La estructura de una biomol\'{e}cula tiene tiene 4 niveles de organizaci\'{o}n, denominadas \textit{estructuras primaria, secundaria, terciaria y cuaternaria}.\\
+
+Por ejemplo, en una prote\'{i}na la estructura primaria es la secuencia u  orden de los mon\'{o}meros (amino\'{a}cidos) que la constituyen. La estructura secundaria es determinada por los puentes de hidr\'{o}geno existentes entre los grupos amino y carboxilo de dos amino\'{a}cidos diferentes; predice la estructura tridimensional en forma local. Mientras que la estructura terciaria la da el arreglo tridimensional de cada uno de sus \'{a}tomos, espec\'{i}ficamente se determina con las coordenadas de cada uno de los \'{a}tomos. La estructura cuaternaria es el arreglo de unidades proteicas o cadenas pept\'{i}dicas formando lo que se conoce como complejo multiproteico.\\
+
+Siguiendo el ejemplo de las prote\'{i}nas, la clase de prote\'{i}nas de transporte que se encuentran en la membrana celular act\'{u}an como mediadoras para el transporte de iones y sustratos, permitiendo de esta manera servir como paso previo al metabolismo y la energ\'{e}tica celular al interior de la c\'{e}lula.\\
+\section{Din\'{a}mica de una Biomol\'{e}cula}
+
 La din\'{a}mica de una biomol\'{e}cula se determina por las ecuaciones de movimiento para cada uno de los \'{a}tomos que la constituyen. Usualmente en una biomol\'{e}cula el n\'{u}mero de mon\'{o}meros es mayor a 20, que al multiplicarlo por el n\'{u}mero de \'{a}tomos en cada mon\'{o}mero incrementa considerablemente el n\'{u}mero de ecuaciones de movimiento a resolver, de ah\'{i} que sea necesario realizar \textit{din\'{a}mica molecular} (Molecular Dynamics que por sus siglas en ingl\'{e}s es MD) la cual estudia mediante simulaciones computacionales el movimiento de los \'{a}tomos, de acuerdo a las interacciones que presenten.\\
->>>>>>> b7135250bc9138189c3783a0d80fda1228288f7e
 
 Las ecuaciones de movimiento se pueden conocer a partir de los formalismos lagrangiano o hamiltoniano \cite{Goldstein2001ClassicalMechanics}, en los cuales es necesario conocer los potenciales con los que interact\'{u}an los \'{a}tomos. Las soluciones a las ecuaciones de movimiento se encuentran mediante los m\'{e}todos de la din\'{a}mica molecular o los an\'{a}lisis de modos normales (Normal Mode Analysis que por sus siglas en ingl\'{e}s es NMA) en los cuales se escogen los modelos de potencial.\\
 
@@ -43,22 +47,45 @@ El sistema se encuentra alrededor del equilibrio cuando las fuerzas generalizada
 \frac{\partial V}{\partial q_i}=0
 \end{equation}\label{eq:2}
 En este tipo de casos como la energ\'{i}a se minimiza, se dice que hay un equilibrio estable. En un equilibrio estable cuando se hace un incremento de la energ\'{i}a total $E$ se proporciona cierta energ\'{i}a cin\'{e}tica $T_0$ a los constituyentes. Dicha energ\'{i}a  $T_0$  disminuye a medida que el sistema se aleja de la posci\'{o}n de m\'{i}nima energ\'{i}a (la energ\'{i}a potencial aumenta) como se muestra en la figura \ref{fig:pot}. La raz\'{o}n es que $E_0+dE=T+V$, con $E_0+dE$ la energ\'{i}a total del sistema,que se mantiene constante. La explicaci\'{o}n para equilibrios estables e inestables se encuentra en \cite{Goldstein2001ClassicalMechanics}.\\
+
 Considerando la condici\'{o}n del equilibrio \eqref{eq:2} y despreciando desplazamientos de orden superior se tiene que:
 
 \begin{figure}
 \centering%
-\includegraphics[scale=0.5]{potencial.png}%
-\caption{Potencial en funci\'{o}n de la posici\'{o}n} \label{fig:pot}
+\input{Kap2/Potencial.tex}%
+\caption{Potencial en funci\'{o}n de la posici\'{o}n (EDITAR)} \label{fig:pot}
 \end{figure}
 
 \begin{equation}
-V(q)=\sum_{ij}^{n}\frac{\partial V^2 }{\partial q_i\partial q_j}q_i q_j
+V(\mathbf{q})=\sum_{i=1,j=1}^{n}\frac{\partial V^2 }{\partial q_i\partial q_j}q_i q_j
 \end{equation}\label{eq:3}
+
 Se identifican las constantes el\'{a}sticas como:
 \begin{equation}
-k_{ij}=\frac{\partial V^2 }{\partial q_i\partial q_j}
+U_{ij}=\frac{\partial V^2 }{\partial q_i\partial q_j}
 \end{equation}\label{eq:4}
 
+En t\'{e}rminos matriciales el potencial se puede escribir como:
+\begin{equation}
+V(\mathbf{q})=\mathbf{q}^t\mathbf{U}\mathbf{q}
+\end{equation}\label{eq:5}
+Donde $\mathbf{q}$ es el vector columna formado por los desplazamientos de las posiciones de equilibrio para cada constituyente, id est, $\mathbf{q}^t=(q_1,q_2,...q_n)$.\\
+
+Para las peque\~{n}as oscilaciones, no existen ligaduras dependientes expl\'{i}citamente de el tiempo (holon\'{o}micas), luego la eneg\'{i}a cin\'{e}tica de los constituyentes s\'{o}lo depender\'{a} de los cuadrados de las velocidades generalizadas:
+\begin{equation}
+T=\frac{1}{2}\mathbf{q}^t\mathbf{M}\mathbf{q}
+\end{equation}\label{eq:6}
+Donde $\mathbf{M}$ es la masa generalizada, la cual se expresa en t\'{e}rminos de los factores de escala entre sistemas coordenados:
+\begin{equation}
+M_{jk}=m_{i}\frac{\partial \mathbf{r_{i}} }{\partial q_j}\cdot\frac{\partial \mathbf{r_{j}} }{\partial q_k}
+\end{equation}\label{eq:7}
+En este caso:
+\begin{equation}
+\frac{\partial \mathbf{r_{i}} }{\partial q_j}\cdot\frac{\partial \mathbf{r_{j}} }{\partial q_k}=\delta_{ij}\delta_{jk}
+\end{equation}\label{eq:8}
+Ya que las coordenadas de posici\'{o}n son lineales a los desplazamientos de las posiciones de equilibrio.\\
+
+Tamando en cuenta que 
 \subsubsection{Ensamble Estad\'{i}stico}
 \subsubsection{Modelo de Redes Gaussianas (GNM)}
 \subsubsection{Modelos de Resdes Anisotr\'{o}picas (ANM)}
