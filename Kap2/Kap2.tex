@@ -46,31 +46,34 @@ El sistema se encuentra alrededor del equilibrio cuando las fuerzas generalizada
 \begin{equation}
 \frac{\partial V}{\partial q_i}=0
 \end{equation}\label{eq:2}
-En este tipo de casos como la energ\'{i}a se minimiza, se dice que hay un equilibrio estable. Para entender esto, sup\'{o}gase que la energ\'{i}a total, que en este caso es $E=T+V$ corresponde al punto de equilibrio donde los nodos no se mueven, es decir, $E=V_{min}$ (l\'{i}nea punteada de la figura \ref{fig:pot}). Aora sup\'{o}nga que hay una incremento de la energ\'{i}a total en una cantidad $\Delta E$, este incremento generar\'{a} un aumento en la energ\'{i}a potencial, l\'{i}nea continua.  Si el sistema se desv\'{i}a de la posici\'{o}n de equilibrio, por conservaci\'{o}n de la energ\'{i}a y como $E=T+V$, la energ\'{i}a cin\'{e}tica disminuye. En un equilibrio inestable la energ\'{i}a cin\'{e}tica aumenta, alejando al sistema del equilibrio. \cite{Goldstein2001ClassicalMechanics} \\
+En este tipo de casos como la energ\'{i}a se minimiza, se dice que hay un equilibrio estable. Para entender esto, sup\'{o}gase que la energ\'{i}a total, que en este caso es $E=T+V$ corresponde al punto de equilibrio donde los nodos no se mueven, es decir, $E=V_{min}$ (l\'{i}nea punteada de la figura \ref{fig:pot}). Ahora suponga que hay una incremento de la energ\'{i}a total en una cantidad $\Delta E$, este incremento generar\'{a} un aumento en la energ\'{i}a potencial, l\'{i}nea continua.  Si el sistema se desv\'{i}a de la posici\'{o}n de equilibrio, por conservaci\'{o}n de la energ\'{i}a y como $E=T+V$, la energ\'{i}a cin\'{e}tica disminuye. En un equilibrio inestable la energ\'{i}a cin\'{e}tica aumenta, alejando al sistema del equilibrio. \cite{Goldstein2001ClassicalMechanics} \\
 
-
-Considerando la condici\'{o}n del equilibrio \eqref{eq:2} y despreciando desplazamientos de orden superior se tiene que:
 
 \begin{figure}
 \centering%
+\put(0,0){$E$}
+\put(0,10){$E+\Delta E$}
+\put(0,10){$T$}
+\put(0,10){\vector(0,1){10}}
 \input{Kap2/Potencial.tex}%
-\caption{Potencial en funci\'{o}n de la posici\'{o}n (EDITAR)} \label{fig:pot}
+\caption{Potencial en funci\'{o}n de la posici\'{o}n y energ\'{i}a total $E$} \label{fig:pot}
 \end{figure}
 
+Considerando la condici\'{o}n de equilibrio \eqref{eq:2} y despreciando desplazamientos de orden superior se tiene que:
 \begin{equation}
-V(\mathbf{q})=\sum_{i=1,j=1}^{n}\frac{\partial V^2 }{\partial q_i\partial q_j}q_i q_j
+V(\mathbf{q})=\sum_{i,j=1}^{n}\frac{\partial^2 V }{\partial q_i\partial q_j}q_i q_j
 \end{equation}\label{eq:3}
 
-Se identifican las constantes el\'{a}sticas como:
+Donde se identifican las constantes el\'{a}sticas como:
 \begin{equation}
-U_{ij}=\frac{\partial V^2 }{\partial q_i\partial q_j}
+U_{ij}=\frac{\partial^2 V }{\partial q_i\partial q_j}
 \end{equation}\label{eq:4}
 
 En t\'{e}rminos matriciales el potencial se puede escribir como:
 \begin{equation}
 V(\mathbf{q})=\mathbf{q}^t\mathbf{U}\mathbf{q}
 \end{equation}\label{eq:5}
-Donde $\mathbf{q}$ es el vector columna formado por los desplazamientos de las posiciones de equilibrio para cada constituyente, id est, $\mathbf{q}^t=(q_1,q_2,...q_n)$.\\
+En la ecuaci\'{o}n \eqref{eq:5} $\mathbf{q}$ es el vector columna formado por los desplazamientos de las posiciones de equilibrio para cada constituyente, i. e., $\mathbf{q}^t=(q_1,q_2,...q_n)$. Por otro lado la matriz de constantes el\'{a}sticas $\mathbf{U}$ es una matriz sim\'{e}trica debido a que la fuerza generalizada se considera conservativa, lo cual permite intercambiar el orden de las derivadas parciales.\\
 
 Para las peque\~{n}as oscilaciones, no existen ligaduras dependientes expl\'{i}citamente de el tiempo (holon\'{o}micas), luego la eneg\'{i}a cin\'{e}tica de los constituyentes s\'{o}lo depender\'{a} de los cuadrados de las velocidades generalizadas:
 \begin{equation}
@@ -84,7 +87,7 @@ En este caso:
 \begin{equation}
 \frac{\partial \mathbf{r_{i}} }{\partial q_j}\cdot\frac{\partial \mathbf{r_{j}} }{\partial q_k}=\delta_{ij}\delta_{jk}
 \end{equation}\label{eq:8}
-Ya que las coordenadas de posici\'{o}n son lineales a los desplazamientos de las posiciones de equilibrio.\\
+Ya que las coordenadas de posici\'{o}n son lineales a los desplazamientos de las posiciones de equilibrio. Esto permite llamar a $\mathbf{M}$ simplemente la masa del sistema.\\
 
 Tamando en cuenta que 
 \subsubsection{Ensamble Estad\'{i}stico}
