@@ -85,14 +85,16 @@ Donde $\mathbf{M}$ es la masa generalizada, la cual se expresa en t\'{e}rminos d
 \begin{equation}
 M_{jk}=\sum_{i=1}^{N} m_{i}\frac{\partial \mathbf{r_{i}} }{\partial q_j}\cdot\frac{\partial \mathbf{r_{i}} }{\partial q_k}
 \end{equation}\label{eq:7}
-La forma en que se escribir\'{a}n los elementos de la masa del sistema depende de la transformaci\'{o}n aplicada. Por ejemplo, en una dimensión las componentees de $\mathbf{q}$ se definen como:
+En este caso:
 \begin{equation}
-q_i=
+\frac{\partial \mathbf{r_{i}} }{\partial q_j}\cdot\frac{\partial \mathbf{r_{j}} }{\partial q_k}=\delta_{ij}\delta_{jk}
 \end{equation}\label{eq:8}
+Ya que las coordenadas de posici\'{o}n son lineales a los desplazamientos de las posiciones de equilibrio. Esto permite llamar a $\mathbf{M}$ simplemente la masa del sistema.\\
 
+Tamando en cuenta que 
 \subsubsection{Ensamble Estad\'{i}stico}
 \subsubsection{Modelo de Redes Gaussianas (GNM)}
-\subsubsection{Modelos de Redes Anisotr\'{o}picas (ANM)}
+\subsubsection{Modelos de Resdes Anisotr\'{o}picas (ANM)}
 \subsection{An\'{a}lisis de Modos Normales Est\'{a}ndar (NMA)}
 Describe un sistema oscilatorio en el que todos los constituyentes del sistema oscilan sinusoidalmente y con la misma frecuencia.
 \subsection{An\'{a}lisis por Componentes Principales (PCA)}
