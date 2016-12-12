@@ -89,13 +89,47 @@ La forma en que se escribir\'{a}n los elementos de la masa del sistema depende d
 \begin{equation}
 q_i=x_i-x_{i0}
 \end{equation}\label{eq:8}
-En \eqref{eq:8} $x_i$ son las desviaciones de la posici\'{o}n de equilibrio de la part\'{i}cula $i$ y $x_{i0}$ su posici\'{o}n de equilibrio. Para este caso particular \eqref{eq:7} se convierte en:
+En \eqref{eq:8} $x_i$ es la posici\'{o}n variable de la part\'{i}cula $i$ con respecto a un sistema fijo y $x_{i0}$ su posici\'{o}n de equilibrio. Para este caso particular \eqref{eq:7} se convierte en:
 \begin{eqnarray}
-M_{jk}=\sum_{i=1}^{N} m_{i} \delta_{ij}\delta_{ik}\nonumber \\
-M_{jk}=m_{j} \delta_{jk}
+M_{jk}&=&\sum_{i=1}^{N} m_{i} \delta_{ij}\delta_{ik}\nonumber \\
+M_{jk}&=&m_{j} \delta_{jk}
 \end{eqnarray}\label{eq:9}
-
-
+La equaci\'{o}n \eqref{eq:9} dice que la matriz $\mathbf{M}$ es una matriz diagonal cuyas componentes son las masas del sistema.\\
+En tres dimensiones, como es nuestro caso real, la transformaci\'{o}n depender\'{a} del modelo escogido. Exceptuando el modelo de redes gaussianas (Gaussian Network Model que por sus siglas en ingl\'{e}s es GNM) la transformaci\'{o}n de coordenadas va de $\mathbf{r}_{i}$ posiciones con $i=1,2,...,N$ ($3N$ coordenadas) a $q_j$ coordenadas $j=1,2,..,3N$:
+\begin{equation*}
+\mathbf{r}_{i}\longrightarrow q_{j}
+\end{equation*}
+Con
+\begin{equation*}
+i=1,2,...,N\mbox{  }j=1,2,..,3N
+\end{equation*}
+Por cada componente en cartesianas:
+\begin{eqnarray}
+\begin{array}{cccccc}
+q_1=x_1-x_{10}&q_4=x_2-x_{20}&\cdots &q_{3i-2}=x_i-x_{i0}&\cdots &q_{3N-2}=x_N-x_{N0} \\
+q_2=y_1-y_{10}&q_5=y_2-y_{20}&\cdots &q_{3i-1}=y_i-y_{i0}&\cdots &q_{3N-1}=y_N-y_{N0}\\
+q_3=z_1-z_{10}&q_6=z_2-z_{20}&\cdots &q_{3i}=z_i-z_{i0}&\cdots &q_{3N}=z_N-z_{N0}\\
+\end{array}
+\end{eqnarray}\label{eq:10}
+Para esta transformaci\'{o}n, \eqref{eq:7} se convierte en:
+\begin{eqnarray}
+M_{jk}&=&\sum_{i=1}^{N} m_{i}\left( \delta_{i,3j-2}\delta_{jk}+\delta_{i,3j-1}\delta_{jk}+  \delta_{i,3j}\delta_{jk}\right)\nonumber \\
+M_{jk}&=&m_{3j-2}\delta_{jk}+m_{3j-1}\delta_{jk}+m_{3j}\delta_{jk} \nonumber \\
+M_{jk}&=&\left( m_{3j-2}+m_{3j-1}+m_{3j} \right) \delta_{jk}
+\end{eqnarray}\label{eq:11}
+En \eqref{eq:11} debe resaltarse que para $j=k=3N$, el elemento de matriz $M_{3N,3N}$ requiere las masas $m_{3(3N)-2}=m_{9N-2}$, $m_{3(3N)-1}=m_{9N-1}$ y $m_{3(3N)}=m_{9N}$, sin embargo ! no hay $9N$ masas!, el n\'{u}mero de masas es el mismo n\'{u}mero de nodos: $N$, entonces, para poder calcular la matriz $\mathbf{M}$ es necesario definir lo siguiente:
+\begin{equation}
+m_{N+1},m_{N+2},...,m_{3N}=0
+\end{equation}\label{eq:12}
+Como a partir de $N+1$ las masas son nulas, la matriz de masa (que es diagonal) tiene elementos nulos si  
+\begin{eqnarray*}
+3j-2=N+1\\
+j=\frac{N+3}{3} \\
+\end{eqnarray*}
+Como no siempre $N$ es m\'{u}ltiplo de 3, se escoge el entero menor que este m\'{a}s cerca al valor:
+\begin{equation}
+j=\left \lfloor\frac{N+3}{3}\right \rfloor
+\end{equation}\label{eq:13}
 \subsubsection{Ensamble Estad\'{i}stico}
 \subsubsection{Modelo de Redes Gaussianas (GNM)}
 \subsubsection{Modelos de Redes Anisotr\'{o}picas (ANM)}
