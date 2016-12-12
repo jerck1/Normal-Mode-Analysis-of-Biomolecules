@@ -85,10 +85,16 @@ Donde $\mathbf{M}$ es la masa generalizada, la cual se expresa en t\'{e}rminos d
 \begin{equation}
 M_{jk}=\sum_{i=1}^{N} m_{i}\frac{\partial \mathbf{r_{i}} }{\partial q_j}\cdot\frac{\partial \mathbf{r_{i}} }{\partial q_k}
 \end{equation}\label{eq:7}
-La forma en que se escribir\'{a}n los elementos de la masa del sistema depende de la transformaci\'{o}n aplicada. Por ejemplo, en una dimensin las componentees de $\mathbf{q}$ se definen como:
+La forma en que se escribir\'{a}n los elementos de la masa del sistema depende de la transformaci\'{o}n aplicada. Por ejemplo, en una dimensi\'{o}n las componentes de $\mathbf{q}$ se definen como:
 \begin{equation}
-q_i=
+q_i=x_i-x_{i0}
 \end{equation}\label{eq:8}
+En \eqref{eq:8} $x_i$ son las desviaciones de la posici\'{o}n de equilibrio de la part\'{i}cula $i$ y $x_{i0}$ su posici\'{o}n de equilibrio. Para este caso particular \eqref{eq:7} se convierte en:
+\begin{eqnarray}
+M_{jk}=\sum_{i=1}^{N} m_{i} \delta_{ij}\delta_{ik}\nonumber \\
+M_{jk}=m_{j} \delta_{jk}
+\end{eqnarray}\label{eq:9}
+
 
 \subsubsection{Ensamble Estad\'{i}stico}
 \subsubsection{Modelo de Redes Gaussianas (GNM)}
