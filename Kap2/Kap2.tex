@@ -68,14 +68,14 @@ V(\mathbf{q})=\sum_{i,j=1}^{n}\frac{\partial^2 V }{\partial q_i\partial q_j}q_i 
 
 Donde se identifican las constantes el\'{a}sticas como:
 \begin{equation}
-U_{ij}=\frac{\partial^2 V }{\partial q_i\partial q_j}
+H_{ij}=\frac{\partial^2 V }{\partial q_i\partial q_j}
 \end{equation}\label{eq:4}
 
 En t\'{e}rminos matriciales el potencial se puede escribir como:
 \begin{equation}
-V(\mathbf{q})=\mathbf{q}^t\mathbf{U}\mathbf{q}
+V(\mathbf{q})=\mathbf{q}^t\mathbf{H}\mathbf{q}
 \end{equation}\label{eq:5}
-En la ecuaci\'{o}n \eqref{eq:5} $\mathbf{q}$ es el vector columna formado por los desplazamientos de las posiciones de equilibrio para cada constituyente, i. e., $\mathbf{q}^t=(q_1,q_2,...q_n)$. Por otro lado la matriz de constantes el\'{a}sticas $\mathbf{U}$, es una matriz sim\'{e}trica debido a que la fuerza generalizada se considera conservativa, lo cual permite intercambiar el orden de las derivadas parciales.\\
+En la ecuaci\'{o}n \eqref{eq:5} $\mathbf{q}$ es el vector columna formado por los desplazamientos de las posiciones de equilibrio para cada constituyente, i. e., $\mathbf{q}^t=(q_1,q_2,...q_n)$. Por otro lado la matriz de constantes el\'{a}sticas $\mathbf{H}$, es una matriz sim\'{e}trica debido a que la fuerza generalizada se considera conservativa, lo cual permite intercambiar el orden de las derivadas parciales.\\
 
 Para las peque\~{n}as oscilaciones, no existen ligaduras dependientes expl\'{i}citamente de el tiempo (holon\'{o}micas) luego, la eneg\'{i}a cin\'{e}tica de los constituyentes s\'{o}lo depender\'{a} de los cuadrados de las velocidades generalizadas:
 \begin{equation}
@@ -130,6 +130,11 @@ Como no siempre $N$ es m\'{u}ltiplo de 3, se escoge el entero menor que este m\'
 \begin{equation}
 j=\left \lfloor\frac{N+3}{3}\right \rfloor
 \end{equation}\label{eq:13}
+\paragraph{Ecuaci\'{o}n de Movimiento}
+El sistema satisface la ecuaci\'{o}n de un oscilador arm\'{o}nico, tal como es descrito en \cite{Goldstein2001ClassicalMechanics}:
+\begin{equation}
+\mathbf{q}\mathbf{M}+\mathbf{q}\mathbf{H}=\mathbf{0}
+\end{equation}\label{eq:14}
 \subsubsection{Ensamble Estad\'{i}stico}
 \subsubsection{Modelo de Redes Gaussianas (GNM)}
 \subsubsection{Modelos de Redes Anisotr\'{o}picas (ANM)}
