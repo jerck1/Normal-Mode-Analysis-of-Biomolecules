@@ -144,16 +144,15 @@ Reemplazando dichas transformaciones en la ecuaci\'{o}n de movimiento se obtiene
 \begin{equation}
 \ddot{\mathbf{q'}}+\mathbf{K}\mathbf{q'}=\mathbf{0}
 \end{equation}\label{eq:16}
-El efecto que tienen las coordenadas de masa ponderada sobre la energias cin\'{e}tica  es el de desaparecer la dependencia con la matriz de masas del sistema, que como se vi\'{o} puede resultar en una expresi\'{o}n tediosa. Las energias cin\'{e}tica y potencial en las nuevas coordenadas son:
+El efecto que tienen las coordenadas de masa ponderada sobre las energias cin\'{e}tica y potencial es el de desaparecer la dependencia con la matriz de masas del sistema, que como se vi\'{o} puede resultar en una expresi\'{o}n tediosa:
 \begin{eqnarray}
-T&=&\frac{1}{2}\mathbf{q}^t\mathbf{M}\mathbf{q} \nonumber \\
-T&=&\frac{1}{2}\mathbf{\dot{r}}^t\mathbf{M^{-1/2}}^t\mathbf{M}\mathbf{M^{1/2}}\mathbf{\dot{r}}\nonumber \\
-T&=&\frac{1}{2}\mathbf{\dot{r}}^t \mathbf{\dot{r}}
+T=\frac{1}{2}\mathbf{q}^t\mathbf{M}\mathbf{q} \nonumber \\
+T=\frac{1}{2}\mathbf{\dot{r}}^t\mathbf{M^{-1/2}}^t\mathbf{M}\mathbf{M^{1/2}}\mathbf{\dot{r}}\nonumber \\
+T=\frac{1}{2}\mathbf{\dot{r}}^t \mathbf{\dot{r}}
 \end{eqnarray}\label{eq:19}
 \begin{eqnarray}
-V(\mathbf{q})&=&\mathbf{q}^t\mathbf{U}\mathbf{q} \nonumber \\
-V(\mathbf{q})&=&\mathbf{r}^t\mathbf{M^{-1/2}}^t\mathbf{U}\mathbf{M^{1/2}}\mathbf{r} \nonumber \\
-V(\mathbf{q})&=&\mathbf{r}^t\mathbf{K}\mathbf{r}
+V(\mathbf{q})=\mathbf{q}^t\mathbf{U}\mathbf{q} \nonumber \\
+V(\mathbf{q})=\mathbf{r}^t\mathbf{M^{-1/2}}^t\mathbf{U}\mathbf{M^{1/2}}\mathbf{r}
 \end{eqnarray}\label{eq:20}
 Una soluci\'{o}n (de prueba) a la ecuaci\'{o}n de movimiento es la oscilatoria, en la cual los constituyentes de la biomol\'{e}cula tienen la misma frecuencia $\omega$:
 \begin{equation}
@@ -163,9 +162,9 @@ El vector $\mathbf{a}$ es denominado vector de amplitudes debido a que cada una 
 
 Al reemplazar la soluci\'{o}n de prueba en la ecuaci\'{o}n \eqref{eq:16} se convierte en un problema de autovalores y autovectores:
 \begin{eqnarray}
-\ddot{\mathbf{q'}}&=&-\mathbf{K}\mathbf{q'} \nonumber \\
-\omega^2\mathbf{a}&=&\mathbf{K}\mathbf{a} \nonumber \\
-\lambda_{k}\mathbf{a_{k}}&=&\mathbf{K}\mathbf{a_{k}}
+\ddot{\mathbf{q'}}=-\mathbf{K}\mathbf{q'} \nonumber \\
+\omega^2\mathbf{a}=\mathbf{K}\mathbf{a} \nonumber \\
+\lambda_{k}\mathbf{a_{k}}=\mathbf{K}\mathbf{a_{k}}
 \end{eqnarray}\label{eq:18}
 En \eqref{eq:18} se ha definido $\lambda=\omega^2$ y posteriormente se ha agregado el sub\'{i}ndice $k$ para distinguir cada uno de los autovalores y autovectores que se encuentren en el problema \eqref{eq:18}.\\
 Cuando cada uno de los mon\'{o}meros tiene la misma frecuencia, a cada frecuencia le corresponde un vector de amplitudes $\mathbf{a}$, cada uno de estos posibles vectores se les conoce como un \textit{modo normal de oscilaci\'{o}n}.
