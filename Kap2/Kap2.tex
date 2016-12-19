@@ -170,7 +170,15 @@ Al reemplazar la soluci\'{o}n de prueba en la ecuaci\'{o}n \eqref{eq:16} se conv
 En \eqref{eq:18} se ha definido $\lambda=\omega^2$ y posteriormente se ha agregado el sub\'{i}ndice $k$ para distinguir cada uno de los autovalores y autovectores que se encuentren en el problema \eqref{eq:18}.\\
 Cuando cada uno de los mon\'{o}meros tiene la misma frecuencia, a cada frecuencia le corresponde un vector de amplitudes $\mathbf{a}$, cada uno de estos posibles vectores se les conoce como un \textit{modo normal de oscilaci\'{o}n}.
 \subsubsection{Ensamble Estad\'{i}stico}
-Cuando la energ\'{i}a total del sistema fluct\'{u}a poco, es decir, no hay un intercambio de energ\'{i}a apreciable y las m\'{i}nimas fluctuaciones son mucho mayores que la incertidumbre en la energ\'{i}a, entonces el sistema est\'{a} descrito por el ensamble micro can\'{o}nico. Esto se satisface para las peque\~{n}as oscilaciones ya que se asume la energ\'{i} total como fija .\\
+Cuando el sistema (biomol\'{e}cula) se encuentre a temperaturas fisiol\'{o}gicas, el sistema  s\'{o}lo intercambiar\'{a} calor con los alrededores (ba\~{n}o t\'{e}rmico). Sin embargo, se ha demostrado  que a esta temperatura, la aproximaci\'{o}n arm\'{o}nica falla, presentando m\'{u}ltiples m\'{i}nimos y no uno solo. Como \'{u}nicamente hay intercambio de energ\'{i}a y se trabaja a temperatura fisiol\'{o}gica, la estad\'{i}stica apropidada es la del ensamble can\'{o}nico . En el ensamble  can\'{o}nico se sigue la distribuci\'{o} de probabilidad de Boltzmann:
+\begin{equation}
+p=\frac{\exp(-E_s/k_BT)}{Z}
+\end{equation}\label{eq:21}
+Donde $E_s$ es la energ\'{i}a del sistema y $Z$ la funci\'{o}n de partici\'{o}n. La funci\'{o}n de partici\'{o}n es el factor de normalizaci\'{o}n de la densidad de probabilidad y cuenta todos los posibles microestados a temperatura constante:
+\begin{equation}
+Z=\int \mathrm{d}^n p\mathrm{d}^n q \exp \left [-H(\mathbf{p},\mathbf{q})/k_BT \right]
+\end{equation}\label{eq:22}
+Ha de notarse que la funci\'{o}n de partici\'{o}n en \eqref{eq:22} desacopla los momentos y las posiciones, ya que el hamiltoniano est\'{a} dado por la f\'{o}rmula $H=T+V$,  
 \subsubsection{Modelo de Redes Gaussianas (GNM)}
 \subsubsection{Modelos de Redes Anisotr\'{o}picas (ANM)}
 \subsection{An\'{a}lisis de Modos Normales Est\'{a}ndar (NMA)}
