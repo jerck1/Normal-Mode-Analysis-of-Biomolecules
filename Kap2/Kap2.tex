@@ -14,6 +14,16 @@ Las ecuaciones de movimiento se pueden conocer a partir de los formalismos lagra
 Los diversos modelos de potencial pueden ser tomados seg\'{u}n la naturaleza del pol\'{i}mero a analizar, ver \cite{Lezon2009ElasticViruses}. Sin embargo, al escoger el potencial  para hacer un an\'{a}lisis \textit{in silico} de la din\'{a}mica de una biomol\'{e}cula, debe tenerse en cuenta el costo computacional requerido, esto es, el tiempo de simulaci\'{o}n de la mol\'{e}cula y la exactitud requerida en el movimiento de cada uno de los constituyentes de la mol\'{e}cula.\\
 
 De acuerdo a los par\'{a}metros de costo y tiempo, las simulaciones de biomol\'{e}culas se pueden hacer analizando los \textit{movimientos locales} y los \textit{movimientos globales}.
+\section{Movimientos Locales}
+Hace referencia a las simulaciones en las que se incluyen todos los \'{a}tomos junto con las interacciones presentes, es decir, en las que se analizan los \textit{cambios locales}. Estas se pueden simular a un orden de magnitud de los nanosegundos en una m\'{a}quina usual, al respecto ver \cite{Gur2013GlobalPredictions.}.
+
+Como caso particular se pueden tomar los potenciales usados en \cite{Amber2016AmberManual}, que siguen el modelo de Amber. El modelo de Amber tiene en cuenta las contribuciones debidas a:
+ \begin{itemize}
+\item Interacciones intermoleculares: Son las producidas por los enlaces covalentes entre grupos de \'{a}tomos, las de valencia y las torsiones.
+\item Interacciones entre pares: Lennard Jones, electrost\'{a}tico.
+\end{itemize}
+\subsection{An\'{a}lisis de Modos Normales Est\'{a}ndar (NMA)}
+Los modos normales ocurren cuando todos los constituyentes del sistema oscilan sinusoidalmente y con la misma frecuencia. En el an\'{a}lisis \textit{est\'{a}ndar} los constituyentes son todos los \'{a}tomos de la biomol\'{e}cula, con lo cual 
 
 \section{Movimientos Globales}
 
@@ -31,13 +41,13 @@ Al simplificar el potencial, la biomol\'{e}cula original se convierte en una red
 \includegraphics[scale=0.3]{Kap2/dibujo.pdf}%
 \caption{ (a) Vista exterior de un c\'{a}pside v\'{i}rico HK97 coloreado por cada cadena, todas las prote\'{i}nas son id\'{e}nticas. (b) Vista del arreglo prote\'{i}nico en una cara del c\'{a}pside. (c) Vista de la estructura secundaria de las prote\'{i}nas (d) Esquema de cada prote\'{i}na mostrando cada uno de sus \'{a}tomos, las aristas de cada cara son carbonos $\alpha$ unidos por lados (ligaduras el\'{a}sticas). Tomado de \cite{Lezon2009ElasticViruses}.} \label{fig:pan}
 \end{figure}
-\subsubsection{Descripci\'{o}n Mec\'{a}nica del Modelo}
+\section{Descripci\'{o}n Mec\'{a}nica del Modelo}
 
 Consid\'{e}rese una biomol\'{e}cula con $N$ part\'{i}culas constituyentes, el tipo de constituyente depende del modelo apropiado para la biomol\'{e}cula, por ejemplo en las prote\'{i}nas como la BPTI, ver \cite{Gur2013GlobalPredictions.}, los constituyentes son los carbonos $\alpha$ de los amino\'{a}cidos.\\
 
 La energ\'{i}a potencial $V$ que representa las interacciones entre los constituyentes de la biomol\'{e}cula, se puede expresar alrededor de las posiciones de equilibrio $\mathbf{q_0}=\mathbf{0}$ tal como describe la teor\'{i}a de peque\~{n}as oscilaciones, ver \cite{Goldstein2001ClassicalMechanics}:
 \begin{equation}
-V(q)=V(\mathbf{0})+\sum_{i=1}^n\frac{\partial V}{\partial q_i}q_i+\sum_{ij}^{n}\frac{\partial^2 V }{\partial q_i\partial q_j}q_i q_j+...
+V(\mathbf{q})=V(\mathbf{0})+\sum_{i=1}^n\frac{\partial V}{\partial q_i}q_i+\frac{1}{2}\sum_{ij}^{n}\frac{\partial^2 V }{\partial q_i\partial q_j}q_i q_j+...
 \end{equation}\label{eq:1}
 Donde $q_i$ son los desplazamientos con respecto a las posiciones de equilibrio, $n$ es el n\'{u}mero de posibles desplazamientos en la biomol\'{e}cula. $V(\mathbf{0})$ es el potencial en equilibrio que por conveniencia puede ser calibrado a cero: $V(\mathbf{0})=0$. \\
 
@@ -63,7 +73,7 @@ En este tipo de casos como la energ\'{i}a se minimiza, se dice que hay un equili
 
 Considerando la condici\'{o}n de equilibrio \eqref{eq:2} y despreciando desplazamientos de orden superior se tiene que:
 \begin{equation}
-V(\mathbf{q})=\sum_{i,j=1}^{n}\frac{\partial^2 V }{\partial q_i\partial q_j}q_i q_j
+V(\mathbf{q})=\frac{1}{2}\sum_{i,j=1}^{n}\frac{\partial^2 V }{\partial q_i\partial q_j}q_i q_j
 \end{equation}\label{eq:3}
 
 Donde se identifican las constantes el\'{a}sticas como:
@@ -73,7 +83,7 @@ U_{ij}=\frac{\partial^2 V }{\partial q_i\partial q_j}
 
 En t\'{e}rminos matriciales el potencial se puede escribir como:
 \begin{equation}
-V(\mathbf{q})=\mathbf{q}^t\mathbf{U}\mathbf{q}
+V(\mathbf{q})=\frac{1}{2}\mathbf{q}^t\mathbf{U}\mathbf{q}
 \end{equation}\label{eq:5}
 En la ecuaci\'{o}n \eqref{eq:5} $\mathbf{q}$ es el vector columna formado por los desplazamientos de las posiciones de equilibrio para cada constituyente, i. e., $\mathbf{q}^t=(q_1,q_2,...q_n)$. Por otro lado la matriz de constantes el\'{a}sticas $\mathbf{H}$, es una matriz sim\'{e}trica debido a que la fuerza generalizada se considera conservativa, lo cual permite intercambiar el orden de las derivadas parciales.\\
 
@@ -137,12 +147,12 @@ El sistema satisface la ecuaci\'{o}n de un oscilador arm\'{o}nico, lo cual se mu
 \end{equation}\label{eq:14}
 Para convertir la ecuaci\'{o}n a la forma est\'{a}ndar se usan las coordenadas de masa ponderada (en ingl\'{e}s mass-weighted coordinates) las cuales cambian la escala en la que se mide la posici\'{o}n:
 \begin{eqnarray}
-\mathbf{q'}&=&\mathbf{M}^{1/2}\mathbf{q}\\
+\mathbf{r}&=&\mathbf{M}^{1/2}\mathbf{q}\\
 \mathbf{K}&=&\mathbf{M}^{-1/2}\mathbf{U}\mathbf{M}^{-1/2}
 \end{eqnarray}\label{eq:15}
 Reemplazando dichas transformaciones en la ecuaci\'{o}n de movimiento se obtiene:
 \begin{equation}
-\ddot{\mathbf{q'}}+\mathbf{K}\mathbf{q'}=\mathbf{0}
+\ddot{\mathbf{r}}+\mathbf{K}\mathbf{r}=\mathbf{0}
 \end{equation}\label{eq:16}
 El efecto que tienen las coordenadas de masa ponderada sobre la energias cin\'{e}tica  es el de desaparecer la dependencia con la matriz de masas del sistema, que como se vi\'{o} puede resultar en una expresi\'{o}n tediosa. Las energias cin\'{e}tica y potencial en las nuevas coordenadas son:
 \begin{eqnarray}
@@ -151,49 +161,62 @@ T&=&\frac{1}{2}\mathbf{\dot{r}}^t\mathbf{M^{-1/2}}^t\mathbf{M}\mathbf{M^{1/2}}\m
 T&=&\frac{1}{2}\mathbf{\dot{r}}^t \mathbf{\dot{r}}
 \end{eqnarray}\label{eq:19}
 \begin{eqnarray}
-V(\mathbf{q})&=&\mathbf{q}^t\mathbf{U}\mathbf{q} \nonumber \\
-V(\mathbf{q})&=&\mathbf{r}^t\mathbf{M^{-1/2}}^t\mathbf{U}\mathbf{M^{1/2}}\mathbf{r} \nonumber \\
-V(\mathbf{q})&=&\mathbf{r}^t\mathbf{K}\mathbf{r}
+V(\mathbf{q})&=&\frac{1}{2}\mathbf{q}^t\mathbf{U}\mathbf{q} \nonumber \\
+V(\mathbf{q})&=&\frac{1}{2}\mathbf{r}^t\mathbf{M^{-1/2}}^t\mathbf{U}\mathbf{M^{1/2}}\mathbf{r} \nonumber \\
+V(\mathbf{q})&=&\frac{1}{2}\mathbf{r}^t\mathbf{K}\mathbf{r}
 \end{eqnarray}\label{eq:20}
 Una soluci\'{o}n (de prueba) a la ecuaci\'{o}n de movimiento es la oscilatoria, en la cual los constituyentes de la biomol\'{e}cula tienen la misma frecuencia $\omega$:
 \begin{equation}
-\mathbf{q'}=\mathbf{a}e^{i\omega t}
+\mathbf{r}=\mathbf{a}e^{i\omega t}
 \end{equation}\label{eq:17}
 El vector $\mathbf{a}$ es denominado vector de amplitudes debido a que cada una de sus componentes corresponde a las amplitudes de cada mon\'{o}mero. Sus valores son fijos en el tiempo.\\
 
 Al reemplazar la soluci\'{o}n de prueba en la ecuaci\'{o}n \eqref{eq:16} se convierte en un problema de autovalores y autovectores:
 \begin{eqnarray}
-\ddot{\mathbf{q'}}&=&-\mathbf{K}\mathbf{q'} \nonumber \\
+\ddot{\mathbf{r}}&=&-\mathbf{K}\mathbf{r} \nonumber \\
 \omega^2\mathbf{a}&=&\mathbf{K}\mathbf{a} \nonumber \\
 \lambda_{k}\mathbf{a_{k}}&=&\mathbf{K}\mathbf{a_{k}}
 \end{eqnarray}\label{eq:18}
 En \eqref{eq:18} se ha definido $\lambda=\omega^2$ y posteriormente se ha agregado el sub\'{i}ndice $k$ para distinguir cada uno de los autovalores y autovectores que se encuentren en el problema \eqref{eq:18}.\\
 Cuando cada uno de los mon\'{o}meros tiene la misma frecuencia, a cada frecuencia le corresponde un vector de amplitudes $\mathbf{a}$, cada uno de estos posibles vectores se les conoce como un \textit{modo normal de oscilaci\'{o}n}.
 \subsubsection{Ensamble Estad\'{i}stico}
-Cuando el sistema (biomol\'{e}cula) se encuentre a temperaturas fisiol\'{o}gicas, el sistema  s\'{o}lo intercambiar\'{a} calor con los alrededores (ba\~{n}o t\'{e}rmico). Sin embargo, se ha demostrado  que a esta temperatura, la aproximaci\'{o}n arm\'{o}nica falla , presentando m\'{u}ltiples m\'{i}nimos y no uno solo \cite{Hayward2008NormalDynamics},  ; por otro lado, a temperatura fisiol\'{o}gica el ensamble es cl\'{a}sico \cite{Sethna2006}. Como \'{u}nicamente hay intercambio de energ\'{i}a y se trabaja a temperatura fisiol\'{o}gica, la estad\'{i}stica apropidada es la del ensamble can\'{o}nico . En el ensamble  can\'{o}nico se sigue la distribuci\'{o} de probabilidad de Boltzmann:
+Cuando el sistema (biomol\'{e}cula) se encuentre a temperaturas fisiol\'{o}gicas, el sistema  s\'{o}lo intercambiar\'{a} calor con los alrededores (ba\~{n}o t\'{e}rmico). Sin embargo, se ha demostrado  que a esta temperatura, la aproximaci\'{o}n arm\'{o}nica falla , presentando m\'{u}ltiples m\'{i}nimos y no uno solo \cite{Hayward2008NormalDynamics}, \cite{Elber1987}; por otro lado, a temperatura fisiol\'{o}gica el ensamble es cl\'{a}sico \cite{Sethna2006}. Como \'{u}nicamente hay intercambio de energ\'{i}a y se trabaja a temperatura fisiol\'{o}gica, la estad\'{i}stica apropidada es la del ensamble can\'{o}nico. En el ensamble  can\'{o}nico se sigue la distribuci\'{o}n de probabilidad de Boltzmann:
 \begin{equation}
 p=\frac{\exp(-E_s/k_BT)}{Z}
 \end{equation}\label{eq:21}
 Donde $E_s$ es la energ\'{i}a del sistema y $Z$ la funci\'{o}n de partici\'{o}n. La funci\'{o}n de partici\'{o}n es el factor de normalizaci\'{o}n de la densidad de probabilidad y cuenta todos los posibles microestados a temperatura constante:
 \begin{equation}
-Z=\int \mathrm{d}^n p\mathrm{d}^n q \exp \left [-H(\mathbf{p},\mathbf{q})/k_BT \right]
+Z=\frac{1}{h^{n}}\int \mathrm{d}^n p\mathrm{d}^n q \exp \left [-H(\mathbf{p},\mathbf{q})/k_BT \right]
 \end{equation}\label{eq:22}
-Ha de notarse que la funci\'{o}n de partici\'{o}n en \eqref{eq:22} desacopla los momentos y las posiciones, ya que el hamiltoniano est\'{a} dado por la f\'{o}rmula $H=T+V$,  
+En \eqref{eq:22}, $n=3N$ cuando el n\'{u}mero de coordenadas $q_i$ escogido es el mismo que el n\'{u}mero de coordenadas cartesianas.\\
+Ha de notarse que la funci\'{o}n de partici\'{o}n en \eqref{eq:22} desacopla los momentos y las posiciones, ya que el hamiltoniano est\'{a} dado por la f\'{o}rmula $H=T+V$, donde la enger\'{i}a cin\'{e}tica depende s\'{o}lo de los momentos generalizados y  el potencial de las coordenadas generalizadas.\\
+
+Se desarrolla \eqref{eq:22} teniendo en cuenta que $\mathbf{M}$ es diagonal:
+\begin{eqnarray}
+Z&=&\frac{1}{h^{n}}\int \mathrm{d}^n p\mathrm{d}^n q \exp \left [-\left( \mathbf{\dot{q}^t}\mathbf{M}\mathbf{\dot{q}}/2+\mathbf{q}^t\mathbf{U}\mathbf{q}/2\right)/k_BT \right]
+\nonumber \\
+Z&=&\frac{1}{h^{n}}\int \mathrm{d}^n p \exp \left [-\sum_i \frac{p_i^2}{2m_i}\right]
+\int \mathrm{d}^n r \left( \prod_i \sqrt{m_i}\right)\exp \left[-\frac{1}{2}\mathbf{r}^t\mathbf{K}\mathbf{r}/k_BT \right]
+\nonumber \\
+Z&=&\frac{(2\pi)^{n/2}}{h^{n}}
+\int \mathrm{d}^n r\exp \left[-\frac{1}{2}\mathbf{r}^t\mathbf{K}\mathbf{r}/k_BT \right] 
+\end{eqnarray}\label{eq:23}
+El resultado \eqref{eq:23} es el mostrado en \cite{Lezon2009} o en \cite{Sethna2006}:
+\begin{equation}
+Z=\frac{\left(k_BT\right)^{n/2}}{\hbar^{n}} \frac{1}{|\mathbf{K}|^{n/2}}
+\end{equation}\label{eq:24}
+Tomando $\hbar=1$ y teniendo en cuenta que el determinante de $\mathbf{K}$ es el producto de los autovalores, es deci, de las frecuencias al cuadrado, entonces:
+\begin{eqnarray}
+Z&=&\left(k_BT\right)^{n/2} \prod_{i=1}^{n}\frac{1}{\omega_i}
+ \\
+Z&=&\left(k_BT\right)^{n/2} |\mathbf{K^{-1}}|^{1/2}
+\end{eqnarray}\label{eq:25}
+\section{Descripciones de los Movimientos Globales}
+\subsection{ENM}
 \subsubsection{Modelo de Redes Gaussianas (GNM)}
+Es un modelo en el que se considera un potencial con la diferencia de distancias y no con los desplazamientos alrededor del equilibrio. Se requieren dos par\'{a}metros para describir el modelo: Una misma constante el\'{a}stica para todas las unidades de la biomol\'{e}cula y una distancia de corte a partir de la cual no se ejerce un potencial.
 \subsubsection{Modelos de Redes Anisotr\'{o}picas (ANM)}
-\subsection{An\'{a}lisis de Modos Normales Est\'{a}ndar (NMA)}
-Describe un sistema oscilatorio en el que todos los constituyentes del sistema oscilan sinusoidalmente y con la misma frecuencia.
 \subsection{An\'{a}lisis por Componentes Principales (PCA)}
-\section{Movimientos Locales}
-Hace referencia a las simulaciones en las que se incluyen todos los \'{a}tomos junto con las interacciones presentes, es decir, en las que se analizan los \textit{cambios locales}. Estas se pueden simular a un orden de magnitud de los nanosegundos en una m\'{a}quina usual, al respecto ver \cite{Gur2013GlobalPredictions.}.
-
-Como caso particular se pueden tomar los potenciales usados en \cite{Amber2016AmberManual}, que siguen el modelo de Amber. El modelo de Amber tiene en cuenta las contribuciones debidas a:
- \begin{itemize}
-\item Interacciones intermoleculares: Son las producidas por los enlaces covalentes entre grupos de \'{a}tomos, las de valencia y las torsiones.
-\item Interacciones entre pares: Lennard Jones, electrost\'{a}tico.
-\end{itemize}
-
-\subsubsection{An\'{a}lisis por Componentes Principales}
 
 \begin{itemize}
 \item 
