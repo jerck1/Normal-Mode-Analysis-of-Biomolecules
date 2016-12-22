@@ -4,12 +4,12 @@ Es importante estudiar los movimientos de una biomol\'{e}cula ya que como es se\
 
 Por ejemplo, en una prote\'{i}na la estructura primaria es la secuencia u  orden de los mon\'{o}meros (amino\'{a}cidos) que la constituyen. La estructura secundaria est\'{a} determinada por los puentes de hidr\'{o}geno existentes entre los grupos amino y carboxilo de dos amino\'{a}cidos diferentes; predice la estructura tridimensional en forma local. Mientras que la estructura terciaria la da el arreglo tridimensional de cada uno de sus \'{a}tomos, espec\'{i}ficamente se determina con las coordenadas de cada uno de los \'{a}tomos. La estructura cuaternaria es el arreglo de unidades proteicas o cadenas pept\'{i}dicas formando lo que se conoce como complejo multiproteico.\\
 
-Algunas prote\'{i}nas est\'{a}n en la clase de prote\'{i}nas de transporte que se encuentran en la membrana celular, la funci\'{o}n que cumplen es act\'{u}ar como mediadoras para el transporte de iones y sustratos, convirti\'{e}ndose este en un paso previo al metabolismo y la energ\'{e}tica celular al interior de la c\'{e}lula.\\
+Algunas prote\'{i}nas est\'{a}n en la clase de prote\'{i}nas de transporte que se encuentran en la membrana celular, la funci\'{o}n que cumplen es actuar como mediadoras para el transporte de iones y sustratos, convirti\'{e}ndose este en un paso previo al metabolismo y la energ\'{e}tica celular al interior de la c\'{e}lula.\\
 \section{Din\'{a}mica de una Biomol\'{e}cula}
 
 La din\'{a}mica de una biomol\'{e}cula se determina por las ecuaciones de movimiento para cada uno de los \'{a}tomos que la constituyen. Usualmente en una biomol\'{e}cula el n\'{u}mero de mon\'{o}meros es mayor a 20, que al multiplicarlo por el n\'{u}mero de \'{a}tomos en cada mon\'{o}mero incrementa considerablemente el n\'{u}mero de ecuaciones de movimiento a resolver, de ah\'{i} que sea necesario realizar \textit{din\'{a}mica molecular} (Molecular Dynamics que por sus siglas en ingl\'{e}s es MD) la cual estudia mediante simulaciones computacionales el movimiento de los \'{a}tomos, de acuerdo a las interacciones que presenten.\\
 
-Las ecuaciones de movimiento se pueden conocer a partir de los formalismos lagrangiano o hamiltoniano \cite{Goldstein2001}, en los cuales es necesario conocer los potenciales con los que interact\'{u}an los \'{a}tomos. Las soluciones a las ecuaciones de movimiento se encuentran mediante los m\'{e}todos de la din\'{a}mica molecular o los an\'{a}lisis de modos normales (Normal Mode Analysis que por sus siglas en ingl\'{e}s es NMA) en los cuales se escogen los modelos de potencial.\\
+Las ecuaciones de movimiento se pueden conocer a partir de los formalismos lagrangiano o hamiltoniano \cite{Goldstein2001}, en los cuales es necesario conocer los potenciales con los que interact\'{u}an los \'{a}tomos. Las soluciones a las ecuaciones de movimiento se encuentran mediante los m\'{e}todos de la din\'{a}mica molecular, el an\'{a}lisis de modos normales (Normal Mode Analysis que por sus siglas en ingl\'{e}s es NMA) o el an\'{a}lisis por componentes principales (Principal Component Analysis, PCA por sus siglas en ingl\'{e}s) los cuales se escogen los modelos de potencial.\\
 
 Los diversos modelos de potencial pueden ser tomados seg\'{u}n la naturaleza del pol\'{i}mero a analizar, ver \cite{Lezon2009}. Sin embargo, al escoger el potencial  para hacer un an\'{a}lisis \textit{in silico} de la din\'{a}mica de una biomol\'{e}cula, debe tenerse en cuenta el costo computacional requerido, esto es, el tiempo de simulaci\'{o}n de la mol\'{e}cula y la exactitud requerida en el movimiento de cada uno de los constituyentes de la mol\'{e}cula.\\
 
@@ -22,8 +22,20 @@ Como caso particular se pueden tomar los potenciales usados en \cite{Amber2016},
 \item Interacciones intermoleculares: Son las producidas por los enlaces covalentes entre grupos de \'{a}tomos, las de valencia y las torsiones.
 \item Interacciones entre pares: Lennard Jones, electrost\'{a}tico.
 \end{itemize}
-\subsection{An\'{a}lisis de Modos Normales Est\'{a}ndar (NMA)}
-Los modos normales ocurren cuando todos los constituyentes del sistema oscilan sinusoidalmente y con la misma frecuencia. En el an\'{a}lisis \textit{est\'{a}ndar} los constituyentes son todos los \'{a}tomos de la biomol\'{e}cula, con lo cual 
+\subsection{An\'{a}lisis de Modos Normales Est\'{a}ndar (NMA est\'{a}ndar)}
+Los modos normales ocurren cuando todos los constituyentes del sistema oscilan sinusoidalmente y con la misma frecuencia. Los potenciales que cumplen con estas caracter\'{i}sticas son los potenciales arm\'{o}nicos; ya que los potenciales tienen una forma complicada como la del modelo de Amber, se cambian estos potenciales por un potencial parab\'{o}lico .\\
+
+En el an\'{a}lisis \textit{est\'{a}ndar} los constituyentes son \textit{todos los \'{a}tomos} de la biomol\'{e}cula. Al utilizar todos los \'{a}tomos, los costos computacionales de las simulaciones pueden ser mayores que los de otros modelos en los que no se usan todos los \'{a}tomos. A pesar de esto, el NMA est\'{a}ndar es \'{u}til para estudiar los movimientos funcionales de la biomol\'{e}cula.\\
+
+De acuerdo a \cite{Hayward2008}, los pasos requeridos para realizar un modelo de NMA est\'{a}ndar son:
+\begin{quote}
+ \begin{enumerate}
+  \item Una minimizaci\'{o}n de la energ\'{i}a potencial conformacional en funci\'{o}n de las coordenadas cartesianas at\'{o}micas. Se usan las coordenadas at\'{o}micas ponderadas.
+  \item El c\'{a}lculo de la matriz ``Hessiana", que es la matriz de las segundas derivadas de la energ\'{i}a potencial evaluada en el m\'{i}nimo. 
+  \item La diagonalizaci\'{o}n de la matriz de Hessiana.
+ \end{enumerate}
+\end{quote}
+
 
 \section{Movimientos Globales}
 
@@ -33,19 +45,23 @@ Un conjunto de modelos que permite calcular los movimientos globales de una mol\
  Otros modelos que describen los movimientos globales son los an\'{a}lisis por componentes principales (Principal Component Analysis o PCA por sus siglas en ingl\'{e}s) y el an\'{a}lisis por modos normales est\'{a}ndar (Normal Mode Analysis o NMA por sus siglas en ingl\'{e}s).
  
 \subsection{Modelos de Redes El\'{a}sticas (ENM)}
-Los ENM, como la palabra \textit{el\'{a}stico} lo indica, se basan en una simplificaci\'{o}n de la energ\'{i}a potencial a una energ\'{i}a potencial el\'{a}stica, es decir de tipo Hooke.Un requisito para que sea posible hacer dicha simplificaci\'{o}n, es la de minimizar la energ\'{i}a potencial. \\
+Los ENM, como la palabra \textit{el\'{a}stico} lo indica, se basan en una simplificaci\'{o}n de la energ\'{i}a potencial a una energ\'{i}a potencial el\'{a}stica, es decir de tipo Hooke. Un requisito para que sea posible hacer dicha simplificaci\'{o}n, es el hecho de que la energ\'{i}a potencial sea minimizable. La diferencia con el NMA est\'{a}ndar es que ya no se toman todos los \'{a}tomos en el modelo, sino los \textit{residuos} de la biomol\'{e}cula. Por ejemplo en una prote\'{i}na los residuos son sus amino\'{a}cidos.\\
 
-Al simplificar el potencial, la biomol\'{e}cula original se convierte en una red cuyos nodos est\'{a}n sometidos al potencial el\'{a}stico, ver figura \ref{fig:pan}. Los nodos se consideran como bloques constituyentes de la biomol\'{e}cula y no siempre los nodos coincidir\'{a}n con cada uno de los \'{a}tomos en la biomol\'{e}cula. La elecci\'{o}n del bloque constituyente depende de la compatibilidad del modelo con los datos experimentales, que se encuentra reflejado en la estabilidad de los enlaces con respecto a su posici\'{o}n de equilibrio, de tal manera que cada bloque constituyente pueda considerarse como una part\'{i}cula puntual o incluso como un cuerpo r\'{i}gido. \\
+Al simplificar el potencial, la biomol\'{e}cula original se convierte en una red cuyos nodos est\'{a}n sometidos al potencial el\'{a}stico, ver figura \ref{fig:pan}. Los nodos se consideran como bloques constituyentes de la biomol\'{e}cula. Aunque el bloques constituyentes suelen ser los residuos de la biomol\'{e}cula, puede variar ligeramente para dar compatibilidad al modelo con los datos experimentales. Por ejemplo en las prote\'{i}nas como la BPTI, ver \cite{Gur2013}, los constituyentes son los carbonos $\alpha$ de los amino\'{a}cidos.\\\\
+
+El modelo es bueno cuando hay una buena estabilidad de los enlaces con respecto a su posici\'{o}n de equilibrio; para distancias mucho mayores que lo que se donomina la distancia de corte $R_c$ no hay potencial alguno. La distancia de corte es uno de los par\'{a}metros requeridos en el modelo, otro son las constantes el\'{a}sticas.\\
+
 \begin{figure}
 \centering%
 \includegraphics[scale=0.3]{Kap2/dibujo.pdf}%
 \caption{ (a) Vista exterior de un c\'{a}pside v\'{i}rico HK97 coloreado por cada cadena, todas las prote\'{i}nas son id\'{e}nticas. (b) Vista del arreglo prote\'{i}nico en una cara del c\'{a}pside. (c) Vista de la estructura secundaria de las prote\'{i}nas (d) Esquema de cada prote\'{i}na mostrando cada uno de sus \'{a}tomos, las aristas de cada cara son carbonos $\alpha$ unidos por lados (ligaduras el\'{a}sticas). Tomado de \cite{Lezon2009}.} \label{fig:pan}
 \end{figure}
+
+La primera vez que se usaron los ENM en la investigaci\'{o}n de prote\'{i}nas fue gracias a Monique Tirion, ver \cite{Tirion1996}. Entre las prote\'{i}nas  investigadas se encuentran la actina G (C\'{o}digo PDB: 1atn) y la miosina H1 (C\'{o}digo PDB: 1my). La G-actina es modelada bien por los ENM.\\ 
+
 \section{Descripci\'{o}n Mec\'{a}nica del Modelo}
 
-Consid\'{e}rese una biomol\'{e}cula con $N$ part\'{i}culas constituyentes, el tipo de constituyente depende del modelo apropiado para la biomol\'{e}cula, por ejemplo en las prote\'{i}nas como la BPTI, ver \cite{Gur2013}, los constituyentes son los carbonos $\alpha$ de los amino\'{a}cidos.\\
-
-La energ\'{i}a potencial $V$ que representa las interacciones entre los constituyentes de la biomol\'{e}cula, se puede expresar alrededor de las posiciones de equilibrio $\mathbf{q_0}=\mathbf{0}$ tal como describe la teor\'{i}a de peque\~{n}as oscilaciones, ver \cite{Goldstein2001}:
+Consid\'{e}rese una biomol\'{e}cula con $N$ part\'{i}culas constituyentes, la energ\'{i}a potencial $V$ que representa las interacciones entre los constituyentes de la biomol\'{e}cula, se puede expresar alrededor de las posiciones de equilibrio $\mathbf{q_0}=\mathbf{0}$ tal como describe la teor\'{i}a de peque\~{n}as oscilaciones, ver \cite{Goldstein2001}:
 \begin{equation}
 V(\mathbf{q})=V(\mathbf{0})+\sum_{i=1}^n\frac{\partial V}{\partial q_i}q_i+\frac{1}{2}\sum_{ij}^{n}\frac{\partial^2 V }{\partial q_i\partial q_j}q_i q_j+...
 \end{equation}\label{eq:1}
@@ -180,7 +196,7 @@ Al reemplazar la soluci\'{o}n de prueba en la ecuaci\'{o}n \eqref{eq:16} se conv
 En \eqref{eq:18} se ha definido $\lambda=\omega^2$ y posteriormente se ha agregado el sub\'{i}ndice $k$ para distinguir cada uno de los autovalores y autovectores que se encuentren en el problema \eqref{eq:18}.\\
 Cuando cada uno de los mon\'{o}meros tiene la misma frecuencia, a cada frecuencia le corresponde un vector de amplitudes $\mathbf{a}$, cada uno de estos posibles vectores se les conoce como un \textit{modo normal de oscilaci\'{o}n}.
 \subsubsection{Ensamble Estad\'{i}stico}
-Cuando el sistema (biomol\'{e}cula) se encuentre a temperaturas fisiol\'{o}gicas, el sistema  s\'{o}lo intercambiar\'{a} calor con los alrededores (ba\~{n}o t\'{e}rmico). Sin embargo, se ha demostrado  que a esta temperatura, la aproximaci\'{o}n arm\'{o}nica falla , presentando m\'{u}ltiples m\'{i}nimos y no uno solo \cite{Hayward2008NormalDynamics}, \cite{Elber1987}; por otro lado, a temperatura fisiol\'{o}gica el ensamble es cl\'{a}sico \cite{Sethna2006}. Como \'{u}nicamente hay intercambio de energ\'{i}a y se trabaja a temperatura fisiol\'{o}gica, la estad\'{i}stica apropidada es la del ensamble can\'{o}nico. En el ensamble  can\'{o}nico se sigue la distribuci\'{o}n de probabilidad de Boltzmann:
+Cuando el sistema (biomol\'{e}cula) se encuentre a temperaturas fisiol\'{o}gicas, el sistema  s\'{o}lo intercambiar\'{a} calor con los alrededores (ba\~{n}o t\'{e}rmico). Sin embargo, se ha demostrado  que a esta temperatura, la aproximaci\'{o}n arm\'{o}nica falla , presentando m\'{u}ltiples m\'{i}nimos y no uno solo \cite{Hayward2008}, \cite{Elber1987}; por otro lado, a temperatura fisiol\'{o}gica el ensamble es cl\'{a}sico \cite{Sethna2006}. Como \'{u}nicamente hay intercambio de energ\'{i}a y se trabaja a temperatura fisiol\'{o}gica, la estad\'{i}stica apropidada es la del ensamble can\'{o}nico. En el ensamble  can\'{o}nico se sigue la distribuci\'{o}n de probabilidad de Boltzmann:
 \begin{equation}
 p=\frac{\exp(-E_s/k_BT)}{Z}
 \end{equation}\label{eq:21}
@@ -205,7 +221,7 @@ El resultado \eqref{eq:23} es el mostrado en \cite{Lezon2009} o en \cite{Sethna2
 \begin{equation}
 Z=\frac{\left(k_BT\right)^{n/2}}{\hbar^{n}} \frac{1}{|\mathbf{K}|^{n/2}}
 \end{equation}\label{eq:24}
-Tomando $\hbar=1$ y teniendo en cuenta que el determinante de $\mathbf{K}$ es el producto de los autovalores, es deci, de las frecuencias al cuadrado, entonces:
+Tomando $\hbar=1$ y teniendo en cuenta que el determinante de $\mathbf{K}$ es el producto de los autovalores, es decir, de las frecuencias al cuadrado:
 \begin{eqnarray}
 Z&=&\left(k_BT\right)^{n/2} \prod_{i=1}^{n}\frac{1}{\omega_i}
  \\
