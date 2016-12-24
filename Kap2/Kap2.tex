@@ -23,7 +23,7 @@ Como caso particular se pueden tomar los potenciales usados en \cite{Amber2016},
 \item Interacciones entre pares: Lennard Jones, electrost\'{a}tico.
 \end{itemize}
 \subsection{An\'{a}lisis de Modos Normales Est\'{a}ndar (NMA est\'{a}ndar)}
-Los modos normales ocurren cuando todos los constituyentes del sistema oscilan sinusoidalmente y con la misma frecuencia. Los potenciales que cumplen con estas caracter\'{i}sticas son los potenciales arm\'{o}nicos; ya que los potenciales tienen una forma complicada como la del modelo de Amber, se cambian estos potenciales por un potencial parab\'{o}lico .\\
+Los modos normales ocurren cuando todos los constituyentes del sistema oscilan sinusoidalmente y con la misma frecuencia. Los potenciales que cumplen con estas caracter\'{i}sticas son los potenciales arm\'{o}nicos; ya que los potenciales tienen una forma complicada como la del modelo de Amber, se aproxima el potencial alrededor de un punto de equilibrio a una cuadr\'{a}tica.\\
 
 En el an\'{a}lisis \textit{est\'{a}ndar} los constituyentes son \textit{todos los \'{a}tomos} de la biomol\'{e}cula. Al utilizar todos los \'{a}tomos, los costos computacionales de las simulaciones pueden ser mayores que los de otros modelos en los que no se usan todos los \'{a}tomos. A pesar de esto, el NMA est\'{a}ndar es \'{u}til para estudiar los movimientos funcionales de la biomol\'{e}cula.\\
 
@@ -43,13 +43,14 @@ Son aqu\'{e}llas simulaciones en las que se desean conocer los \textit{cambios g
 
 Un conjunto de modelos que permite calcular los movimientos globales de una mol\'{e}cula son los \textit{Modelos de Redes El\'{a}sticas} (Elastic Network Models o ENM por sus siglas en ingl\'{e}s).
  Otros modelos que describen los movimientos globales son los an\'{a}lisis por componentes principales (Principal Component Analysis o PCA por sus siglas en ingl\'{e}s) y el an\'{a}lisis por modos normales est\'{a}ndar (Normal Mode Analysis o NMA por sus siglas en ingl\'{e}s).
- 
+ \subsection{An\'{a}lisis de Modos Normales (NMA)}
+ Existe una versi\'{o}n del an\'{a}lisis de modos normales en el cual se usa el mismo potencial pero no se consideran todos los \'{a}tomos de la red sino las unidades monom\'{e}ricas de la biomol\'{e}cula. Por ejemplo, en una prote\'{i}na las unidades monom\'{e}ricas son los amino\'{a}cidos y las posiciones de equilibrio son las de los C-$\alpha$ en la estructura cristalina, las cuales se encuentran en las bases de datos existentes.
 \subsection{Modelos de Redes El\'{a}sticas (ENM)}
-Los ENM, como la palabra \textit{el\'{a}stico} lo indica, se basan en una simplificaci\'{o}n de la energ\'{i}a potencial a una energ\'{i}a potencial el\'{a}stica, es decir de tipo Hooke. Un requisito para que sea posible hacer dicha simplificaci\'{o}n, es el hecho de que la energ\'{i}a potencial sea minimizable. La diferencia con el NMA est\'{a}ndar es que ya no se toman todos los \'{a}tomos en el modelo, sino los \textit{residuos} de la biomol\'{e}cula. Por ejemplo en una prote\'{i}na los residuos son sus amino\'{a}cidos.\\
+Los ENM, como la palabra \textit{el\'{a}stico} lo indica, se basan en una simplificaci\'{o}n de la energ\'{i}a potencial a una energ\'{i}a potencial el\'{a}stica, es decir de tipo Hooke.  Una diferencia con los NMA (est\'{a}ndar y global) es la forma del potencial, en este caso se toman los potenciales de un resorte, los cuales se calculan con la diferencia de distancias y no los desplazamientos $q_i$ del potencial \eqref{eq:3}, ver figura PONER. \\
 
-Al simplificar el potencial, la biomol\'{e}cula original se convierte en una red cuyos nodos est\'{a}n sometidos al potencial el\'{a}stico, ver figura \ref{fig:pan}. Los nodos se consideran como bloques constituyentes de la biomol\'{e}cula. Aunque el bloques constituyentes suelen ser los residuos de la biomol\'{e}cula, puede variar ligeramente para dar compatibilidad al modelo con los datos experimentales. Por ejemplo en las prote\'{i}nas como la BPTI, ver \cite{Gur2013}, los constituyentes son los carbonos $\alpha$ de los amino\'{a}cidos.\\\\
+Al simplificar el potencial, la biomol\'{e}cula original se convierte en una red cuyos nodos est\'{a}n sometidos al potencial el\'{a}stico, ver figura \ref{fig:pan}. Los nodos se consideran como bloques constituyentes de la biomol\'{e}cula. Aunque el bloques constituyentes suelen ser los residuos de la biomol\'{e}cula, puede variar ligeramente para dar compatibilidad al modelo con los datos experimentales. Por ejemplo en las prote\'{i}nas como la BPTI, ver \cite{Gur2013}, los constituyentes son los C-$\alpha$ de los amino\'{a}cidos.\\
 
-El modelo es bueno cuando hay una buena estabilidad de los enlaces con respecto a su posici\'{o}n de equilibrio; para distancias mucho mayores que lo que se donomina la distancia de corte $R_c$ no hay potencial alguno. La distancia de corte es uno de los par\'{a}metros requeridos en el modelo, otro son las constantes el\'{a}sticas.\\
+El modelo es bueno cuando hay una buena estabilidad de los enlaces con respecto a su posici\'{o}n de equilibrio; para distancias mucho mayores que lo que se donomina la distancia de corte $R_c$ no hay potencial alguno. La distancia de corte es uno de los par\'{a}metros requeridos en el modelo, el otro es la constante el\'{a}stica que puede ser la misma para todas las unidades o puede variar.\\
 
 \begin{figure}
 \centering%
@@ -58,19 +59,19 @@ El modelo es bueno cuando hay una buena estabilidad de los enlaces con respecto 
 \end{figure}
 
 La primera vez que se usaron los ENM en la investigaci\'{o}n de prote\'{i}nas fue gracias a Monique Tirion, ver \cite{Tirion1996}. Entre las prote\'{i}nas  investigadas se encuentran la actina G (C\'{o}digo PDB: 1atn) y la miosina H1 (C\'{o}digo PDB: 1my). La G-actina es modelada bien por los ENM.\\ 
+\subsection{An\'{a}lisis por Componentes Principales (PCA)}
+\section{Descripci\'{o}n Mec\'{a}nica de NMA}
 
-\section{Descripci\'{o}n Mec\'{a}nica del Modelo}
-
-Consid\'{e}rese una biomol\'{e}cula con $N$ part\'{i}culas constituyentes, la energ\'{i}a potencial $V$ que representa las interacciones entre los constituyentes de la biomol\'{e}cula, se puede expresar alrededor de las posiciones de equilibrio $\mathbf{q_0}=\mathbf{0}$ tal como describe la teor\'{i}a de peque\~{n}as oscilaciones, ver \cite{Goldstein2001}:
+Consid\'{e}rese una biomol\'{e}cula con $N$ part\'{i}culas constituyentes, la energ\'{i}a potencial $V$ que representa las interacciones entre los constituyentes de la biomol\'{e}cula ( v\'{a}lido tanto para NMA est\'{a}ndar como para NMA global), se puede expresar alrededor de las posiciones de equilibrio $\mathbf{q_0}=\mathbf{0}$ tal como describe la teor\'{i}a de peque\~{n}as oscilaciones, ver \cite{Goldstein2001}:
 \begin{equation}
-V(\mathbf{q})=V(\mathbf{0})+\sum_{i=1}^n\frac{\partial V}{\partial q_i}q_i+\frac{1}{2}\sum_{ij}^{n}\frac{\partial^2 V }{\partial q_i\partial q_j}q_i q_j+...
+V(\mathbf{q})=V(\mathbf{0})+\sum_{i=1}^n\frac{\partial V}{\partial q_i}\bigg|_{\mathbf{q}=\mathbf{0}}q_i+\frac{1}{2}\sum_{ij}^{n}\frac{\partial^2 V }{\partial q_i\partial q_j}\bigg|_{\mathbf{q}=\mathbf{0}}q_i q_j+...
 \end{equation}\label{eq:1}
 Donde $q_i$ son los desplazamientos con respecto a las posiciones de equilibrio, $n$ es el n\'{u}mero de posibles desplazamientos en la biomol\'{e}cula. $V(\mathbf{0})$ es el potencial en equilibrio que por conveniencia puede ser calibrado a cero: $V(\mathbf{0})=0$. \\
 
 
 El sistema se encuentra alrededor del equilibrio cuando las fuerzas generalizadas se anulan, esto es:
 \begin{equation}
-\frac{\partial V}{\partial q_i}=0
+\frac{\partial V}{\partial q_i}\bigg|_{\mathbf{q}=\mathbf{0}}=0
 \end{equation}\label{eq:2}
 En este tipo de casos como la energ\'{i}a se minimiza, se dice que hay un equilibrio estable. Para entender esto, sup\'{o}gase que la energ\'{i}a total, que en este caso es $E=T+V$ corresponde al punto de equilibrio donde los nodos no se mueven, es decir, $E=V_{min}$ (l\'{i}nea punteada de la figura \ref{fig:pot}). Ahora suponga que hay una incremento de la energ\'{i}a total en una cantidad $\Delta E$, este incremento generar\'{a} un aumento en la energ\'{i}a potencial, l\'{i}nea continua.  Si el sistema se desv\'{i}a de la posici\'{o}n de equilibrio, por conservaci\'{o}n de la energ\'{i}a y como $E=T+V$, la energ\'{i}a cin\'{e}tica disminuye. En un equilibrio inestable la energ\'{i}a cin\'{e}tica aumenta, alejando al sistema del equilibrio. \cite{Goldstein2001} \\
 
@@ -89,12 +90,12 @@ En este tipo de casos como la energ\'{i}a se minimiza, se dice que hay un equili
 
 Considerando la condici\'{o}n de equilibrio \eqref{eq:2} y despreciando desplazamientos de orden superior se tiene que:
 \begin{equation}
-V(\mathbf{q})=\frac{1}{2}\sum_{i,j=1}^{n}\frac{\partial^2 V }{\partial q_i\partial q_j}q_i q_j
+V(\mathbf{q})=\frac{1}{2}\sum_{i,j=1}^{n}\frac{\partial^2 V }{\partial q_i\partial q_j}\bigg|_{\mathbf{q}=\mathbf{0}}q_i q_j
 \end{equation}\label{eq:3}
 
 Donde se identifican las constantes el\'{a}sticas como:
 \begin{equation}
-U_{ij}=\frac{\partial^2 V }{\partial q_i\partial q_j}
+U_{ij}=\frac{\partial^2 V }{\partial q_i\partial q_j}\bigg|_{\mathbf{q}=\mathbf{0}}
 \end{equation}\label{eq:4}
 
 En t\'{e}rminos matriciales el potencial se puede escribir como:
@@ -221,16 +222,28 @@ El resultado \eqref{eq:23} es el mostrado en \cite{Lezon2009} o en \cite{Sethna2
 \begin{equation}
 Z=\frac{\left(k_BT\right)^{n/2}}{\hbar^{n}} \frac{1}{|\mathbf{K}|^{n/2}}
 \end{equation}\label{eq:24}
-Tomando $\hbar=1$ y teniendo en cuenta que el determinante de $\mathbf{K}$ es el producto de los autovalores, es decir, de las frecuencias al cuadrado:
+Tomando $\hbar=1$ y teniendo en cuenta que el determinante de $\mathbf{K}$ es el producto de los autovalores no nulos, es decir, de las frecuencias al cuadrado:
 \begin{eqnarray}
 Z&=&\left(k_BT\right)^{n/2} \prod_{i=1}^{n}\frac{1}{\omega_i}
  \\
 Z&=&\left(k_BT\right)^{n/2} |\mathbf{K^{-1}}|^{1/2}
 \end{eqnarray}\label{eq:25}
+Se observa que los modos de m\'{a}s bajas frecuencias contribuyen m\'{a}s a la funci\'{o}n de partici\'{o}n.
 \section{Descripciones de los Movimientos Globales}
 \subsection{ENM}
+Como se ha dicho, la aproximaci\'{o}n a segundo orden del potencial (minimizaci\'{o}n) \eqref{eq:5} es cambiada por un potencial de Hooke en el cual se tienen en cuenta las distancias en lugar de los desplazamientos alrededor del equilibrio:
+\begin{equation}
+V(\mathbf{q})=\frac{1}{2}\sum_{i,j=1}^{N}
+\end{equation}\label{eq:26}
+\begin{equation}
+V=\frac{1}{2}\sum_{i,j=1}^{N}\gamma_{ij}\left(R_{ij}-R_{ij}^0\right)^2
+\end{equation}\label{eq:27}
+Donde $R_{ij}^0$ es la distancia de equilibrio entre los nodos $i-j$ de la red,  $R_{ij}$ su distancia variable y $\gamma_{ij}$ las constantes el\'{a}sticas entre los nodos $i-j$.
 \subsubsection{Modelo de Redes Gaussianas (GNM)}
-Es un modelo en el que se considera un potencial con la diferencia de distancias y no con los desplazamientos alrededor del equilibrio. Se requieren dos par\'{a}metros para describir el modelo: Una misma constante el\'{a}stica para todas las unidades de la biomol\'{e}cula y una distancia de corte a partir de la cual no se ejerce un potencial.
+El modelo se denomina gaussiano debido a  . Se requieren dos par\'{a}metros para describir el modelo: Una misma constante el\'{a}stica para todas las unidades de la biomol\'{e}cula y una distancia de corte a partir de la cual no se ejerce el potencial.
+\begin{equation}
+V=\frac{\gamma}{2}\sum_{i,j=1}^{N}\left(R_{ij}-R_{ij}^0\right)^2
+\end{equation}\label{eq:27}
 \subsubsection{Modelos de Redes Anisotr\'{o}picas (ANM)}
 \subsection{An\'{a}lisis por Componentes Principales (PCA)}
 
