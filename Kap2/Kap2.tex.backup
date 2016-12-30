@@ -269,5 +269,4 @@ Matriz de covarianza:
 C=\langle(\mathbf{x(t)}-\langle\mathbf{x}\rangle)(\mathbf{x(t)}-\langle\mathbf{x}\rangle)^T\rangle
 \end{equation}\label{eq:28}
 
-En \eqref{eq:29}, la media es calculada para la trayectoria en todos los tiempos.\\
-La matriz de covarianza puede ser expresada en t\'{e}rminos de $\lambda_i$ autovalores y sus autovectores $\mathbf{t_i}$, con $i<3N+1$
+Como se analiza la trayectoria en \eqref{eq:29}, la media es calculada para la trayectoria en todos los tiempos. 
