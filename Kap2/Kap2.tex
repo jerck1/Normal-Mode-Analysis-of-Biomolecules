@@ -48,7 +48,8 @@ Un conjunto de modelos que permite calcular los movimientos globales de una mol\
 \subsection{Modelos de Redes El\'{a}sticas (ENM)}
 Los ENM, como la palabra \textit{el\'{a}stico} lo indica, se basan en una simplificaci\'{o}n de la energ\'{i}a potencial a una energ\'{i}a potencial el\'{a}stica, es decir de tipo Hooke.  Una diferencia con los NMA (est\'{a}ndar y global) es la forma del potencial, en este caso se toman los potenciales de un resorte, los cuales se calculan con la diferencia de distancias y no los desplazamientos $q_i$ del potencial \eqref{eq:3}, ver figura PONER. \\
 
-Al simplificar el potencial, la biomol\'{e}cula original se convierte en una red cuyos nodos est\'{a}n sometidos al potencial el\'{a}stico, ver figura \ref{fig:pan}. Los nodos se consideran como bloques constituyentes de la biomol\'{e}cula. Aunque el bloques constituyentes suelen ser los residuos de la biomol\'{e}cula, puede variar ligeramente para dar compatibilidad al modelo con los datos experimentales. Por ejemplo en las prote\'{i}nas como la BPTI, ver \cite{Gur2013}, los constituyentes son los C-$\alpha$ de los amino\'{a}cidos.\\
+Al simplificar el potencial, la biomol\'{e}cula original se convierte en una red cuyos nodos est\'{a}n sometidos al potencial el\'{a}stico, ver figura \ref{fig:pan}. Los nodos se consideran como bloques constituyentes de la biomol\'{e}cula. Aunque el bloques constituyentes suelen ser los residuos de la biomol\'{e}cula, puede variar ligeramente para dar compatibilidad al modelo con los datos experimentales. Por ejemplo en las prote\'{i}nas como el 
+inhibidor de la tripsina pancreática bovina (BPTI) \cite{Gur2013}, los constituyentes son los C-$\alpha$ de los amino\'{a}cidos.\\
 
 El modelo es bueno cuando hay una buena estabilidad de los enlaces con respecto a su posici\'{o}n de equilibrio; para distancias mucho mayores que lo que se donomina la distancia de corte $R_c$ no hay potencial alguno. La distancia de corte es uno de los par\'{a}metros requeridos en el modelo, el otro es la constante el\'{a}stica que puede ser la misma para todas las unidades o puede variar.\\
 
@@ -60,6 +61,7 @@ El modelo es bueno cuando hay una buena estabilidad de los enlaces con respecto 
 
 La primera vez que se usaron los ENM en la investigaci\'{o}n de prote\'{i}nas fue gracias a Monique Tirion, ver \cite{Tirion1996}. Entre las prote\'{i}nas  investigadas se encuentran la actina G (C\'{o}digo PDB: 1atn) y la miosina H1 (C\'{o}digo PDB: 1my). La G-actina es modelada bien por los ENM.\\ 
 \subsection{An\'{a}lisis por Componentes Principales (PCA)}
+En el an\'{a}lisis por componentes principales (PCA por sus siglas en ingl\'{e}s) se buscan las contribuciones principales a las fluctuaciones, enti\'{e}ndase por esto a las varianzas. Contrario a los ENM y NMA, los modos que m\'{a}s contribuyen a las fluctuaciones son los de m\'{a}s altas frecuencias \cite{Amadei1993}.
 \section{Descripci\'{o}n Mec\'{a}nica de NMA}
 
 Consid\'{e}rese una biomol\'{e}cula con $N$ part\'{i}culas constituyentes, la energ\'{i}a potencial $V$ que representa las interacciones entre los constituyentes de la biomol\'{e}cula ( v\'{a}lido tanto para NMA est\'{a}ndar como para NMA global), se puede expresar alrededor de las posiciones de equilibrio $\mathbf{q_0}=\mathbf{0}$ tal como describe la teor\'{i}a de peque\~{n}as oscilaciones, ver \cite{Goldstein2001}:
