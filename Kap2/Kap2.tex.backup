@@ -278,9 +278,8 @@ Tomando $\Lambda={\lambda_i}$, la matriz diagonal formada por los autovalores a 
 \begin{equation}
 \Lambda=T^TCT
 \end{equation}\label{eq:29}
-Donde se ha tenido en cuenta que $T^{-1}=T^T$. De forma equivalente:
+O de forma equivalente:
 \begin{equation}
-C=T\Lambda T^T
+\Lambda=T^TCT
 \end{equation}\label{eq:30}
-
 
