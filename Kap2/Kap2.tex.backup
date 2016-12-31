@@ -282,7 +282,5 @@ Donde se ha tenido en cuenta que $T^{-1}=T^T$. Expresado de otra forma:
 \begin{equation}
 C=T\Lambda T^T
 \end{equation}\label{eq:30}
-La esencia de un PCA es descartar los modos menos relevantes que corresponden a los autovalores m\'{a}s pequeños y generar un nuevo conjunto de datos de menor tamaño a partir de estos (componentes principales). En \cite{Amadei1993} se demuestra que las desviaciones m\'{a}s grandes corresponden a los autovalores m\'{a}s grandes. \\
-
-Descartando de $T$ los autovectores o columnas menos relevantes, se define la matriz de las componentes principales
+La esencia de un PCA es 
 
