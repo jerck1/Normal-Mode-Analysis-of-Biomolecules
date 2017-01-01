@@ -272,17 +272,28 @@ C=\langle(\mathbf{x(t)}-\langle\mathbf{x}\rangle)(\mathbf{x(t)}-\langle\mathbf{x
 En \eqref{eq:29}, la media es calculada para la trayectoria en todos los tiempos.\\
 La matriz de covarianza puede ser expresada en t\'{e}rminos de sus autovalores  $\lambda_i$ y sus autovectores $\mathbf{t_i}$, con $i<3N+1$.
 \begin{equation*}
-Ct_i=\lambda_it_i
+\mathbf{C}\mathbf{t_i}=\lambda_i\mathbf{t_i}
 \end{equation*}
-Tomando $\Lambda={\lambda_i}$, la matriz diagonal formada por los autovalores y $T=\left(t_1, t_2,...,t_3N\right)$ como la matriz cuyas columnas son los autovectores, escritas de tal manera que los autovalores esten ordenados de mayor a menor y los autovectores ordenados de acuerdo a los autovalores entonces:
+Tomando $\Lambda={\lambda_i}$, la matriz diagonal formada por los autovalores y $\mathbf{T}=\left(\mathbf{t_1},\mathbf{t_2},...,\mathbf{t_{3N}}\right)$ como la matriz cuyas columnas son los autovectores, escritas de tal manera que los autovalores esten ordenados de mayor a menor y los autovectores ordenados de acuerdo a los autovalores entonces:
 \begin{equation}
-\Lambda=T^TCT
+\mathbf{\Lambda}=\mathbf{T}^T\mathbf{C}\mathbf{T}
 \end{equation}\label{eq:29}
-Donde se ha tenido en cuenta que $T^{-1}=T^T$. Expresado de otra forma:
+Donde se ha tenido en cuenta que $\mathbf{T}^{-1}=\mathbf{T}^T$. Expresado de otra forma:
 \begin{equation}
-C=T\Lambda T^T
+\mathbf{C}=\mathbf{T}\mathbf{\Lambda} \mathbf{T}^T
 \end{equation}\label{eq:30}
-La esencia de un PCA es descartar los modos menos relevantes que corresponden a los autovalores m\'{a}s pequeños y generar un nuevo conjunto de datos de menor tamaño a partir de estos (componentes principales). En \cite{Amadei1993} se demuestra que las desviaciones m\'{a}s grandes corresponden a los autovalores m\'{a}s grandes. \\
+La esencia de un PCA es descartar los modos menos relevantes que corresponden a los autovalores m\'{a}s peque\~{n}os y generar un nuevo conjunto de datos de menor tama\~{n}o a partir de estos (componentes principales). En \cite{Amadei1993} se demuestra que las desviaciones m\'{a}s grandes corresponden a los autovalores m\'{a}s grandes, por tanto, se trabaja s\'{o}lamente con los autovalores m\'{a}s grandes. \\
 
-Descartando de $T$ los autovectores o columnas menos relevantes, se define la matriz de las componentes principales
-
+Dejando s\'{o}lamente en $\mathbf{T}$ los $M$ autovectores o columnas m\'{a}s relevantes, se define la matriz de las componentes principales $\mathbf{P}=\left(\mathbf{p_1},\mathbf{p_2},...,\mathbf{p_{M}}\right)$, donde $M<3N$ como:
+\begin{eqnarray}
+\mathbf{P}&=&\mathbf{T}^T(\mathbf{x(t)}-\langle\mathbf{x}\rangle)^T \nonumber \\
+\mathbf{P}&=&(\mathbf{x(t)}-\langle\mathbf{x}\rangle)\mathbf{T}
+\end{eqnarray}\label{eq:31}
+O en t\'{e}rminos de cada componente principal:
+\begin{equation}
+\mathbf{p_i}=\mathbf{t_i}^T(\mathbf{x(t)}-\langle\mathbf{x}\rangle)^T
+\end{equation}\label{eq:32}
+Si se desea volver a los datos originales hay que realizar la transformaci\'{o}n inversa:
+\begin{equation}
+\mathbf{x(t)}^T=\mathbf{T}\mathbf{P}+\langle\mathbf{x}\rangle^T
+\end{equation}\label{eq:32}
