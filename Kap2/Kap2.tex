@@ -251,7 +251,7 @@ Se observa que los modos de m\'{a}s bajas frecuencias contribuyen m\'{a}s a la f
 Como se ha dicho, la aproximaci\'{o}n a segundo orden del potencial , minimizaci\'{o}n, \eqref{eq:5} es cambiada por un potencial de Hooke en el cual se tienen en cuenta las distancias en lugar de los desplazamientos alrededor del equilibrio y tambi\'{e}n se pueden tener en cuenta diferentes constantes el\'{a}sticas entre diferentes nodos:
 \begin{equation}
 V=\left\{\begin{array}{cl}
-   \frac{1}{2}\sum_{i,j=1}^{N}\gamma_{ij}\left(R_{ij}-R_{ij}^0\right)^2 &\mbox{  si } R_{ij},R_{ij}^0<R_c\\
+   \frac{1}{2}\sum_{i\neq j=1}^{N}\gamma_{ij}\left(R_{ij}-R_{ij}^0\right)^2 &\mbox{  si } R_{ij},R_{ij}^0<R_c\\
    0 &\mbox{  Otro caso}
   \end{array}
 \right.
@@ -266,22 +266,32 @@ Donde $R_{ij}^0$ es la distancia de equilibrio entre los nodos $i-j$ de la red, 
 El c\'{a}lculo de la matriz de segundas derivadas $\mathbf{U}$ para el an\'{a}lisis de modos normales, si parte de una minimizaci\'{o}n de la energ\'{i}a.  Las derivadas se calculan v\'{i}a el potencial anisotr\'{o}pico \eqref{eq:26}, para el presente caso la matriz $\mathbf{U}$ es llamada $\mathbf{\mathcal{H}}$. La matriz $\mathbf{\mathcal{H}}$ es de tama\~{n}o $3N\times3N$ con $N$ el n\'{u}mero de residuos y est\'{a} constituida por $N\times N$ submatrices de tama\~{n}o $3\times3$ llamadas $\mathbf{H}_{ij}$:
 \begin{equation}
 \mathbf{\mathcal{H}}=\{H_{ij}\} \mbox{		con	}i,j=1,...,N
-\end{equation}\label{eq:33}
+\end{equation}\label{eq:34}
 Los elementos de $\mathbf{H}_{ij}$ son:
 \begin{equation}
 \mathbf{H}_{ij}=\left(
 \begin{array}{ccc}
- \partial_x\partial_x V & \partial_x\partial_x V & \partial_x\partial_x V \\
- \partial_x\partial_x V & \partial_x\partial_x V & \partial_x\partial_x V \\
- \partial_x\partial_x V & \partial_x\partial_x V & \partial_x\partial_x V
+ \partial_x\partial_x V & \partial_x\partial_y V & \partial_x\partial_z V \\
+ \partial_y\partial_x V & \partial_y\partial_y V & \partial_y\partial_z V \\
+ \partial_z\partial_x V & \partial_z\partial_y V & \partial_z\partial_z V
 \end{array}
 \right)
 \end{equation}\label{eq:35}
-O:
-\begin{equation}
-\frac{\partial^2 V }{\partial x_i\partial x_j}\bigg|_{R_{ij}=R_{ij}^0}=\frac{\gamma_{ij}x_{ij}y_{ij}}{R_{ij}^2}
-\end{equation}\label{eq:4}
 
+Calculando algunas de estas derivadas y definiendo $x_{ik}=x_k-x_i$, $y_{ik}=y_k-y_i$ y $z_{ik}=z_k-z_i$ se obtiene:
+\begin{equation}
+\frac{\partial V }{\partial y_k}=\sum_j\frac{\gamma_{jk}\left(R_{kj}-R_{kj}^0\right)y_{kj}}{R_{kj}}
+\end{equation}\label{eq:36}
+\begin{equation}
+\frac{\partial^2 V }{\partial x_i\partial y_j}\bigg|_{R_{ij}=R_{ij}^0}=-\frac{\gamma_{ij}x_{ij}y_{ij}}{R_{ij}^2}
+\end{equation}\label{eq:37}
+\begin{equation}
+\frac{\partial^2 V }{\partial x_i\partial x_j}\bigg|_{R_{ij}=R_{ij}^0}=-\frac{\gamma_{ij}x_{ij}^2}{R_{ij}^2}
+\end{equation}\label{eq:38}
+Para las submatrices que se encuentran en la diagonal:
+\begin{equation}
+\frac{\partial^2 V }{\partial x_i^2}\bigg|_{R_{ij}=R_{ij}^0}=-\sum_{j\neq i}\gamma_{ij}\left(.\right)
+\end{equation}\label{eq:39}
 
 
 
@@ -326,4 +336,4 @@ O en t\'{e}rminos de cada componente principal:
 Si se desea volver a los datos originales hay que realizar la transformaci\'{o}n inversa:
 \begin{equation}
 \mathbf{x(t)}^T=\mathbf{T}\mathbf{P}+\langle\mathbf{x}\rangle^T
-\end{equation}\label{eq:32}
+\end{equation}\label{eq:33}
