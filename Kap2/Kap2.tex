@@ -246,21 +246,51 @@ Z&=&\left(k_BT\right)^{n/2} |\mathbf{K^{-1}}|^{1/2}
 \end{eqnarray}\label{eq:25}
 Se observa que los modos de m\'{a}s bajas frecuencias contribuyen m\'{a}s a la funci\'{o}n de partici\'{o}n.
 \section{Descripciones de los Movimientos Globales}
-\subsection{ENM}
-Como se ha dicho, la aproximaci\'{o}n a segundo orden del potencial (minimizaci\'{o}n) \eqref{eq:5} es cambiada por un potencial de Hooke en el cual se tienen en cuenta las distancias en lugar de los desplazamientos alrededor del equilibrio:
+\subsection{ENMs}
+\subsubsection{Modelos de Redes Anisotr\'{o}picas (ANM)}
+Como se ha dicho, la aproximaci\'{o}n a segundo orden del potencial , minimizaci\'{o}n, \eqref{eq:5} es cambiada por un potencial de Hooke en el cual se tienen en cuenta las distancias en lugar de los desplazamientos alrededor del equilibrio y tambi\'{e}n se pueden tener en cuenta diferentes constantes el\'{a}sticas entre diferentes nodos:
 \begin{equation}
-V(\mathbf{q})=\frac{1}{2}\sum_{i,j=1}^{N}
+V=\left\{\begin{array}{cl}
+   \frac{1}{2}\sum_{i,j=1}^{N}\gamma_{ij}\left(R_{ij}-R_{ij}^0\right)^2 &\mbox{  si } R_{ij},R_{ij}^0<R_c\\
+   0 &\mbox{  Otro caso}
+  \end{array}
+\right.
 \end{equation}\label{eq:26}
+Donde $R_{ij}^0$ es la distancia de equilibrio entre los nodos $i-j$ de la red, la cual  $R_{ij}$ su distancia variable y $\gamma_{ij}$ las constantes el\'{a}sticas entre los nodos $i-j$. Como se ilustra en la figura \ref{fig:res}, el t\'{e}rmino $R_{ij}-R_{ij}^0$ es la elongaci\'{o}n del resorte, lo cual es diferente a la resta de los desplazamientos, entonces no se est\'{a} aproximando el potencial, por tanto no se requiere una minimizaci\'{o}n de la energ\'{i}a, como se ha recalcado, s\'{o}lo se cambia la forma del potencial.\\
+\begin{figure}
+\centering%
+\includegraphics[scale=0.3]{Kap2/resorte.png}%
+\caption{Desplazamientos de los nodos $i-j$ de su posici\'{o}n de equilibrio. Tomado de \cite{Rader2006}.} \label{fig:res}
+\end{figure}
+\paragraph{Matriz Hessiana}
+El c\'{a}lculo de la matriz de segundas derivadas $\mathbf{U}$ para el an\'{a}lisis de modos normales, si parte de una minimizaci\'{o}n de la energ\'{i}a.  Las derivadas se calculan v\'{i}a el potencial anisotr\'{o}pico \eqref{eq:26}, para el presente caso la matriz $\mathbf{U}$ es llamada $\mathbf{\mathcal{H}}$. La matriz $\mathbf{\mathcal{H}}$ es de tama\~{n}o $3N\times3N$ con $N$ el n\'{u}mero de residuos y est\'{a} constituida por $N\times N$ submatrices de tama\~{n}o $3\times3$ llamadas $\mathbf{H}_{ij}$:
 \begin{equation}
-V=\frac{1}{2}\sum_{i,j=1}^{N}\gamma_{ij}\left(R_{ij}-R_{ij}^0\right)^2
-\end{equation}\label{eq:27}
-Donde $R_{ij}^0$ es la distancia de equilibrio entre los nodos $i-j$ de la red,  $R_{ij}$ su distancia variable y $\gamma_{ij}$ las constantes el\'{a}sticas entre los nodos $i-j$.
+\mathbf{\mathcal{H}}=\{H_{ij}\} \mbox{		con	}i,j=1,...,N
+\end{equation}\label{eq:33}
+Los elementos de $\mathbf{H}_{ij}$ son:
+\begin{equation}
+\mathbf{H}_{ij}=\left(
+\begin{array}{ccc}
+ \partial_x\partial_x V & \partial_x\partial_x V & \partial_x\partial_x V \\
+ \partial_x\partial_x V & \partial_x\partial_x V & \partial_x\partial_x V \\
+ \partial_x\partial_x V & \partial_x\partial_x V & \partial_x\partial_x V
+\end{array}
+\right)
+\end{equation}\label{eq:35}
+O:
+\begin{equation}
+\frac{\partial^2 V }{\partial x_i\partial x_j}\bigg|_{R_{ij}=R_{ij}^0}=\frac{\gamma_{ij}x_{ij}y_{ij}}{R_{ij}^2}
+\end{equation}\label{eq:4}
+
+
+
+
 \subsubsection{Modelo de Redes Gaussianas (GNM)}
 El modelo se denomina gaussiano debido a  . Se requieren dos par\'{a}metros para describir el modelo: Una misma constante el\'{a}stica para todas las unidades de la biomol\'{e}cula y una distancia de corte a partir de la cual no se ejerce el potencial.
 \begin{equation}
-V=\frac{\gamma}{2}\sum_{i,j=1}^{N}\left(R_{ij}-R_{ij}^0\right)^2
-\end{equation}\label{eq:28}
-\subsubsection{Modelos de Redes Anisotr\'{o}picas (ANM)}
+V=\frac{\gamma}{2}\sum_{i,j=1}^{N}\left(\textbf{R}_{ij}-\textbf{R}_{ij}^0\right)^2
+\end{equation}\label{eq:27}
+
 \subsection{An\'{a}lisis por Componentes Principales (PCA)}
 Sea $\mathbf{x(t)}$ la trayectoria en forma de vector columna de $3N$ componentes que tiene las posiciones a cada instante de tiempo de todos los \'{a}tomos. La matriz de covarianza, en este caso, es aqu\'{e}lla que mide la dependencia entre cada una de las variables ($3N$ componentes) y cuyos elementos de la diagonal son las varianzas de dichas variables.\\
 
