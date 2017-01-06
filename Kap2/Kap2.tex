@@ -271,14 +271,14 @@ Los elementos de $\mathbf{H}_{ij}$ son:
 \begin{equation}
 \mathbf{H}_{ij}=\left(
 \begin{array}{ccc}
- \partial_x\partial_x V & \partial_x\partial_y V & \partial_x\partial_z V \\
- \partial_y\partial_x V & \partial_y\partial_y V & \partial_y\partial_z V \\
- \partial_z\partial_x V & \partial_z\partial_y V & \partial_z\partial_z V
+ \partial_{xi}\partial_{xj} V & \partial_{xi}\partial_{yj} V & \partial_{xi}\partial_{zj} V \\
+ \partial_{yi}\partial_{xj} V & \partial_{yi}\partial_{yj} V & \partial_{yi}\partial_{zj} V \\
+ \partial_{zi}\partial_{xj} V & \partial_{zi}\partial_{yj} V & \partial_{zi}\partial_{zj} V
 \end{array}
 \right)
 \end{equation}\label{eq:35}
 
-Calculando algunas de estas derivadas y definiendo $x_{ik}=x_k-x_i$, $y_{ik}=y_k-y_i$ y $z_{ik}=z_k-z_i$ se obtiene:
+Calculando algunas de estas derivadas y definiendo $x_{ik}=x_k-x_i$, $y_{ik}=y_k-y_i$ y $z_{ik}=z_k-z_i$ se obtiene (Caso $i\neq j$):
 \begin{equation}
 \frac{\partial V }{\partial y_k}=\sum_j\frac{\gamma_{jk}\left(R_{kj}-R_{kj}^0\right)y_{kj}}{R_{kj}}
 \end{equation}\label{eq:36}
@@ -288,11 +288,28 @@ Calculando algunas de estas derivadas y definiendo $x_{ik}=x_k-x_i$, $y_{ik}=y_k
 \begin{equation}
 \frac{\partial^2 V }{\partial x_i\partial x_j}\bigg|_{R_{ij}=R_{ij}^0}=-\frac{\gamma_{ij}x_{ij}^2}{R_{ij}^2}
 \end{equation}\label{eq:38}
-Para las submatrices que se encuentran en la diagonal:
+De forma an\'{a}loga se encuentran los otros elementos de $\mathbf{H}_{ij}$ con lo cual los superelementos no diagonales de $\mathbf{\mathcal{H}}$ quedan escritos como \cite{Lezon2009}:
 \begin{equation}
-\frac{\partial^2 V }{\partial x_i^2}\bigg|_{R_{ij}=R_{ij}^0}=-\sum_{j\neq i}\gamma_{ij}\left(.\right)
-\end{equation}\label{eq:39}
+\mathbf{H}_{ij}=-\frac{\gamma_{ij}}{R_{ij}^2}\left(
+\begin{array}{ccc}
+ x_{ij}^2 & x_{ij}y_{ij} & x_{ij}z_{ij}\\
+ y_{ij}x_{ij} & y_{ij}^2 & y_{ij}z_{ij} \\
+ z_{ij}x_{ij} &z_{ij}y_{ij} & z_{ij}^2
+\end{array}
+\right)
+\end{equation}\label{eq:35}
 
+
+Para los superelementos $\mathbf{H}_{ii}$ que se encuentran en la diagonal, algunos de sus elementos son:
+\begin{eqnarray}
+\frac{\partial^2 V }{\partial x_i^2}\bigg|_{R_{ij}=R_{ij}^0}=-\sum_{j\neq i}\gamma_{ij}\left(\frac{x_{ij}^2}{R_{ij}^2}\right) \nonumber \\
+\frac{\partial^2 V }{\partial x_i^2}\bigg|_{R_{ij}=R_{ij}^0}=-\sum_{j\neq i} H_{ij,xx}
+\end{eqnarray}\label{eq:39}
+En \eqref{eq:39}, $H_{ij,xx}$ es el primer elemento de la submatriz $\mathbf{H}_{ij}$. El resultado \eqref{eq:39} puede generalizarse para todos los superelementos de la diagonal, ver \cite{Lezon2009}:
+\begin{eqnarray}
+\mathbf{ii}=\sum_{j\neq i}\mathbf{H}_{ij}
+\end{eqnarray}\label{eq:40}
+Una vez obtenida la matriz Hessiana, es necesario calcular sus autovalores y autovactores, de la misma forma que en NMA, ya que esto describe los movimientos de la biomol\'{e}cula. La diagonalizaci\'{o}n de $\mathcal{H}$ lleva a lo sumo $3N-6$ modos normales no nulos, como se demuestra en \cite{Tirion1996}. Los 6 modos normales restantes, corresponden a las rotaciones y traslaciones de un cuerpo r\'{i}gido; se puede escoger un sistema fijo en la molecula y que rote con ella.\\
 
 
 \subsubsection{Modelo de Redes Gaussianas (GNM)}
