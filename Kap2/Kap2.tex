@@ -211,7 +211,14 @@ Al reemplazar la soluci\'{o}n de prueba en la ecuaci\'{o}n \eqref{eq:16} se conv
 \lambda_{k}\mathbf{a_{k}}&=&\mathbf{K}\mathbf{a_{k}}
 \end{eqnarray}\label{eq:18}
 En \eqref{eq:18} se ha definido $\lambda=\omega^2$ y posteriormente se ha agregado el sub\'{i}ndice $k$ para distinguir cada uno de los autovalores y autovectores que se encuentren en el problema \eqref{eq:18}.\\
-Cuando cada uno de los mon\'{o}meros tiene la misma frecuencia, a cada frecuencia le corresponde un vector de amplitudes $\mathbf{a}$, cada uno de estos posibles vectores se les conoce como un \textit{modo normal de oscilaci\'{o}n}.
+Cuando cada uno de los mon\'{o}meros tiene la misma frecuencia, a cada frecuencia le corresponde un vector de amplitudes $\mathbf{a}$, cada uno de estos posibles vectores se les conoce como un \textit{modo normal de oscilaci\'{o}n}.\\
+
+Ha de notarse que la soluci\'{o}n total no est\'{a} compuesta por un \'{u}nico modo, sino por la superposici\'{o}n de estos:
+\begin{equation}
+\mathbf{r}=\sum_k\mathbf{a}_ke^{i\omega_k t}
+\end{equation}\label{eq:tot}
+
+Cuando se tiene esta soluci\'{o}n y se desean conocer los modos normales, pueden aplicarse dos m\'{e}todos: El de la transformada de Fourier y la transformaci\'{o}n a las coordenadas normales; las coordenadas normales son un espacio en el cual se separan los movimientos compuestos.
 \subsubsection{Ensamble Estad\'{i}stico}
 Cuando el sistema (biomol\'{e}cula) se encuentre a temperaturas fisiol\'{o}gicas, el sistema  s\'{o}lo intercambiar\'{a} calor con los alrededores (ba\~{n}o t\'{e}rmico). Sin embargo, se ha demostrado  que a esta temperatura, la aproximaci\'{o}n arm\'{o}nica falla , presentando m\'{u}ltiples m\'{i}nimos y no uno solo \cite{Hayward2008}, \cite{Elber1987}; por otro lado, a temperatura fisiol\'{o}gica el ensamble es cl\'{a}sico \cite{Sethna2006}. Como \'{u}nicamente hay intercambio de energ\'{i}a y se trabaja a temperatura fisiol\'{o}gica, la estad\'{i}stica apropidada es la del ensamble can\'{o}nico. En el ensamble  can\'{o}nico se sigue la distribuci\'{o}n de probabilidad de Boltzmann:
 \begin{equation}
