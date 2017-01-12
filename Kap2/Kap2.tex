@@ -255,15 +255,32 @@ Se observa que los modos de m\'{a}s bajas frecuencias contribuyen m\'{a}s a la f
 \section{Descripciones de los Movimientos Globales}
 \subsection{ENMs}
 \subsubsection{Modelos de Redes Anisotr\'{o}picas (ANM)}
-Como se ha dicho, la aproximaci\'{o}n a segundo orden del potencial , minimizaci\'{o}n, \eqref{eq:5} es cambiada por un potencial de Hooke en el cual se tienen en cuenta las distancias en lugar de los desplazamientos alrededor del equilibrio y tambi\'{e}n se pueden tener en cuenta diferentes constantes el\'{a}sticas entre diferentes nodos:
+Como se ha dicho, la aproximaci\'{o}n a segundo orden del potencial, minimizaci\'{o}n, \eqref{eq:5} es cambiada por un potencial de Hooke en el cual se tienen en cuenta las distancias en lugar de los desplazamientos alrededor del equilibrio y tambi\'{e}n se pueden tener en cuenta diferentes constantes el\'{a}sticas entre diferentes nodos:
 \begin{equation}
-V=\left\{\begin{array}{cl}
-   \frac{1}{2}\sum_{i\neq j=1}^{N}\gamma_{ij}\left(R_{ij}-R_{ij}^0\right)^2 &\mbox{  si } R_{ij},R_{ij}^0<R_c\\
-   0 &\mbox{  Otro caso}
-  \end{array}
-\right.
+V=
+   \frac{1}{2}\sum_{
+   i,j>i  
+   }
+   \gamma_{ij}\left(R_{ij}-R_{ij}^0\right)^2
 \end{equation}\label{eq:26}
-Donde $R_{ij}^0$ es la distancia de equilibrio entre los nodos $i-j$ de la red, la cual  $R_{ij}$ su distancia variable y $\gamma_{ij}$ las constantes el\'{a}sticas entre los nodos $i-j$. Como se ilustra en la figura \ref{fig:res}, el t\'{e}rmino $R_{ij}-R_{ij}^0$ es la elongaci\'{o}n del resorte, lo cual es diferente a la resta de los desplazamientos, entonces no se est\'{a} aproximando el potencial, por tanto no se requiere una minimizaci\'{o}n de la energ\'{i}a, como se ha recalcado, s\'{o}lo se cambia la forma del potencial.\\
+\begin{equation*}
+\mbox{			Con		} R_{ij},R_{ij}^0<R_c  
+\end{equation*}
+
+Donde $R_{ij}^0$ es la distancia de equilibrio entre los nodos $i-j$ de la red, $R_{ij}$ su distancia variable y $\gamma_{ij}$ las constantes el\'{a}sticas entre los nodos $i-j$. Como se ilustra en la figura \ref{fig:res}, el t\'{e}rmino $R_{ij}-R_{ij}^0$ es la elongaci\'{o}n del resorte, lo cual es diferente a la resta de los desplazamientos, ecuaci\'{o}n \eqref{eq:3}; entonces no se est\'{a} aproximando el potencial ni se requiere una minimizaci\'{o}n de la energ\'{i}a, como se ha recalcado, s\'{o}lo se cambia la forma del potencial.\\
+
+Se requiere que $j>i$ para que no aparezca repetido el t\'{e}rmino $\left(R_{ij}-R_{ij}^0\right)^2$ con $\left(R_{ji}-R_{ji}^0\right)^2$   ya que representan la misma interacci\'{o}n, de ser as\'{i}, se vuelven obsoletas las constantes el\'{a}sticas $\gamma_{ij}$ con $j<i$. Sin embargo, el potencial tambi\'{e}n puede escogerse dejando los t\'{e}rminos repetidos y redefiniendo la matriz de constantes el\'{a}sticas como una matriz sim\'{e}trica, esto es: $\gamma_{ij}=\gamma_{ji}$. Escogiendo el potencial de esta manera, como es usal en la literatura \cite{Rader2006}, queda de la forma:
+\begin{equation}
+V_{ANM}=
+   \frac{1}{2}\sum_{
+   i\neq j=1  
+   }
+   \gamma_{ij}\left(R_{ij}-R_{ij}^0\right)^2
+\end{equation}\label{eq:26}
+\begin{eqnarray*}
+\mbox{			Con		} R_{ij},R_{ij}^0<R_c \\
+\mbox{			y		} \gamma_{ij}=\gamma_{ji}
+\end{eqnarray*}
 \begin{figure}
 \centering%
 \includegraphics[scale=0.3]{Kap2/resorte.png}%
@@ -314,16 +331,38 @@ Para los superelementos $\mathbf{H}_{ii}$ que se encuentran en la diagonal, algu
 \end{eqnarray}\label{eq:39}
 En \eqref{eq:39}, $H_{ij,xx}$ es el primer elemento de la submatriz $\mathbf{H}_{ij}$. El resultado \eqref{eq:39} puede generalizarse para todos los superelementos de la diagonal, ver \cite{Lezon2009}:
 \begin{eqnarray}
-\mathbf{ii}=\sum_{j\neq i}\mathbf{H}_{ij}
+\mathbf{H}_{ii}=\sum_{j\neq i}\mathbf{H}_{ij}
 \end{eqnarray}\label{eq:40}
 Una vez obtenida la matriz Hessiana, es necesario calcular sus autovalores y autovactores, de la misma forma que en NMA, ya que esto describe los movimientos de la biomol\'{e}cula. La diagonalizaci\'{o}n de $\mathcal{H}$ lleva a lo sumo $3N-6$ modos normales no nulos, como se demuestra en \cite{Tirion1996}. Los 6 modos normales restantes, corresponden a las rotaciones y traslaciones de un cuerpo r\'{i}gido; se puede escoger un sistema fijo en la molecula y que rote con ella.\\
 
-
+El t\'{e}rmino de la distancia de corte $R_c$ puede ser incluido en las constantes el\'{a}sticas, es decir, $\gamma_{ij}=0$ si  $R_{ij}>R_c$ sino $\gamma_{ij}\neq 0$. Adicional a esto, las constantes el\'{a}sticas pueden ser iguales (isotr\'{o}picas): $\gamma_{ij}=\gamma$ si  $R_{ij}<R_c$ de lo contrario  $\gamma_{ij}=0$.
 \subsubsection{Modelo de Redes Gaussianas (GNM)}
-El modelo se denomina gaussiano debido a  . Se requieren dos par\'{a}metros para describir el modelo: Una misma constante el\'{a}stica para todas las unidades de la biomol\'{e}cula y una distancia de corte a partir de la cual no se ejerce el potencial.
+El modelo se denomina gaussiano debido a que las desviaciones del equilibrio o fluctuaciones con respecto al equlibrio son gaussianas e isotr\'{o}picas \cite{Rader2006}. Se requieren dos par\'{a}metros para describir el modelo: Una misma constante el\'{a}stica $\gamma$ para todas las unidades de la biomol\'{e}cula y una distancia de corte a partir de la cual no se ejerce el potencial.\\
+Contrario al ANM, en el modelo de redes gaussianas se consideran las desviaciones del equilibrio como desplazamientos:
 \begin{equation}
-V=\frac{\gamma}{2}\sum_{i,j=1}^{N}\left(\textbf{R}_{ij}-\textbf{R}_{ij}^0\right)^2
+V_{GNM}=\frac{\gamma}{2}\sum_{i,j=1}^{N}\Gamma_{ij}\left(\textbf{R}_{ij}-\textbf{R}_{ij}^0\right)^2
 \end{equation}\label{eq:27}
+Al ser $\gamma_{ij}$ una matriz de constantes el\'{a}sticas, se incluyen en la sumatoria los elementos $\Gamma_{ij}$ donde $\gamma_{ij}=\gamma\Gamma_{ij}$. $\Gamma_{ij}$ representa la simetr\'{i}a de la matriz $ \mathbf{\gamma}$ y como se puede ver en \cite{Rader2006}, la topolog\'{i}a de la red.\\
+
+Ya que $\textbf{R}_{ij}=\textbf{R}_{j}-\textbf{R}_{i}$ y definiendo $\Delta\textbf{R}_{i}=\textbf{R}_{i}-\textbf{R}_{i}^0$ se tiene que  $\textbf{R}_{ij}-\textbf{R}_{ij}^0=\Delta\textbf{R}_{j}-\Delta\textbf{R}_{i}$, el potencial gaussiano se puede escribir en t\'{e}rminos de los desplazamientos individuales:
+\begin{eqnarray}
+V_{GNM}&=&\frac{\gamma}{2}\sum_{i\neq j=1}^{N}\Gamma_{ij}\left( \Delta\textbf{R}_{j}-\Delta\textbf{R}_{i}\right)^2 \nonumber \\
+V_{GNM}&=&\frac{\gamma}{2}\sum_{i\neq j=1}^{N}\Gamma_{ij}\left[\left(\Delta x_j-\Delta x_i \right)^2+\left(\Delta y_j-\Delta y_i \right)^2+\left(\Delta z_j-\Delta z_i \right)^2 \right] \nonumber \\
+V_{GNM}&=&\frac{\gamma}{2}\sum_{i\neq j=1}^{N}\Gamma_{ij}\left[\left(\Delta x_{ij}\right)^2+\left(\Delta y_{ij}\right)^2+\left(\Delta z_{ij}\right)^2 \right]
+\end{eqnarray}\label{eq:34}
+Escribiendo \eqref{eq:34} en forma matricial se tiene:
+\begin{equation}
+V_{GNM}=\frac{\gamma}{2}\left(\Delta\mathbf{X}^T\mathbf{\Gamma}\Delta\mathbf{X}+\Delta\mathbf{Y}^T\mathbf{\Gamma}\Delta\mathbf{Y}+\Delta\mathbf{Z}^T\mathbf{\Gamma}\Delta\mathbf{Z} \right)
+\end{equation}\label{eq:35}
+Para garantizar que $\Gamma_{ij}$ sea adimensional, se escogen (no de forma \'{u}nica) los elementos fuera de la diagonal de acuerdo al procedimiento descrito a continuaci\'{o}n.\\
+
+N\'{o}tese que los t\'{e}rminos cuadr\'{a}ticos por cada componente pueden expandirse:
+\begin{eqnarray}
+\sum_{i\neq j=1}^{N}\Gamma_{ij}\left(\Delta x_{ij}\right)^2&=&\sum_{i\neq j=1}^{N}\Gamma_{ij}\left(\Delta x_{i}^2+\Delta x_{j}^2-2\Delta x_{i}\Delta x_{j}\right) \nonumber \\
+&=&2\sum_{i\neq j=1}^{N}\Gamma_{ij}\Delta x_{i}^2-2\sum_{i\neq j=1}^{N}\Delta x_{i}\Gamma_{ij}\Delta x_{j}
+\end{eqnarray}\label{eq:36}
+
+
 
 \subsection{An\'{a}lisis por Componentes Principales (PCA)}
 Sea $\mathbf{x(t)}$ la trayectoria en forma de vector columna de $3N$ componentes que tiene las posiciones a cada instante de tiempo de todos los \'{a}tomos. La matriz de covarianza, en este caso, es aqu\'{e}lla que mide la dependencia entre cada una de las variables ($3N$ componentes) y cuyos elementos de la diagonal son las varianzas de dichas variables.\\
