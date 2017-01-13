@@ -1,0 +1,63 @@
+\begin{thebibliography}{}
+
+\bibitem[Amadei et~al., 1993]{Amadei1993}
+Amadei, A., Linssen, A. B.~M., and Berendsen, H. J.~C. (1993).
+\newblock {Essential dynamics of proteins}.
+\newblock {\em Proteins Struct. Funct. Genet.}, 17(4):412--425.
+
+\bibitem[Amber, 2016]{Amber2016}
+Amber, C. (2016).
+\newblock {Amber 2016 Reference Manual}.
+
+\bibitem[Elber and Karplus, 1987]{Elber1987}
+Elber, R. and Karplus, M. (1987).
+\newblock {Multiple conformational states of proteins: a molecular dynamics
+  analysis of myoglobin}.
+\newblock {\em Science (80-. ).}, 235(4786):318--321.
+
+\bibitem[Eyal et~al., 2015]{Eyal2015}
+Eyal, E., Lum, G., and Bahar, I. (2015).
+\newblock {The anisotropic network model web server at 2015 (ANM 2.0)}.
+\newblock {\em Bioinformatics}, 31(9):1487--1489.
+
+\bibitem[Goldstein et~al., 2001]{Goldstein2001}
+Goldstein, H., Poole, C.~P., and Safko, J. (2001).
+\newblock {\em {Classical Mechanics}}, volume~1.
+\newblock Adison Wesley, Pearson, 3 edition.
+
+\bibitem[Gur et~al., 2013]{Gur2013}
+Gur, M., Zomot, E., and Bahar, I. (2013).
+\newblock {Global motions exhibited by proteins in micro- to milliseconds
+  simulations concur with anisotropic network model predictions.}
+\newblock {\em J. Chem. Phys.}, 139(12):121912.
+
+\bibitem[Hayward and de~Groot, 2008]{Hayward2008}
+Hayward, S. and de~Groot, B.~L. (2008).
+\newblock {Normal modes and essential dynamics}.
+\newblock {\em Methods Mol. Biol.}, 443:89--106.
+
+\bibitem[Lezon et~al., 2009]{Lezon2009}
+Lezon, T.~R., Shrivastava, I.~H., Yang, Z., and Bahar, I. (2009).
+\newblock {Elastic Network Models For Biomolecular Dynamics: Theory and
+  Application to Membrane Proteins and Viruses}.
+\newblock {\em Handb. Biol. Networks}, pages 129--158.
+
+\bibitem[Rader et~al., 2006]{Rader2006}
+Rader, A.~J., Chennubhotla, C., Yang, L.-W., and Bahar, I. (2006).
+\newblock {The Gaussian Network Model: theory and applications}.
+\newblock {\em Norm. Mode Anal. - theory Appl. to Biol. Chem. Syst.},
+  10(20):41--64.
+
+\bibitem[Sethna, 2006]{Sethna2006}
+Sethna, J.~P. (2006).
+\newblock {Entropy, order parameters, and complexity}.
+\newblock {\em Stat. Mech. Lab. At. Solid State Physics, Cornell Univ. Ithaca,
+  NY}, pages 105--113.
+
+\bibitem[Tirion, 1996]{Tirion1996}
+Tirion, M.~M. (1996).
+\newblock {Large Amplitude Elastic Motions in Proteins from a Single-Parameter,
+  Atomic Analysis.}
+\newblock {\em Phys. Rev. Lett.}, 77(9):1905--1908.
+
+\end{thebibliography}

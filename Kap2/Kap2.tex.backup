@@ -286,7 +286,7 @@ V_{ANM}=
 \includegraphics[scale=0.3]{Kap2/resorte.png}%
 \caption{Desplazamientos de los nodos $i-j$ de su posici\'{o}n de equilibrio. Tomado de \cite{Rader2006}.} \label{fig:res}
 \end{figure}
-Existe un servidor web \cite{Eyal2015} basado en ANM que permite ver los movimientos globales de una prote\'{i}na o de un \'{a}cido nucleico y permite obtener informaci\'{o}n como los autovalores, los factores-B, las correlaciones entre otras.\footnote{ Recurso disponible en \url{http://anm.csb.pitt.edu/cgi-bin/anm2/anm2.cgi}}
+Existe un servidor web \cite{Eyal2015} 
 \paragraph{Matriz Hessiana}
 El c\'{a}lculo de la matriz de segundas derivadas $\mathbf{U}$ para el an\'{a}lisis de modos normales, si parte de una minimizaci\'{o}n de la energ\'{i}a.  Las derivadas se calculan v\'{i}a el potencial anisotr\'{o}pico \eqref{eq:26}, para el presente caso la matriz $\mathbf{U}$ es llamada $\mathbf{\mathcal{H}}$. La matriz $\mathbf{\mathcal{H}}$ es de tama\~{n}o $3N\times3N$ con $N$ el n\'{u}mero de residuos y est\'{a} constituida por $N\times N$ submatrices de tama\~{n}o $3\times3$ llamadas $\mathbf{H}_{ij}$:
 \begin{equation}\label{eq:34}
@@ -363,7 +363,7 @@ N\'{o}tese que los t\'{e}rminos cuadr\'{a}ticos por cada componente pueden expan
 &=&2\sum_{i\neq j=1}^{N}\Gamma_{ij}\Delta x_{i}^2-2\sum_{i\neq j=1}^{N}\Delta x_{i}\Gamma_{ij}\Delta x_{j}
 \end{eqnarray}
 
-Existe un servidor web basado en GNM que permite ver los movimientos globales de una prote\'{i}na o de un \'{a}cido nucleico y permite obtener informaci\'{o}n como los autovalores, los factores-B, las correlaciones entre otras.\footnote{ Recurso disponible en \url{http://web.archive.org/web/20070615210550/http://ignm.ccbb.pitt.edu/GNM_Online_Calculation.htm}}
+
 
 \subsection{An\'{a}lisis por Componentes Principales (PCA)}
 Sea $\mathbf{x(t)}$ la trayectoria en forma de vector columna de $3N$ componentes que tiene las posiciones a cada instante de tiempo de todos los \'{a}tomos. La matriz de covarianza, en este caso, es aqu\'{e}lla que mide la dependencia entre cada una de las variables ($3N$ componentes) y cuyos elementos de la diagonal son las varianzas de dichas variables.\\

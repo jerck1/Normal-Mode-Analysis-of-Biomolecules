@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: TesisMSc.aux
+A level-1 auxiliary file: HojaTitulo/HojaTituloMSc.aux
+A level-1 auxiliary file: Tab_Simbolos/TabSimbolosMSc.aux
+A level-1 auxiliary file: Kap1/Kap1.aux
+A level-1 auxiliary file: Kap2/Kap2.aux
+A level-1 auxiliary file: Kap3/Kap3.aux
+A level-1 auxiliary file: Kap4/Kap4.aux
+A level-1 auxiliary file: Kap5/Kap5.aux
+A level-1 auxiliary file: Kap6/Kap6.aux
+A level-1 auxiliary file: Anexos/Anexos.aux
+The style file: apalike.bst
+Database file #1: Mendeley.bib
+Warning--can't use both author and editor fields in Goldstein2001
+Warning--can't use both volume and number fields in Goldstein2001
+You've used 11 entries,
+            1935 wiz_defined-function locations,
+            566 strings with 5615 characters,
+and the built_in function-call counts, 4528 in all, are:
+= -- 456
+> -- 165
+< -- 8
++ -- 54
+- -- 54
+* -- 392
+:= -- 772
+add.period$ -- 32
+call.type$ -- 11
+change.case$ -- 82
+chr.to.int$ -- 11
+cite$ -- 13
+duplicate$ -- 168
+empty$ -- 318
+format.name$ -- 69
+if$ -- 888
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 11
+newline$ -- 57
+num.names$ -- 33
+pop$ -- 61
+preamble$ -- 1
+purify$ -- 82
+quote$ -- 0
+skip$ -- 138
+stack$ -- 0
+substring$ -- 367
+swap$ -- 31
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 64
+warning$ -- 2
+while$ -- 41
+width$ -- 0
+write$ -- 143
+(There were 2 warnings)
