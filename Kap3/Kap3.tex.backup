@@ -8,13 +8,8 @@ Los transportadores se clasifican, de acuerdo al sistema de clasificaci\'{o}n de
 \begin{enumerate}
  \item \textbf{Portadores}:
  \begin{enumerate}
- \item[1.] Transportadores activos primarios
- \item[2.a] Transportadores activos secundarios
-  \begin{enumerate}
- \item[a)] Simportadores
- \item[b)] Antiportadores
- \end{enumerate}
- \item[2.b] Uniportadores
+ \item[a)] Transportadores activos primarios
+ \item[b)] Transportadores activos secundarios
  \end{enumerate}
  \item  \textbf{Canales i\'{o}nicos}: Los canales se diferencian de los portadores en la raz\'{o}n a la que transportan los iones, que es de $10^6$ iones/segundo  (muy alta) as\'{i} como en que los canales no necesitan energ\'{i}a metab\'{o}lica para transportar los iones.
 \end{enumerate}
