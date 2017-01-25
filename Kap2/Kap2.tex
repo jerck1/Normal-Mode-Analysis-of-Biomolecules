@@ -32,7 +32,8 @@ V_{elec}(r)&=&\sum_{j=1}^{N-1}\sum_{i=j+1}^{N}\frac{q_iq_j}{4\pi\epsilon_0r_{ij}
 \end{eqnarray}
 \end{itemize}
 \subsection{An\'{a}lisis de Modos Normales Est\'{a}ndar (NMA est\'{a}ndar)}
-Los modos normales ocurren cuando todos los constituyentes del sistema oscilan sinusoidalmente y con la misma frecuencia. Los potenciales que cumplen con estas caracter\'{i}sticas son los potenciales arm\'{o}nicos; ya que los potenciales tienen una forma complicada como la del modelo de Amber, se aproxima el potencial alrededor de un punto de equilibrio a una cuadr\'{a}tica.\\
+
+An\'{a}lisis de modos normales es el an\'{a}lisis arm\'{o}nico que en este caso es aplicado a las prote\'{i}nas.Los modos normales ocurren cuando todos los constituyentes del sistema oscilan sinusoidalmente y con la misma frecuencia. Los potenciales que cumplen con estas caracter\'{i}sticas son los potenciales arm\'{o}nicos; ya que los potenciales tienen una forma complicada como la del modelo de Amber, entonces se aproxima el potencial alrededor de un punto de equilibrio a una cuadr\'{a}tica.\\
 
 En el an\'{a}lisis \textit{est\'{a}ndar} los constituyentes son \textit{todos los \'{a}tomos} de la biomol\'{e}cula. Al utilizar todos los \'{a}tomos, los costos computacionales de las simulaciones pueden ser mayores que los de otros modelos en los que no se usan todos los \'{a}tomos. A pesar de esto, el NMA est\'{a}ndar es \'{u}til para estudiar los movimientos funcionales de la biomol\'{e}cula.\\
 
@@ -53,22 +54,31 @@ Son aqu\'{e}llas simulaciones en las que se desean conocer los \textit{cambios g
 Un conjunto de modelos que permite calcular los movimientos globales de una mol\'{e}cula son los \textit{Modelos de Redes El\'{a}sticas} (Elastic Network Models o ENM por sus siglas en ingl\'{e}s).
  Otros modelos que describen los movimientos globales son los an\'{a}lisis por componentes principales (Principal Component Analysis o PCA por sus siglas en ingl\'{e}s) y el an\'{a}lisis por modos normales est\'{a}ndar (Normal Mode Analysis o NMA por sus siglas en ingl\'{e}s).
  \subsection{An\'{a}lisis de Modos Normales (NMA)}
- Existe una versi\'{o}n del an\'{a}lisis de modos normales en el cual se usa el mismo potencial pero no se consideran todos los \'{a}tomos de la red sino las unidades monom\'{e}ricas de la biomol\'{e}cula. Por ejemplo, en una prote\'{i}na las unidades monom\'{e}ricas son los amino\'{a}cidos y las posiciones de equilibrio son las de los C-$\alpha$ en la estructura cristalina, las cuales se encuentran en las bases de datos existentes.
-\subsection{Modelos de Redes El\'{a}sticas (ENM)}
-Propuesto por primera vez en \cite{Tirion1996}, los ENM, como la palabra \textit{el\'{a}stico} lo indica, se basan en una simplificaci\'{o}n de la energ\'{i}a potencial a una energ\'{i}a potencial el\'{a}stica, es decir de tipo Hooke.  Una diferencia con los NMA (est\'{a}ndar y global) es la forma del potencial, en este caso se toman los potenciales de un resorte, los cuales se calculan con la diferencia de distancias y no los desplazamientos $q_i$ del potencial \eqref{eq:3}, ver figura PONER. \\
+ Existe una versi\'{o}n equivalente del an\'{a}lisis de modos normales en el cual se usa el mismo potencial pero no se consideran todos los \'{a}tomos de la red sino las unidades monom\'{e}ricas de la biomol\'{e}cula. Por ejemplo, en una prote\'{i}na las unidades monom\'{e}ricas son los amino\'{a}cidos y las posiciones de equilibrio son las de los C-$\alpha$ en la estructura cristalina, las cuales se encuentran en las bases de datos existentes.
+\subsubsection{Modelos de Redes El\'{a}sticas (ENM)}
+Propuesto por primera vez en \cite{Tirion1996}, los ENM, como la palabra \textit{el\'{a}stico} lo indica, se basan en una simplificaci\'{o}n de la energ\'{i}a potencial a una energ\'{i}a potencial el\'{a}stica, es decir de tipo Hooke, ver figura \ref{fig:pan}.\\
 
-Al simplificar el potencial, la biomol\'{e}cula original se convierte en una red cuyos nodos est\'{a}n sometidos al potencial el\'{a}stico, ver figura \ref{fig:pan}. Los nodos se consideran como bloques constituyentes de la biomol\'{e}cula. Aunque el bloques constituyentes suelen ser los residuos de la biomol\'{e}cula, puede variar ligeramente para dar compatibilidad al modelo con los datos experimentales. Por ejemplo en las prote\'{i}nas como el 
-inhibidor de la tripsina pancreática bovina (BPTI) \cite{Gur2013}, los constituyentes son los C-$\alpha$ de los amino\'{a}cidos.\\
+Los nodos se consideran como bloques constituyentes de la biomol\'{e}cula. Aunque el bloques constituyentes suelen ser los residuos de la biomol\'{e}cula, puede variar ligeramente para dar compatibilidad al modelo con los datos experimentales. Por ejemplo en las prote\'{i}nas como el inhibidor de la tripsina pancre\'{a}tica bovina (BPTI) \cite{Gur2013}, los constituyentes son los C-$\alpha$ de los amino\'{a}cidos.\\
 
-El modelo es bueno cuando hay una buena estabilidad de los enlaces con respecto a su posici\'{o}n de equilibrio; para distancias mucho mayores que lo que se donomina la distancia de corte $R_c$ no hay potencial alguno. La distancia de corte es uno de los par\'{a}metros requeridos en el modelo, el otro es la constante el\'{a}stica que puede ser la misma para todas las unidades o puede variar.\\
+El modelo es bueno cuando la estabilidad de los enlaces con respecto a su posici\'{o}n de equilibrio es menor a una estimaci\'{o}n  de $13\AA$; para distancias mucho mayores el potencial se corta; la distancia a partir de la que se corta el potencial se denomina distancia de corte $R_c$. La distancia de corte es uno de los par\'{a}metros requeridos en el modelo, el otro es la constante el\'{a}stica que puede ser la misma para todas las unidades o puede variar.\\
 
 \begin{figure}
 \centering%
-\includegraphics[scale=0.3]{Kap2/dibujo.pdf}%
+\includegraphics[scale=0.28]{Kap2/dibujo.pdf}%
 \caption{ (a) Vista exterior de un c\'{a}pside v\'{i}rico HK97 coloreado por cada cadena, todas las prote\'{i}nas son id\'{e}nticas. (b) Vista del arreglo prote\'{i}nico en una cara del c\'{a}pside. (c) Vista de la estructura secundaria de las prote\'{i}nas (d) Esquema de cada prote\'{i}na mostrando cada uno de sus \'{a}tomos, las aristas de cada cara son carbonos $\alpha$ unidos por lados (ligaduras el\'{a}sticas). Tomado de \cite{Lezon2009}.} \label{fig:pan}
 \end{figure}
 
 La primera vez que se usaron los ENM en la investigaci\'{o}n de prote\'{i}nas fue gracias a Monique Tirion, ver \cite{Tirion1996}. Entre las prote\'{i}nas  investigadas se encuentran la actina G (C\'{o}digo PDB: 1atn) y la miosina H1 (C\'{o}digo PDB: 1my). La G-actina es modelada bien por los ENM.\\ 
+
+Existen dos tipos de ENM: Modelos de redes anisotr\'{o}picas (ANM por sus siglas en ingl\'{e}s) y Modelos de Redes Gaussianas (GNM por sus siglas en ingl\'{e}s) los cuales se diferencian en el modelo de potencial usado.  El modelo de redes anisotr\'{o}picas inicialmente no usa el mismo potencial que el an\'{a}lisis de modos normales est\'{a}ndar sino que usa el potencial presente entre resortes tridimensionales, en la figura \cite{fig:ANM} se muestra que el potencial entre los resortes depende de la diferencia de distancias.\\
+\begin{figure}
+\centering
+\input{Kap2/resorte2.pdf_tex}%
+\caption{Modelo representativo de las elongaciones de un resorte para ANM} \label{fig:ANM}
+\end{figure}
+\subsubsection{Modelos de Bloques r\'{i}gidos (BNM)}
+El modelo de bloques r\'{i}gidos (BNM por sus siglas en ingl\'{e}s) o tambi\'{e}n conocido como rotaciones y traslaciones de bloques (RTB por sus siglas en ingl\'{e}s) es un modelo que surge cuando se desea estudiar 
+
 \subsection{An\'{a}lisis por Componentes Principales (PCA)}
 En el an\'{a}lisis por componentes principales (PCA por sus siglas en ingl\'{e}s) se buscan las contribuciones principales a las fluctuaciones, enti\'{e}ndase por esto a las covarianzas entre las componentes de la posici\'{o}n de los \'{a}tomos. Contrario a los ENM y NMA, los modos que m\'{a}s contribuyen a las fluctuaciones son los de m\'{a}s altas frecuencias \cite{Amadei1993}.
 \section{Descripci\'{o}n Mec\'{a}nica de NMA}
@@ -208,9 +218,9 @@ Es decir, las coordenadas normales $\zeta_k$ representan a un \'{u}nico modo nor
 Cuando el sistema (biomol\'{e}cula) se encuentre a temperaturas fisiol\'{o}gicas, s\'{o}lo intercambiar\'{a} calor con los alrededores (ba\~{n}o t\'{e}rmico). Sin embargo, se ha demostrado  que a esta temperatura, la aproximaci\'{o}n arm\'{o}nica falla , \cite{Hayward2008}; por otro lado, a temperatura fisiol\'{o}gica el ensamble es cl\'{a}sico dependiendo del rango de frecuencias a analizar\cite{Sethna2006}, \cite{Cui2006}. En la figura \ref{fig:estad}, se observa el n\'{u}mero de nodos en funci\'{o}n de la frecuencia para diferentes prote\'{i}nas, para frecuencias menores que la frecuencia de vibraci\'{o}n del oscilador arm\'{o}nico a temperatura ambiente, se puede trabajar con la mec\'{a}nica cl\'{a}sica.\\
 \begin{figure}
 \centering%
-\includegraphics[scale=0.2]{Kap2/modos_vs_f.png}%
-\put(0,200){$#$ de modos}
-\put(200,0){Frecuencia ($p\mathrm{s}^{-1}$}
+\includegraphics[scale=0.3]{Kap2/modos_vs_f.png}%
+\put(-80,50){N\'{u}mero de modos}
+\put(-45,-5){Frecuencia ($p\mathrm{s}^{-1}$)}
 \caption{Desplazamientos de los nodos $i-j$ de su posici\'{o}n de equilibrio. Tomado de \cite{Cui2006}.} \label{fig:estad}
 \end{figure}
 Como \'{u}nicamente hay intercambio de energ\'{i}a y se trabaja a temperatura fisiol\'{o}gica, la estad\'{i}stica apropidada es la del ensamble can\'{o}nico. En el ensamble  can\'{o}nico se sigue la distribuci\'{o}n de probabilidad de Boltzmann:
@@ -394,11 +404,12 @@ Si se desea volver a los datos originales hay que realizar la transformaci\'{o}n
 \begin{equation}\label{eq:33}
 \mathbf{x(t)}^T=\mathbf{T}\mathbf{P}+\langle\mathbf{x}\rangle^T
 \end{equation}
+\subsection{Modelos de Bloque R\'{i}gido}
 \section{Comparaci\'{o}n Entre distintos modelos}
 \subsection{Diferencias entre GNM y ANM}
 \section{Clasificaci\'{o}n Modelos Te\'{o}ricos}
 \begin{figure}
 \centering%
-\includegraphics[scale=0.3]{Kap2/clasif_din.png}%
+\includegraphics[scale=0.4]{Kap2/mapa.png}%
 \caption{Mapa conceptual en el que se dividen los movimientos locales de los movimientos globales y mostrando cada tipo de movimiento global utilizado} \label{fig:movs}
 \end{figure}
