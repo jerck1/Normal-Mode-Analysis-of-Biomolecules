@@ -20,7 +20,16 @@ Hace referencia a las simulaciones en las que se incluyen todos los \'{a}tomos j
 Como caso particular se pueden tomar los potenciales usados en \cite{Amber2016}, que siguen el modelo de Amber. El modelo de Amber tiene en cuenta las contribuciones debidas a:
  \begin{itemize}
 \item Interacciones intermoleculares: Son las producidas por los enlaces covalentes entre grupos de \'{a}tomos, las de valencia y las torsiones.
+\begin{eqnarray}
+V_{cov}(r)&=&\sum_{enlaces}k_r\left(r-r_0\right)^2\\
+V_{val}(r)&=&\sum_{val}k_\theta\left(\theta-\theta_0\right)^2\\
+V_{tor}(r)&=&\sum_{torsiones}\sum_{n}\frac{V_n}{2}\left[1+\cos(n\phi-\gamma)\right]^2
+\end{eqnarray}
 \item Interacciones entre pares: Lennard Jones, electrost\'{a}tico.
+\begin{eqnarray}
+V_{len}(r)&=&\sum_{j=1}^{N+1}\sum_{i=j+1}^N f_{ij}\left\{\epsilon_{ij}\left[\left(\frac{r_{0ij}}{r_{ij}}\right)^{12}-2\left(\frac{r_{0ij}}{r_{ij}}\right)^6\right]\right\}\\
+V_{elec}(r)&=&\sum_{j=1}^{N-1}\sum_{i=j+1}^{N}\frac{q_iq_j}{4\pi\epsilon_0r_{ij}}
+\end{eqnarray}
 \end{itemize}
 \subsection{An\'{a}lisis de Modos Normales Est\'{a}ndar (NMA est\'{a}ndar)}
 Los modos normales ocurren cuando todos los constituyentes del sistema oscilan sinusoidalmente y con la misma frecuencia. Los potenciales que cumplen con estas caracter\'{i}sticas son los potenciales arm\'{o}nicos; ya que los potenciales tienen una forma complicada como la del modelo de Amber, se aproxima el potencial alrededor de un punto de equilibrio a una cuadr\'{a}tica.\\
@@ -76,20 +85,8 @@ El sistema se encuentra alrededor del equilibrio cuando las fuerzas generalizada
 \frac{\partial V}{\partial q_i}\bigg|_{\mathbf{q}=\mathbf{0}}=0
 \end{equation}
 En este tipo de casos como la energ\'{i}a se minimiza, se dice que hay un equilibrio estable. Para entender esto, sup\'{o}gase que la energ\'{i}a total, que en este caso es $E=T+V$ corresponde al punto de equilibrio donde los nodos no se mueven, es decir, $E=V_{min}$ (l\'{i}nea punteada de la figura \ref{fig:pot}). Ahora suponga que hay una incremento de la energ\'{i}a total en una cantidad $\Delta E$, este incremento generar\'{a} un aumento en la energ\'{i}a potencial, l\'{i}nea continua.  Si el sistema se desv\'{i}a de la posici\'{o}n de equilibrio, por conservaci\'{o}n de la energ\'{i}a y como $E=T+V$, la energ\'{i}a cin\'{e}tica disminuye. En un equilibrio inestable la energ\'{i}a cin\'{e}tica aumenta, alejando al sistema del equilibrio. \cite{Goldstein2001} \\
-'{e}rese una biomol\'{e}cula con $N$ part\'{i}culas constituyentes, la energ\'{i}a potencial $V$ que representa las interacciones entre los constituyentes de la biomol\'{e}cula ( v\'{a}lido tanto para NMA est\'{a}ndar como para NMA global), se puede expresar alrededor de las posiciones de equilibrio $\mathbf{q_0}=\mathbf{0}$ tal como describe la teor\'{i}a de peque\~{n}as oscilaciones, ver \cite{Goldstein2001}:
-\begin{equation}\label{eq:1}
-V(\mathbf{q})=V(\mathbf{0})+\sum_{i=1}^n\frac{\partial V}{\partial q_i}\bigg|_{\mathbf{q}=\mathbf{0}}q_i+\frac{1}{2}\sum_{ij}^{n}\frac{\partial^2 V }{\partial q_i\partial q_j}\bigg|_{\mathbf{q}=\mathbf{0}}q_i q_j+...
-\end{equation}
-Donde $q_i$ son los desplazamientos con respecto a las posiciones de equilibrio, $n$ es el n\'{u}mero de posibles desplazamientos en la biomol\'{e}cula. $V(\mathbf{0})$ es el potencial en equilibrio que por conveniencia puede ser calibrado a cero: $V(\mathbf{0})=0$. \\
 
-
-El sistema se encuentra alrededor del equilibrio cuando las fuerzas generalizadas se anulan, esto es:
-\begin{equation}\label{eq:2}
-\frac{\partial V}{\partial q_i}\bigg|_{\mathbf{q}=\mathbf{0}}=0
-\end{equation}
-En este tipo de casos como la energ\'{i}a se minimiza, se dice que hay un equilibrio estable. Para entender esto, sup\'{o}gase que la energ\'{i}a total, que en este caso es $E=T+V$ corresponde al punto de equilibrio donde los nodos no se mueven, es decir, $E=V_{min}$ (l\'{i}nea punteada de la figura \ref{fig:pot}). Ahora suponga que hay una incremento de la energ\'{i}a total en una cantidad $\Delta E$, este incremento generar\'{a} un aumento en la energ\'{i}a potencial, l\'{i}nea continua.  Si el sistema se desv\'{i}a de la posici\'{o}n de equilibrio, por conservaci\'{o}n de la energ\'{i}a y como $E=T+V$, la energ\'{i}a cin\'{e}tica disminuye. En un equilibrio inestable la energ\'{i}a cin\'{e}tica aumenta, alejando al sistema del equilibrio. \cite{Goldstein2001} \\
-
-
+En la figura \ref{fig:pot} tambi\'{e}n debe considerarse que la escala de las distancias est\'{a} entre 0.1 y 10nm, pero que al acercarnos a distancias menores la aproximaci\'{o}n arm\'{o}nica falla, presentando m\'{u}ltiples m\'{i}nimos relativos, \cite{Elber1987}.\\
 \begin{figure}
 \centering%
 \input{Kap2/Potencial.tex}%
@@ -99,7 +96,12 @@ En este tipo de casos como la energ\'{i}a se minimiza, se dice que hay un equili
 \put(-405,345){\vector(0,1){130}}
 \put(-280,410){$T$}
 \put(-300,375){\vector(0,1){100}}
-\caption{Potencial en funci\'{o}n de la posici\'{o}n y energ\'{i}a total $E$} \label{fig:pot}
+\put(0,800){$E$}
+\put(700,10){$q$}
+\put(-830,8){\textbf{a)}}
+\put(12,8){\textbf{b)}}
+\includegraphics[trim = -1cm -3cm 0cm 0cm , clip, width=6cm,height=7cm]{Kap2/mult_min.png}%
+\caption{Potencial en funci\'{o}n de la posici\'{o}n, a) mostrando la energ\'{i}a total $E$ y los cambios en la energ\'{i}a cin\'{e}tica y b) mostrando el modelo de m\'{u}ltiples m\'{i}nimos. } \label{fig:pot}
 \end{figure}
 
 Considerando la condici\'{o}n de equilibrio \eqref{eq:2} y despreciando desplazamientos de orden superior se tiene que:
@@ -136,43 +138,14 @@ M_{jk}&=&\sum_{i=1}^{N} m_{i} \delta_{ij}\delta_{ik}\nonumber \\
 M_{jk}&=&m_{j} \delta_{jk}
 \end{eqnarray}
 La equaci\'{o}n \eqref{eq:9} dice que la matriz $\mathbf{M}$ es una matriz diagonal cuyas componentes son las masas del sistema.\\
-En tres dimensiones, como es nuestro caso real, la transformaci\'{o}n depender\'{a} del modelo escogido. Exceptuando el modelo de redes gaussianas (Gaussian Network Model que por sus siglas en ingl\'{e}s es GNM) la transformaci\'{o}n de coordenadas va de $\mathbf{r}_{i}$ posiciones con $i=1,2,...,N$ ($3N$ coordenadas) a $q_j$ coordenadas $j=1,2,..,3N$:
-\begin{equation*}
-\mathbf{r}_{i}\longrightarrow q_{j}
-\end{equation*}
-Con
-\begin{equation*}
-i=1,2,...,N\mbox{  }j=1,2,..,3N
-\end{equation*}
-Por cada componente en cartesianas:
-\begin{eqnarray}\label{eq:10}
-\begin{array}{cccccc}
-q_1=x_1-x_{10}&q_4=x_2-x_{20}&\cdots &q_{3i-2}=x_i-x_{i0}&\cdots &q_{3N-2}=x_N-x_{N0} \\
-q_2=y_1-y_{10}&q_5=y_2-y_{20}&\cdots &q_{3i-1}=y_i-y_{i0}&\cdots &q_{3N-1}=y_N-y_{N0}\\
-q_3=z_1-z_{10}&q_6=z_2-z_{20}&\cdots &q_{3i}=z_i-z_{i0}&\cdots &q_{3N}=z_N-z_{N0}\\
-\end{array}
-\end{eqnarray}
-Para esta transformaci\'{o}n, \eqref{eq:7} se convierte en:
-\begin{eqnarray}\label{eq:11}
-M_{jk}&=&\sum_{i=1}^{N} m_{i}\left( \delta_{i,3j-2}\delta_{jk}+\delta_{i,3j-1}\delta_{jk}+  \delta_{i,3j}\delta_{jk}\right)\nonumber \\
-M_{jk}&=&m_{3j-2}\delta_{jk}+m_{3j-1}\delta_{jk}+m_{3j}\delta_{jk} \nonumber \\
-M_{jk}&=&\left( m_{3j-2}+m_{3j-1}+m_{3j} \right) \delta_{jk}
-\end{eqnarray}
-En \eqref{eq:11} debe resaltarse que para $j=k=3N$, el elemento de matriz $M_{3N,3N}$ requiere las masas $m_{3(3N)-2}=m_{9N-2}$, $m_{3(3N)-1}=m_{9N-1}$ y $m_{3(3N)}=m_{9N}$, sin embargo ! no hay $9N$ masas!, el n\'{u}mero de masas es el mismo n\'{u}mero de nodos: $N$, entonces, para poder calcular la matriz $\mathbf{M}$ es necesario definir lo siguiente:
-\begin{equation}\label{eq:12}
-m_{N+1},m_{N+2},...,m_{3N}=0
+
+Para el caso tridimensional, la matriz de masas del sistema es (Los detalles del c\'{a}lculo se encuentran en el anexo \ref{AnexoA}):
+\begin{equation}
+M_{jk}=\left( m_{3j-2}+m_{3j-1}+m_{3j} \right) \delta_{jk}
 \end{equation}
-Como a partir de $N+1$ las masas son nulas, la matriz de masa (que es diagonal) tiene elementos nulos si  
-\begin{eqnarray*}
-3j-2=N+1\\
-j=\frac{N+3}{3} \\
-\end{eqnarray*}
-Como no siempre $N$ es m\'{u}ltiplo de 3, se escoge el entero menor que este m\'{a}s cerca al valor:
-\begin{equation}\label{eq:13}
-j=\left \lfloor\frac{N+3}{3}\right \rfloor
-\end{equation}
+
 \paragraph{Ecuaci\'{o}n de Movimiento}
-El sistema satisface la ecuaci\'{o}n de un oscilador arm\'{o}nico, lo cual se muestra para las peque\~{n}as oscilaciones en \cite[Chapter~6]{Goldstein2001} o puede ser revisado en el anexo \ref{AnexoA}:
+El sistema satisface la ecuaci\'{o}n de un oscilador arm\'{o}nico, lo cual se muestra para las peque\~{n}as oscilaciones en \cite[Chapter~6]{Goldstein2001}:
 \begin{equation}\label{eq:14}
 \mathbf{M}\ddot{\mathbf{q}}+\mathbf{U}\mathbf{q}=\mathbf{0}
 \end{equation}
@@ -185,7 +158,7 @@ Reemplazando dichas transformaciones en la ecuaci\'{o}n de movimiento se obtiene
 \begin{equation}\label{eq:16}
 \ddot{\mathbf{r}}+\mathbf{K}\mathbf{r}=\mathbf{0}
 \end{equation}
-El efecto que tienen las coordenadas de masa ponderada sobre la energias cin\'{e}tica  es el de desaparecer la dependencia con la matriz de masas del sistema, que como se vi\'{o} puede resultar en una expresi\'{o}n tediosa. Las energias cin\'{e}tica y potencial en las nuevas coordenadas son:
+El efecto que tienen las coordenadas de masa ponderada sobre la energ\'{i}a cin\'{e}tica  es el de desaparecer la dependencia con la matriz de masas del sistema, que como se vi\'{o} puede resultar en una expresi\'{o}n tediosa. Las energias cin\'{e}tica y potencial en las nuevas coordenadas son:
 \begin{eqnarray}\label{eq:19}
 T&=&\frac{1}{2}\mathbf{q}^t\mathbf{M}\mathbf{q} \nonumber \\
 T&=&\frac{1}{2}\mathbf{\dot{r}}^t\mathbf{M^{-1/2}}^t\mathbf{M}\mathbf{M^{1/2}}\mathbf{\dot{r}}\nonumber \\
@@ -203,11 +176,13 @@ Una soluci\'{o}n (de prueba) a la ecuaci\'{o}n de movimiento es la oscilatoria, 
 El vector $\mathbf{a}$ es denominado vector de amplitudes debido a que cada una de sus componentes corresponde a las amplitudes de cada mon\'{o}mero. Sus valores son fijos en el tiempo.\\
 
 Al reemplazar la soluci\'{o}n de prueba en la ecuaci\'{o}n \eqref{eq:16} se convierte en un problema de autovalores y autovectores:
+
 \begin{eqnarray}\label{eq:18}
 \ddot{\mathbf{r}}&=&-\mathbf{K}\mathbf{r} \nonumber \\
 \omega^2\mathbf{a}&=&\mathbf{K}\mathbf{a} \nonumber \\
 \lambda_{k}\mathbf{a_{k}}&=&\mathbf{K}\mathbf{a_{k}}
 \end{eqnarray}
+
 En \eqref{eq:18} se ha definido $\lambda=\omega^2$ y posteriormente se ha agregado el sub\'{i}ndice $k$ para distinguir cada uno de los autovalores y autovectores que se encuentren en el problema \eqref{eq:18}.\\
 Cuando cada uno de los mon\'{o}meros tiene la misma frecuencia, a cada frecuencia le corresponde un vector de amplitudes $\mathbf{a}$, cada uno de estos posibles vectores se les conoce como un \textit{modo normal de oscilaci\'{o}n}.\\
 
@@ -216,9 +191,23 @@ Ha de notarse que la soluci\'{o}n total no est\'{a} compuesta por un \'{u}nico m
 \mathbf{r}=\sum_k\mathbf{a}_ke^{i\omega_k t}
 \end{equation}
 
-Cuando se tiene esta soluci\'{o}n y se desean conocer los modos normales, pueden aplicarse dos m\'{e}todos: El de la transformada de Fourier y la transformaci\'{o}n a las coordenadas normales; las coordenadas normales son un espacio en el cual se separan los movimientos compuestos.
+Cuando se tiene esta soluci\'{o}n y se desean conocer los modos normales, pueden aplicarse dos m\'{e}todos: El de la transformada de Fourier para conocer las frecuencias y la transformaci\'{o}n a las coordenadas normales; las coordenadas normales son un espacio en el cual se separan los movimientos compuestos.\\
+
+Las coordenadas normales $\mathbf{\zeta}$ se definen como:
+\begin{equation}
+\mathbf{r}=\mathbf{T}\mathbf{\zeta}
+\end{equation}
+Donde $\mathbf{T}$ es una transformaci\'{o}n ortogonal  $\mathbf{T}\mathbf{T}^T=\mathbf{I}$ formada por los modos normales $\mathbf{a}_k$  pero modificados para que se cumpla la ortonormalidad. Cada componente de $\mathbf{\zeta}$ es:
+\begin{equation}
+\zeta_k=C_k e^{i\omega_k t}
+\end{equation}
+Es decir, las coordenadas normales $\zeta_k$ representan a un \'{u}nico modo normal de oscilaci\'{o}n, una \'{u}nica frecuencia. Mientras que las columnas de $\mathbf{T}$ proporcionan las direcciones en las que se da cada modo normal.\\
+
+
 \subsubsection{Ensamble Estad\'{i}stico}
-Cuando el sistema (biomol\'{e}cula) se encuentre a temperaturas fisiol\'{o}gicas, el sistema  s\'{o}lo intercambiar\'{a} calor con los alrededores (ba\~{n}o t\'{e}rmico). Sin embargo, se ha demostrado  que a esta temperatura, la aproximaci\'{o}n arm\'{o}nica falla , presentando m\'{u}ltiples m\'{i}nimos y no uno solo \cite{Hayward2008}, \cite{Elber1987}; por otro lado, a temperatura fisiol\'{o}gica el ensamble es cl\'{a}sico \cite{Sethna2006}. Como \'{u}nicamente hay intercambio de energ\'{i}a y se trabaja a temperatura fisiol\'{o}gica, la estad\'{i}stica apropidada es la del ensamble can\'{o}nico. En el ensamble  can\'{o}nico se sigue la distribuci\'{o}n de probabilidad de Boltzmann:
+Cuando el sistema (biomol\'{e}cula) se encuentre a temperaturas fisiol\'{o}gicas, s\'{o}lo intercambiar\'{a} calor con los alrededores (ba\~{n}o t\'{e}rmico). Sin embargo, se ha demostrado  que a esta temperatura, la aproximaci\'{o}n arm\'{o}nica falla , \cite{Hayward2008}; por otro lado, a temperatura fisiol\'{o}gica el ensamble es cl\'{a}sico dependiendo del rango de frecuencias a analizar\cite{Sethna2006}, \cite{}. \\
+
+Como \'{u}nicamente hay intercambio de energ\'{i}a y se trabaja a temperatura fisiol\'{o}gica, la estad\'{i}stica apropidada es la del ensamble can\'{o}nico. En el ensamble  can\'{o}nico se sigue la distribuci\'{o}n de probabilidad de Boltzmann:
 \begin{equation}\label{eq:21}
 p=\frac{\exp(-E_s/k_BT)}{Z}
 \end{equation}

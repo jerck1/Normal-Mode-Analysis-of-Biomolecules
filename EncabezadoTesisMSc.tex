@@ -86,3 +86,18 @@ Raum-gesch-win-dig-keit Durch-fluss Stick-stoff-gemisch
 Ad-sorp-tions-tem-pe-ra-tur Klein-schmidt
 Kohlen-stoff-Mole-kular-siebe Py-rolysat-aus-beu-te
 Trans-port-vor-gan-ge}
+
+%%%%%%%%%%%%%%%
+%Para hacer cajas coloreadas en latex (por John Cabrera)
+\usepackage{tcolorbox}% http://ctan.org/pkg/tcolorbox
+\definecolor{mycolor}{rgb}{0.122, 0.435, 0.698}% Rule colour
+\makeatletter
+\newcommand{\mybox}[1]{%
+  \setbox0=\hbox{#1}%
+  \setlength{\@tempdima}{\dimexpr\wd0+13pt}%
+  \begin{tcolorbox}[colframe=mycolor,boxrule=0.5pt,arc=4pt,
+      left=6pt,right=6pt,top=6pt,bottom=6pt,boxsep=0pt,width=\@tempdima]
+    #1
+  \end{tcolorbox}
+}
+\makeatother
