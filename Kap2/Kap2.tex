@@ -219,9 +219,9 @@ Cuando el sistema (biomol\'{e}cula) se encuentre a temperaturas fisiol\'{o}gicas
 \begin{figure}
 \centering%
 \includegraphics[scale=0.3]{Kap2/modos_vs_f.png}%
-\put(-80,50){N\'{u}mero de modos}
+\put(-65,5){\rotatebox{90}{N\'{u}mero de modos}}
 \put(-45,-5){Frecuencia ($p\mathrm{s}^{-1}$)}
-\caption{Desplazamientos de los nodos $i-j$ de su posici\'{o}n de equilibrio. Tomado de \cite{Cui2006}.} \label{fig:estad}
+\caption{N\'{u}mero de modos normales en funci\'{o}n de la frecuencia para tres prote\'{i}nas diferentes.$k_BT/h$ es la frecuencia correspondiente a la m\'{a}s baja energ\'{i}a promedio a temperatura $T$. Tomado de \cite{Cui2006}.} \label{fig:estad}
 \end{figure}
 Como \'{u}nicamente hay intercambio de energ\'{i}a y se trabaja a temperatura fisiol\'{o}gica, la estad\'{i}stica apropidada es la del ensamble can\'{o}nico. En el ensamble  can\'{o}nico se sigue la distribuci\'{o}n de probabilidad de Boltzmann:
 \begin{equation}\label{eq:21}
@@ -337,11 +337,12 @@ En \eqref{eq:39}, $H_{ij,xx}$ es el primer elemento de la submatriz $\mathbf{H}_
 \begin{eqnarray}\label{eq:40}
 \mathbf{H}_{ii}=\sum_{j\neq i}\mathbf{H}_{ij}
 \end{eqnarray}
-Una vez obtenida la matriz Hessiana, es necesario calcular sus autovalores y autovactores, de la misma forma que en NMA, ya que esto describe los movimientos de la biomol\'{e}cula. La diagonalizaci\'{o}n de $\mathcal{H}$ lleva a lo sumo $3N-6$ modos normales no nulos, como se demuestra en \cite{Tirion1996}. Los 6 modos normales restantes, corresponden a las rotaciones y traslaciones de un cuerpo r\'{i}gido; se puede escoger un sistema fijo en la molecula y que rote con ella.\\
+Una vez obtenida la matriz Hessiana, es necesario calcular sus autovalores y autovactores de la misma forma que en NMA, ya que esto describe los movimientos de la biomol\'{e}cula. La diagonalizaci\'{o}n de $\mathcal{H}$ lleva a lo sumo $3N-6$ modos normales no nulos, como se demuestra en \cite{Tirion1996}. Los 6 modos normales restantes, corresponden a las rotaciones y traslaciones de un cuerpo r\'{i}gido; se puede escoger un sistema fijo en la molecula y que rote con ella.\\
 
 El t\'{e}rmino de la distancia de corte $R_c$ puede ser incluido en las constantes el\'{a}sticas, es decir, $\gamma_{ij}=0$ si  $R_{ij}>R_c$ sino $\gamma_{ij}\neq 0$. Adicional a esto, las constantes el\'{a}sticas pueden ser iguales (isotr\'{o}picas): $\gamma_{ij}=\gamma$ si  $R_{ij}<R_c$ de lo contrario  $\gamma_{ij}=0$.
 \subsubsection{Modelo de Redes Gaussianas (GNM)}
-El modelo se denomina gaussiano debido a que las desviaciones del equilibrio o fluctuaciones con respecto al equlibrio son gaussianas e isotr\'{o}picas \cite{Rader2006}. Se requieren dos par\'{a}metros para describir el modelo: Una misma constante el\'{a}stica $\gamma$ para todas las unidades de la biomol\'{e}cula y una distancia de corte a partir de la cual no se ejerce el potencial.\\
+El modelo se denomina gaussiano debido a que las desviaciones del equilibrio o fluctuaciones isotr\'{o}picas y siguen una distribuci\'{o}n gaussiana \cite{Rader2006}. Se requieren dos par\'{a}metros para describir el modelo: Una misma constante el\'{a}stica $\gamma$ para todas las unidades de la biomol\'{e}cula y una distancia de corte a partir de la cual no se ejerce el potencial.\\
+
 Contrario al ANM, en el modelo de redes gaussianas se consideran las desviaciones del equilibrio como desplazamientos:
 \begin{equation}\label{eq:27}
 V_{GNM}=\frac{\gamma}{2}\sum_{i,j=1}^{N}\Gamma_{ij}\left(\textbf{R}_{ij}-\textbf{R}_{ij}^0\right)^2
@@ -365,6 +366,20 @@ N\'{o}tese que los t\'{e}rminos cuadr\'{a}ticos por cada componente pueden expan
 \sum_{i\neq j=1}^{N}\Gamma_{ij}\left(\Delta x_{ij}\right)^2&=&\sum_{i\neq j=1}^{N}\Gamma_{ij}\left(\Delta x_{i}^2+\Delta x_{j}^2-2\Delta x_{i}\Delta x_{j}\right) \nonumber \\
 &=&2\sum_{i\neq j=1}^{N}\Gamma_{ij}\Delta x_{i}^2-2\sum_{i\neq j=1}^{N}\Delta x_{i}\Gamma_{ij}\Delta x_{j}
 \end{eqnarray}
+
+La idea es que los t\'{e}rminos de \eqref{eq:36} y \eqref{eq:35} coincidan. Escribiendo expl\'{i}citamente el t\'{e}rmino de la componente x en \eqref{eq:35}:
+\begin{eqnarray}\label{eq:37}
+editar
+\end{eqnarray}
+De anterior se concluye que la matriz de de Kirchhoff $\mathbf{\Gamma}$ es:
+\begin{equation}\label{eq:38}
+\Gamma_{ij}=\left\{\begin{array}{ccc}
+-1 &\mbox{si }i\neq j&\mbox{	y	}R_{ij}\leq r_c \\
+0&\mbox{si }i\neq j&\mbox{	y	}R_{ij}\geq r_c \\
+-\sum_{j,j\neq i}\Gamma_{ij}&\mbox{si	}i=j&.\\
+            \end{array}
+\right.
+\end{equation}
 
 Existe un servidor web basado en GNM que permite ver los movimientos globales de una prote\'{i}na o de un \'{a}cido nucleico y permite obtener informaci\'{o}n como los autovalores, los factores-B, las correlaciones entre otras.\footnote{ Recurso disponible en \url{http://web.archive.org/web/20070615210550/http://ignm.ccbb.pitt.edu/GNM_Online_Calculation.htm}}
 
@@ -414,6 +429,7 @@ La ecuaci\'{o}n de movimiento es:
 \section{Clasificaci\'{o}n Modelos Te\'{o}ricos}
 \begin{figure}
 \centering%
+%\input{Kap2/mapa.png}
 \includegraphics[scale=0.4]{Kap2/mapa.png}%
-\caption{Mapa conceptual en el que se dividen los movimientos locales de los movimientos globales y mostrando cada tipo de movimiento global utilizado} \label{fig:movs}
+\caption{Mapa conceptual en el que se dividen los movimientos locales de los movimientos globales, mostrando los tipos de movimientos globales utilizados} \label{fig:movs}
 \end{figure}
