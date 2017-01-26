@@ -341,7 +341,7 @@ Una vez obtenida la matriz Hessiana, es necesario calcular sus autovalores y aut
 
 El t\'{e}rmino de la distancia de corte $R_c$ puede ser incluido en las constantes el\'{a}sticas, es decir, $\gamma_{ij}=0$ si  $R_{ij}>R_c$ sino $\gamma_{ij}\neq 0$. Adicional a esto, las constantes el\'{a}sticas pueden ser iguales (isotr\'{o}picas): $\gamma_{ij}=\gamma$ si  $R_{ij}<R_c$ de lo contrario  $\gamma_{ij}=0$.
 \subsubsection{Modelo de Redes Gaussianas (GNM)}
-El modelo se denomina gaussiano debido a que las desviaciones del equilibrio o fluctuaciones isotr\'{o}picas y siguen una distribuci\'{o}n gaussiana \cite{Rader2006}. Se requieren dos par\'{a}metros para describir el modelo: Una misma constante el\'{a}stica $\gamma$ para todas las unidades de la biomol\'{e}cula y una distancia de corte a partir de la cual no se ejerce el potencial.\\
+El modelo se denomina gaussiano debido a que las desviaciones del equilibrio o fluctuaciones son isotr\'{o}picas y siguen una distribuci\'{o}n gaussiana \cite{Rader2006}. Se requieren dos par\'{a}metros para describir el modelo: Una misma constante el\'{a}stica $\gamma$ para todas las unidades de la biomol\'{e}cula y una distancia de corte a partir de la cual no se ejerce el potencial.\\
 
 Contrario al ANM, en el modelo de redes gaussianas se consideran las desviaciones del equilibrio como desplazamientos:
 \begin{equation}\label{eq:27}
@@ -359,6 +359,8 @@ Escribiendo \eqref{eq:34} en forma matricial se tiene:
 \begin{equation}\label{eq:35}
 V_{GNM}=\frac{\gamma}{2}\left(\Delta\mathbf{X}^T\mathbf{\Gamma}\Delta\mathbf{X}+\Delta\mathbf{Y}^T\mathbf{\Gamma}\Delta\mathbf{Y}+\Delta\mathbf{Z}^T\mathbf{\Gamma}\Delta\mathbf{Z} \right)
 \end{equation}
+Con $\Delta\mathbf{X}^T$ un vector $N$ dimensional con componentes:$\Delta\mathbf{X}^T=\left(\Delta x_1,...,\Delta x_N\right)$ y $\mathbf{\Gamma}$ la matriz de Kirchhoff que se discutir\'{a} en o que sigue con el fin de entender la expresi\'{o}n \eqref{eq:35}.\\
+
 Para garantizar que $\Gamma_{ij}$ sea adimensional, se escogen (no de forma \'{u}nica) los elementos fuera de la diagonal de acuerdo al procedimiento descrito a continuaci\'{o}n.\\
 
 N\'{o}tese que los t\'{e}rminos cuadr\'{a}ticos por cada componente pueden expandirse:
@@ -371,7 +373,7 @@ La idea es que los t\'{e}rminos de \eqref{eq:36} y \eqref{eq:35} coincidan. Escr
 \begin{eqnarray}\label{eq:37}
 editar
 \end{eqnarray}
-De anterior se concluye que la matriz de de Kirchhoff $\mathbf{\Gamma}$ es:
+De lo anterior se concluye que la matriz de de Kirchhoff $\mathbf{\Gamma}$ es:
 \begin{equation}\label{eq:38}
 \Gamma_{ij}=\left\{\begin{array}{ccc}
 -1 &\mbox{si }i\neq j&\mbox{	y	}R_{ij}\leq r_c \\
@@ -381,6 +383,50 @@ De anterior se concluye que la matriz de de Kirchhoff $\mathbf{\Gamma}$ es:
 \right.
 \end{equation}
 
+\paragraph{Fluctuaciones, Correlaciones}.\\
+El objetivo primario es calcular las fluctuaciones cuadr\'{a}ticas medias (ms por sus siglas en ingl\'{e}s) para un residuo y las correlaciones entre residuos. Las fluctuaciones ms proporcionan los movimientos de la biomol\'{e}cula y las correlaciones establecen la dependencia entre distintas partes de la biomol\'{e}cula, es decir, los movimientos colectivos.\\
+
+Las fluctuciones ms para el residuo $i$ se calculan como:
+\begin{equation}\label{eq:39}
+\langle\Delta \mathbf{R_i}\cdot\Delta\mathbf{R_i}\rangle=\langle\Delta{X_i}^2\rangle+\langle\Delta {Y_i}^2\rangle +\langle\Delta {Z_i}^2\rangle 
+\end{equation}
+
+Y las correlaciones entre el residuo $i$ y el $j$ son:
+\begin{equation}\label{eq:40}
+\langle\Delta \mathbf{R_i}\cdot\Delta\mathbf{R_j}\rangle=\langle\Delta X_i\Delta X_j\rangle+\langle\Delta Y_i\Delta Y_j\rangle +\langle\Delta Z_i\Delta Z_j\rangle 
+\end{equation}
+Los promedios calculados en \eqref{eq:39} y en \eqref{eq:40} son calculados con respecto al espacio de coordenadas.\\
+
+De manera similar al resultado \label{eq:25}, donde la matriz $\mathbf{K}$ es cambiada por la matriz $\gamma\mathbf{\Gamma}$ y $n=3N$ se llega a la funci\'{o}n de partici\'{o}n gaussiana:
+\begin{equation}\label{eq:41}
+Z_{GNM}=\left(2\pi\right)^{3N/2}\left| \frac{k_BT}{\gamma}\Gamma^{-1}\right|^{1/2}
+\end{equation}
+
+En \cite{Rader2006} se encuentra que estas medidas est\'{a}n relacionadas con la inversa de la matriz de Kirchhoff:\\
+\begin{equation}\label{eq:42}
+\langle \Delta \mathbf{R_i}^2 \rangle=\frac{3 k_BT}{\gamma}\left(\mathbf{\Gamma}^{-1}\right)_{ii}
+\end{equation}
+\begin{equation}\label{eq:43}
+\langle \Delta \mathbf{R_i}\cdot\Delta \mathbf{R_j} \rangle=\frac{3 k_BT}{\gamma}\left(\mathbf{\Gamma}^{-1}\right)_{ij}\\
+\end{equation}
+\paragraph{Factor-B}.\\
+El factor-B, factor de Debye-Waller o factor de temperatura es un factor que est\'{a} directamente relacionado con las amplitudes de los haces dispersados cuando se hace difracci\'{o}n de rayos-x y por lo tanto describe la atenuaci\'{o}n de la dispersi\'{o}n.\\
+
+Para un modelo de arm\'{o}nico isotr\'{o}pico, donde cada constituyente fluct\'{u}a de su posici\'{o}n de equilibrio como: $\mathbf{\Delta R_{i}}=R_i-R_i^0$, se encuentra que la intensidad de onda dispersada es:
+\begin{equation}\label{eq:44}
+I=I_0\exp\left(-\frac{1}{3}\langle\mathbf{\Delta R_{i}}\rangle^2 \mathbf{q}^2\right)
+\end{equation}
+Con $\mathbf{q}$ el vector de la red rec\'{i}proca, $I_0$ la intensidad dispersada para la estrucutura r\'{i}gida\\
+El factor-B se define como el t\'{e}rmino dentro de la exponencial en \eqref{eq:44}. Como est\'{a} directamente relacionado con la fluctuaci\'{o}n ms, entonces da una medida de la rigidez o de la flexibilidad de la biomol\'{e}cula, adem\'{a}s tiene unidades de $\AA^2$.\\
+
+Como en la dispersi\'{o}n de Bragg, el vector de onda de la red rec\'{i}proca es $4\pi\sin\theta/\lambda$, entonces:
+\begin{equation}\label{eq:44}
+B=\frac{8\pi}{3}\langle\mathbf{\Delta R_{i}}\rangle^2
+\end{equation}
+Para el caso GNM, de acuerdo a \eqref{eq:42} el factor de estructura se convierte en:
+\begin{equation}\label{eq:45}
+B=\frac{8\pi^2 k_BT}{\gamma}\left(\mathbf{\Gamma}^{-1}\right)_{ii}
+\end{equation}
 Existe un servidor web basado en GNM que permite ver los movimientos globales de una prote\'{i}na o de un \'{a}cido nucleico y permite obtener informaci\'{o}n como los autovalores, los factores-B, las correlaciones entre otras.\footnote{ Recurso disponible en \url{http://web.archive.org/web/20070615210550/http://ignm.ccbb.pitt.edu/GNM_Online_Calculation.htm}}
 
 \subsection{An\'{a}lisis por Componentes Principales (PCA)}
