@@ -68,7 +68,7 @@ El modelo es bueno cuando la estabilidad de los enlaces con respecto a su posici
 
 \begin{figure}
 \centering%
-\includegraphics[scale=0.28]{Kap2/dibujo.pdf}%
+\includegraphics[scale=0.28]{Kap3/dibujo.pdf}%
 \caption{ (a) Vista exterior de un c\'{a}pside v\'{i}rico HK97 coloreado por cada cadena, todas las prote\'{i}nas son id\'{e}nticas. (b) Vista del arreglo prote\'{i}nico en una cara del c\'{a}pside. (c) Vista de la estructura secundaria de las prote\'{i}nas (d) Esquema de cada prote\'{i}na mostrando cada uno de sus \'{a}tomos, las aristas de cada cara son carbonos $\alpha$ unidos por lados (ligaduras el\'{a}sticas). Tomado de \cite{Lezon2009}.} \label{fig:pan}
 \end{figure}
 
@@ -77,7 +77,7 @@ La primera vez que se usaron los ENM en la investigaci\'{o}n de prote\'{i}nas fu
 Existen dos tipos de ENM: Modelos de redes anisotr\'{o}picas (ANM por sus siglas en ingl\'{e}s) y Modelos de Redes Gaussianas (GNM por sus siglas en ingl\'{e}s) los cuales se diferencian en el modelo de potencial usado.  El modelo de redes anisotr\'{o}picas inicialmente no usa el mismo potencial que el an\'{a}lisis de modos normales est\'{a}ndar sino que usa el potencial presente entre resortes tridimensionales, en la figura \cite{fig:ANM} se muestra que el potencial entre los resortes depende de la diferencia de distancias.\\
 \begin{figure}
 \centering
-\input{Kap2/resorte2.pdf_tex}%
+\input{Kap3/resorte2.pdf_tex}%
 \caption{Modelo representativo de las elongaciones de un resorte para ANM} \label{fig:ANM}
 \end{figure}
 \subsubsection{Modelos de Bloques r\'{i}gidos (BNM)}
@@ -103,7 +103,7 @@ En este tipo de casos como la energ\'{i}a se minimiza, se dice que hay un equili
 En la figura \ref{fig:pot} tambi\'{e}n debe considerarse que la escala de las distancias est\'{a} entre 0.1 y 10nm, pero que al acercarnos a distancias menores la aproximaci\'{o}n arm\'{o}nica falla, presentando m\'{u}ltiples m\'{i}nimos relativos, \cite{Elber1987}.\\
 \begin{figure}
 \centering%
-\input{Kap2/Potencial.tex}%
+\input{Kap3/Potencial.tex}%
 \put(-830,330){$E$}
 \put(-950,480){$E+\Delta E$}
 \put(-400,390){$T$}
@@ -114,7 +114,7 @@ En la figura \ref{fig:pot} tambi\'{e}n debe considerarse que la escala de las di
 \put(700,10){$q$}
 \put(-830,8){\textbf{a)}}
 \put(12,8){\textbf{b)}}
-\includegraphics[trim = -1cm -3cm 0cm 0cm , clip, width=6cm,height=7cm]{Kap2/mult_min.png}%
+\includegraphics[trim = -1cm -3cm 0cm 0cm , clip, width=6cm,height=7cm]{Kap3/mult_min.png}%
 \caption{Potencial en funci\'{o}n de la posici\'{o}n, a) mostrando la energ\'{i}a total $E$ y los cambios en la energ\'{i}a cin\'{e}tica y b) mostrando el modelo de m\'{u}ltiples m\'{i}nimos. } \label{fig:pot}
 \end{figure}
 
@@ -222,7 +222,7 @@ Es decir, las coordenadas normales $\zeta_k$ representan a un \'{u}nico modo nor
 Cuando el sistema (biomol\'{e}cula) se encuentre a temperaturas fisiol\'{o}gicas, s\'{o}lo intercambiar\'{a} calor con los alrededores (ba\~{n}o t\'{e}rmico). Sin embargo, se ha demostrado  que a esta temperatura, la aproximaci\'{o}n arm\'{o}nica falla , \cite{Hayward2008}; por otro lado, a temperatura fisiol\'{o}gica el ensamble es cl\'{a}sico dependiendo del rango de frecuencias a analizar\cite{Sethna2006}, \cite{Cui2006}. En la figura \ref{fig:estad}, se observa el n\'{u}mero de nodos en funci\'{o}n de la frecuencia para diferentes prote\'{i}nas, para frecuencias menores que la frecuencia de vibraci\'{o}n del oscilador arm\'{o}nico a temperatura ambiente, se puede trabajar con la mec\'{a}nica cl\'{a}sica.\\
 \begin{figure}
 \centering%
-\includegraphics[scale=0.3]{Kap2/modos_vs_f.png}%
+\includegraphics[scale=0.3]{Kap3/modos_vs_f.png}%
 \put(-65,5){\rotatebox{90}{N\'{u}mero de modos}}
 \put(-45,-5){Frecuencia ($p\mathrm{s}^{-1}$)}
 \caption{N\'{u}mero de modos normales en funci\'{o}n de la frecuencia para tres prote\'{i}nas diferentes.$k_BT/h$ es la frecuencia correspondiente a la m\'{a}s baja energ\'{i}a promedio a temperatura $T$. Tomado de \cite{Cui2006}.} \label{fig:estad}
@@ -290,7 +290,7 @@ V_{ANM}=
 \end{eqnarray*}
 \begin{figure}
 \centering%
-\includegraphics[scale=0.3]{Kap2/resorte.png}%
+\includegraphics[scale=0.3]{Kap3/resorte.png}%
 \caption{Desplazamientos de los nodos $i-j$ de su posici\'{o}n de equilibrio. Tomado de \cite{Rader2006}.} \label{fig:res}
 \end{figure}
 Existe un servidor web \cite{Eyal2015} basado en ANM que permite ver los movimientos globales de una prote\'{i}na o de un \'{a}cido nucleico y permite obtener informaci\'{o}n como los autovalores, los factores-B, las correlaciones entre otras.\footnote{ Recurso disponible en \url{http://anm.csb.pitt.edu/cgi-bin/anm2/anm2.cgi}}
@@ -479,7 +479,7 @@ La ecuaci\'{o}n de movimiento es:
 \section{Clasificaci\'{o}n Modelos Te\'{o}ricos}
 \begin{figure}
 \centering%
-%\input{Kap2/mapa.png}
-\includegraphics[scale=0.4]{Kap2/mapa.png}%
+%\input{Kap3/mapa.png}
+\includegraphics[scale=0.4]{Kap3/mapa.png}%
 \caption{Mapa conceptual en el que se dividen los movimientos locales de los movimientos globales, mostrando los tipos de movimientos globales utilizados} \label{fig:movs}
 \end{figure}
