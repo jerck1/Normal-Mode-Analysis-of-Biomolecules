@@ -31,17 +31,18 @@ A continuaci\'{o}n se muestran los 20 amino\'{a}cidos proteinog\'{e}nicos  comun
 
 Exceptuando la glicina, todos los amino\'{a}cidos presentan la propiedad de la quiralidad, existiendo dos posibles formas posibles para cada amino\'{a}cido: L-amino\'{a}cidos o D-amino\'{a}cidos. La distinci\'{o}n va seg\'{u}n la direcci\'{o}n en la que desv\'{i}en la luz con respecto al centro quiral que es el C-$\alpha$ del amino\'{a}cido.  Pr\'{a}cticamente todos los amino\'{a}cidos encontrados en prote\'{i}nas tienen la forma L.
 \section{Formaci\'{o}n de P\'{e}ptidos y Prote\'{i}nas}
-Dos amino\'{a}cidos reaccionan formando un enlace llamado pept\'{i}dico, esto ocurre cuando el carbono del grupo carboxilo se enlaza covalentemente con el nitr\'{o}geno del grupo amino, produciendo una deshidrataci\'{o}n, es decir, liberando agua. En la figura \ref{fig:pepti} se muestran los reactantes y los productos de la reacci\'{o}n.
+Dos amino\'{a}cidos reaccionan formando un enlace llamado pept\'{i}dico, esto ocurre cuando el carbono del grupo carboxilo en el primer amino\'{a}cido se enlaza covalentemente con el nitr\'{o}geno del grupo amino en el segundo amino\'{a}cido, produciendo una deshidrataci\'{o}n, es decir, liberando agua. En la figura \ref{fig:pepti} se muestran los reactantes y los productos de la reacci\'{o}n.
 \begin{figure}[H]
 \centering
-\definesubmol\a{C^{\alpha}(-[:270]H)(-[:0]C(=[:270]O)(-[:0]OH))(-[:180]NH_{2})(-[:90]R^{1})}
-\definesubmol\b{C^{\alpha}(-[:270]H)(-[:0]C(=[:270]O)(-[:0]OH))(-[:180]N(-[:90]H)(-[:180]H))(-[:90]R^{2})}
+\definesubmol\a{C^{\alpha}(-[:270]H)(-[:0]C(=[:270]O)(-[:0]|{\color{blue}OH}))(-[:180]NH_{2})(-[:90]R^{1})}
+\definesubmol\b{C^{\alpha}(-[:270]H)(-[:0]COOH)(-[:180]N(-[:90]H)(-[:180]|{\color{blue}H}))(-[:90]R^{2})}
 \definesubmol\c{C^{\alpha}(-[:90]R^{1})(-[:270]H)(-[:0]C(=[:270]O)(-[:0]N(-[:90]H)(-[:0]C^{\alpha}(-[:90]R^{2})(-[:270]H)(-[:0]COOH))))(-[:180]NH_{2})}
 \schemestart
-\chemfig[][scale=0.75]{!\a}\+\chemfig[][scale=0.75]{!\b}\schemestop
-\schemestart\arrow{-U>[\chemfig[scale=0.75]{H_{2}O}][][-1pt]}[180] \schemestop
-\chemfig[][scale=0.75]{!\c}
-\caption{Formaci\'{o}n de un dip\'{e}ptido. Se muestran los reactantes sin ionizar para ejemplificar, en sus formas polii\'{o}nicas  se obtienen los mismos productos}\label{fig:pepti}
+\chemfig[][scale=0.65]{!\a}\+\chemfig[][scale=0.75]{!\b}
+\arrow{<=>[][\chemfig[scale=0.4]{H_{2}O}]}[0,0.8]
+\chemfig[][scale=0.65]{!\c}
+\schemestop
+\caption{Formaci\'{o}n de un dip\'{e}ptido. Se muestran los reactantes sin ionizar para ejemplificar, en sus formas polii\'{o}nicas  se ioniza el amino-terminal y el carboxi-terminal}\label{fig:pepti}
 \end{figure}
 
 \section{Prote\'{i}nas de Membrana}
