@@ -102,20 +102,24 @@ Trans-port-vor-gan-ge}
 }
 \makeatother
 %%%%%%%%%%%
-\usetikzlibrary{decorations}
-\pgfdeclaredecoration{ddbond}{initial}
-{
-\state{initial}[width=4pt]
-{
-\pgfpathlineto{\pgfpoint{4pt}{0pt}}
-\pgfpathmoveto{\pgfpoint{2pt}{2pt}}
-\pgfpathlineto{\pgfpoint{4pt}{2pt}}
-\pgfpathmoveto{\pgfpoint{4pt}{0pt}}
+\catcode‘\@=11
+\tikzset{
+ddbond/.style args={#1}{
+draw=none,
+decoration={%
+markings,
+mark=at position 0 with {
+\coordinate (CF@startdeloc) at (0,\dimexpr#1\CF@double@sep/2)
+coordinate (CF@startaxis) at (0,\dimexpr-#1\CF@double@sep/2);
+},
+mark=at position 1 with {
+\coordinate (CF@enddeloc) at (0,\dimexpr#1\CF@double@sep/2)
+coordinate (CF@endaxis) at (0,\dimexpr-#1\CF@double@sep/2);
+\draw[dash pattern=on 2pt off 1.5pt] (CF@startdeloc)--(CF@enddeloc);
+\draw (CF@startaxis)--(CF@endaxis);
 }
-\state{final}
-{
-\pgfpathlineto{\pgfpointdecoratedpathlast}
+},
+postaction={decorate}
 }
 }
-\tikzset{lddbond/.style={decorate,decoration=ddbond}}
-\tikzset{rddbond/.style={decorate,decoration={ddbond,mirror}}}
+\catcode‘\@=12

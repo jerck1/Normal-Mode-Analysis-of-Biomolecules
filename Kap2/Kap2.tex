@@ -34,16 +34,29 @@ Exceptuando la glicina, todos los amino\'{a}cidos presentan la propiedad de la q
 Dos amino\'{a}cidos reaccionan formando un enlace llamado pept\'{i}dico, esto ocurre cuando el carbono del grupo carboxilo se enlaza covalentemente con el nitr\'{o}geno del grupo amino produciendo una deshidrataci\'{o}n, es decir, liberando agua. En la figura \ref{fig:pepti} se muestran los reactantes y los productos de la reacci\'{o}n.
 \begin{figure}[H]
 \centering
-\definesubmol\a{C^{\alpha}(-[:270]H)(-[:0]C(=[:270]O)(-[:0]OH))(-[:180]NH_{2})(-[:90]R^{1})}
-\definesubmol\b{C^{\alpha}(-[:270]H)(-[:0]C(=[:270]O)(-[:0]OH))(-[:180]N(-[:90]H)(-[:180]H))(-[:90]R^{2})}
+\definesubmol\a{C^{\alpha}(-[:270]H)(-[:0]C(=[:270]O)(-[:0].\textcolor{blue}{OH}))(-[:180]NH_{2})(-[:90]R^{1})}
+\definesubmol\b{C^{\alpha}(-[:270]H)(-[:0]C(=[:270]O)(-[:0]OH))(-[:180]N(-[:90]H)(-[:180].\textcolor{blue}{H}))(-[:90]R^{2})}
 \definesubmol\c{C^{\alpha}(-[:90]R^{1})(-[:270]H)(-[:0]C(=[:270]O)(-[:0]N(-[:90]H)(-[:0]C^{\alpha}(-[:90]R^{2})(-[:270]H)(-[:0]COOH))))(-[:180]NH_{2})}
 \schemestart
 \chemfig[][scale=0.75]{!\a}\+\chemfig[][scale=0.75]{!\b}\schemestop
-\schemestart\arrow{-U>[\chemfig[scale=0.75]{H_{2}O}][][-1pt]}[180] \schemestop
+\schemestart\arrow{<=>[][\chemfig[scale=0.75]{H_{2}O}]} \schemestop
 \chemfig[][scale=0.75]{!\c}
-\caption{Formaci\'{o}n de un dip\'{e}ptido. Se muestran los reactantes sin ionizar para ejemplificar, en sus formas polii\'{o}nicas  se obtienen los mismos productos}\label{fig:pepti}
+\caption{Formaci\'{o}n de un dip\'{e}ptido. Se muestran los reactantes sin ionizar para ejemplificar, en sus formas polii\'{o}nicas  se ioniza el amino-terminal y el carboxi-terminal}\label{fig:pepti}
 \end{figure}
+El enlace pept\'{i}dico es un enlace amida de la forma \ce{R^{1}C(O)NHR^{2}}. Debido a que las amidas forman una estructura de resonancia tal como se ilustra en la figura, el enlace pept\'{i}dico forma un enlace parcial doble. Este enlace parcial doble, como los caracter\'{i}sticos de las estructuras de resonancia, es un h\'{i}brido entre el enlace simple y el enlace doble. De hecho, Linus Pauling y Robert Corey \cite{Nelson2011}, encontraron que la longitud del enlace pept\'{i}dico era de $1.32\AA{}$ la cual es mayor a la de un enlace \ce{C-N} simple ($1.49 \AA{}$) y menor a la de un enlace doble \ce{C=N} ($1.27\AA{}$). \\
 
+\begin{figure}[H]
+\centering
+\definesubmol\a{\lewis{4:,C}(=[:90]\lewis{0:4:,O})(-[:0]\lewis{0:2:,N}(-[:270]H))}
+\definesubmol\b{\lewis{4:,C}(-[:90]\lewis{0:4:,O})(=[:0]\lewis{0:2:,N}(-[:270]H))}
+\definesubmol\c{C(-[:90,,,,rddbond]O)(-[:0,,,,lddbond]N(-[:270]H))}
+\schemestart
+\chemfig[][scale=0.75]{!\a}\arrow{<->}[0,0.75]\chemfig[][scale=0.75]{!\b}\schemestop
+\schemestart\arrow{<->}[0,0.75] \schemestop
+\chemfig[][scale=0.75]{!\c}
+\caption{Posibles estructuras de Lewis de la ani\'{o}n amida \ce{[C(O)NH]^{-2}} que al mezclarlas producen el estado resonante.}\label{fig:amide}
+\end{figure}
+Adicionalmente Linus Pauling y Robert Corey encontraron que el enlace pept\'{i}dico forma una estructura planar que contiene a los 4 \'{a}tomos enlazados alrededor del \ce{C-N}.\\ 
 \section{Prote\'{i}nas de Membrana}
 
 \section{Transportadores}
