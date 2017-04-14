@@ -43,25 +43,56 @@ Dos amino\'{a}cidos reaccionan formando un enlace llamado pept\'{i}dico, esto oc
 \chemfig[][scale=0.75]{!\c}
 \caption{Formaci\'{o}n de un dip\'{e}ptido. Se muestran los reactantes sin ionizar para ejemplificar, en sus formas polii\'{o}nicas  se ioniza el amino-terminal y el carboxi-terminal}\label{fig:pepti}
 \end{figure}
-El enlace pept\'{i}dico es un enlace amida de la forma \ce{R^{1}C(O)NHR^{2}}. Debido a que las amidas forman una estructura de resonancia tal como se ilustra en la figura \ref{fig:amide}, el enlace pept\'{i}dico forma un enlace parcial doble. Este enlace parcial doble, como los caracter\'{i}sticos de las estructuras de resonancia, es un h\'{i}brido entre el enlace simple y el enlace doble. De hecho, Linus Pauling y Robert Corey \cite{Nelson2011}, encontraron que la longitud del enlace pept\'{i}dico era de $1.32\AA{}$ la cual es mayor a la de un enlace \ce{C-N} simple ($1.49 \AA{}$) y menor a la de un enlace doble covalente \ce{C=N} ($1.27\AA{}$). \\
+El enlace pept\'{i}dico es un enlace amida de la forma \ce{R^{1}C(O)NHR^{2}}. Debido a que las amidas forman una estructura de resonancia tal como se ilustra en la figura \ref{fig:amide}, el enlace pept\'{i}dico forma un enlace parcial doble. Este enlace parcial doble, como los caracter\'{i}sticos de las estructuras de resonancia, es un h\'{i}brido entre el enlace simple y el enlace doble. De hecho, Linus Pauling y Robert Corey \cite{Nelson2011}, encontraron que la longitud del enlace pept\'{i}dico era de $1.32\AA{}$ la cual es menor a la de un enlace \ce{C-N} simple ($1.49 \AA{}$) y mayor a la de un enlace doble covalente \ce{C=N} ($1.27\AA{}$). \\
 
 \begin{figure}[H]
 \centering
-\definesubmol\a{\lewis{4:,C}(=[:90]\lewis{0:4:,O})(-[:0]\lewis{0:2:,N}(-[:270]H))}
-\definesubmol\b{\lewis{4:,C}(-[:90]\lewis{0:4:,O})(=[:0]\lewis{0:2:,N}(-[:270]H))}
-\definesubmol\c{C(-[:90,,,,rddbond]O)(-[:0,,,,lddbond]N(-[:270]H))}
+\definesubmol\a{-[:0,0.5]C(=[:90]\lewis{0:4:,O})(-[:0]\lewis{2:,N}(-[:270]H)(-[:0,0.5]))}
+\definesubmol\b{-[:0,0.5]C(-[:90]\lewis{0:4:,O})(=[:0]\lewis{2:,N}(-[:270]H)(-[:0,0.5]))}
+\definesubmol\c{-[:0,0.5]C(-[:90,,,,rddbond]O)(-[:0,,,,lddbond]N(-[:270]H)(-[:0,0.5]))}
 \schemestart
 \chemfig[][scale=0.75]{!\a}\arrow{<->}[0,0.75]\chemfig[][scale=0.75]{!\b}\schemestop
 \schemestart\arrow{<->}[0,0.75] \schemestop
 \chemfig[][scale=0.75]{!\c}
 \caption{Posibles estructuras de Lewis de la ani\'{o}n amida \ce{[C(O)NH]^{-2}} que al mezclarlas producen el estado resonante.}\label{fig:amide}
 \end{figure}
-Adicionalmente Linus Pauling y Robert Corey encontraron que el enlace pept\'{i}dico forma una estructura planar que contiene a los 4 \'{a}tomos enlazados alrededor del \ce{C-N}.\\ 
-FIGURA\\
+\subsection{Estructura de las Prote\'{i}nas}
+\subsubsection{Estructura Primaria y Secundaria}
+Por \textit{estructura primaria} se entiende la secuencia u orden en que se encuentran los residuos unidos por enlaces pept\'{i}dicos dentro de un p\'{e}ptido o prote\'{i}na.\\
 
-En la figura \ref{fig:pepti} se observa un residuo contiguo al otro en forma horizontal. Sin embargo, al observar al p\'{e}ptido tridimensionalmente la cadena que se forma no es lineal. Esto se debe a los \'{a}tomos presentes en cada residuo ya que existen interacciones entre \'{a}tomos de distintos residuos que no necesariamente est\'{a}n conectados por el enlace pept\'{i}co.\\
+En la figura \ref{fig:pepti} se observa un residuo contiguo al otro en forma horizontal, es decir en su estructura primaria. Sin embargo, al observar al p\'{e}ptido tridimensionalmente la cadena que se forma no es lineal. Esto se debe a interacciones no covalentes entre los \'{a}tomos que no necesariamente est\'{a}n conectados por el enlace pept\'{i}dico. Estas interacciones hacen que los grupos funcionales dentro del p\'{e}ptido se encuentren a \'{a}ngulos diferentes. Para estudiar la estructura tridimensional se describir\'{a}n inicialmente, los \'{a}ngulos de rotaci\'{o}n entre los residuos que componen al p\'{e}ptido o prote\'{i}na.\\
 
-En particular, el \'{a}tomo de ox\'{i}geno presente en el grupo carbonilo, puede interactuar con 
+Linus Pauling y Robert Corey encontraron que el enlace pept\'{i}dico forma una estructura planar (r\'{i}gida) que contiene 4 \'{a}tomos enlazados alrededor del \ce{C-N}, la cual se presenta debido al enlace parcial doble, de tal manera que fija el \'{a}ngulo de rotaci\'{o}n del grupo \ce{C=O} con respecto al grupo \ce{N-H}. El \'{a}ngulo $\omega$ entre los dos grupos es, excepto cuando hay prolinas, de $180\textdegree$ (conformaci\'{o}n trans). En la figura \ref{fig:pepti2} se pueden observar los \textit{planos amida} de los residuos.\\ 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{Kap2/peptide.png}
+\caption{\'{A}ngulos dihedros $\phi$, $\psi$ y $\omega$(No mostrado). Tomado de \cite{Nelson2011}.}\label{fig:pepti2}
+\end{figure}
+El \'{a}ngulo $\phi$ es $0\textdegree$ cuando el grupo \ce{N-H} est\'{a} en la posici\'{o}n trans respecto al enlace \ce{C\alpha-C} mientras que el \'{a}ngulo $\psi$ es  $0\textdegree$ cuando el enlace \ce{C-N} est\'{a} en la posici\'{o}n trans respecto al enlace \ce{C=O}, ver \cite{Kuchel}.\\
+
+La \textit{estructura secundaria} se define como la conformaci\'{o}n local que genera estructuras repetitivas. Al definir la estructura secundaria se simplifica el entendimiento de la estructura tridimensional de la prote\'{i}na ya que permite identificar patrones que se repiten en diferentes prote\'{i}nas.\\
+
+Existen tres tipos com\'{u}nes de estructura secundaria:
+\begin{enumerate}
+ \item $\alpha$ H\'{e}lice: Ocurre si la cadena principal se enrolla formando una h\'{e}lice, de tal manera que el ox\'{i}geno del grupo carbonilo en un residuo forma un \textit{puente de hidr\'{o}geno} con el hidr\'{o}geno de la amina secundaria encontrado 4 residuos m\'{a}s adelante. En la figura \ref{fig:helice} se observan mediante las l\'{i}neas punteadas, \'{a}tomos de ox\'{i}geno (rojo) interactuando con los protones (gris claro)  en otro residuo. La cadena principal o esqueleto se representa con una cinta enrollada, figura de la izquierda cumpliendo la propiedad de tener 3.6 residuos por cada vuelta, \cite{Kuchel}.
+ \item Hoja $\beta$: Se presenta 
+ \item Aleatoria:
+\end{enumerate}
+Tambi\'{e}n hay otros tipos de estructura secundaria como las h\'{e}lices de col\'{a}geno, las $\pi$ h\'{e}lices, $3_{10}$ h\'{e}lices que no son de inter\'{e}s para estudiar nuestra prote\'{i}na.\\
+
+Los patrones estructurales se forman cuando los \'{a}ngulos entre residuos son fijos. Precisamente esa es la diferencia entre una $\alpha$ h\'{e}lice y una hoja $\beta$, los \'{a}ngulos $\phi$ y $\psi$ entre residuos son diferentes. Aunque estos \'{a}ngulos son diferentes en cada prote\'{i}na, 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{Kap2/helix.png}
+\includegraphics[scale=0.2]{Kap2/helix2.png}
+\caption{Porci\'{o}n de una $\alpha$ h\'{e}lice perteneciente a la prote\'{i}na vSGLT (C\'{o}digo pdb 3DH4) formada por los enlaces de hidr\'{o}geno mostrados en color amarillo.}\label{fig:helice}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{Kap2/Rama.png}
+\caption{Gr\'{a}fico de Ramachandran}\label{fig:Rama}
+\end{figure}
 \section{Prote\'{i}nas de Membrana}
 
 \section{Transportadores}
