@@ -112,7 +112,9 @@ Los patrones estructurales se forman cuando los \'{a}ngulos entre residuos son f
 \caption{Gr\'{a}fico de Ramachandran para 97368 residuos tomados de 500 estructuras diferentes mostrando las regiones permitidas para una $\alpha_R$ h\'{e}lice, una $\alpha_L$ h\'{e}lice, una hoja $\beta$ y las vueltas $\gamma$ y $\gamma'$. Imagen tomada de \cite{Lovell2003}}\label{fig:Rama}
 \end{figure}
 \subsubsection{Estructura Terciaria}
-Es la forma en que las cadenas polipept\'{i}dicas se pliegan en su estructura tridimensional \cite{Kuchel}. Las p\'{e}ptidos y prote\'{i}nas se pliegan en el entorno biol\'{o}gico, mientras que los p\'{e}ptidos sint\'{e}ticos en soluci\'{o}n generalmente muestran una conformaci\'{o}n aleatoria. El plegamiento de las prote\'{i}nas no es un proceso favorable termodin\'{a}micamente, sin embargo, las porte\'{i}nas adquieren su estructura en condiciones biol\'{o}gicas debido a las interacciones no covalentes presentes dentro de ella misma y con el medio acuoso.\\
+Es la forma en que las cadenas polipept\'{i}dicas se pliegan en su estructura tridimensional \cite{Kuchel}.\\
+
+Las interacciones presentes en son:
 \begin{itemize}
  \item Interacci\'{o}n electrost\'{a}tica
  \item Interacci\'{o}n de Van der Waals
