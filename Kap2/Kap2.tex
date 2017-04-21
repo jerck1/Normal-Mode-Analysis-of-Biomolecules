@@ -111,15 +111,40 @@ Los patrones estructurales se forman cuando los \'{a}ngulos entre residuos son f
 \put(-16,10){$\gamma$}
 \caption{Gr\'{a}fico de Ramachandran para 97368 residuos tomados de 500 estructuras diferentes mostrando las regiones permitidas para una $\alpha_R$ h\'{e}lice, una $\alpha_L$ h\'{e}lice, una hoja $\beta$ y las vueltas $\gamma$ y $\gamma'$. Imagen tomada de \cite{Lovell2003}}\label{fig:Rama}
 \end{figure}
-\subsubsection{Estructura Terciaria}
-Es la forma en que las cadenas polipept\'{i}dicas se pliegan en su estructura tridimensional \cite{Kuchel}. Las p\'{e}ptidos y prote\'{i}nas se pliegan en el entorno biol\'{o}gico, mientras que los p\'{e}ptidos sint\'{e}ticos en soluci\'{o}n generalmente muestran una conformaci\'{o}n aleatoria. El plegamiento de las prote\'{i}nas no es un proceso favorable termodin\'{a}micamente, sin embargo, las porte\'{i}nas adquieren su estructura en condiciones biol\'{o}gicas debido a las interacciones no covalentes presentes dentro de ella misma y con el medio acuoso.\\
-\begin{itemize}
- \item Interacci\'{o}n electrost\'{a}tica
- \item Interacci\'{o}n de Van der Waals
- \item Puentes de Hidr\'{o}geno
- \item Interacciones Hidrof\'{o}bicas
-\end{itemize}
+\subsubsection{Estructura Terciaria y cuaternaria}
+La estructura Terciaria es la forma en que las cadenas polipept\'{i}dicas como un todo (lo global en oposici\'{o}n a lo local) se pliegan en su estructura tridimensional \cite{Kuchel}. Las p\'{e}ptidos y prote\'{i}nas se pliegan en el entorno biol\'{o}gico, mientras que los p\'{e}ptidos sint\'{e}ticos en soluci\'{o}n generalmente muestran una conformaci\'{o}n aleatoria. El plegamiento de las prote\'{i}nas no es un proceso favorable termodin\'{a}micamente, sin embargo, las prote\'{i}nas adquieren su estructura en condiciones biol\'{o}gicas debido a las interacciones no covalentes presentes dentro de ella misma y con el medio acuoso.\\
 
+Las interacciones no covalentes presentes en la prote\'{i}na son: \cite{Kuchel}
+\begin{itemize}
+ \item \textit{Interacci\'{o}n electrost\'{a}tica}: Es la interacci\'{o}n de Coulomb entre grupos cargados en un medio diel\'{e}ctrico. A partir de la fuerza de interacci\'{o}n de Coulomb se puede obtener la energ\'{i}a potencial, que de forma equivalente, es el trabajo requerido para separar un sistema de cargas, en este caso, para separar los grupos que est\'{a}n interactuando y que tambi\'{e}n viene siendo la energ\'{i}a almacenada por el sistema. La energ\'{i}a potencial electrost\'{a}tica para $N$ grupos funcionales que est\'{a}n interactuando es:
+\begin{equation}
+V_{elec}(r)=\sum_{j=1}^{N-1}\sum_{i=j+1}^{N}\frac{Z_{i}Z_{j}e^2}{4 \pi \epsilon_0 \epsilon_{r} r_{ij}}
+\end{equation}
+Donde $N$ es el n\'{u}mero de grupos interactuantes, $i=1,2,...,N-1$ y $j=j+1,...,N$ son etiquetas que se les coloca a cada grupo con el fin de sumar todas las interacciones posibles. $Z_{i}$ y $Z_{j}$ son las cargas electr\'{o}nicas de los grupos $i$ y $j$ respectivamente. $e_r$ es la constante diel\'{e}ctrica o permitividad relativa del medio el cual suele ser acuoso, cuyo valor es $e_r=80.10$ a $20\textdegree C$ aunque en prote\'{i}nas de membrana tambi\'{e}n se puede considerar la bicapa lip\'{i}dica como otro diel\'{e}ctrico.\\
+Ha de notarse que la sumatoria interna corre desde $j+1$ para no repetir la interacci\'{o}n entre el grupo $i$ y el grupo $j$ con la del grupo $j$ y el $i$, que es la misma.\\
+
+  \item \textit{Puente de Hidr\'{o}geno}: Es una interacci\'{o}n electrost\'{a}tica entre grupos polares, debida a la asimetr\'{i}a de las cargas. Uno de estos grupos polares necesariamente posee un \'{a}tomo de hidr\'{o}geno unido covalentemente a un \'{a}tomo electronegativo, lo cual convierte al hidr\'{o}geno en un \'{a}tomo electropositivo. El otro grupo posee un \'{a}tomo con pares de electrones sin enlazar.\\
+  El grupo al cual est\'{a} unido el hidr\'{o}geno se le conoce como donor de puentes de hidr\'{o}geno y al otro grupo como aceptor de puentes de hidr\'{o}geno. Se dice tambi\'{e}n que es un enlace de polarizaci\'{o}n.
+  
+ \item \textit{Interacci\'{o}n de Van der Waals}: Es tambi\'{e}n un enlace de polarizaci\'{o}n, pero en este caso debida a la presencia de dipolos moment\'{a}neos en ciertos grupos con altas diferencias en sus electronegatividades. El potencial de Van der Waals, tambi\'{e}n conocido como Potencial de Lennard-Jones 6,12 es:
+ \begin{equation}
+V_{len}(r)=\sum_{j=1}^{N+1}\sum_{i=j+1}^N f_{ij}\left\{\epsilon_{ij}\left[\left(\frac{r_{0ij}}{r_{ij}}\right)^{12}-2\left(\frac{r_{0ij}}{r_{ij}}\right)^6\right]\right\}
+\end{equation}
+Donde 
+El potencial de Van der Waals para dos se encuentra graficado en la figura \ref{fig:van}.
+Las sumatorias expresan el total de interacciones presentes en los grupos con dipolos transitorios. Hay dos t\'{e}rminos presentes, uno con potencia $r_{ij}^{-6}$ y el otro con potencia $r_{ij}^{-12}$. El de $r_{ij}^{-12}$ se conoce como t\'{e}rmino repulsivo y se puede por analog\'{i}a con la interacci\'{o}n de Coulomb, cuando las cargas son positivas el potencial electrost\'{a}tico es positivo. Por oposici\'{o}n, el t\'{e}rmino $r_{ij}^{-6}$ el t\'{e}rmino atractivo.
+\item \textit{Interacciones Hidrof\'{o}bicas}: Es la forma de organizarse las mol\'{e}culas hidrof\'{o}bicas en un medio acuoso. Cuando se agregan moleculas apolares en el agua, como por ejemplo, los hidrocarburos, las mol\'{e}culas de agua se organizan de manera energ\'{e}ticamente desfavorable, entonces las mol\'{e}culas hidrof\'{o}bicas se organizan de tal manera que decrezca la entrop\'{i}a de la soluci\'{o}n.
+\end{itemize}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{Kap2/van_der_waals2.png}
+\put(-100,60){Energ\'{i}a}
+%\put(-16,35){$\alpha_L$}
+%\put(-33,53){$\beta$}
+%\put(-36,40){$\gamma'$}
+%\put(-16,10){$\gamma$}
+\caption{Potencial de Van der Waals entre \'{a}tomos. Imagen tomada de \cite{Kuchel}}\label{fig:van}
+\end{figure}
 TABLA RANGO DE LAS INTERACCIONES
 \subsubsection{Estructura Cuaternaria}
 \section{Prote\'{i}nas de Membrana}
