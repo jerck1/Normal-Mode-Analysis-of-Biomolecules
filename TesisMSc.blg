@@ -1,0 +1,63 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: TesisMSc.aux
+A level-1 auxiliary file: HojaTitulo/HojaTituloMSc.aux
+A level-1 auxiliary file: Tab_Simbolos/TabSimbolosMSc.aux
+A level-1 auxiliary file: Kap1/Kap1.aux
+A level-1 auxiliary file: Kap2/Kap2.aux
+A level-1 auxiliary file: Kap3/Kap3.aux
+A level-1 auxiliary file: Kap4/Kap4.aux
+A level-1 auxiliary file: Kap5/Kap5.aux
+A level-1 auxiliary file: Kap6/Kap6.aux
+A level-1 auxiliary file: Anexos/Anexos.aux
+The style file: apalike.bst
+Database file #1: Mendeley.bib
+Warning--I didn't find a database entry for "SaierJr.quotTheFamilyquot"
+Warning--I didn't find a database entry for "fig:ANM"
+Warning--empty publisher in Cui2006
+Warning--can't use both author and editor fields in Goldstein2001
+Warning--can't use both volume and number fields in Goldstein2001
+Warning--empty publisher in Kuchel
+Warning--empty publisher in Nelson2011
+You've used 21 entries,
+            1935 wiz_defined-function locations,
+            640 strings with 7929 characters,
+and the built_in function-call counts, 9133 in all, are:
+= -- 875
+> -- 444
+< -- 11
++ -- 154
+- -- 154
+* -- 843
+:= -- 1590
+add.period$ -- 60
+call.type$ -- 21
+change.case$ -- 180
+chr.to.int$ -- 21
+cite$ -- 26
+duplicate$ -- 308
+empty$ -- 594
+format.name$ -- 183
+if$ -- 1749
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 24
+newline$ -- 105
+num.names$ -- 63
+pop$ -- 155
+preamble$ -- 1
+purify$ -- 182
+quote$ -- 0
+skip$ -- 238
+stack$ -- 0
+substring$ -- 645
+swap$ -- 41
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 118
+warning$ -- 5
+while$ -- 73
+width$ -- 0
+write$ -- 266
+(There were 7 warnings)

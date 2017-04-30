@@ -10,10 +10,10 @@
 \usepackage{threeparttable}
 \usepackage{amscd}
 \usepackage{here}
-\usepackage{graphicx}
 \usepackage{lscape}
+\usepackage[tight]{subfigure}
+\usepackage{graphicx}
 \usepackage{tabularx}
-\usepackage{subfigure}
 \usepackage{longtable}
 \usepackage{url}
 \usepackage{hyperref}% Para referencias entre paginas y partes del texto
@@ -24,7 +24,8 @@
 \renewcommand{\theequation}{\thechapter-\arabic{equation}}
 \renewcommand{\thefigure}{\textbf{\thechapter-\arabic{figure}}}
 \renewcommand{\thetable}{\textbf{\thechapter-\arabic{table}}}
-
+\usepackage{caption}
+\usepackage{subcaption}%Para insertar varios encabezados en una misma imagen
 
 \pagestyle{fancyplain}%\addtolength{\headwidth}{\marginparwidth}
 \textheight22.5cm \topmargin0cm \textwidth16.5cm
@@ -119,3 +120,28 @@ Trans-port-vor-gan-ge}
 }
 \tikzset{lddbond/.style={decorate,decoration=ddbond}}
 \tikzset{rddbond/.style={decorate,decoration={ddbond,mirror}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Para ajustar una tabla al tamano de la pagina
+\usepackage{adjustbox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Para hacer enlaces punteados (Hydrogen bond, hydrophobic interactions)
+%Comando para llamar el enlace grueso en el documento: \chemfig{(-[,,,,bold bond])}
+%Comando para llamar el enlace punteado en el documento: \chemfig{(-[,,,,dash bond])}
+\newcommand*{\bondboldwidth}{0.22832 em} %'Bold Width'
+\newcommand*{\bondhashlength}{0.25737 em} % 'Hash Spacing'
+\tikzset{
+  bold bond/.style = {line width = \bondboldwidth},
+  dash bond/.style =
+    {dash pattern = on \bondhashlength off \bondhashlength},
+  hash bond/.style =
+    {
+      dash pattern = on \bondwidth off \bondhashlength,
+      line width   = \bondboldwidth
+    },
+}
+%%%%%%%%%%%%%
+\usepackage{float}
+
+\floatstyle{ruled}
+\newfloat{program}{thp}{lop}
+\floatname{program}{Program}

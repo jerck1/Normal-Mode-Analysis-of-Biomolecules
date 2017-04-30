@@ -28,7 +28,7 @@ A continuaci\'{o}n se muestran los 20 amino\'{a}cidos proteinog\'{e}nicos  comun
 \end{center}
 \caption{F\'{o}rmulas estructurales de los 20 amino\'{a}cidos proteinog\'{e}nicos a pH 7 clasificados seg\'{u}n su radical de color rosado. Tomado de \cite{Nelson2011}.}
 \end{figure}
-Exceptuando la glicina, todos los amino\'{a}cidos presentan la propiedad de la quiralidad, existiendo dos posibles formas posibles para cada amino\'{a}cido: L-amino\'{a}cidos o D-amino\'{a}cidos. La distinci\'{o}n va seg\'{u}n la direcci\'{o}n en la que desv\'{i}en la luz con respecto al centro quiral que es el C-$\alpha$ del amino\'{a}cido.  Pr\'{a}cticamente todos los amino\'{a}cidos encontrados en prote\'{i}nas tienen la forma L.
+Exceptuando la glicina, todos los amino\'{a}cidos presentan la propiedad de la quiralidad, existiendo dos formas posibles para cada amino\'{a}cido: L-amino\'{a}cidos o D-amino\'{a}cidos. La distinci\'{o}n va seg\'{u}n la direcci\'{o}n en la que desv\'{i}en la luz con respecto al centro quiral que es el C-$\alpha$ del amino\'{a}cido.  Pr\'{a}cticamente todos los amino\'{a}cidos encontrados en prote\'{i}nas tienen la forma L.
 \section{Formaci\'{o}n de P\'{e}ptidos y Prote\'{i}nas}
 Dos amino\'{a}cidos reaccionan formando un enlace llamado pept\'{i}dico, esto ocurre cuando el carbono del grupo carboxilo se enlaza covalentemente con el nitr\'{o}geno del grupo amino produciendo una deshidrataci\'{o}n, es decir, liberando agua. En la figura \ref{fig:pepti} se muestran los reactantes y los productos de la reacci\'{o}n.
 \begin{figure}[H]
@@ -157,13 +157,28 @@ Las sumatorias expresan el total de interacciones presentes en los grupos con di
 \put(-35,40){Distancia (nm)}
 \caption{Potencial de Van der Waals entre \'{a}tomos. Imagen tomada de \cite{Kuchel}}\label{fig:van}
 \end{figure}
-Mientras que en la estructura cuaternaria no aparecen interacciones covalentes, en la estructura terciaria normalmente se considera una s\'{o}la interacci\'{o}n covalente: \textit{El puente disulfuro}. Esta interacci\'{o}n ocurre cuando los tioles de dos ciste\'{i}nas, que pueden estar lejanas, se oxidan formando el enlace entre los dos azufres de las ciste\'{i}nas.
+Mientras que en la estructura cuaternaria no aparecen interacciones covalentes, en la estructura terciaria normalmente se considera una s\'{o}la interacci\'{o}n covalente: \textit{El puente disulfuro}. Esta interacci\'{o}n ocurre cuando los tioles de dos ciste\'{i}nas, que pueden estar lejanas, se oxidan formando el enlace entre los dos azufres de las ciste\'{i}nas.\\
 
-
+En la tabla \ref{Rango} se muestran las energ\'{i}as de enlace y los rangos en los que act\'{u}an algunas de estas interacciones para ciertos casos particulares o en otros casos una estimaci\'{o}n de su valor.
+\begin{table}[H]
+\centering
+\begin{adjustbox}{width=0.7\textwidth,center}
+ \begin{tabular}[c]{|c|c|c|c|}\hline
+\textbf{Interacci\'{o}n} & \textbf{Rango ($\AA$)}&\textbf{Energ\'{i}a de Enlace($kJ/mol$)}&Descripci\'{o}n\\ \hline
+Enlace covalente&1.5&356& Para un enlace \ce{-C-C-} \\ \hline
+Enlace pept\'{i}dico&1.32&-&La energ\'{i}a de enlace var\'{i}a por cada prote\'{i}na\\ \hline %\ce{CH_2--[:0,0.5]H_2C}\\ \hline
+Electrost\'{a}tica &3&12-20& Residuos en el interior de la prote\'{i}na\\ \hline
+Puente de Hidr\'{o}geno &1.9-2.0&5& Entre un carbonilo y un amina\\ \hline
+Van der Waals&0.3-0.5&0.4-2.0&\chemfig{-[,0.5]CH_2-[,1,,,dash bond]H_2C(-[,0.5])}\\ \hline
+Hidrof\'{o}bicas&-&$\sim3$&Transferencia de un \ce{-CH_2} de una cadena lateral al agua\\ \hline
+\end{tabular}
+\end{adjustbox}
+\caption{Rango de interacci\'{o}n y energ\'{i}a de enlace para las interacciones presentes en una prote\'{i}na}\label{Rango}
+\end{table} 
 \section{Prote\'{i}nas de Membrana}
 
 \section{Transportadores}
-La membrana celular al ser hidrof\'{o}bica permite protegerse de la regi\'{o}n extracelular, sin embargo, ella necesita ingresar y expulsar todos los compuestos necesarios para realizar su fisiolog\'{i}a OJO. La membranana celular tiene prote\'{i}nas que permiten el ingreso y la expulsi\'{o}n de estos compuestos. Entre los tipos de prote\'{i}nas se encuentran  los poros, las bombas, los transportadores y los canales. \\
+La membrana celular al ser hidrof\'{o}bica permite protegerse de la regi\'{o}n extracelular, sin embargo, ella necesita ingresar y expulsar todos los compuestos necesarios para realizar su fisiolog\'{i}a OJO. La membranana celular tiene prote\'{i}nas que permiten el ingreso y la expulsi\'{o}n de estos compuestos. Entre los tipos de prote\'{i}nas se encuentran  los poros, El potencial de Van der Waals para dos se encuentra graficado en la figura \ref{fig:van}.\\
 
 Los transportadores se clasifican, de acuerdo al sistema de clasificaci\'{o}n de transportadores \cite{Nelson2011}, en dos categor\'{i}as principales de las cuales se desprenden otras subcategor\'{i}as :
 \begin{enumerate}
@@ -184,7 +199,8 @@ Los transportadores se clasifican, de acuerdo al sistema de clasificaci\'{o}n de
 Para visualizar las prote\'{i}nas se puede usar el microscopio de fuerza at\'{o}mico
 \subsection{Cotransportadores}
 Hacia la d\'{e}cada de los a\~{n}os sesenta Robert Crane, ver \cite{Hamilton2013}, estableci\'{o} una relaci\'{o}n acoplada o de \textit{cotransporte} entre el ion de sodio y la glucosa los cuales son absorbidos por el intestino delgado. El conocimiento de este mecanismo ha permitido realizar el tratamiento de la diarrea y del c\'{o}lera mediante la rehidrataci\'{o}n oral. La hip\'{o}tesis del cotransporte que ha sido numerosamente validada y ha sido una piedra angular para el entendimiento de el metabolismo de los carbohidratos, claves en la energ\'{e}tica celular. La hip\'{o}tesis del cotransporte tambi\'{e}n se ha extendido a otros organismos vivos, con la diferencia de que el acoplamiento del sodio se puede dar con cualquier otro soluto org\'{a}nico \cite{Faham2008}.\\
-\section{Algunas Familias Proteicas y enrollamiento LeuT (LeuT fold)}
+\section{Algunas Familias Proteicas y el plegamiento LeuT (LeuT fold)}
+Las prote\'{i}nas globulares tienden a formar ciertas arreglos estables de estructura secundaria. Estos arreglos de estructura secundaria se conocen como \textit{estructuras supersecundarias}, \textit{motivos estructurales} o \textit{plegamientos}.
 \section{Co-transportador vSGLT}
 El cotransportador de Na+/Galactosa presente en la proteobacteria \textit{Vibrio Parahaemolyticus } denotado como vSGLT, es un simportador perteneciente a la familia de simportadores de $\mathrm{Na}^+$-soluto SSS \cite{SaierJr.quotTheFamilyquot}.\\
 La caracterizaci\'{o}n molecular del compuesto se realiz\'{o} por primera vez hacia el a\~{n}o 2000 ver \cite{Turk2000}, mientras que la determinaci\'{o}n de su estructura fue posible hacia el a\~{n}o 2008 \cite{Faham2008}. En dichos estudios se establece que vSGLT es similar en la estructura primaria y terciaria a otros transportadores de la familia SLC5 como por ejemplo NIS, SGLT1, SGLT2.
