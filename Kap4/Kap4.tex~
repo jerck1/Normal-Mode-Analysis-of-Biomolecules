@@ -6,7 +6,7 @@ Se estudia el cotransportador vSGLT mediante el servidor ANM (En ingl\'{e}s Anis
 En la FIGURA se encuentra un esquema de la entrada y salida de datos
 \begin{figure}
  \centering
-    \includegraphics[scale=0.2]{./Kap4/flujo.pdf} 
+    \includegraphics[scale=0.2]{./Kap4/ANM/ANM_server/grafica_7_A_n.png} 
 \caption{Esquema de entrada y salida del servidor ANM}
 \end{figure}
 
