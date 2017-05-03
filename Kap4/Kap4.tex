@@ -12,6 +12,7 @@ En la FIGURA se encuentra un esquema de la entrada y salida de datos
 
 \section{NMA previo de vSGLT}
 Mediante el servidor ANM, se ha realizado un estudio previo del simportador vSGLT \cite{Cabrera2017}, en el cual se utiliza un archivo de entrada que es el pdb de 3DH4 encontrado en la base de datos del Protein Data Bank. En este archivo pdb no se determinan los residuos de la primera h\'{e}lice en cada subunidad. Aunque aparecen las posiciones de los residuos, el ANM server los ignora, haciendo el c\'{a}lculo \'{u}nicamente con los residuos conocidos.\\
+
 Los c\'{a}lculos de salida mostrados son los factores b por cada n\'{u}mero de residuo y para cada distancia de corte $r_c$, variable entre $7\AA$ y $14\AA$ y en la cadena A, ver figura \ref{fig:ANM_pre}. Ha de notarse que para distancias de corte menores o iguales a $7\AA$,no se encontraron todos  los autovalores, ni autovectores, ni factores b, lo cual se evidencia en la gr\'{a}fica para  $R_c=7\AA$ de la figura \ref{fig:ANM_pre}. Esto se debe a que los no todos los AUTOVALORES no convergen. Para distancias de corte mayores a $8\AA$, se encontraron todos los factores b.\\
 \begin{figure}
  \centering
@@ -38,10 +39,10 @@ Los c\'{a}lculos de salida mostrados son los factores b por cada n\'{u}mero de r
  
 \section{ANM para vSGLT}
 \subsection{Preparaci\'{o}n del PDB}
-Ya que en el mutante de vSGLT en la posici\'{o}n A294A, llamado 2XQ2 aparece resuelta la estructura cristalina del TM1 perteneciente a la cadena A, se usa el programa PyMol, y como archivos de entrada los pdbs 3DH4 y el de su mutante 2XQ2, para usar un archivo que sea cercano a la estructura real objeto de estudio, esto es, al cotransportador vSGLT.
+Ya que en el mutante de vSGLT en la posici\'{o}n K294A, llamado 2XQ2 aparece resuelta la estructura cristalina del TM1 perteneciente a la cadena A, se usa el programa PyMol, y como archivos de entrada los pdbs 3DH4 y el de su mutante 2XQ2, para crear un archivo que sea cercano a la estructura real objeto de estudio, esto es, al cotransportador vSGLT. 
 \subsection{Resultados}
 
-\begin{figure}
+\begin{figure}[h]
  \centering
   \includegraphics[scale=0.2]{./Kap4/ANM/ANM_s_nuevo/grafica_7_A_n.png}
    \put(-50,-2){$R_c=7\AA$}
