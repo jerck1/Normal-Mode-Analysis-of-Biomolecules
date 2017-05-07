@@ -3,20 +3,16 @@
 \section{Introducci\'{o}n}
 Se estudia el cotransportador vSGLT mediante el servidor ANM (En ingl\'{e}s Anisotropic Network Model server) de la universidad de Pittsburgh \cite{Eyal2015}\footnote{Recurso disponible en \url{http://anm.csb.pitt.edu/cgi-bin/anm2/anm2.cgi}}. El servidor ANM, como su nombre lo indica, es un servidor web que procesa la informaci\'{o}n de entrada del lado del cliente, en este caso, la informaci\'{o}n de entrada ser\'{a} el pdb y los par\'{a}metros de entrada para realizar los c\'{a}lculos del ANM, mientras que del lado del servidor se procesa la informaci\'{o}n suministrada v\'{i}a un c\'{o}digo escrito en C, el cual permite calcular los $n$ primeros modos normales, los factores b, las constantes el\'{a}sticas, las correlaciones entre distintas partes de la mol\'{e}cula y permite visualizar los modos de vibraci\'{o}n mediante java o pymol. Tambi\'{e}n es posible descargar el c\'{o}digo fuente desde la p\'{a}gina del servidor.\\
 
-En la figura \ref{flujo} se encuentra un esquema de la entrada y salida de datos
-\begin{figure}
+En la figura \ref{fig:flujo} se encuentra un esquema de la entrada y salida de datos
+\begin{figure}[h]
  \centering
     \includegraphics[scale=0.6]{./Kap4/flujo.pdf} 
 \caption{Esquema de entrada y salida del servidor ANM}\label{fig:flujo}
 \end{figure}
 
 \section{NMA previo de vSGLT}
-<<<<<<< HEAD
 Mediante el servidor ANM, se ha realizado un estudio previo del simportador vSGLT, ver \cite{Cabrera2017}, en el cual se utiliza un archivo de entrada que es el pdb de 3DH4 encontrado en la base de datos del Protein Data Bank. En este archivo pdb no se determinan los residuos de la primera h\'{e}lice en cada subunidad. Aunque aparecen las posiciones de los residuos, el ANM server los ignora, haciendo el c\'{a}lculo \'{u}nicamente con los residuos conocidos.\\
-=======
-Mediante el servidor ANM, se ha realizado un estudio previo del simportador vSGLT \cite{Cabrera2017}, en el cual se utiliza un archivo de entrada que es el pdb de 3DH4 encontrado en la base de datos del Protein Data Bank. En este archivo pdb no se determinan los residuos de la primera h\'{e}lice en cada subunidad. Aunque aparecen las posiciones de los residuos, el ANM server los ignora, haciendo el c\'{a}lculo \'{u}nicamente con los residuos conocidos.\\
 
->>>>>>> f6a0171e68efdc9af7fd0b2b89a45a5b24ab1287
 Los c\'{a}lculos de salida mostrados son los factores b por cada n\'{u}mero de residuo y para cada distancia de corte $r_c$, variable entre $7\AA$ y $14\AA$ y en la cadena A, ver figura \ref{fig:ANM_pre}. Ha de notarse que para distancias de corte menores o iguales a $7\AA$,no se encontraron todos  los autovalores, ni autovectores, ni factores b, lo cual se evidencia en la gr\'{a}fica para  $R_c=7\AA$ de la figura \ref{fig:ANM_pre}. Esto se debe a que los no todos los AUTOVALORES no convergen. Para distancias de corte mayores a $8\AA$, se encontraron todos los factores b.\\
 \begin{figure}
  \centering
