@@ -271,7 +271,7 @@ La estructura tridimensional de vSGLT \cite{Faham2008} se obtiene por difracci\'
 En la base de datos del PDB, se encuentra la estructura de vSGLT  como un tetr\'{a}mero, ver figura
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.2]{Kap2/3dh4tetra.png}
+\includegraphics[scale=0.2]{Kap2/chainB.png}
 \put(-70,0){\textbf{(a)}}
 \includegraphics[scale=0.08]{Kap2/chainAB.png}
 \put(-70,0){\textbf{(b)}}
