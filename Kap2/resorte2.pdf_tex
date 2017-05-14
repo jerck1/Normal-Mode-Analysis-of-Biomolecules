@@ -49,7 +49,7 @@
   \global\let\svgscale\undefined%
   \makeatother%
   \begin{picture}(1,0.40351585)%
-    \put(0,0){\includegraphics[width=\unitlength]{Kap3/resorte2.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength]{Kap2/resorte2.pdf}}%
     \put(0.3674819,0.35135451){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$R_{ij}^0$}}}%
     \put(0.37596604,0.11650248){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$R_{ij}$}}}%
     \put(0.20086495,0.16142969){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$R_{i}$}}}%

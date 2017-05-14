@@ -1,296 +1,488 @@
-\chapter{Estudios del Cotransportador vSGLT}
-\section{Introducci\'{o}n}
-El presente estudio se ocupa de una prote\'{i}na encontrada en la membrana de la bacteria \textit{Vibrio Parahaemoliticus}. Pero antes de realizar dicho estudio es necesario responder las siguientes preguntas fundamentales: ?`qu\'{e} es una prote\'{i}na? ?`de qu\'{e} est\'{a} conformada una prote\'{i}na? ?`d\'{o}nde se encuentran las prote\'{i}nas? ?`cu\'{a}l es el papel que desempe\~{n}an las prote\'{i}nas en los seres vivos? ?`Cu\'{a}l es la forma de las prote\'{i}nas?.\\ \\
+\chapter{An\'{a}lisis de Modos Normales}
+\section{Relevancia}
+Es importante estudiar los movimientos de una biomol\'{e}cula ya que como es se\~{n}alado en \cite{Lezon2009} y en  \cite{Rader2006}, la din\'{a}mica de la mol\'{e}cula vincula la estructura con la funci\'{o}n de la biomol\'{e}cula. La funci\'{o}n es el papel que desempe\~{n}a la biomol\'{e}cula y que est\'{a} intimamente relacionado con las interacciones de la biomol\'{e}cula a un ligando. La estructura de una biomol\'{e}cula tiene 4 niveles de organizaci\'{o}n, denominadas \textit{estructuras primaria, secundaria, terciaria y cuaternaria}.\\
 
-Una prote\'{i}na es un pol\'{i}mero (pol\'{i}- Muchas -mero: Partes) que est\'{a} formado por una gran cantidad de unidades del mismo tipo, estas unidades se conocen como amino\'{a}cidos. Espec\'{i}ficamente se dice que las prote\'{i}nas son polip\'{e}ptidos \footnote{P\'{e}ptido: Mol\'{e}cula formada por una cadena de varios amino\'{a}cidos mediante un enlace llamado pept\'{i}dico; normalmente se le dice pept\'{i}do a una cadena con menos de $20\sim30$  amino\'{a}cidos} que tienen m\'{a}s de 50 amino\'{a}cidos, haciendo que su peso molecular sea mayor a 5000 Da \cite{Kuchel}.\\
+Por ejemplo, en una prote\'{i}na la estructura primaria es la secuencia u  orden de los mon\'{o}meros (amino\'{a}cidos) que la constituyen. La estructura secundaria est\'{a} determinada por los puentes de hidr\'{o}geno existentes entre los grupos amino y carboxilo de dos amino\'{a}cidos diferentes; predice la estructura tridimensional en forma local. Mientras que la estructura terciaria la da el arreglo tridimensional de cada uno de sus \'{a}tomos, espec\'{i}ficamente se determina con las coordenadas de cada uno de los \'{a}tomos. La estructura cuaternaria es el arreglo de unidades proteicas o cadenas pept\'{i}dicas formando lo que se conoce como complejo multiproteico.\\
 
-Un amino\'{a}cido es una mol\'{e}cula org\'{a}nica formada por un carbono llamado $\alpha$ alrededor del cual se encuentran los grupos funcionales carboxilo y amino, adem\'{a}s de un hidr\'{o}geno y un radical que le da la identidad a cada amino\'{a}cido, ver figura \ref{fig:amino}.\\
-\begin{figure}[H]
-\centering
-\chemfig{C^{\alpha}(-[:0]H)(-[:90]COO^{-})(-[:180]NH_{3}^{+})(-[:270]R)}
-\caption{Forma general de un L-amino\'{a}cido a pH 7. El radical \ce{R} cambia para cada amino\'{a}cido.}\label{fig:amino}
-\end{figure}
-A continuaci\'{o}n se muestran los 20 amino\'{a}cidos proteinog\'{e}nicos  comunes \footnote{Son los incorporados en la s\'{i}ntesis de prote\'{i}nas durante la traducci\'{o}n en el ribosoma}  clasificados de acuerdo a la carga, la polaridad y la formaci\'{o}n de grupos arom\'{a}ticos. Las abreviaciones de los amino\'{a}cidos se encuentran en la secci\'{o}n Lista de S\'{i}mbolos.\\
-\begin{figure}[H]
-\begin{center}
-\begin{picture}(100,110)
-\put(0,60){\includegraphics[scale=0.3]{Kap2/nopolar.png}}
-\put(70,75){\includegraphics[scale=0.3]{Kap2/aromatico.png}}
-\put(0,0){\includegraphics[scale=0.3]{Kap2/polardescargado.png}}
-\put(70,30){\includegraphics[scale=0.3]{Kap2/qpp.png}}
-\put(70,-5){\includegraphics[scale=0.2]{Kap2/qmm.png}}
-\put(0,110){No polar, grupo R alif\'{a}tico}
-\put(70,110){Grupo R arom\'{a}tico}
-\put(0,55){Polar descargado}
-\put(70,65){Grupo R cargado positivamente}
-\put(70,20){Grupo R cargado negativamente}
-\end{picture}
-\end{center}
-\caption{F\'{o}rmulas estructurales de los 20 amino\'{a}cidos proteinog\'{e}nicos a pH 7 clasificados seg\'{u}n su radical de color rosado. Tomado de \cite{Nelson2011}.}
-\end{figure}
-Exceptuando la glicina, todos los amino\'{a}cidos presentan la propiedad de la quiralidad, existiendo dos formas posibles para cada amino\'{a}cido: L-amino\'{a}cidos o D-amino\'{a}cidos. La distinci\'{o}n va seg\'{u}n la direcci\'{o}n en la que desv\'{i}en la luz con respecto al centro quiral que es el C-$\alpha$ del amino\'{a}cido.  Pr\'{a}cticamente todos los amino\'{a}cidos encontrados en prote\'{i}nas tienen la forma L.
-\section{Formaci\'{o}n de P\'{e}ptidos y Prote\'{i}nas}
-Dos amino\'{a}cidos reaccionan formando un enlace llamado pept\'{i}dico, esto ocurre cuando el carbono del grupo carboxilo se enlaza covalentemente con el nitr\'{o}geno del grupo amino produciendo una deshidrataci\'{o}n, es decir, liberando agua. En la figura \ref{fig:pepti} se muestran los reactantes y los productos de la reacci\'{o}n.
-\begin{figure}[H]
-\centering
-\definesubmol\a{C^{\alpha}(-[:270]H)(-[:0]C(=[:270]O)(-[:0].\textcolor{blue}{OH}))(-[:180]NH_{2})(-[:90]R^{1})}
-\definesubmol\b{C^{\alpha}(-[:270]H)(-[:0]C(=[:270]O)(-[:0]OH))(-[:180]N(-[:90]H)(-[:180].\textcolor{blue}{H}))(-[:90]R^{2})}
-\definesubmol\c{C^{\alpha}(-[:90]R^{1})(-[:270]H)(-[:0]C(=[:270]O)(-[:0]N(-[:90]H)(-[:0]C^{\alpha}(-[:90]R^{2})(-[:270]H)(-[:0]COOH))))(-[:180]NH_{2})}
-\schemestart
-\chemfig[][scale=0.75]{!\a}\+\chemfig[][scale=0.75]{!\b}\schemestop
-\schemestart\arrow{<=>[][\chemfig[scale=0.75]{H_{2}O}]} \schemestop
-\chemfig[][scale=0.75]{!\c}
-\caption{Formaci\'{o}n de un dip\'{e}ptido. Se muestran los reactantes sin ionizar para ejemplificar, en sus formas polii\'{o}nicas  se ioniza el amino-terminal y el carboxi-terminal}\label{fig:pepti}
-\end{figure}
-El enlace pept\'{i}dico es un enlace amida de la forma \ce{R^{1}C(O)NHR^{2}}. Debido a que las amidas forman una estructura de resonancia tal como se ilustra en la figura \ref{fig:amide}, el enlace pept\'{i}dico forma un enlace parcial doble. Este enlace parcial doble, como los caracter\'{i}sticos de las estructuras de resonancia, es un h\'{i}brido entre el enlace simple y el enlace doble. De hecho, Linus Pauling y Robert Corey \cite{Nelson2011}, encontraron que la longitud del enlace pept\'{i}dico era de $1.32\AA{}$ la cual es menor a la de un enlace \ce{C-N} simple ($1.49 \AA{}$) y mayor a la de un enlace doble covalente \ce{C=N} ($1.27\AA{}$). \\
+Algunas prote\'{i}nas est\'{a}n en la clase de prote\'{i}nas de transporte que se encuentran en la membrana celular, la funci\'{o}n que cumplen es actuar como mediadoras para el transporte de iones y sustratos, convirti\'{e}ndose en un paso previo al metabolismo y la energ\'{e}tica celular al interior de la c\'{e}lula.\\
 
-\begin{figure}[H]
-\centering
-\definesubmol\a{-[:0,0.5]C(=[:90]\lewis{0:4:,O})(-[:0]\lewis{2:,N}(-[:270]H)(-[:0,0.5]))}
-\definesubmol\b{-[:0,0.5]C(-[:90]\lewis{0:4:,O})(=[:0]\lewis{2:,N}(-[:270]H)(-[:0,0.5]))}
-\definesubmol\c{-[:0,0.5]C(-[:90,,,,rddbond]O)(-[:0,,,,lddbond]N(-[:270]H)(-[:0,0.5]))}
-\schemestart
-\chemfig[][scale=0.75]{!\a}\arrow{<->}[0,0.75]\chemfig[][scale=0.75]{!\b}\schemestop
-\schemestart\arrow{<->}[0,0.75] \schemestop
-\chemfig[][scale=0.75]{!\c}
-\caption{Posibles estructuras de Lewis de la ani\'{o}n amida \ce{[C(O)NH]^{-2}} que al mezclarlas producen el estado resonante.}\label{fig:amide}
-\end{figure}
-Otro apunte que hay resaltar es el hecho de que la distancia entre los carbonos $\alpha$ es de $3.8\AA$, \cite{Smith1996}, la cual se pone en evidencia cuando se involucra la estructura de los p\'{e}ptidos y de las prote\'{i}nas en el espacio tridimensional.
+\section{Din\'{a}mica de una Biomol\'{e}cula}
 
-\subsection{Estructura de las Prote\'{i}nas}
-De acuerdo a Kai Linderstr{\o}m-Lang, la estructura de las prote\'{i}nas puede considerarse en varios niveles, conocidos como estructuras \textit{primaria}, \textit{secundaria}, \textit{terciaria} y \textit{cuaternaria}. En lo que sigue se detallan cada uno de estos niveles.
-\subsubsection{Estructura Primaria y Secundaria}
-Por \textit{estructura primaria} se entiende la secuencia u orden en que se encuentran los residuos unidos por enlaces pept\'{i}dicos dentro de un p\'{e}ptido o prote\'{i}na. Generalmente se conoce primero por m\'{e}todos experimentales de clivaje, la secuencia de los residuos. Conocer la secuencia es fundamental ya que esta determina la estructura tridimensional.\\
+La din\'{a}mica de una biomol\'{e}cula se determina por las ecuaciones de movimiento para cada uno de los \'{a}tomos que la constituyen. Usualmente en una biomol\'{e}cula el n\'{u}mero de mon\'{o}meros es mayor a 20, que al multiplicarlo por el n\'{u}mero de \'{a}tomos en cada mon\'{o}mero incrementa considerablemente el n\'{u}mero de ecuaciones de movimiento a resolver. En el presente caso, se ha determinado que en cada cadena del cotransoortador vSGLT hay 530 amino\'{a}cidos, conformando un total de 3854 \'{a}tomos (ver \cite{Faham2008} y el archivo PDB). De ah\'{i} que sea necesario realizar simulaciones computacionales por \textit{din\'{a}mica molecular} (Molecular Dynamics que por sus siglas en ingl\'{e}s es MD) en las cuales se estudia el movimiento como funci\'{o}n del tiempo de los \'{a}tomos (Full atomic MD) de acuerdo a las interacciones que presenten.\\
 
-En la figura \ref{fig:pepti} se observa un residuo contiguo al otro en forma horizontal, es decir en su estructura primaria. Sin embargo, al observar al p\'{e}ptido tridimensionalmente la cadena que se forma no es lineal. Esto se debe a interacciones no covalentes entre los \'{a}tomos que no necesariamente est\'{a}n conectados por el enlace pept\'{i}dico. Estas interacciones hacen que los grupos funcionales dentro del p\'{e}ptido se encuentren a \'{a}ngulos diferentes. Para estudiar la estructura tridimensional se describir\'{a}n inicialmente, los \'{a}ngulos de rotaci\'{o}n entre los residuos que componen al p\'{e}ptido o prote\'{i}na.\\
+Las ecuaciones de movimiento se pueden conocer a partir de los formalismos lagrangiano o hamiltoniano \cite{Goldstein2001}, en los cuales es necesario conocer los potenciales con los que interact\'{u}an los \'{a}tomos. Las soluciones a las ecuaciones de movimiento se encuentran mediante los m\'{e}todos de la din\'{a}mica molecular, el an\'{a}lisis de modos normales (Normal Mode Analysis que por sus siglas en ingl\'{e}s es NMA) o el an\'{a}lisis por componentes principales (Principal Component Analysis, PCA por sus siglas en ingl\'{e}s) los cuales difieren en los modelos de potencial y en los resultados relevantes. Mientras que en MD se obtiene la posici\'{o}n como funci\'{o}n del tiempo, en los NMA y en los PCA  es m\'{a}s importante analizar el espectro, es decir, los autovalores y autovectores obtenidos de una diagonalizaci\'{o}n.\\
 
-Linus Pauling y Robert Corey encontraron que el enlace pept\'{i}dico forma una estructura planar (r\'{i}gida) que contiene 4 \'{a}tomos enlazados alrededor del \ce{C-N}, la cual se presenta debido al enlace parcial doble, de tal manera que fija el \'{a}ngulo de rotaci\'{o}n del grupo \ce{C=O} con respecto al grupo \ce{N-H}. El \'{a}ngulo $\omega$ entre los dos grupos es, excepto cuando hay prolinas, de $180\textdegree$ (conformaci\'{o}n trans). En la figura \ref{fig:pepti2} se pueden observar los \textit{planos amida} de los residuos.\\ 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.3]{Kap2/peptide.png}
-\caption{\'{A}ngulos dihedros $\phi$, $\psi$ y $\omega$(No mostrado). Tomado de \cite{Nelson2011}.}\label{fig:pepti2}
-\end{figure}
-El \'{a}ngulo $\phi$ es $0\textdegree$ cuando el grupo \ce{N-H} est\'{a} en la posici\'{o}n trans respecto al enlace \ce{C\alpha-C} mientras que el \'{a}ngulo $\psi$ es  $0\textdegree$ cuando el enlace \ce{C-N} est\'{a} en la posici\'{o}n trans respecto al enlace \ce{C=O}, ver \cite{Kuchel}.\\
+Los diversos modelos de potencial pueden ser tomados seg\'{u}n la naturaleza del pol\'{i}mero a analizar, ver \cite{Lezon2009}. Sin embargo, al escoger el potencial  para hacer un an\'{a}lisis \textit{in silico} de la din\'{a}mica de una biomol\'{e}cula, debe tenerse en cuenta el costo computacional requerido, esto es, el tiempo de simulaci\'{o}n de la mol\'{e}cula y la exactitud requerida en el movimiento de cada uno de los constituyentes de la mol\'{e}cula.\\
 
-La \textit{estructura secundaria} se define como la conformaci\'{o}n local que genera estructuras repetitivas. Al definir la estructura secundaria se simplifica el entendimiento de la estructura tridimensional de la prote\'{i}na ya que permite identificar patrones que se repiten en diferentes prote\'{i}nas.\\
-
-Existen tres tipos com\'{u}nes de estructura secundaria, ver \cite{Kuchel}:
-\begin{enumerate}
- \item $\alpha$ H\'{e}lice: Ocurre si la cadena principal se enrolla formando una h\'{e}lice, de tal manera que el ox\'{i}geno del grupo carbonilo en un residuo forma un \textit{puente de hidr\'{o}geno} con el hidr\'{o}geno de la amina secundaria encontrado 4 residuos m\'{a}s adelante. En la figura \ref{fig:helice} se observan mediante las l\'{i}neas punteadas, \'{a}tomos de ox\'{i}geno (rojo) interactuando con los protones (gris claro)  en otro residuo. La cadena principal o esqueleto se representa con una cinta enrollada, figura de la izquierda cumpliendo la propiedad de tener 3.6 residuos por cada vuelta. Se observa que la secuencia en la h\'{e}lice avanza seg\'{u}n la regla de la mano derecha, esto es caracter\'{i}co de todas las h\'{e}lices formadas por L-amino\'{a}cidos, estas se les denomina $\alpha_R$ h\'{e}lices (Dextr\'{o}giras).
- \item Hoja plegada $\beta$ o l\'{a}mina $\beta$: Las hojas plegadas beta aparecen casi formando l\'{a}minas, contrario a la $\alpha$ h\'{e}lice. La hoja es formada por dos o m\'{a}s segmentos polipept\'{i}dos, contrario a la $\alpha$ h\'{e}lice, donde s\'{o}lo se requiere una cadena polipept\'{i}dica para formar la h\'{e}lice. Estos segmentos polipept\'{i}dicos est\'{a}n unidos por puentes de hidr\'{o}geno en los grupos carbonilo y amina de sus residuos. Hay dos tipos de l\'{a}minas $\beta$, las \textit{paralelas} que tienen sus cadenas polipept\'{i}dicas las mismas direccion\'{e}s, es decir del amino terminal al carboxi terminal o \textit{antiparalelas}, es decir, con direcciones opuestas entre s\'{i}. En la figura 
- \item Vueltas (Turns): Son aqu\'{e}llas conformaciones que no tienen una estructura secundaria repetitiva (pierden su estructura secundaria) e invierten la direcci\'{o}n de la cadena principal. Usualmente aparecen involucrados de 1 a 5 residuos, teniendo a estas cadenas un tama\~{n}o menor a $7\AA$. Existe una variedad de tipos de vuelta seg\'{u}n los \'{a}ngulos dihedros que formen: \cite{Pavone1996}
- \begin{enumerate}
- \item $\alpha$ Vuelta (En ingl\'{e}s $\alpha$-turn): Es com\'{u}n que sea la unidad repetitiva de una $\alpha_R$ h\'{e}lice, \cite{Pavone1996}. Se forman puentes de hidr\'{o}geno entre los grupos amino y carbonilo del primer y el quinto residuo.
- \item $\beta$ Vuelta (En ingl\'{e}s $\beta$-turn): Es la m\'{a}s com\'{u}n y se presenta entre las conexiones de las hojas $\beta$ antiparalelas. Ocurre cuando hay puentes de hidr\'{o}geno entre los grupos amino y carbonilo del primer y el cuarto residuo. Existen 4 tipos principlaes de $\beta$ vueltas, las cuales, a pesar de ser estructuras no repetitivas, se distinguen por tener \'{a}ngulos $\phi$ y $\psi$ determinados. Frecuentemente se encuentran con residuos de glicina y prolina.
- \item $\gamma$ Vuelta (En ingl\'{e}s $\gamma$-turn): Forman sus puentes de hidr\'{o}geno entre el residuo $i$ y el $i+2$. Tienen una regi\'{o}n m\'{a}s bien definida en el gr\'{a}fico de Ramachandran, encontr\'{a}ndose de dos tipos: Cl\'{a}sicas $(\phi,\psi)=(75,-65)$ e invertidas $(\phi,\psi)=(-75,65)$. En la figura \label{fig:Rama} se muestran estas regiones.
-  \item Lazo $\omega$ (En ingl\'{e}s $\omega$-loop): Se difinen como elementos que aunque tienen una longitud del enlace fijo, las direcciones o \'{a}ngulos no est\'{a}n correlacionados, es decir, se distribuyen de manera aleatoria. \cite{Smith1996}.
-\end{enumerate}
-\end{enumerate}
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.2]{Kap2/helix.png}
-\includegraphics[scale=0.2]{Kap2/helix2.png}
-\caption{Porci\'{o}n de una $\alpha$ h\'{e}lice perteneciente a la prote\'{i}na vSGLT (C\'{o}digo pdb 3DH4) formada por los enlaces de hidr\'{o}geno mostrados en color amarillo.}\label{fig:helice}
-\end{figure}
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.2]{Kap2/beta2.png}
-\includegraphics[scale=0.2]{Kap2/beta.png}
-\caption{Porci\'{o}n de una hoja $\beta$ antiparalela perteneciente a la prote\'{i}na hRBP2 (C\'{o}digo pdb 2RCQ) formada por los enlaces de hidr\'{o}geno mostrados en color amarillo.}\label{fig:beta}
-\end{figure}
-Tambi\'{e}n hay otros tipos de estructura secundaria como las h\'{e}lices de col\'{a}geno, las $\pi$ h\'{e}lices, las $3_{10}$ h\'{e}lices, entre otras, que no son de inter\'{e}s para estudiar nuestra prote\'{i}na.\\
-
-Los patrones estructurales se forman cuando los \'{a}ngulos entre residuos son fijos. Esto diferencia un tipo de estructura secundaria de la otra, los \'{a}ngulos $\phi$ y $\psi$ entre residuos son diferentes. Aunque no hay \'{u}nicos \'{a}ngulos que determinen si conformaci\'{o}n es una $\alpha$ h\'{e}lice o una hoja $\beta$, al graficar $\psi$ contra $\phi$ , se han encontrado regiones permitidas y prohibidas para la formaci\'{o}n de estas conformaciones locales. El gr\'{a}fico de $\phi$ contra $\psi$ se conoce como gr\'{a}fico de Ramachandran. En la figura \ref{fig:Rama} se muestran las \'{a}ngulos permitidos en color oscuro para una $\alpha_R$ h\'{e}lice, una hoja $\beta$ y una $\alpha_L$ h\'{e}lice.
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.4]{Kap2/Rama.png}
-\put(-33,30){$\alpha_R$}
-\put(-16,35){$\alpha_L$}
-\put(-33,53){$\beta$}
-\put(-36,40){$\gamma'$}
-\put(-16,10){$\gamma$}
-\caption{Gr\'{a}fico de Ramachandran para 97368 residuos tomados de 500 estructuras diferentes mostrando las regiones permitidas para una $\alpha_R$ h\'{e}lice, una $\alpha_L$ h\'{e}lice, una hoja $\beta$ y las vueltas $\gamma$ y $\gamma'$. Imagen tomada de \cite{Lovell2003}}\label{fig:Rama}
-\end{figure}
-\subsubsection{Estructura Terciaria y cuaternaria}
-La \textit{estructura terciaria} es la forma en que las cadenas polipept\'{i}dicas como un todo (lo global en oposici\'{o}n a lo local) se pliegan en su estructura tridimensional \cite{Kuchel}. Las p\'{e}ptidos y prote\'{i}nas se pliegan en el entorno biol\'{o}gico, mientras que los p\'{e}ptidos sint\'{e}ticos en soluci\'{o}n generalmente muestran una conformaci\'{o}n aleatoria, ver figura \ref{fig:complejo} (a). El plegamiento de las prote\'{i}nas no es un proceso favorable termodin\'{a}micamente, sin embargo, las prote\'{i}nas adquieren su estructura en condiciones biol\'{o}gicas debido a las interacciones no covalentes y covalentes (puente de disulfuro) presentes dentro de ella misma y con el medio acuoso.\\
-
-En la \textit{estructura cuaternaria} diferentes cadenas polipept\'{i}dicas, denominadas subunidades, se arreglan formando un complejo multiproteico. Estas subunidades est\'{a}n unidas por interacciones prote\'{i}na-prot\'{i}na, que no son m\'{a}s que interacciones no covalentes. Un complejo multiproteico puede estar formado por dos o m\'{a}s prote\'{i}nas del mismo tipo, mult\'{i}meros homot\'{i}picos \footnote{Cuando hay pocas subunidades monom\'{e}ricas se denomina un homoolig\'{o}mero, en particular, si hay dos mon\'{o}meros se le dice un d\'{i}mero, tres mon\'{o}meros tr\'{i}mero, cuatro mon\'{o}meros tetr\'{a}mero, etc.}, o diferentes, mult\'{i}meros heterot\'{i}picos. En la figura \ref{fig:complejo} (b) se muestra on d\'{i}mero.\\
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.2]{Kap2/chainB.png}
-\put(-70,0){\textbf{(a)}}
-\includegraphics[scale=0.08]{Kap2/chainAB.png}
-\put(-70,0){\textbf{(b)}}
-\caption{Mon\'{o}mero del cotransportador vSGLT(C\'{o}digo pdb 3dh4); \textbf{(b)}vSGLT mostrado como d\'{i}mero, como aparece en su forma biol\'{o}gica}\label{fig:complejo}
-\end{figure}
-Las interacciones no covalentes que pliegan la prote\'{i}na en la estructura terciaria y unen las subunidades proteicas son: \cite{Kuchel}
-\begin{itemize}
- \item \textit{Interacci\'{o}n electrost\'{a}tica}: Es la interacci\'{o}n de Coulomb entre grupos cargados en un medio diel\'{e}ctrico. A partir de la fuerza de interacci\'{o}n de Coulomb se puede obtener la energ\'{i}a potencial, que de forma equivalente, es el trabajo requerido para separar un sistema de cargas, en este caso, para separar los grupos que est\'{a}n interactuando y que tambi\'{e}n viene siendo la energ\'{i}a almacenada por el sistema. La energ\'{i}a potencial electrost\'{a}tica para $N$ grupos funcionales que est\'{a}n interactuando es:
-\begin{equation}
-V_{elec}(r)=\sum_{j=1}^{N-1}\sum_{i=j+1}^{N}\frac{Z_{i}Z_{j}e^2}{4 \pi \epsilon_0 \epsilon_{r} r_{ij}}
-\end{equation}
-Donde $N$ es el n\'{u}mero de grupos interactuantes, $i=1,2,...,N-1$ y $j=j+1,...,N$ son etiquetas que se les coloca a cada grupo con el fin de sumar todas las interacciones posibles. $Z_{i}$ y $Z_{j}$ son las cargas electr\'{o}nicas de los grupos $i$ y $j$ respectivamente. $e_r$ es la constante diel\'{e}ctrica o permitividad relativa del medio el cual suele ser acuoso, cuyo valor es $e_r=80.10$ a $20\textdegree C$ aunque en prote\'{i}nas de membrana tambi\'{e}n se puede considerar la bicapa lip\'{i}dica como otro diel\'{e}ctrico.\\
-Ha de notarse que la sumatoria interna corre desde $j+1$ para no repetir la interacci\'{o}n entre el grupo $i$ y el grupo $j$ con la del grupo $j$ y el $i$, que es la misma.\\
-
-  \item \textit{Puente de Hidr\'{o}geno}: Es una interacci\'{o}n electrost\'{a}tica entre grupos polares, debida a la asimetr\'{i}a de las cargas. Uno de estos grupos polares necesariamente posee un \'{a}tomo de hidr\'{o}geno unido covalentemente a un \'{a}tomo electronegativo, lo cual convierte al hidr\'{o}geno en un \'{a}tomo electropositivo. El otro grupo posee un \'{a}tomo con pares de electrones sin enlazar.\\
-  El grupo al cual est\'{a} unido el hidr\'{o}geno se le conoce como donor de puentes de hidr\'{o}geno y al otro grupo como aceptor de puentes de hidr\'{o}geno. Se dice tambi\'{e}n que es un enlace de polarizaci\'{o}n.
- 
- \item \textit{Puente salino}: Ocurre cuando entre dos grupos est\'{a}n presentes la interacci\'{o}n electrost\'{a}tica y el puente de hidr\'{o}geno.
- 
- \item \textit{Interacci\'{o}n de Van der Waals}: Es tambi\'{e}n un enlace de polarizaci\'{o}n, pero en este caso debida a la presencia de dipolos moment\'{a}neos en ciertos grupos con altas diferencias en sus electronegatividades. El potencial de Van der Waals, tambi\'{e}n conocido como Potencial de Lennard-Jones 6,12 es:
- \begin{equation}
-V_{len}(r)=\sum_{j=1}^{N+1}\sum_{i=j+1}^N f_{ij}\left\{\epsilon_{ij}\left[\left(\frac{r_{0ij}}{r_{ij}}\right)^{12}-2\left(\frac{r_{0ij}}{r_{ij}}\right)^6\right]\right\}
-\end{equation}
-Donde las constantes $f_{ij}$, $\epsilon_{ij}$ y $r_{0ij}$ pueden ser calculadas o determinadas emp\'{i}ricamente. El potencial de Van der Waals para dos \'{a}tomos se encuentra graficado en la figura \ref{fig:van}.
-Las sumatorias expresan el total de interacciones presentes en los grupos con dipolos transitorios. Hay dos t\'{e}rminos presentes, uno con potencia $r_{ij}^{-6}$ y el otro con potencia $r_{ij}^{-12}$. El de $r_{ij}^{-12}$ se conoce como t\'{e}rmino repulsivo y se puede por analog\'{i}a con la interacci\'{o}n de Coulomb, cuando las cargas son positivas el potencial electrost\'{a}tico es positivo. Por oposici\'{o}n, el t\'{e}rmino $r_{ij}^{-6}$ el t\'{e}rmino atractivo.
-\item \textit{Interacciones Hidrof\'{o}bicas}: Es la forma de organizarse las mol\'{e}culas hidrof\'{o}bicas en un medio acuoso. Cuando se agregan moleculas apolares en el agua, como por ejemplo, los hidrocarburos, las mol\'{e}culas de agua se organizan de manera energ\'{e}ticamente desfavorable, entonces las mol\'{e}culas hidrof\'{o}bicas se organizan de tal manera que decrezca la entrop\'{i}a de la soluci\'{o}n.
+De acuerdo a los par\'{a}metros de costo, tiempo, escala y detalle en el sistema, las simulaciones de biomol\'{e}culas se pueden hacer analizando los \textit{movimientos locales} y los \textit{movimientos globales}.
+\section{Movimientos Locales}
+Hacen referencia a las simulaciones en las que se incluyen todos los \'{a}tomos junto con las interacciones presentes, es decir, en las que se analizan los \textit{cambios locales}. Estas se pueden simular a un orden de magnitud de los nanosegundos en una m\'{a}quina usual, al respecto ver \cite{Gur2013}.
+\subsection{MD usando todos los \'{a}tomos}
+Existen simulaciones MD usando todos los \'{a}tomos (Full atomic MD) o usando los movimientos globales (Coarse-grained models). Como caso particular se pueden considerar los potenciales usados en \cite{Amber2016}, que siguen el modelo de Amber. El modelo de Amber tiene en cuenta las contribuciones debidas a:
+ \begin{itemize}
+\item Interacciones intermoleculares: Son las producidas por los enlaces covalentes entre grupos de \'{a}tomos, las de valencia y las torsiones.
+\begin{eqnarray}
+V_{cov}(r)&=&\sum_{enlaces}k_r\left(r-r_0\right)^2\\
+V_{val}(r)&=&\sum_{val}k_\theta\left(\theta-\theta_0\right)^2\\
+V_{tor}(r)&=&\sum_{torsiones}\sum_{n}\frac{V_n}{2}\left[1+\cos(n\phi-\gamma)\right]
+\end{eqnarray}
+\item Interacciones entre pares: Lennard Jones, electrost\'{a}tico.
+\begin{eqnarray}
+V_{len}(r)&=&\sum_{j=1}^{N+1}\sum_{i=j+1}^N f_{ij}\left\{\epsilon_{ij}\left[\left(\frac{r_{0ij}}{r_{ij}}\right)^{12}-2\left(\frac{r_{0ij}}{r_{ij}}\right)^6\right]\right\}\\
+V_{elec}(r)&=&\sum_{j=1}^{N-1}\sum_{i=j+1}^{N}\frac{q_iq_j}{4\pi\epsilon_0r_{ij}}
+\end{eqnarray}
 \end{itemize}
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.3]{Kap2/van_der_waals2.png}
-\put(-100,60){\makebox(0,0){\rotatebox[origin=c]{90}{Energ\'{i}a}}}
-\put(-130,50){Atractiva}
-\put(-130,25){Repulsiva}
-\put(-75,10){Distancia de contacto}
-\put(-75,5){de Van der Waals}
-\put(-35,40){Distancia (nm)}
-\caption{Potencial de Van der Waals entre \'{a}tomos. Imagen tomada de \cite{Kuchel}}\label{fig:van}
-\end{figure}
-Mientras que en la estructura cuaternaria no aparecen interacciones covalentes, en la estructura terciaria normalmente se considera una s\'{o}la interacci\'{o}n covalente: \textit{El puente disulfuro}. Esta interacci\'{o}n ocurre cuando los tioles de dos ciste\'{i}nas, que pueden estar lejanas, se oxidan formando el enlace entre los dos azufres de las ciste\'{i}nas.\\
+\subsection{An\'{a}lisis de Modos Normales Est\'{a}ndar (NMA est\'{a}ndar)}
 
-En la tabla \ref{Rango} se muestran las energ\'{i}as de enlace y los rangos en los que act\'{u}an algunas de estas interacciones para ciertos casos particulares o en otros casos una estimaci\'{o}n de su valor.
-\begin{table}[H]
-\centering
-\begin{adjustbox}{width=0.7\textwidth,center}
- \begin{tabular}[c]{|c|c|c|c|}\hline
-\textbf{Interacci\'{o}n} & \textbf{Rango ($\AA$)}&\textbf{Energ\'{i}a de Enlace($kJ/mol$)}&Descripci\'{o}n\\ \hline
-Enlace covalente&1.5&356& Para un enlace \ce{-C-C-} \\ \hline
-Enlace pept\'{i}dico&1.32&-&La energ\'{i}a de enlace var\'{i}a por cada prote\'{i}na\\ \hline %\ce{CH_2--[:0,0.5]H_2C}\\ \hline
-Electrost\'{a}tica &3&12-20& Residuos en el interior de la prote\'{i}na\\ \hline
-Puente de Hidr\'{o}geno &1.9-2.0&5& Entre un carbonilo y un amina\\ \hline
-Van der Waals&0.3-0.5&0.4-2.0&\chemfig{-[,0.5]CH_2-[,1,,,dash bond]H_2C(-[,0.5])}\\ \hline
-Hidrof\'{o}bicas&-&$\sim3$&Transferencia de un \ce{-CH_2} de una cadena lateral al agua\\ \hline
-\end{tabular}
-\end{adjustbox}
-\caption{Rango de interacci\'{o}n y energ\'{i}a de enlace para las interacciones presentes en una prote\'{i}na}\label{Rango}
-\end{table} 
-\subsubsection{Cristalograf\'{i}a de rayos X}
-Es una t\'{e}cnica para determinar la estructura tridimensional de un mol\'{e}cula encontrada en un cristal. Existen otros m\'{e}todos para encontrar la estructura tridimensional de una mol\'{e}cula, como la resonancia magn\'{e}tica nuclear, pero en el presente trabajo s\'{o}lo es de inter\'{e}s la cristalograf\'{i}a de rayos X.\\
+El an\'{a}lisis de modos normales es el an\'{a}lisis arm\'{o}nico que en este caso es aplicado a las prote\'{i}nas. Los modos normales ocurren cuando todos los constituyentes del sistema oscilan sinusoidalmente y con la misma frecuencia. Los potenciales que cumplen con estas caracter\'{i}sticas son los potenciales tipo Hooke; ya que los potenciales tienen una forma complicada como la del modelo de Amber, entonces se aproxima el potencial alrededor de un punto de equilibrio a una cuadr\'{a}tica.\\
 
-Las cristalograf\'{i}a de rayos X est\'{a} basada en las leyes f\'{i}sicas de la difracci\'{o}n. Como se requiere determinar la estructura de una prote\'{i}na, primero debe cristalizarse la prote\'{i}na, es decir, esta debe formar una red altamente organizada (peri\'{o}dica) con la cual se puede generar un patr\'{o}n de difracci\'{o}n.\\
+En el an\'{a}lisis \textit{est\'{a}ndar} los constituyentes son \textit{todos los \'{a}tomos} de la biomol\'{e}cula. Al utilizar todos los \'{a}tomos, los costos computacionales de las simulaciones pueden ser mayores que los de otros modelos en los que no se usan todos los \'{a}tomos. A pesar de esto, el NMA est\'{a}ndar es \'{u}til para estudiar los movimientos funcionales de la biomol\'{e}cula.\\
 
-Una gran variedad de prote\'{i}nas pueden ser cristalizadas mediante tres m\'{e}todos: Difusi\'{o}n por calor, m\'{e}todo ``microbatch'' y el microdi\'{a}lisis. Mientras que otras prote\'{i}nas como las de membrana, requieren de una soluci\'{o}n detergente para poder cristalizarlas. En dichas t\'{e}cnicas el objetivo es reducir impurezas y conseguir un cristales bien ordenados.\\
-
-Luego de estar listo el cristal de la prote\'{i}na, este se analiza mediante un difract\'{o}metro. En la figura se muestra el esquema de dicho dispositivo. La muestra se coloca sobre un goni\'{o}metro, dispositivo que puede rotar, el cual se encuentra entre la zona que produce el haz de rayos X y la zona de detecci\'{o}n.\\
-\begin{figure}[h]
- \centering
- \includegraphics[scale=0.5]{Kap2/diffractometer.png}
- % diffractometer.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
- \caption{Difract\'{o}metro de rayos X. Tomada de \cite{UniversidadPolitecnicadeValenciaMetodoX}}
- \label{fig:dif}
-\end{figure}
-
-
-La primera prote\'{i}na en cristalizarse y determinarse su estructura fue la mioglobina, publicada en 1958 \cite{Nelson2011} y a partir de ah\'{i}, se han determinado hasta la fecha m\'{a}s de 100 000 estructuras de prote\'{i}nas, las cuales est\'{a}n reposadas en el Protein Data Bank (PDB por sus siglas en ingl\'{e}s).\\
-
-\section{Algunas Familias Proteicas}
-
-Como se ha dicho, las interacciones  covalentes y no covalentes no s\'{o}lamente ocurren entre los residuos de la prote\'{i}na sino 
-tambi\'{e}n entre la prote\'{i}na y el entorno que la rodea, por ejemplo, en condiciones fisiol\'{o}gicas con el medio acuoso o con 
-la bicapa fosfolip\'{i}dica. Estas interacciones hacen que cada prote\'{i}na se pliegue de forma \'{u}nica, siendo predominante 
-para la determinaci\'{o}n de la estructura, la secuencia de los residuos. A 
-pesar de las diferencias, muchas de ellas tienden a formar dos tipos de plegamientos, el de \textit{prote\'{i}nas fibrosas}, el de 
-\textit{prote\'{i}nas globulares}. Las prote\'{i}nas fibrosas forman filamentos largos, similares a los de una cuerda mientras que las 
-prote\'{i}nas globulares tienden a formar una estructura compacta como la de un bal\'{o}n. Cada tipo de prote\'{i}na tiene 
-caracter\'{i}sticas particulares, por ejemplo, las prote\'{i}nas fibrosas no son solubles en agua, mientras que las globulares si 
-lo son. Esto se debe a la forma en que se arregla los residuos en cada una de ellas, en las globulares los residuos 
-hidrof\'{o}bicos tienden a estar en el interior debido al agua y en las fibrosas se encuentran residuos hidrof\'{o}bicos, que tienden a formar un solo tipo de estructura secundaria.\\
-
-La clasificaci\'{o}n de prote\'{i}nas globulares y fibrosas es limitada y no \'{u}nica, de hecho, en la base de datos SCOP2 \cite{Andreeva2014}, las 
-prote\'{i}nas se clasifican en 4 \textit{tipos}: Solubles, de membrana, fibrosas e intrinsecamente desordenadas. Es importante resaltar esto porque prote\'{i}nas como las de membrana, es decir, que est\'{a}n en la  membrana celular, no son exclusivamente globulares o fibrosas.\\
-Las prote\'{i}nas se clasifican de acuerdo a sus propiedades estructurales y funcionales en dominios, especies, dominios proteicos, familias, superfamilias, plegamientos y clases. ver \cite{Hubbard1999} y \cite{Andreeva2014}.\\
-
-Las clases de prote\'{i}nas se deben a la s similaridades en la composici\'{o}n de su estructura secundaria pero no necesariamente de su estructura terciaria o de sus or\'{i}genes evolutivos. Estos arreglos de estructura secundaria se conocen como \textit{estructuras supersecundarias}, \textit{motivos estructurales} o \textit{plegamientos}, proteinas con estos motivos estructurales pueden ser $\alpha$ prote\'{i}nas, $\beta$ prote\'{i}nas, $\alpha/\beta$ prote\'{i}nas (alternan $\alpha$ y $\beta$) $\alpha+\beta$($\alpha$ y $\beta$ segregadas) . Otras clases son las prote\'{i}nas de membrana y de superficie, las peque\'~{n}as prote\'{i}nas, las prote\'{i}nas con estructura aleatoria, entre otras.\\
-
-Los plegamientos (fold) son grupos dentro de cada clase que contienen prote\'{i}nas con estructura terciaria similar pero no est\'{a}n necesariamente relacionados evolutivamente. Los plegamientos contienen superfamilias. En cada superfamilia, sus miembros tienen un estructura terciaria lo suficientemente similar como para deducir una relaci\'{o}n evolucionaria entre \'{e}stos.\\
-
-Dentro de cada superfamilia hay familias. Los miembros de las familias est\'{a}n m\'{a}s relacionados tanto en su secuencia, como en su estructura y en su funci\'{o}n. Comparten m\'{a}s del $30\%$ de la secuencia y realizan la misma funci\'{o}n.
-
-\section{Prote\'{i}nas de Membrana}
-Son las prote\'{i}nas encontradas en la bicapa fosfolip\'{i}dica de las membranas biol\'{o}gicas. En la figura  \ref{fig:cell} se muestra la membrana 
-celular de una bacteria. Las bacterias, a diferencia de los eucariontes, tienen dos membranas, una conocida como pared celular y otra simplemente como membrana celular.\\
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.3]{Kap2/cell_wall.pdf}
-\caption{Membranas interna y externa de una bacteria gram negativa mostrando algunas de las macromol\'{e}culas que la constituyen. La membrana externa se conoce como pared celular. Traducida de \cite{Dahl2008File:Gram-}}\label{fig:cell}
-\end{figure}
-Tambi\'{e}n se observan macromol\'{e}culas unidas a cada membrana, algunas de estas son prote\'{i}nas de membrana. Hay prote\'{i}nas de membrana que atraviesan la membrana (prote\'{i}nas integrales de membrana) mientras que otras s\'{o}lamente est\'{a}n ubicadas en el interior o 
-el exterior de la c\'{e}lula, estas son conocidas como prote\'{i}nas de membrana perif\'{e}ricas. Incluso, algunas est\'{a}n unidas con grupos no proteicos, tales como carbohidratos y l\'{i}pidos.\\
-
-Para visualizar las membranas se puede usar el microscopio de fuerza at\'{o}mico, que muestra el perfil de la membrana con sus componenentes.\\
-\subsection{Transportadores}
-La membrana celular al ser hidrof\'{o}bica permite protegerse de la regi\'{o}n extracelular, sin embargo, ella necesita ingresar y expulsar todos los compuestos necesarios para realizar sus procesos metab\'{o}licos. Seg\'{u}n el tama\~{n}o, la concentraci\'{o}n y las cargas relativas de estos compuestos, estos pueden pasar directamente por la membrana lip\'{i}dica, mientras que otras requieren de las prote\'{i}nas de membrana para poder pasar al interior y/o al exterior de la c\'{e}lula. Ah\'{i} entran en juego los \textit{transportadores}, los cuales son prote\'{i}nas integrales de membrana que permiten el ingreso de sustancias al interior y al exterior de las membranas biol\'{o}gicas.\\
-
-
-Algunas sustancias que pasan directamente por la bicapa fosfolp\'{i}dica son el \ce{O_2} y el \ce{CO_2} que son sustancias peque\~{n}as y apolares, estas pueden pasar por difusi\'{o}n simple, lo cual no requiere un gasto de energ\'{i}a, ya que esto es un efecto dependiente de la organizaci\'{o}n de las moleculas en el espacio, es decir, de los cambios de sus concentraciones en el espacio.\\
-
-Los transportadores se clasifican, de acuerdo al sistema de clasificaci\'{o}n de transportadores \cite{Nelson2011}, en dos categor\'{i}as principales de las cuales se desprenden otras subcategor\'{i}as :
-\begin{enumerate}
- \item \textbf{Portadores}:
+De acuerdo a \cite{Hayward2008}, los pasos requeridos para realizar un modelo de NMA est\'{a}ndar son:
+\begin{quote}
  \begin{enumerate}
- \item[1.] Transportadores activos primarios: Son aqu\'{e}llos que requieren un gasto de energ\'{i}a libre para poder mover solutos en contra de su gradiente de concentraci\'{o}n. La forma m\'{a}s conocida para proporcionar energ\'{i}a es mediante la desfosforilaci\'{o}n del ATP.
- \item[2.a] Transportadores activos secundarios (Cotransportadores \cite{Nelson2011}): Son aqu\'{e}llos que est\'{a}n mediados en los que hay un acoplamiento de dos solutos. Mientras uno es transportado a favor del gradiente de concentraci\'{o}n \footnote{Por convenci\'{o}n a favor del gradiente de concentraci\'{o}n significa que pasa de mayor a menor concentraci\'{o}n, es decir, en la direcci\'{o}n contraria al gradiente ``matem\'{a}tico'' $\nabla c$}, proporcionando energ\'{i}a libre, el otro aprovecha esta energ\'{i}a para ir en contra del gradiente de concentraci\'{o}n. Frecuentemente este proceso est\'{a} acompa\~{n}ado de un transporte activo primario, para producir el gradiente favorable de concentraci\'{o}n. Existen dos tipos:
-  \begin{enumerate}
- \item[a)] Simportadores: Son los que transportan las dos sustancias en la misma direcci\'{o}n.
- \item[b)] Antiportadores: Son los que transportan las dos sustancias en direcciones contrarias.
+  \item Una minimizaci\'{o}n de la energ\'{i}a potencial conformacional en funci\'{o}n de las coordenadas cartesianas at\'{o}micas. Se usan las coordenadas at\'{o}micas cristalogr\'{a}ficas.
+  \item El c\'{a}lculo de la matriz ``Hessiana", que es la matriz de las segundas derivadas de la energ\'{i}a potencial evaluada en el m\'{i}nimo. 
+  \item La diagonalizaci\'{o}n de la matriz de Hessiana.
  \end{enumerate}
- \item[2.b] Uniportadores: Se da por difusi\'{o}n facilitada, esto es, la prote\'{i}na facilita la difusi\'{o}n a favor del gradiente de concentraci\'{o}n, se presenta debido a que algunas sustancias no son solubles en l\'{i}pidos (iones o sustancias polares) o su tama\~{n}o molecular no les permite pasar.
- \end{enumerate}
- \item  \textbf{Canales i\'{o}nicos}: Los canales se diferencian de los portadores en que no necesitan energ\'{i}a metab\'{o}lica para transportar los iones. Adicional a esto, la raz\'{o}n a la que transportan los iones, es de $10^6$ iones/segundo  (muy alta).
- \end{enumerate}
+\end{quote}
 
 
-\subsection{Simportadores de Sodio Soluto}
-Hacia la d\'{e}cada de los a\~{n}os sesenta Robert Crane, ver \cite{Hamilton2013}, estableci\'{o} una relaci\'{o}n acoplada o de \textit{cotransporte} entre el ion de sodio y la glucosa los cuales son absorbidos por el intestino delgado. El conocimiento de este mecanismo ha permitido realizar el tratamiento de la diarrea y del c\'{o}lera mediante la rehidrataci\'{o}n oral. La hip\'{o}tesis del cotransporte ha sido numerosamente validada y ha sido una piedra angular para el entendimiento de el metabolismo de los carbohidratos, claves en la energ\'{e}tica celular. La hip\'{o}tesis del cotransporte tambi\'{e}n se ha extendido a otros organismos vivos, con la diferencia de que el acoplamiento del sodio se puede dar con cualquier otro soluto org\'{a}nico \cite{Faham2008}.\\
+\section{Movimientos Globales}
 
-Ejemplos de simportadores que transportan el sodio acoplado con otros solutos son el transportador de \ce{Na^{+}/I^{-}} NIS encontrado en las c\'{e}lulas de la gl\'{a}ndula tiroidea, el transportador de  \ce{Na^{+}/Glucosa} SGLT1 encontrado en el intestino delgado (mencionado arriba) y el transportador de  \ce{Na^{+}/Glucosa} SGLT2 encontrado en la nefrona del ri\~{n}on.\\ 
+Son aqu\'{e}llas simulaciones en las que se desean conocer los \textit{cambios globales} o el aspecto general que excibe el movimiento de una biomol\'{e}cula haciendo simplificaciones, ya sea en los potenciales presentes o en el n\'{u}mero de \'{a}tomos interconectados. Algunas de estas simulaciones pueden ser realizadas a un orden de magnitud de los microsegundos y en algotras pueden obtenerse resultados en tan solo unos minutos, lo cual facilita su uso en computadores personales, al respecto ver \cite{Gur2013}. Los modelos en que se reemplaza la descripci\'{o}n atom\'{i}stica por una de m\'{a}s baja resoluci\'{o}n se conocen como modelos de grano grueso, en ingl\'{e}s \textit{coarse-grained models}.\\
 
-Actualmente los simportadores de \ce{Na^+}-soluto, son una familia de prote\'{i}nas de membrana, denotada como SSS (en ingl\'{e}s Sodium Solute Symporter). La cual pertenece a la superfamilia APC (Por las siglas en ingl\'{e}s Amino acid-poliamine organocation superfamily) de la cual, una familia a resaltar es la NSS, que contiene el cotransportador de leucina y dos \ce{Na^+} LeuT, que posee un plegamiento similar al de los tranportadores mencionados (Com\'{u}nmente conocido como leuT fold o plegamiento de LeuT).\\
-\section{Co-transportador vSGLT}
-El cotransportador de Na+/Galactosa presente en la membrana interna de la proteobacteria gram negativa \textit{Vibrio Parahaemolyticus} denotado como vSGLT, es un simportador perteneciente a la familia  SSS \cite{SaierJr.}, es decir, transporta simult\'{a}neamente sodio y galactosa.\\
+De forma semejante a la red cristalina en el estado s\'{o}lido, los bloques constituyentes de la biomol\'{e}cula se reemplazan  por un punto representativo llamdo \textit{nodo}. Aunque los bloques constituyentes son los residuos (mon\'{o}meros) de la biomol\'{e}cula.\\
 
-La caracterizaci\'{o}n molecular del compuesto se realiz\'{o} por primera vez hacia el a\~{n}o 2000 por \cite{Turk2000}, mientras que la determinaci\'{o}n de su estructura fue posible hacia el a\~{n}o 2008 \cite{Faham2008}. Luego, en el a\~{n}o 2010 se determin\'{o} la estructura del mutante K294A (reemplazo de lisina por alanina) en la que aparecen registradas dos $\alpha$ h\'{e}lices adicionales.\\
+En una prote\'{i}na las unidades monom\'{e}ricas son los amino\'{a}cidos y  se suelen tomar como nodos las posiciones de equilibrio de los C-$\alpha$ en la estructura cristalina. Ver por ejemplo el tratamiento realizado al inhibidor de la tripsina pancre\'{a}tica bovina (BPTI) y al transportador de aspartato en arqueas GltPh, ver \cite{Gur2013}. Aunque se suelen tomar los C-$\alpha$ esto puede variar ligeramente para dar compatibilidad al modelo con los datos experimentales. Existen programas como MAVEN \cite{Zimmermann2011} que permiten escoger el centro de gravedad de cada mon\'{o}mero como posici\'{o}n de equilibrio del nodo, usar modelos de grano grueso esf\'{e}rico o usar modelos de resoluci\'{o}n mixtals.\\
+Un conjunto de modelos que permite calcular los movimientos globales de una mol\'{e}cula son los an\'{a}lisis por modos normales (Normal Mode Analysis o NMA por sus siglas en ingl\'{e}s).
+ Otros modelos que describen los movimientos globales son los an\'{a}lisis por componentes principales (Principal Component Analysis o PCA por sus siglas en ingl\'{e}s).
+ \subsection{An\'{a}lisis de Modos Normales (NMA)}
+Existe una versi\'{o}n equivalente del an\'{a}lisis de modos normales en el cual se usa el mismo potencial pero no se consideran todos los \'{a}tomos de la red sino las unidades monom\'{e}ricas de la biomol\'{e}cula.
+\subsubsection{Modelos de Redes El\'{a}sticas (ENM)}
+Propuesto por primera vez en \cite{Tirion1996}, los ENM, como la palabra \textit{el\'{a}stico} lo indica, se basan en una simplificaci\'{o}n de la energ\'{i}a potencial a una energ\'{i}a potencial el\'{a}stica, es decir de tipo Hooke, ver figura \ref{fig:pan}.\\
 
-En la caracterizaci\'{o}n de vSGLT, se encuentra reportada una  masa de 60676 Da y 543 residuos, equivalente a 3854 \'{a}tomos, sin incluir los hidr\'{o}genos. Adem\'{a}s este puede transportar como mon\'{o}mero,  aunque en su forma biol\'{o}gica aparece como d\'{i}mero. Principalmente transporta galactosa, aunque con un menor rendimiento puede transportar glucosa y fructosa, de la misma manera que lo hacen los transportadores SGLT1 Y SGLT2 \cite{SaierJr.}.\\
 
-La estructura tridimensional de vSGLT \cite{Faham2008} se obtiene por difracci\'{o}n de rayos x con un espaciamiento de Bragg entre $2.7\AA$ y $3\AA$ (mejor y peor direcci\'{o}n) y  a una temperatura de $T=100$K. Esta  resoluci\'{o}n es la dada por los rayos x emitidos de una placa de cobre y corresponde al tama\~{n}o al que se alcanzan a percibir los residuos en una prote\'{i}na con posibles errores en los rotameros de las cadenas laterales peque\~{n}as \cite{Huang2007}. Se pasaron por el difract\'{o}metro tres tipos de estructuras cristalinas \ce{P1}, \ce{P2_{1}},  \ce{P2_{1}P2_{1}P2_{1}} que corresponden a los sistemas tricl\'{i}nico, monocl\'{i}nico y ortorr\'{o}mbico respectivamente.\\
 
-En la base de datos del PDB, se encuentra la estructura de vSGLT  como un tetr\'{a}mero con el c\'{o}digo PDB 3DH4, ver figura \ref{fig:3dh4}. La estructura tetram\'{e}rica es la de la celda unitaria. Mientras que en su ensamblaje biol\'{o}gico forma un d\'{i}mero, figura \label{fig:complejo} (a).
+El modelo es bueno cuando la estabilidad de los enlaces con respecto a su posici\'{o}n de equilibrio es menor a una estimaci\'{o}n  de $13\AA$; para distancias mucho mayores el potencial se corta; la distancia a partir de la que se corta el potencial se denomina distancia de corte $R_c$. La distancia de corte es uno de los par\'{a}metros requeridos en el modelo, el otro es la constante el\'{a}stica que puede ser la misma para todas las unidades o puede variar.\\
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.1]{Kap2/3dh4tetra.png}
-\caption{Tetr\'{a}mero del cotransportador vSGLT (C\'{o}digo pdb 3dh4) como aparece cristalizado.}\label{fig:3dh4}
+\begin{figure}
+\centering%
+\includegraphics[scale=0.28]{Kap2/dibujo.pdf}%
+\caption{ (a) Vista exterior de un c\'{a}pside v\'{i}rico HK97 coloreado por cada cadena, todas las prote\'{i}nas son id\'{e}nticas. (b) Vista del arreglo prote\'{i}nico en una cara del c\'{a}pside. (c) Vista de la estructura secundaria de las prote\'{i}nas (d) Esquema de cada prote\'{i}na mostrando cada uno de sus \'{a}tomos, las aristas de cada cara son carbonos $\alpha$ unidos por lados (ligaduras el\'{a}sticas). Tomado de \cite{Lezon2009}.} \label{fig:pan}
 \end{figure}
-La conformaci\'{o}n con la cual se obtuvo la estructura cristalina del simportador fue la conformaci\'{o}n hacia adentro cerrada, es decir, con la galactosa ocluida dentro del simportador tal como se muestra en la figura \ref{fig:3dh4_2}. El sitio del sodio fue determinado de acuerdo a la arquitectura central (core structure) que comparte el simportador con los simportadores que pertenecen a la superfamilia del plegamiento de LeuT, la cual es cercana al sitio Na2 de LeuT. La distancia a la que se encuentran el sodio (ion) y la galactosa (substrato) es $\sim 10 \AA$\\
-\begin{figure}[H]
+
+La primera vez que se usaron los ENM en la investigaci\'{o}n de prote\'{i}nas fue gracias a Monique Tirion, ver \cite{Tirion1996}. Entre las prote\'{i}nas  investigadas se encuentran la actina G (C\'{o}digo PDB: 1atn) y la miosina H1 (C\'{o}digo PDB: 1my). La G-actina es modelada bien por los ENM.\\ 
+
+Existen dos tipos de ENM: Modelos de redes anisotr\'{o}picas (ANM por sus siglas en ingl\'{e}s) y Modelos de Redes Gaussianas (GNM por sus siglas en ingl\'{e}s) los cuales se diferencian en el modelo de potencial usado.  El modelo de redes anisotr\'{o}picas inicialmente no usa el mismo potencial que el an\'{a}lisis de modos normales est\'{a}ndar sino que usa el potencial presente entre resortes tridimensionales, en la figura \ref{fig:ANM} se muestra que el potencial entre los resortes depende de la diferencia de distancias.\\
+\begin{figure}
 \centering
-\includegraphics[scale=0.07]{Kap2/vSGLT_in1.png}
-\put(-40,0){(a)}
-\includegraphics[scale=0.07]{Kap2/vSGLT_in2.png}
-\put(-40,0){(b)}
-\vspace{10mm}
-\includegraphics[scale=0.1]{Kap2/vSGLT_inward.png}
-\put(-50,70){Out}
-\put(-50,-5){In}
-\put(-60,0){(c)}
-\caption{14 segmentos transmembranales de vSGLT con sus $\alpha$ h\'{e}lices representadas por cilindros. La galactosa se muestra  ocluida.(a) Vista desde el periplasma; (b) vista desde el citoplasma; (c) vista lateral}\label{fig:3dh4_2}
+\input{Kap2/resorte2.pdf_tex}%
+\caption{Modelo representativo de las elongaciones de un resorte para ANM} \label{fig:ANM}
 \end{figure}
-El n\'{u}mero de segmentos transmembranales TM es de 14, distribuidos entre los residuos \cite{Lomize2012OPMMembranes}:\\
+\subsubsection{Modelos de Bloques r\'{i}gidos (BNM)}
+El modelo de bloques r\'{i}gidos (BNM por sus siglas en ingl\'{e}s) o tambi\'{e}n conocido como rotaciones y traslaciones de bloques (RTB por sus siglas en ingl\'{e}s) es un modelo que surge cuando se desean estudiar  los modos de un sistema grande como rotaciones y traslaciones de sus partes. Para esto se escogen $n_b$ bloques r\'{i}gidos con $n_b<N$, para $N$ el n\'{u}mero de constituyentes.\\
 
-TM1(4-18), TM2(53-77), TM3(82-99), TM4(129-155), TM5(162-177), TM6(188-205), TM7(255-267), TM8(286-305), TM9(348-377), TM10(397-418), TM11(423-443), TM12(458-472), TM13(479-496), TM14(524-545).\\
+\subsection{An\'{a}lisis por Componentes Principales (PCA)}
+En el an\'{a}lisis por componentes principales (PCA por sus siglas en ingl\'{e}s) se buscan las contribuciones principales a las fluctuaciones, enti\'{e}ndase por esto a las covarianzas entre las componentes de la posici\'{o}n de los \'{a}tomos. Contrario a los ENM y NMA, los modos que m\'{a}s contribuyen a las fluctuaciones son los de m\'{a}s altas frecuencias \cite{Amadei1993}.
+\section{Descripci\'{o}n Mec\'{a}nica de NMA}\label{sec:MecNMA}
 
-Debe tenerse en cuenta que el TM2 est\'{a} fragmentado en dos partes:  TM2E(53-64), TM2I(67-77).\\
+Consid\'{e}rese una biomol\'{e}cula con $N$ part\'{i}culas constituyentes, la energ\'{i}a potencial $V$ que representa las interacciones entre los constituyentes de la biomol\'{e}cula ( v\'{a}lido tanto para NMA est\'{a}ndar como para NMA global), se puede expresar alrededor de las posiciones de equilibrio $\mathbf{q_0}=\mathbf{0}$ tal como describe la teor\'{i}a de peque\~{n}as oscilaciones, ver \cite{Goldstein2001}:
+\begin{equation}\label{eq:1}
+V(\mathbf{q})=V(\mathbf{0})+\sum_{i=1}^n\frac{\partial V}{\partial q_i}\bigg|_{\mathbf{q}=\mathbf{0}}q_i+\frac{1}{2}\sum_{ij}^{n}\frac{\partial^2 V }{\partial q_i\partial q_j}\bigg|_{\mathbf{q}=\mathbf{0}}q_i q_j+...
+\end{equation}
+Donde $q_i$ son los desplazamientos con respecto a las posiciones de equilibrio, $n$ es el n\'{u}mero de posibles desplazamientos en la biomol\'{e}cula. $V(\mathbf{0})$ es el potencial en equilibrio que por conveniencia puede ser calibrado a cero: $V(\mathbf{0})=0$. \\
 
-Posteriormente en \cite{Watanabe2010} aparece una nueva estructura del cotransportador vSGLT en su conformaci\'{o}n hacia adentro pero abierta o no ocluida, es decir, con el sustrato liberado. En la base de datos del PDB se encuentra reposada dicha estructura con el c\'{o}digo 2XQ2. Esta estructura difiere de 3DH4 en que all\'{i} se resuelve el segmento TM1, que aunque en la figura \ref{fig:3dh4_2} aparece como una h\'{e}lice, en esta no se conocen las posiciones de los residuos. Adicionalmente, se encuentra una he\'{e}lice adicional al final de la secuencia.\\
-\section{Estudios actuales del Co-transportador vSGLT}
+
+El sistema se encuentra alrededor del equilibrio cuando las fuerzas generalizadas se anulan, esto es:
+\begin{equation}\label{eq:2}
+\frac{\partial V}{\partial q_i}\bigg|_{\mathbf{q}=\mathbf{0}}=0
+\end{equation}
+En este tipo de casos como la energ\'{i}a se minimiza, se dice que hay un equilibrio estable. Para entender esto, sup\'{o}gase que la energ\'{i}a total, que en este caso es $E=T+V$ corresponde al punto de equilibrio donde los nodos no se mueven, es decir, $E=V_{min}$ (l\'{i}nea punteada de la figura \ref{fig:pot}). Ahora suponga que hay una incremento de la energ\'{i}a total en una cantidad $\Delta E$, este incremento generar\'{a} un aumento en la energ\'{i}a potencial, l\'{i}nea continua.  Si el sistema se desv\'{i}a de la posici\'{o}n de equilibrio, por conservaci\'{o}n de la energ\'{i}a y como $E=T+V$, la energ\'{i}a cin\'{e}tica disminuye. En un equilibrio inestable la energ\'{i}a cin\'{e}tica aumenta, alejando al sistema del equilibrio. \cite{Goldstein2001} \\
+
+En la figura \ref{fig:pot} tambi\'{e}n debe considerarse que la escala de las distancias est\'{a} entre 0.1 y 10nm, pero que al acercarnos a distancias menores la aproximaci\'{o}n arm\'{o}nica falla, presentando m\'{u}ltiples m\'{i}nimos relativos, \cite{Elber1987}.\\
+\begin{figure}
+\centering%
+\input{Kap2/Potencial.tex}%
+\put(-830,330){$E$}
+\put(-950,480){$E+\Delta E$}
+\put(-400,390){$T$}
+\put(-405,345){\vector(0,1){130}}
+\put(-280,410){$T$}
+\put(-300,375){\vector(0,1){100}}
+\put(0,800){$E$}
+\put(700,10){$q$}
+\put(-830,8){\textbf{a)}}
+\put(12,8){\textbf{b)}}
+\includegraphics[trim = -1cm -3cm 0cm 0cm , clip, width=6cm,height=7cm]{Kap2/mult_min.png}%
+\caption{Potencial en funci\'{o}n de la posici\'{o}n, a) mostrando la energ\'{i}a total $E$ y los cambios en la energ\'{i}a cin\'{e}tica y b) mostrando el modelo de m\'{u}ltiples m\'{i}nimos. } \label{fig:pot}
+\end{figure}
+
+Considerando la condici\'{o}n de equilibrio \eqref{eq:2} y despreciando desplazamientos de orden superior se tiene que:
+\begin{equation}\label{eq:3}
+V(\mathbf{q})=\frac{1}{2}\sum_{i,j=1}^{n}\frac{\partial^2 V }{\partial q_i\partial q_j}\bigg|_{\mathbf{q}=\mathbf{0}}q_i q_j
+\end{equation}
+
+Donde se identifican las constantes el\'{a}sticas como:
+\begin{equation}\label{eq:4}
+U_{ij}=\frac{\partial^2 V }{\partial q_i\partial q_j}\bigg|_{\mathbf{q}=\mathbf{0}}
+\end{equation}
+
+En t\'{e}rminos matriciales el potencial se puede escribir como:
+\begin{equation}\label{eq:5}
+V(\mathbf{q})=\frac{1}{2}\mathbf{q}^t\mathbf{U}\mathbf{q}
+\end{equation}
+En la ecuaci\'{o}n \eqref{eq:5} $\mathbf{q}$ es el vector columna formado por los desplazamientos de las posiciones de equilibrio para cada constituyente, i. e., $\mathbf{q}^t=(q_1,q_2,...q_n)$. Por otro lado la matriz de constantes el\'{a}sticas $\mathbf{H}$, es una matriz sim\'{e}trica debido a que la fuerza generalizada se considera conservativa, lo cual permite intercambiar el orden de las derivadas parciales.\\
+
+Para las peque\~{n}as oscilaciones, no existen ligaduras dependientes expl\'{i}citamente de el tiempo (holon\'{o}micas) luego, la eneg\'{i}a cin\'{e}tica de los constituyentes s\'{o}lo depender\'{a} de los cuadrados de las velocidades generalizadas:
+\begin{equation}\label{eq:6}
+T=\frac{1}{2}\mathbf{q}^t\mathbf{M}\mathbf{q}
+\end{equation}
+Donde $\mathbf{M}$ es la masa generalizada, la cual se expresa en t\'{e}rminos de los factores de escala entre sistemas coordenados:
+\begin{equation}\label{eq:7}
+M_{jk}=\sum_{i=1}^{N} m_{i}\frac{\partial \mathbf{r_{i}} }{\partial q_j}\cdot\frac{\partial \mathbf{r_{i}} }{\partial q_k}
+\end{equation}
+La forma en que se escribir\'{a}n los elementos de la masa del sistema depende de la transformaci\'{o}n aplicada. Por ejemplo, en una dimensi\'{o}n las componentes de $\mathbf{q}$ se definen como:
+\begin{equation}\label{eq:8}
+q_i=x_i-x_{i0}
+\end{equation}
+En \eqref{eq:8} $x_i$ es la posici\'{o}n variable de la part\'{i}cula $i$ con respecto a un sistema fijo y $x_{i0}$ su posici\'{o}n de equilibrio. Para este caso particular \eqref{eq:7} se convierte en:
+\begin{eqnarray}\label{eq:9}
+M_{jk}&=&\sum_{i=1}^{N} m_{i} \delta_{ij}\delta_{ik}\nonumber \\
+M_{jk}&=&m_{j} \delta_{jk}
+\end{eqnarray}
+La equaci\'{o}n \eqref{eq:9} dice que la matriz $\mathbf{M}$ es una matriz diagonal cuyas componentes son las masas del sistema.\\
+
+Para el caso tridimensional, la matriz de masas del sistema es (Los detalles del c\'{a}lculo se encuentran en el anexo \ref{AnexoA}):
+\begin{equation}
+M_{jk}=\left( m_{3j-2}+m_{3j-1}+m_{3j} \right) \delta_{jk}
+\end{equation}
+
+\paragraph{Ecuaci\'{o}n de Movimiento}\label{par:Ecmov}
+El sistema satisface la ecuaci\'{o}n de un oscilador arm\'{o}nico, lo cual se muestra para las peque\~{n}as oscilaciones en \cite[Chapter~6]{Goldstein2001}:
+\begin{equation}\label{eq:14}
+\mathbf{M}\ddot{\mathbf{q}}+\mathbf{U}\mathbf{q}=\mathbf{0}
+\end{equation}
+Para convertir la ecuaci\'{o}n a la forma est\'{a}ndar se usan las coordenadas de masa ponderada (en ingl\'{e}s mass-weighted coordinates) las cuales cambian la escala en la que se mide la posici\'{o}n:
+\begin{eqnarray}\label{eq:15}
+\mathbf{r}&=&\mathbf{M}^{1/2}\mathbf{q}\\
+\mathbf{K}&=&\mathbf{M}^{-1/2}\mathbf{U}\mathbf{M}^{-1/2}\nonumber
+\end{eqnarray}
+Reemplazando dichas transformaciones en la ecuaci\'{o}n de movimiento se obtiene:
+\begin{equation}\label{eq:16}
+\ddot{\mathbf{r}}+\mathbf{K}\mathbf{r}=\mathbf{0}
+\end{equation}
+El efecto que tienen las coordenadas de masa ponderada sobre la energ\'{i}a cin\'{e}tica  es el de desaparecer la dependencia con la matriz de masas del sistema, que como se vi\'{o} puede resultar en una expresi\'{o}n tediosa. Las energias cin\'{e}tica y potencial en las nuevas coordenadas son:
+\begin{eqnarray}\label{eq:19}
+T&=&\frac{1}{2}\mathbf{q}^t\mathbf{M}\mathbf{q} \nonumber \\
+T&=&\frac{1}{2}\mathbf{\dot{r}}^t\mathbf{M^{-1/2}}^t\mathbf{M}\mathbf{M^{1/2}}\mathbf{\dot{r}}\nonumber \\
+T&=&\frac{1}{2}\mathbf{\dot{r}}^t \mathbf{\dot{r}}
+\end{eqnarray}
+\begin{eqnarray}\label{eq:20}
+V(\mathbf{q})&=&\frac{1}{2}\mathbf{q}^t\mathbf{U}\mathbf{q} \nonumber \\
+V(\mathbf{q})&=&\frac{1}{2}\mathbf{r}^t\mathbf{M^{-1/2}}^t\mathbf{U}\mathbf{M^{1/2}}\mathbf{r} \nonumber \\
+V(\mathbf{q})&=&\frac{1}{2}\mathbf{r}^t\mathbf{K}\mathbf{r}
+\end{eqnarray}
+Una soluci\'{o}n (de prueba) a la ecuaci\'{o}n de movimiento es la oscilatoria, en la cual los constituyentes de la biomol\'{e}cula tienen la misma frecuencia $\omega$:
+\begin{equation}\label{eq:17}
+\mathbf{r}=\mathbf{a}e^{i\omega t}
+\end{equation}
+El vector $\mathbf{a}$ es denominado vector de amplitudes debido a que cada una de sus componentes corresponde a las amplitudes de cada mon\'{o}mero. Sus valores son fijos en el tiempo.\\
+
+Al reemplazar la soluci\'{o}n de prueba en la ecuaci\'{o}n \eqref{eq:16} se convierte en un problema de autovalores y autovectores:
+
+\begin{eqnarray}\label{eq:18}
+\ddot{\mathbf{r}}&=&-\mathbf{K}\mathbf{r} \nonumber \\
+\omega^2\mathbf{a}&=&\mathbf{K}\mathbf{a} \nonumber \\
+\lambda_{k}\mathbf{a_{k}}&=&\mathbf{K}\mathbf{a_{k}}
+\end{eqnarray}
+
+En \eqref{eq:18} se ha definido $\lambda=\omega^2$ y posteriormente se ha agregado el sub\'{i}ndice $k$ para distinguir cada uno de los autovalores y autovectores que se encuentren en el problema \eqref{eq:18}.\\
+Cuando cada uno de los mon\'{o}meros tiene la misma frecuencia, a cada frecuencia le corresponde un vector de amplitudes $\mathbf{a}$, cada uno de estos posibles vectores se les conoce como un \textit{modo normal de oscilaci\'{o}n}.\\
+
+Ha de notarse que la soluci\'{o}n total no est\'{a} compuesta por un \'{u}nico modo, sino por la superposici\'{o}n de estos:
+\begin{equation}\label{eq:tot}
+\mathbf{r}=\sum_k\mathbf{a}_ke^{i\omega_k t}
+\end{equation}
+
+Cuando se tiene esta soluci\'{o}n y se desean conocer los modos normales, pueden aplicarse dos m\'{e}todos: El de la transformada de Fourier para conocer las frecuencias y la transformaci\'{o}n a las coordenadas normales; las coordenadas normales son un espacio en el cual se separan los movimientos compuestos.\\
+
+Las coordenadas normales $\mathbf{\zeta}$ se definen como:
+\begin{equation}
+\mathbf{r}=\mathbf{T}\mathbf{\zeta}
+\end{equation}
+Donde $\mathbf{T}$ es una transformaci\'{o}n ortogonal  $\mathbf{T}\mathbf{T}^T=\mathbf{I}$ formada por los modos normales $\mathbf{a}_k$  pero modificados para que se cumpla la ortonormalidad. Cada componente de $\mathbf{\zeta}$ es:
+\begin{equation}\label{eq:nor}
+\zeta_k=C_k e^{i\omega_k t}
+\end{equation}
+Es decir, las coordenadas normales $\zeta_k$ representan a un \'{u}nico modo normal de oscilaci\'{o}n, una \'{u}nica frecuencia. Mientras que las columnas de $\mathbf{T}$ proporcionan las direcciones en las que se da cada modo normal.\\
+
+
+\subsubsection{Ensamble Estad\'{i}stico}
+Cuando el sistema (biomol\'{e}cula) se encuentre a temperaturas fisiol\'{o}gicas, s\'{o}lo intercambiar\'{a} calor con los alrededores (ba\~{n}o t\'{e}rmico). Sin embargo, se ha demostrado  que a esta temperatura, la aproximaci\'{o}n arm\'{o}nica falla , \cite{Hayward2008}; por otro lado, a temperatura fisiol\'{o}gica el ensamble es cl\'{a}sico dependiendo del rango de frecuencias a analizar\cite{Sethna2006}, \cite{Cui2006}. En la figura \ref{fig:estad}, se observa el n\'{u}mero de nodos en funci\'{o}n de la frecuencia para diferentes prote\'{i}nas, para frecuencias menores que la frecuencia de vibraci\'{o}n del oscilador arm\'{o}nico a temperatura ambiente, se puede trabajar con la mec\'{a}nica cl\'{a}sica.\\
+\begin{figure}
+\centering%
+\includegraphics[scale=0.3]{Kap2/modos_vs_f.png}%
+\put(-65,5){\rotatebox{90}{N\'{u}mero de modos}}
+\put(-45,-5){Frecuencia ($p\mathrm{s}^{-1}$)}
+\caption{N\'{u}mero de modos normales en funci\'{o}n de la frecuencia para tres prote\'{i}nas diferentes.$k_BT/h$ es la frecuencia correspondiente a la m\'{a}s baja energ\'{i}a promedio a temperatura $T$. Tomado de \cite{Cui2006}.} \label{fig:estad}
+\end{figure}
+Como \'{u}nicamente hay intercambio de energ\'{i}a y se trabaja a temperatura fisiol\'{o}gica, la estad\'{i}stica apropidada es la del ensamble can\'{o}nico. En el ensamble  can\'{o}nico se sigue la distribuci\'{o}n de probabilidad de Boltzmann:
+\begin{equation}\label{eq:21}
+\rho=\frac{\exp(-E_s/k_BT)}{Z}
+\end{equation}
+Donde $E_s$ es la energ\'{i}a del sistema y $Z$ la funci\'{o}n de partici\'{o}n. La funci\'{o}n de partici\'{o}n es el factor de normalizaci\'{o}n de la densidad de probabilidad y cuenta todos los posibles microestados a temperatura constante:
+\begin{equation}\label{eq:22}
+Z=\frac{1}{h^{n}}\int \mathrm{d}^n p\mathrm{d}^n q \exp \left [-H(\mathbf{p},\mathbf{q})/k_BT \right]
+\end{equation}
+En \eqref{eq:22}, $n=3N$ cuando el n\'{u}mero de coordenadas $q_i$ escogido es el mismo que el n\'{u}mero de coordenadas cartesianas.\\
+Ha de notarse que la funci\'{o}n de partici\'{o}n en \eqref{eq:22} desacopla los momentos y las posiciones, ya que el hamiltoniano est\'{a} dado por la f\'{o}rmula $H=T+V$, donde la enger\'{i}a cin\'{e}tica depende s\'{o}lo de los momentos generalizados y  el potencial de las coordenadas generalizadas.\\
+
+Se desarrolla \eqref{eq:22} teniendo en cuenta que $\mathbf{M}$ es diagonal:
+\begin{eqnarray}\label{eq:23}
+Z&=&\frac{1}{h^{n}}\int \mathrm{d}^n p\mathrm{d}^n q \exp \left [-\left( \mathbf{\dot{q}^t}\mathbf{M}\mathbf{\dot{q}}/2+\mathbf{q}^t\mathbf{U}\mathbf{q}/2\right)/k_BT \right]
+\nonumber \\
+Z&=&\frac{1}{h^{n}}\int \mathrm{d}^n p \exp \left [-\sum_i \frac{p_i^2}{2m_i}\right]
+\int \mathrm{d}^n r \left( \prod_i \sqrt{m_i}\right)\exp \left[-\frac{1}{2}\mathbf{r}^t\mathbf{K}\mathbf{r}/k_BT \right]
+\nonumber \\
+Z&=&\frac{(2\pi)^{n/2}}{h^{n}}
+\int \mathrm{d}^n r\exp \left[-\frac{1}{2}\mathbf{r}^t\mathbf{K}\mathbf{r}/k_BT \right] 
+\end{eqnarray}
+El resultado \eqref{eq:23} es el mostrado en \cite{Lezon2009} o en \cite{Sethna2006}:
+\begin{equation}\label{eq:24}
+Z=\frac{\left(k_BT\right)^{n/2}}{\hbar^{n}} \frac{1}{|\mathbf{K}|^{n/2}}
+\end{equation}
+Tomando $\hbar=1$ y teniendo en cuenta que el determinante de $\mathbf{K}$ es el producto de los autovalores no nulos, es decir, de las frecuencias al cuadrado:
+\begin{eqnarray}\label{eq:25}
+Z&=&\left(k_BT\right)^{n/2} \prod_{i=1}^{n}\frac{1}{\omega_i}
+ \\
+Z&=&\left(k_BT\right)^{n/2} |\mathbf{K^{-1}}|^{1/2}
+\end{eqnarray}
+Se observa que los modos de m\'{a}s bajas frecuencias contribuyen m\'{a}s a la funci\'{o}n de partici\'{o}n.
+\section{Descripciones de los Movimientos Globales}
+\subsection{ENMs}
+\subsubsection{Modelos de Redes Anisotr\'{o}picas (ANM)}\label{ssec:ANM}
+Como se ha dicho, la aproximaci\'{o}n a segundo orden del potencial, minimizaci\'{o}n, \eqref{eq:5} es cambiada por un potencial de Hooke en el cual se tienen en cuenta las distancias en lugar de los desplazamientos alrededor del equilibrio y tambi\'{e}n se pueden tener en cuenta diferentes constantes el\'{a}sticas entre diferentes nodos:
+\begin{equation}\label{eq:26}
+V=
+   \frac{1}{2}\sum_{
+   i,j>i  
+   }
+   \gamma_{ij}\left(R_{ij}-R_{ij}^0\right)^2
+\end{equation}
+\begin{equation*}
+\mbox{			Con		} R_{ij},R_{ij}^0<R_c  
+\end{equation*}
+
+Donde $R_{ij}^0$ es la distancia de equilibrio entre los nodos $i-j$ de la red, $R_{ij}$ su distancia variable y $\gamma_{ij}$ las constantes el\'{a}sticas entre los nodos $i-j$. Como se ilustra en la figura \ref{fig:res}, el t\'{e}rmino $R_{ij}-R_{ij}^0$ es la elongaci\'{o}n del resorte, lo cual es diferente a la resta de los desplazamientos, ecuaci\'{o}n \eqref{eq:3}; entonces no se est\'{a} aproximando el potencial ni se requiere una minimizaci\'{o}n de la energ\'{i}a, como se ha recalcado, s\'{o}lo se cambia la forma del potencial.\\
+
+Se requiere que $j>i$ para que no aparezca repetido el t\'{e}rmino $\left(R_{ij}-R_{ij}^0\right)^2$ con $\left(R_{ji}-R_{ji}^0\right)^2$   ya que representan la misma interacci\'{o}n, de ser as\'{i}, se vuelven obsoletas las constantes el\'{a}sticas $\gamma_{ij}$ con $j<i$. Sin embargo, el potencial tambi\'{e}n puede escogerse dejando los t\'{e}rminos repetidos y redefiniendo la matriz de constantes el\'{a}sticas como una matriz sim\'{e}trica, esto es: $\gamma_{ij}=\gamma_{ji}$. Escogiendo el potencial de esta manera, como es usal en la literatura \cite{Rader2006}, queda de la forma:
+\begin{equation}\label{eq:26}
+V_{ANM}=
+   \frac{1}{2}\sum_{
+   i\neq j=1  z
+   }
+   \gamma\left(R_{ij}-R_{ij}^0\right)^2
+\end{equation}
+\begin{eqnarray*}
+\mbox{			Con		} R_{ij},R_{ij}^0<R_c \\
+\mbox{			y		} \gamma_{ij}=\gamma_{ji}
+\end{eqnarray*}
+\begin{figure}
+\centering%
+\includegraphics[scale=0.3]{Kap2/resorte.png}%
+\caption{Desplazamientos de los nodos $i-j$ de su posici\'{o}n de equilibrio. Tomado de \cite{Rader2006}.} \label{fig:res}
+\end{figure}
+Existe un servidor web \cite{Eyal2015} basado en ANM que permite ver los movimientos globales de una prote\'{i}na o de un \'{a}cido nucleico y permite obtener informaci\'{o}n como los autovalores, los factores-B, las correlaciones entre otras.\footnote{ Recurso disponible en \url{http://anm.csb.pitt.edu/cgi-bin/anm2/anm2.cgi}}
+\paragraph{Matriz Hessiana}\label{par:Mhes}
+El c\'{a}lculo de la matriz de segundas derivadas $\mathbf{U}$ para el an\'{a}lisis de modos normales, si parte de una minimizaci\'{o}n de la energ\'{i}a.  Las derivadas se calculan v\'{i}a el potencial anisotr\'{o}pico \eqref{eq:26}, para el presente caso la matriz $\mathbf{U}$ es llamada $\mathbf{\mathcal{H}}$. La matriz $\mathbf{\mathcal{H}}$ es de tama\~{n}o $3N\times3N$ con $N$ el n\'{u}mero de residuos y est\'{a} constituida por $N\times N$ submatrices de tama\~{n}o $3\times3$ llamadas $\mathbf{H}_{ij}$:
+\begin{equation}\label{eq:34}
+\mathbf{\mathcal{H}}=\{H_{ij}\} \mbox{		con	}i,j=1,...,N
+\end{equation}
+Los elementos de $\mathbf{H}_{ij}$ son:
+\begin{equation}\label{eq:35}
+\mathbf{H}_{ij}=\left(
+\begin{array}{ccc}
+ \partial_{xi}\partial_{xj} V & \partial_{xi}\partial_{yj} V & \partial_{xi}\partial_{zj} V \\
+ \partial_{yi}\partial_{xj} V & \partial_{yi}\partial_{yj} V & \partial_{yi}\partial_{zj} V \\
+ \partial_{zi}\partial_{xj} V & \partial_{zi}\partial_{yj} V & \partial_{zi}\partial_{zj} V
+\end{array}
+\right)
+\end{equation}
+
+Calculando algunas de estas derivadas y definiendo $x_{ik}=x_k-x_i$, $y_{ik}=y_k-y_i$ y $z_{ik}=z_k-z_i$ se obtiene (Caso $i\neq j$):
+\begin{equation}\label{eq:36}
+\frac{\partial V }{\partial y_k}=\sum_j\frac{\gamma_{jk}\left(R_{kj}-R_{kj}^0\right)y_{kj}}{R_{kj}}
+\end{equation}
+\begin{equation}\label{eq:37}
+\frac{\partial^2 V }{\partial x_i\partial y_j}\bigg|_{R_{ij}=R_{ij}^0}=-\frac{\gamma_{ij}x_{ij}y_{ij}}{R_{ij}^2}
+\end{equation}
+\begin{equation}\label{eq:38}
+\frac{\partial^2 V }{\partial x_i\partial x_j}\bigg|_{R_{ij}=R_{ij}^0}=-\frac{\gamma_{ij}x_{ij}^2}{R_{ij}^2}
+\end{equation}
+De forma an\'{a}loga se encuentran los otros elementos de $\mathbf{H}_{ij}$ con lo cual los superelementos no diagonales de $\mathbf{\mathcal{H}}$ quedan escritos como \cite{Lezon2009}:
+\begin{equation}\label{eq:35}
+\mathbf{H}_{ij}=-\frac{\gamma_{ij}}{R_{ij}^2}\left(
+\begin{array}{ccc}
+ x_{ij}^2 & x_{ij}y_{ij} & x_{ij}z_{ij}\\
+ y_{ij}x_{ij} & y_{ij}^2 & y_{ij}z_{ij} \\
+ z_{ij}x_{ij} &z_{ij}y_{ij} & z_{ij}^2
+\end{array}
+\right)
+\end{equation}
+
+
+Para los superelementos $\mathbf{H}_{ii}$ que se encuentran en la diagonal, algunos de sus elementos son:
+\begin{eqnarray}\label{eq:39}
+\frac{\partial^2 V }{\partial x_i^2}\bigg|_{R_{ij}=R_{ij}^0}=-\sum_{j\neq i}\gamma_{ij}\left(\frac{x_{ij}^2}{R_{ij}^2}\right) \nonumber \\
+\frac{\partial^2 V }{\partial x_i^2}\bigg|_{R_{ij}=R_{ij}^0}=-\sum_{j\neq i} H_{ij,xx}
+\end{eqnarray}
+En \eqref{eq:39}, $H_{ij,xx}$ es el primer elemento de la submatriz $\mathbf{H}_{ij}$. El resultado \eqref{eq:39} puede generalizarse para todos los superelementos de la diagonal, ver \cite{Lezon2009}:
+\begin{eqnarray}\label{eq:40}
+\mathbf{H}_{ii}=\sum_{j\neq i}\mathbf{H}_{ij}
+\end{eqnarray}
+Una vez obtenida la matriz Hessiana, es necesario calcular sus autovalores y autovactores de la misma forma que en NMA, ya que esto describe los movimientos de la biomol\'{e}cula. La diagonalizaci\'{o}n de $\mathcal{H}$ lleva a lo sumo $3N-6$ modos normales no nulos, como se demuestra en \cite{Tirion1996}. Los 6 modos normales restantes, corresponden a las rotaciones y traslaciones de un cuerpo r\'{i}gido; se puede escoger un sistema fijo en la molecula y que rote con ella.\\
+
+El t\'{e}rmino de la distancia de corte $R_c$ puede ser incluido en las constantes el\'{a}sticas, es decir, $\gamma_{ij}=0$ si  $R_{ij}>R_c$ sino $\gamma_{ij}\neq 0$. Adicional a esto, las constantes el\'{a}sticas pueden ser iguales (isotr\'{o}picas): $\gamma_{ij}=\gamma$ si  $R_{ij}<R_c$ de lo contrario  $\gamma_{ij}=0$.
+\subsubsection{Modelo de Redes Gaussianas (GNM)}\label{ssec:GNM}
+El modelo se denomina gaussiano debido a que las desviaciones del equilibrio o fluctuaciones son isotr\'{o}picas y siguen una distribuci\'{o}n gaussiana \cite{Rader2006}. Se requieren dos par\'{a}metros para describir el modelo: Una misma constante el\'{a}stica $\gamma$ para todas las unidades de la biomol\'{e}cula y una distancia de corte a partir de la cual no se ejerce el potencial.\\
+
+Contrario al ANM, en el modelo de redes gaussianas se consideran las desviaciones del equilibrio como desplazamientos:
+\begin{equation}\label{eq:27}
+V_{GNM}=\frac{\gamma}{2}\sum_{i,j=1}^{N}\Gamma_{ij}\left(\textbf{R}_{ij}-\textbf{R}_{ij}^0\right)^2
+\end{equation}
+Al ser $\gamma_{ij}$ una matriz de constantes el\'{a}sticas, se incluyen en la sumatoria los elementos $\Gamma_{ij}$ donde $\gamma_{ij}=\gamma\Gamma_{ij}$. $\Gamma_{ij}$ representa la simetr\'{i}a de la matriz $ \mathbf{\gamma}$ y como se puede ver en \cite{Rader2006}, la topolog\'{i}a de la red.\\
+
+Ya que $\textbf{R}_{ij}=\textbf{R}_{j}-\textbf{R}_{i}$ y definiendo $\Delta\textbf{R}_{i}=\textbf{R}_{i}-\textbf{R}_{i}^0$ se tiene que  $\textbf{R}_{ij}-\textbf{R}_{ij}^0=\Delta\textbf{R}_{j}-\Delta\textbf{R}_{i}$, el potencial gaussiano se puede escribir en t\'{e}rminos de los desplazamientos individuales:
+\begin{eqnarray}\label{eq:34}
+V_{GNM}&=&\frac{\gamma}{2}\sum_{i\neq j=1}^{N}\Gamma_{ij}\left( \Delta\textbf{R}_{j}-\Delta\textbf{R}_{i}\right)^2 \nonumber \\
+V_{GNM}&=&\frac{\gamma}{2}\sum_{i\neq j=1}^{N}\Gamma_{ij}\left[\left(\Delta x_j-\Delta x_i \right)^2+\left(\Delta y_j-\Delta y_i \right)^2+\left(\Delta z_j-\Delta z_i \right)^2 \right] \nonumber \\
+V_{GNM}&=&\frac{\gamma}{2}\sum_{i\neq j=1}^{N}\Gamma_{ij}\left[\left(\Delta x_{ij}\right)^2+\left(\Delta y_{ij}\right)^2+\left(\Delta z_{ij}\right)^2 \right]
+\end{eqnarray}
+Escribiendo \eqref{eq:34} en forma matricial se tiene:
+\begin{equation}\label{eq:35}
+V_{GNM}=\frac{\gamma}{2}\left(\Delta\mathbf{X}^T\mathbf{\Gamma}\Delta\mathbf{X}+\Delta\mathbf{Y}^T\mathbf{\Gamma}\Delta\mathbf{Y}+\Delta\mathbf{Z}^T\mathbf{\Gamma}\Delta\mathbf{Z} \right)
+\end{equation}
+Con $\Delta\mathbf{X}^T$ un vector $N$ dimensional con componentes:$\Delta\mathbf{X}^T=\left(\Delta x_1,...,\Delta x_N\right)$ y $\mathbf{\Gamma}$ la matriz de Kirchhoff que se discutir\'{a} en o que sigue con el fin de entender la expresi\'{o}n \eqref{eq:35}.\\
+
+Para garantizar que $\Gamma_{ij}$ sea adimensional, se escogen (no de forma \'{u}nica) los elementos fuera de la diagonal de acuerdo al procedimiento descrito a continuaci\'{o}n.\\
+
+N\'{o}tese que los t\'{e}rminos cuadr\'{a}ticos por cada componente pueden expandirse:
+\begin{eqnarray}\label{eq:36}
+\sum_{i\neq j=1}^{N}\Gamma_{ij}\left(\Delta x_{ij}\right)^2&=&\sum_{i\neq j=1}^{N}\Gamma_{ij}\left(\Delta x_{i}^2+\Delta x_{j}^2-2\Delta x_{i}\Delta x_{j}\right) \nonumber \\
+&=&2\sum_{i\neq j=1}^{N}\Gamma_{ij}\Delta x_{i}^2-2\sum_{i\neq j=1}^{N}\Delta x_{i}\Gamma_{ij}\Delta x_{j}
+\end{eqnarray}
+
+La idea es que los t\'{e}rminos de \eqref{eq:36} y \eqref{eq:35} coincidan. Escribiendo expl\'{i}citamente el t\'{e}rmino de la componente x en \eqref{eq:35}:
+\begin{eqnarray}\label{eq:37}
+editar
+\end{eqnarray}
+De lo anterior se concluye que la matriz de de Kirchhoff $\mathbf{\Gamma}$ es:
+\begin{equation}\label{eq:38}
+\Gamma_{ij}=\left\{\begin{array}{ccc}
+-1 &\mbox{si }i\neq j&\mbox{	y	}R_{ij}\leq r_c \\
+0&\mbox{si }i\neq j&\mbox{	y	}R_{ij}\geq r_c \\
+-\sum_{j,j\neq i}\Gamma_{ij}&\mbox{si	}i=j&.\\
+            \end{array}
+\right.
+\end{equation}
+
+\paragraph{Fluctuaciones, Correlaciones}.\\
+El objetivo primario es calcular las fluctuaciones cuadr\'{a}ticas medias (ms por sus siglas en ingl\'{e}s) para un residuo y las correlaciones entre residuos. Las fluctuaciones ms proporcionan los movimientos de la biomol\'{e}cula y las correlaciones establecen la dependencia entre distintas partes de la biomol\'{e}cula, es decir, los movimientos colectivos.\\
+
+Las fluctuciones ms para el residuo $i$ se calculan como:
+\begin{equation}\label{eq:39}
+\langle\Delta \mathbf{R_i}\cdot\Delta\mathbf{R_i}\rangle=\langle\Delta{X_i}^2\rangle+\langle\Delta {Y_i}^2\rangle +\langle\Delta {Z_i}^2\rangle 
+\end{equation}
+
+Y las correlaciones entre el residuo $i$ y el $j$ son:
+\begin{equation}\label{eq:40}
+\langle\Delta \mathbf{R_i}\cdot\Delta\mathbf{R_j}\rangle=\langle\Delta X_i\Delta X_j\rangle+\langle\Delta Y_i\Delta Y_j\rangle +\langle\Delta Z_i\Delta Z_j\rangle 
+\end{equation}
+Los promedios calculados en \eqref{eq:39} y en \eqref{eq:40} son calculados con respecto al espacio de coordenadas.\\
+
+De manera similar al resultado \label{eq:25}, donde la matriz $\mathbf{K}$ es cambiada por la matriz $\gamma\mathbf{\Gamma}$ y $n=3N$ se llega a la funci\'{o}n de partici\'{o}n gaussiana:
+\begin{equation}\label{eq:41}
+Z_{GNM}=\left(2\pi\right)^{3N/2}\left| \frac{k_BT}{\gamma}\Gamma^{-1}\right|^{1/2}
+\end{equation}
+
+En \cite{Rader2006} se encuentra que estas medidas est\'{a}n relacionadas con la inversa de la matriz de Kirchhoff:\\
+\begin{equation}\label{eq:42}
+\langle \Delta \mathbf{R_i}^2 \rangle=\frac{3 k_BT}{\gamma}\left(\mathbf{\Gamma}^{-1}\right)_{ii}
+\end{equation}
+\begin{equation}\label{eq:43}
+\langle \Delta \mathbf{R_i}\cdot\Delta \mathbf{R_j} \rangle=\frac{3 k_BT}{\gamma}\left(\mathbf{\Gamma}^{-1}\right)_{ij}\\
+\end{equation}
+\paragraph{Factor-B}.\\
+El factor-B, factor de Debye-Waller o factor de temperatura es un factor que est\'{a} directamente relacionado con las amplitudes de los haces dispersados cuando se hace difracci\'{o}n de rayos-x y por lo tanto describe la atenuaci\'{o}n de la dispersi\'{o}n.\\
+
+Para un modelo de arm\'{o}nico isotr\'{o}pico, donde cada constituyente fluct\'{u}a de su posici\'{o}n de equilibrio como: $\mathbf{\Delta R_{i}}=R_i-R_i^0$, se encuentra que la intensidad de onda dispersada es:
+\begin{equation}\label{eq:44}
+I=I_0\exp\left(-\frac{1}{3}\langle\mathbf{\Delta R_{i}}\rangle^2 \mathbf{q}^2\right)
+\end{equation}
+Con $\mathbf{q}$ el vector de la red rec\'{i}proca, $I_0$ la intensidad dispersada para la estrucutura r\'{i}gida\\
+
+El \textit{factor B} se define como el t\'{e}rmino dentro de la exponencial en \eqref{eq:44}. Como est\'{a} directamente relacionado con la fluctuaci\'{o}n ms, entonces es una \textit{medida de la rigidez o de la flexibilidad} de la biomol\'{e}cula, adem\'{a}s tiene unidades de $\AA^2$:
+\begin{equation}\label{eq:45}
+I=-\frac{1}{3}\langle\mathbf{\Delta R_{i}}\rangle^2 \mathbf{q}^2
+\end{equation}
+En la dispersi\'{o}n de Bragg, el vector de onda de la red rec\'{i}proca es $4\pi\sin\theta/\lambda$. Tomando la aproximaci\'{o}n de \'{a}ngulos peque\~{n}os $\cos \theta\sim \theta$, el factor B se convierte en:
+\begin{equation}\label{eq:46}
+B=\frac{8\pi}{3}\langle\mathbf{\Delta R_{i}}\rangle^2
+\end{equation}
+Para el caso del GNM y de acuerdo a \eqref{eq:42}, el factor de estructura se convierte en:
+\begin{equation}\label{eq:47}
+B=\frac{8\pi^2 k_BT}{\gamma}\left(\mathbf{\Gamma}^{-1}\right)_{ii}
+\end{equation}
+Existe un servidor web basado en GNM que permite ver los movimientos globales de una prote\'{i}na o de un \'{a}cido nucleico y permite obtener informaci\'{o}n como los autovalores, los factores-B, las correlaciones entre otras.\footnote{ Recurso disponible en \url{http://gnm.csb.pitt.edu/index.php}}
+
+\subsection{An\'{a}lisis por Componentes Principales (PCA)}
+Sea $\mathbf{x(t)}$ la trayectoria en forma de vector columna de $3N$ componentes que tiene las posiciones a cada instante de tiempo de todos los \'{a}tomos. La matriz de covarianza, en este caso, es aqu\'{e}lla que mide la dependencia entre cada una de las variables ($3N$ componentes) y cuyos elementos de la diagonal son las varianzas de dichas variables.\\
+
+Matriz de covarianza:
+\begin{equation}\label{eq:28}
+\mathbf{C}=\langle(\mathbf{x(t)}-\langle\mathbf{x}\rangle)(\mathbf{x(t)}-\langle\mathbf{x}\rangle)^T\rangle
+\end{equation}
+
+En \eqref{eq:29}, la media es calculada para la trayectoria en todos los tiempos.\\
+La matriz de covarianza puede ser expresada en t\'{e}rminos de sus autovalores  $\lambda_i$ y sus autovectores $\mathbf{t_i}$, con $i<3N+1$.
+\begin{equation}\label{eq:48}
+\mathbf{C}\mathbf{t_i}=\lambda_i\mathbf{t_i}
+\end{equation}
+Tomando $\Lambda={\lambda_i}$, la matriz diagonal formada por los autovalores y $\mathbf{T}=\left(\mathbf{t_1},\mathbf{t_2},...,\mathbf{t_{3N}}\right)$ como la matriz cuyas columnas son los autovectores, escritas de tal manera que los autovalores esten ordenados de mayor a menor y los autovectores ordenados de acuerdo a los autovalores entonces:
+\begin{equation}\label{eq:29}
+\mathbf{\Lambda}=\mathbf{T}^T\mathbf{C}\mathbf{T}
+\end{equation}
+Donde se ha tenido en cuenta que $\mathbf{T}^{-1}=\mathbf{T}^T$. Expresado de otra forma:
+\begin{equation}\label{eq:30}
+\mathbf{C}=\mathbf{T}\mathbf{\Lambda} \mathbf{T}^T
+\end{equation}
+La esencia de un PCA es descartar los modos menos relevantes que corresponden a los autovalores m\'{a}s peque\~{n}os y generar un nuevo conjunto de datos de menor tama\~{n}o a partir de estos (componentes principales). En \cite{Amadei1993} se demuestra que las desviaciones m\'{a}s grandes corresponden a los autovalores m\'{a}s grandes, por tanto, se trabaja s\'{o}lamente con los autovalores m\'{a}s grandes. \\
+
+Dejando s\'{o}lamente en $\mathbf{T}$ los $M$ autovectores o columnas m\'{a}s relevantes, se define la matriz de las componentes principales $\mathbf{P}=\left(\mathbf{p_1},\mathbf{p_2},...,\mathbf{p_{M}}\right)$, donde $M<3N$ como:
+\begin{eqnarray}\label{eq:31}
+\mathbf{P}&=&\mathbf{T}^T(\mathbf{x(t)}-\langle\mathbf{x}\rangle)^T \nonumber \\
+\mathbf{P}&=&(\mathbf{x(t)}-\langle\mathbf{x}\rangle)\mathbf{T}
+\end{eqnarray}
+O en t\'{e}rminos de cada componente principal:
+\begin{equation}\label{eq:32}
+\mathbf{p_i}=\mathbf{t_i}^T(\mathbf{x(t)}-\langle\mathbf{x}\rangle)^T
+\end{equation}
+Si se desea volver a los datos originales hay que realizar la transformaci\'{o}n inversa:
+\begin{equation}\label{eq:33}
+\mathbf{x(t)}^T=\mathbf{T}\mathbf{P}+\langle\mathbf{x}\rangle^T
+\end{equation}
+\subsection{Modelos de Bloque R\'{i}gido (BNM o RTB)}
+Los modos normales de los bloques r\'{i}gidos tienen una dimensi\'{o}n de tama\~{n}o $n_b$ con respecto a los de un NMA, $3N$. Los modos normales de bloque r\'{i}gido se definen a partir de una transformaci\'{o}n denominada $\mathbf{P}$ del espacio de las ${q_i}$ al de los bloques r\'{i}gidos $r_i'$.\\
+
+La ecuaci\'{o}n de movimiento es:
+
+\section{Comparaci\'{o}n Entre distintos modelos}
+\subsection{Diferencias entre GNM y ANM}
+\section{Clasificaci\'{o}n Modelos Te\'{o}ricos}
+\begin{figure}
+\centering%
+%\input{Kap2/mapa.png}
+\includegraphics[scale=0.4]{Kap2/mapa.png}%
+\caption{Mapa conceptual en el que se dividen los movimientos locales de los movimientos globales, mostrando los tipos de movimientos globales utilizados} \label{fig:movs}
+\end{figure}
