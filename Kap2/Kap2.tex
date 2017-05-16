@@ -13,7 +13,7 @@ Los diversos modelos de potencial pueden ser tomados seg\'{u}n la naturaleza del
 De acuerdo a los par\'{a}metros de costo, tiempo, escala y detalle en el sistema, se escoge el modelo de potencial a utilizar y la resoluci\'{o}n a la que se desean ver los detalles del movimiento. Esto permite clasificar los movimientos de biomol\'{e}culas en dos tipos \textit{movimientos locales} y los \textit{movimientos globales}. En la figura \ref{fig:esc} se muestran los modelos locales y globales escogidos seg\'{u}n las escalas temporal y espacial.\\
 \begin{figure}[h]
 \centering%
-\includegraphics[trim={5cm 5cm 5cm 5cm},scale=0.28]{Kap2/escalas.png}%
+\includegraphics[trim={10cm 1cm 8cm 10cm},clip,scale=0.3]{Kap2/escalas.png}%
 \caption{Modelos escogidos de acuerdo a la escala del movimiento y al tiempo de la simulaci\'{o}n computacional.} \label{fig:esc}
 \end{figure}
 
@@ -23,7 +23,7 @@ Seg\'{u}n el tipo de modelo a escoger, las soluciones a las ecuaciones de movimi
 
 \section{Movimientos Locales}
 Hacen referencia a las simulaciones en las que se incluyen todos los \'{a}tomos junto con las interacciones presentes, es decir, en las que se analizan los \textit{cambios locales}. Estas se pueden simular a un orden de magnitud de los nanosegundos en una m\'{a}quina usual, al respecto ver \cite{Gur2013}.\\
-\subsection{MD usando todos los \'{a}tomos}
+\subsection{Potenciales Atom\'{i}sticos}
 Existen simulaciones MD usando todos los \'{a}tomos (Full atomic MD) o usando los movimientos globales (Coarse-grained models). Como caso particular se pueden considerar los potenciales usados en \cite{Amber2016}, que siguen el modelo de Amber. El modelo de Amber tiene en cuenta las contribuciones debidas a:
  \begin{itemize}
 \item Interacciones intermoleculares: Son las producidas por los enlaces covalentes entre grupos de \'{a}tomos, las de valencia y las torsiones.
@@ -38,6 +38,15 @@ V_{len}(r)&=&\sum_{j=1}^{N+1}\sum_{i=j+1}^N f_{ij}\left\{\epsilon_{ij}\left[\lef
 V_{elec}(r)&=&\sum_{j=1}^{N-1}\sum_{i=j+1}^{N}\frac{q_iq_j}{4\pi\epsilon_0r_{ij}}
 \end{eqnarray}
 \end{itemize}
+Las constantes $k_r,k_\theta,f_{ij},\epsilon_{ij},r_{0ij},$ son constantes emp\'{i}ricas definidas de manera diferente en cada uno de los programas que realizan din\'{a}mica molecular.\\
+
+Las interacciones consideradas son las mismas que forman y pliegan una prote\'{i}na  en todos sus niveles de estructura, tal como aparece descrito en la secci\'{o}n \ref{ssec:Estruc}. Estas interacciones no forman una estructura tridimensional est\'{a}tica sino din\'{a}mica, es por esto que se resuelven las ecuaciones de movimiento para estos potenciales:
+\begin{equation}\label{eq:48}
+m_i\frac{\mathrm{d}\mathbf{r_i}}{\mathrm{d}t}=\grad_\mathbf{r_i} V_i
+\end{equation}
+En este caso $i$ indexa cada \'{a}tomo, $r_i$ su posici\'{o}n y $V_i$ el potencial que se ejerce sobre cada \'{a}tomo.\\
+
+Las simulaciones por MD buscan resolver las ecuaciones de movimiento \eqref{eq:48} de forma num\'{e}rica.\\
 \subsection{An\'{a}lisis de Modos Normales Est\'{a}ndar (NMA est\'{a}ndar)}\label{NMAsta}
 
 El an\'{a}lisis de modos normales es el an\'{a}lisis arm\'{o}nico que en este caso es aplicado a las prote\'{i}nas. Los modos normales ocurren cuando todos los constituyentes del sistema oscilan sinusoidalmente y con la misma frecuencia. Los potenciales que cumplen con estas caracter\'{i}sticas son los potenciales tipo Hooke; ya que los potenciales tienen una forma complicada como la del modelo de Amber, entonces se aproxima el potencial alrededor de un punto de equilibrio a una cuadr\'{a}tica.\\
