@@ -44,7 +44,7 @@ Las interacciones consideradas son las mismas que forman y pliegan una prote\'{i
 \begin{equation}\label{eq:48}
 m_i\frac{\mathrm{d}\mathbf{r_i}}{\mathrm{d}t}=\nabla_\mathbf{r_i} V_i
 \end{equation}
-En este caso $i$ indexa cada \'{a}tomo, $r_i$ su posici\'{o}n y $V_i$ el potencial que se ejerce sobre cada \'{a}tomo.\\
+En este caso $i$ indexa cada \'{a}tomo, $}\mathbf{r_i}$ su posici\'{o}n y $V_i$ el potencial que se ejerce sobre cada \'{a}tomo.\\
 
 Las simulaciones por MD buscan resolver las ecuaciones de movimiento \eqref{eq:48} de forma num\'{e}rica.\\
 \subsection{An\'{a}lisis de Modos Normales Est\'{a}ndar (NMA est\'{a}ndar)}\label{NMAsta}
