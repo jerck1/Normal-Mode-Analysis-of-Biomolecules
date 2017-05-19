@@ -286,11 +286,25 @@ La conformaci\'{o}n con la cual se obtuvo la estructura cristalina del simportad
 \put(-60,0){(c)}
 \caption{14 segmentos transmembranales de vSGLT con sus $\alpha$ h\'{e}lices representadas por cilindros. La galactosa se muestra  ocluida.(a) Vista desde el periplasma; (b) vista desde el citoplasma; (c) vista lateral}\label{fig:3dh4_2}
 \end{figure}
-El n\'{u}mero de segmentos transmembranales TM es de 14, distribuidos entre los residuos \cite{Lomize2012OPMMembranes}:\\
+El n\'{u}mero de segmentos transmembranales TM es de 14, los cuales est\'{a}n formados por una o a lo sumo dos $\alpha$ h\'{e}lices unidas por lazos. Los segmentos TM est\'{a}n distribuidos entre los residuos \cite{Lomize2012OPMMembranes}:\\
 
 TM1(4-18), TM2(53-77), TM3(82-99), TM4(129-155), TM5(162-177), TM6(188-205), TM7(255-267), TM8(286-305), TM9(348-377), TM10(397-418), TM11(423-443), TM12(458-472), TM13(479-496), TM14(524-545).\\
 
 Debe tenerse en cuenta que el TM2 est\'{a} fragmentado en dos partes:  TM2E(53-64), TM2I(67-77).\\
 
-Posteriormente en \cite{Watanabe2010} aparece una nueva estructura del cotransportador vSGLT en su conformaci\'{o}n hacia adentro pero abierta o no ocluida, es decir, con el sustrato liberado. En la base de datos del PDB se encuentra reposada dicha estructura con el c\'{o}digo 2XQ2. Esta estructura difiere de 3DH4 en que all\'{i} se resuelve el segmento TM1, que aunque en la figura \ref{fig:3dh4_2} aparece como una h\'{e}lice, en esta no se conocen las posiciones de los residuos. Adicionalmente, se encuentra una he\'{e}lice adicional al final de la secuencia.\\
+Posteriormente en \cite{Watanabe2010} aparece una nueva estructura del cotransportador vSGLT mutada en la posici\'{o}n K294A. Esta estructura aparece en su conformaci\'{o}n hacia adentro pero abierta o no ocluida, es decir, con el sustrato liberado. En la base de datos del PDB se encuentra reposada dicha estructura con el c\'{o}digo 2XQ2. Esta estructura difiere de 3DH4 en que all\'{i} se resuelve el segmento TM1, que aunque en la figura \ref{fig:3dh4_2} aparece como una h\'{e}lice, en esta no se conocen las posiciones de los residuos. Adicionalmente, se encuentra una he\'{e}lice adicional al final de la secuencia.\\
+
+En la figura \ref{fig:2xq2} se muestra la unidad asim\'{e}trica (celda unitaria) obtenida por cristalograf\'{i}a de rayos x a una resoluci\'{o}n de $2.73\AA$. La unidad asim\'{e}trica est\'{a} formada por un d\'{i}mero del vSGLT. Cada mon\'{o}mero tiene 15 segmentos transmembranales.\\
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{Kap3/2xq2.png}
+\caption{Unidad asim\'{e}trica del mutante K294A del cotransportador vSGLT mostrando la cadana principal en forma de "cartoon" }\label{fig:2xq2}
+\end{figure}
 \section{Estudios computacionales del Co-transportador vSGLT}
+La estructura del mutante K294A, junto con una nueva caracterizaci\'{o}n bioqu\'{i}mica y simulaciones por din\'{a}mica molecular, todas encontradas en \cite{Watanabe2010} muestran que cuando sale el sodio, la h\'{e}lice 2 (tomada para ellos como 1) se reorienta, permitiendo que se abra la compuerta para que salga posteriormente la galactosa. Al realizar las simulaciones por din\'{a}mica molecular se encuentra que a los $\sim 52$ns la Tyr263 hace su transici\'{o}n entre dos rot\'{a}meros para dejar pasar la galactosa al espacio intracelular,  tal como se muestra en la figura \ref{fig:Y263}.\\
+\begin{figure}[h]
+\centering%
+\includegraphics[scale=0.5]{Kap3/Y263.png}%
+\caption{Abertura de la compuerta Tyr263 para dejar la galactosa en el citoplasma.Tomada de \cite{Watanabe2010}} \label{fig:Y263}
+\end{figure}
+Posteriormente \cite{Adelman2016}, v\'{i}a simulaciones de din\'{a}mica molecular con los programas MODELLER, CHARMM, CMAP y NAMD encontraron que no existe no existe un orden espec\'{i}fico en que salgan el sodio y la galactosa.
