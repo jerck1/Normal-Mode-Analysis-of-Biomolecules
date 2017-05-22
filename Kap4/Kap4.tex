@@ -14,7 +14,7 @@ En la figura \ref{fig:flujo} se encuentra un esquema de la entrada y salida de d
 Mediante el servidor ANM, se ha realizado un estudio previo del simportador vSGLT, ver \cite{Cabrera2017}, en el cual se utiliza un archivo de entrada que es el pdb de 3DH4 encontrado en la base de datos del Protein Data Bank. En este archivo pdb no se determinan los residuos de la primera h\'{e}lice en cada subunidad. Aunque aparecen las posiciones de los residuos, el ANM server los ignora, haciendo el c\'{a}lculo \'{u}nicamente con los residuos conocidos.\\
 
 Los c\'{a}lculos de salida mostrados son los factores b por cada n\'{u}mero de residuo y para cada distancia de corte $r_c$, variable entre $7\AA$ y $14\AA$ y en la cadena A, ver figura \ref{fig:ANM_pre}. Ha de notarse que para distancias de corte menores o iguales a $7\AA$,no se encontraron todos  los autovalores, ni autovectores, ni factores b, lo cual se evidencia en la gr\'{a}fica para  $R_c=7\AA$ de la figura \ref{fig:ANM_pre}. Esto se debe a que los no todos los AUTOVALORES no convergen. Para distancias de corte mayores a $8\AA$, se encontraron todos los factores b.\\
-\begin{figure}
+\begin{figure}[ht]
  \centering
     \includegraphics[scale=0.2]{./Kap4/ANM/ANM_server/grafica_7_A_n.png} 
 \put(-50,-2){$R_c=7\AA$}
@@ -36,7 +36,12 @@ Los c\'{a}lculos de salida mostrados son los factores b por cada n\'{u}mero de r
 \put(-50,-2){$R_c=14\AA$}
 \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo entre $7\AA\leq R_c\leq 14\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pre}
 \end{figure}
- 
+ VSGLT es más flexible con uno o ambos sitios activos ocupados que vSGLT sin sustratos.\\
+Los movimientos globales de simportador no se afectan significativamente si el ion, el soluto o ambos están unidos. Sugiere que Na + y galactosa no son de alta cooperación.\\
+Para $Rc = 8\AA$ y $Rc = 9\AA$, los movimientos en TM7 (entre los residuos 192-214), TM11 (residuos 372-393), TM12 (residuos 423-493) cuando Na + y Gal están unidos son ligeramente menos rígidos ($<5\%$ ) Que los movimientos de vSGLT con un sitio ocupado. TM7 región es importante porque Y263 actúan como una puerta y Gal interactúa con Y263 y N260.\\
+For $Rc=8\AA$,  $9\AA$ and $11\AA$, the motions in TM6 (residues 161-167), especially T162 and TM13 in residue F496  when Na+ and Gal are bound are more rigid than  motions of vSGLT alone.\\
+Para $Rc = 8\AA$, $9\AA$ y $11\AA$, hay otros residuos involucrados en cambios de movimientos, estos son en segmentos mencionados anteriormente.\\
+
 \section{ANM para vSGLT}
 \subsection{Preparaci\'{o}n del PDB}
 Ya que en el mutante de vSGLT en la posici\'{o}n K294A, llamado 2XQ2 aparece resuelta la estructura cristalina del TM1 perteneciente a la cadena A, se usa el programa PyMol, y como archivos de entrada los pdbs 3DH4 y el de su mutante 2XQ2, para crear un archivo que sea cercano a la estructura real objeto de estudio, esto es, al cotransportador vSGLT. 
@@ -78,6 +83,8 @@ Ya que en el mutante de vSGLT en la posici\'{o}n K294A, llamado 2XQ2 aparece res
 \put(-50,-2){$R_c=20\AA$}
  \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo entre $7\AA\leq R_c\leq 20\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos}
 \end{figure}
+
+
 \section{Modelo GNM de vSGLT}
 
 \section{Mutante K294A de vSGLT con C-$\alpha$}
