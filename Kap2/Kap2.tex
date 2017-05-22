@@ -21,7 +21,7 @@ De acuerdo a los par\'{a}metros de costo, tiempo, escala y detalle en el sistema
 Seg\'{u}n el tipo de modelo a escoger, las soluciones a las ecuaciones de movimiento se encuentran mediante los m\'{e}todos de la din\'{a}mica molecular (Molecular Dynamics que por sus siglas en ingl\'{e}s es MD), el an\'{a}lisis de modos normales (Normal Mode Analysis que por sus siglas en ingl\'{e}s es NMA) o el an\'{a}lisis por componentes principales (Principal Component Analysis, PCA por sus siglas en ingl\'{e}s). Mientras que en MD se obtiene la posici\'{o}n como funci\'{o}n del tiempo, en los NMA y en los PCA  es m\'{a}s importante analizar el espectro, es decir, los autovalores y autovectores obtenidos de una diagonalizaci\'{o}n.\\
 
 \section{Movimientos Locales}
-Hacen referencia a las simulaciones en las que se incluyen todos los \'{a}tomos junto con las interacciones presentes, es decir, en las que se analizan los \textit{cambios locales}. Estas se pueden simular a un orden de magnitud de los nanosegundos en una m\'{a}quina usual, al respecto ver \cite{Gur2013}.\\
+Hacen referencia a las simulaciones en las que se incluyen todos los \'{a}tomos junto con las interacciones presentes, es decir, en las que se analizan los \textit{cambios locales}. Estas se pueden simular a un orden de magnitud de los nanosegundos en una m\'{a}quina usual, ver \cite{Gur2013}.\\
 \subsection{Campos de Fuerza}
 Existen simulaciones MD usando todos los \'{a}tomos (Full atomic MD) o usando los movimientos globales (Coarse-grained models). Como caso particular se pueden considerar los potenciales usados en \cite{Amber2016}, que siguen el modelo de Amber. El modelo de Amber tiene en cuenta las contribuciones debidas a:
  \begin{itemize}
@@ -40,15 +40,24 @@ V_{elec}(r)&=&\sum_{j=1}^{N-1}\sum_{i=j+1}^{N}\frac{q_iq_j}{4\pi\epsilon_0r_{ij}
 Las constantes $k_r,k_\theta,f_{ij},\epsilon_{ij},r_{0ij},$ son constantes emp\'{i}ricas definidas de manera diferente en cada uno de los programas que realizan din\'{a}mica molecular.\\
 
 Las interacciones consideradas son las mismas que forman y pliegan una prote\'{i}na  en todos sus niveles de estructura, tal como aparece descrito en la secci\'{o}n \ref{ssec:Estruc}. Estas interacciones no forman una estructura tridimensional est\'{a}tica sino din\'{a}mica, es por esto que se resuelven las ecuaciones de movimiento para estos potenciales:
-\begin{equation}\label{eq:48}
-m_i\frac{\mathrm{d}\mathbf{r_i}}{\mathrm{d}t}=\nabla_\mathbf{r_i} V_i
+\begin{equation}\label{eq:50}
+m_i\frac{\mathrm{d}^2\mathbf{r_i}}{\mathrm{d}t^2}=\nabla_\mathbf{r_i} V_i
 \end{equation}
 En este caso $i$ indexa cada \'{a}tomo, $r_i$ su posici\'{o}n y $V_i$ el potencial que se ejerce sobre cada \'{a}tomo.\\
 
-Las simulaciones por MD buscan resolver las ecuaciones de movimiento \eqref{eq:48} de forma num\'{e}rica.\\
+Las simulaciones por MD buscan resolver las ecuaciones de movimiento \eqref{eq:50} de forma num\'{e}rica. Para resolverlas es necesario dar las condiciones iniciales $\mathbf{r_i}(t=0)$, $\mathbf{v_i}(t=0)$ y las aceleraciones $\mathbf{a_i}(t=0)=\frac{\mathrm{d}^2\mathbf{r_i}}{\mathrm{d}t^2}\bigg|_t=0$ calculadas mediante el gradiente del potencial. Luego se integran las ecuaciones \ref{eq:50} una vez para obtener la velocidad y dos veces para obtener la posici\'{o}n obteni\'{e}ndose la posici\'{o}n siguiente. La integraci\'{o}n num\'{e}rica puede hacerse por varios m\'{e}todos. A continuaci\'{o}n se expone para su comprensi\'{o}n el m\'{e}todo m\'{a}s sencillo, el m\'{e}todo de Euler \cite{Stote1999TheorySimulations}.\\
+
+Dados $\mathbf{r_i}(t_0=0)$, $\mathbf{v_i}(t_0=0)$, $\mathbf{a}(t_0=0)$ (aceleraci\'{o}n de prueba) y un paso de tiempo $\Delta t$, las aceleraciones, posiciones y velocidades en un tiempo posterior $t=t_0+\Delta t$ ser\'{a}n:
+\begin{itemize}
+\item Velocidades:(Primera integraci\'{o}n num\'{e}rica)\\ $\mathbf{v_i}(t_0+\Delta t)=\mathbf{v_i}(t_0)+\mathbf{a}(t_0)\Delta t$
+\item Posiciones: (Segunda integraci\'{o}n num\'{e}rica)\\ $\mathbf{r_i}(t_0+\Delta t)=\mathbf{r_i}(t_0)+\mathbf{v_i}(t_0)t+\frac{1}{2}\mathbf{a}(t_0)\Delta t^2$
+\item Aceleraciones:\\ $\mathbf{a_i}(t_0)=\frac{1}{m_i}\nabla_\mathbf{r_i} V_i(\mathbf{r_i}(t_0))$
+\item Correcciones: Con la nueva aceleraci\'{o}n se vuelven a calcular las posiciones y velocidades hasta garantizar la convergencia de los valores obtenidos.
+\end{itemize}
+Luego se calculan las posiciones y velocidades en un tiempo posterior $t_0+2\Delta t$ a partir de los resultados obtenidos para $t_0+\Delta t$.
 \subsection{An\'{a}lisis de Modos Normales Est\'{a}ndar (NMA est\'{a}ndar)}\label{NMAsta}
 
-El an\'{a}lisis de modos normales es el an\'{a}lisis arm\'{o}nico que en este caso es aplicado a las prote\'{i}nas. Los modos normales ocurren cuando todos los constituyentes del sistema oscilan sinusoidalmente y con la misma frecuencia. Los potenciales que cumplen con estas caracter\'{i}sticas son los potenciales tipo Hooke; ya que los potenciales tienen una forma complicada como la del modelo de Amber, entonces se aproxima el potencial alrededor de un punto de equilibrio a una cuadr\'{a}tica.\\
+El an\'{a}lisis de modos normales es el an\'{a}lisis arm\'{o}nico que en este caso es aplicado a las prote\'{i}nas. Los modos normales ocurren cuando todos los constituyentes del sistema oscilan sinusoidalmente y con la misma frecuencia. Los potenciales que cumplen con estas caracter\'{i}sticas son los potenciales tipo Hooke; ya que los potenciales tienen una forma complicada como la del modelo de Amber, entonces se aproxima el potencial alrededor de un punto de equilibrio a una cuadr\'{a}tica:
 
 En el an\'{a}lisis \textit{est\'{a}ndar} los constituyentes son \textit{todos los \'{a}tomos} de la biomol\'{e}cula. Al utilizar todos los \'{a}tomos, los costos computacionales de las simulaciones pueden ser mayores que los de otros modelos en los que no se usan todos los \'{a}tomos. A pesar de esto, el NMA est\'{a}ndar es \'{u}til para estudiar los movimientos funcionales de la biomol\'{e}cula.\\
 
