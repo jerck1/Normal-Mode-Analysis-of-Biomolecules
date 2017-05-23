@@ -40,13 +40,9 @@ V_{elec}(r)&=&\sum_{j=1}^{N-1}\sum_{i=j+1}^{N}\frac{q_iq_j}{4\pi\epsilon_0r_{ij}
 Las constantes $k_r,k_\theta,f_{ij},\epsilon_{ij},r_{0ij},$ son constantes emp\'{i}ricas definidas de manera diferente en cada uno de los programas que realizan din\'{a}mica molecular.\\
 
 Las interacciones consideradas son las mismas que forman y pliegan una prote\'{i}na  en todos sus niveles de estructura, tal como aparece descrito en la secci\'{o}n \ref{ssec:Estruc}. Estas interacciones no forman una estructura tridimensional est\'{a}tica sino din\'{a}mica, es por esto que se resuelven las ecuaciones de movimiento para estos potenciales:
-<<<<<<< HEAD
-\begin{equation}\label{eq:48}
-m_i\frac{\mathrm{d}\mathbf{r_i}}{\mathrm{d}t}=\\mathbf{nabla}_\mathbf{r_i} V_i
-=======
+
 \begin{equation}\label{eq:50}
-m_i\frac{\mathrm{d}^2\mathbf{r_i}}{\mathrm{d}t^2}=\nabla_\mathbf{r_i} V_i
->>>>>>> acb4642ec1ddb65da513f3d66a48f5bd6a383c6a
+m_i\frac{\mathrm{d}\mathbf{r_i}}{\mathrm{d}t}=\mathbf{nabla}_\mathbf{r_i} V_i
 \end{equation}
 En este caso $i$ indexa cada \'{a}tomo, $r_i$ su posici\'{o}n y $V_i$ el potencial que se ejerce sobre cada \'{a}tomo.\\
 
@@ -504,10 +500,11 @@ Si se desea volver a los datos originales hay que realizar la transformaci\'{o}n
 Los modos normales de los bloques r\'{i}gidos tienen una dimensi\'{o}n de tama\~{n}o $n_b$ con respecto a los de un NMA, $3N$. Los modos normales de bloque r\'{i}gido se definen a partir de una transformaci\'{o}n denominada $\mathbf{P}$ del espacio de las ${q_i}$ al de los bloques r\'{i}gidos $r_i'$.\\
 
 \section{Clasificaci\'{o}n de los Modos Normales}
-\begin{figure}
+A modo de resumen, en la figura \ref{fig:movs} se muestra un mapa conceptual en el que se clasifican los modos normales encontrados en el presente trabajo y otros encontrados en la literatura.\\
+\begin{figure}[h]
 \centering%
-%\input{Kap2/mapa.png}
-\includegraphics[scale=0.4]{Kap2/mapa.png}%
+%\input{Kap2/mapa.pdf_tex}
+\includegraphics[scale=0.5, angle=-90]{Kap2/mapa.png}%
 \caption{Mapa conceptual en el que se dividen los movimientos locales de los movimientos globales, mostrando los tipos de movimientos globales utilizados} \label{fig:movs}
 \end{figure}
 \section{M\'{e}todos de C\'{a}lculo para NMA}
