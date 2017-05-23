@@ -90,13 +90,13 @@ Existen tres tipos com\'{u}nes de estructura secundaria, ver \cite{Kuchel}:
 \centering
 \includegraphics[scale=0.2]{Kap3/helix.png}
 \includegraphics[scale=0.2]{Kap3/helix2.png}
-\caption{Porci\'{o}n de una $\alpha$ h\'{e}lice perteneciente a la prote\'{i}na vSGLT (C\'{o}digo pdb 3DH4) formada por los enlaces de hidr\'{o}geno mostrados en color amarillo.}\label{fig:helice}
+\caption{Porci\'{o}n de una $\alpha$ h\'{e}lice perteneciente a la prote\'{i}na vSGLT (C\'{o}digo pdb 3DH4) formada por los enlaces de hidr\'{o}geno mostrados en color amarillo. Imagen obtenida con PyMOL \cite{PyMOL}.}\label{fig:helice}
 \end{figure}
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.2]{Kap3/beta2.png}
 \includegraphics[scale=0.2]{Kap3/beta.png}
-\caption{Porci\'{o}n de una hoja $\beta$ antiparalela perteneciente a la prote\'{i}na hRBP2 (C\'{o}digo pdb 2RCQ) formada por los enlaces de hidr\'{o}geno mostrados en color amarillo.}\label{fig:beta}
+\caption{Porci\'{o}n de una hoja $\beta$ antiparalela perteneciente a la prote\'{i}na hRBP2 (C\'{o}digo pdb 2RCQ) formada por los enlaces de hidr\'{o}geno mostrados en color amarillo. Imagen obtenida con PyMOL \cite{PyMOL}.}\label{fig:beta}
 \end{figure}
 Tambi\'{e}n hay otros tipos de estructura secundaria como las h\'{e}lices de col\'{a}geno, las $\pi$ h\'{e}lices, las $3_{10}$ h\'{e}lices, entre otras, que no son de inter\'{e}s para estudiar nuestra prote\'{i}na.\\
 
@@ -121,7 +121,7 @@ En la \textit{estructura cuaternaria} diferentes cadenas polipept\'{i}dicas, den
 \put(-70,0){\textbf{(a)}}
 \includegraphics[scale=0.08]{Kap3/chainAB.png}
 \put(-70,0){\textbf{(b)}}
-\caption{Mon\'{o}mero del cotransportador vSGLT(C\'{o}digo pdb 3dh4); \textbf{(b)}vSGLT mostrado como d\'{i}mero, como aparece en su forma biol\'{o}gica}\label{fig:complejo}
+\caption{Mon\'{o}mero del cotransportador vSGLT(C\'{o}digo pdb 3dh4); \textbf{(b)}vSGLT mostrado como d\'{i}mero, como aparece en su forma biol\'{o}gica. Imagen obtenida con PyMOL \cite{PyMOL}.}\label{fig:complejo}
 \end{figure}
 Las interacciones no covalentes que pliegan la prote\'{i}na en la estructura terciaria y unen las subunidades proteicas son: \cite{Kuchel}
 \begin{itemize}
@@ -244,11 +244,16 @@ Los transportadores se clasifican, de acuerdo al sistema de clasificaci\'{o}n de
  \item[a)] Simportadores: Son los que transportan las dos sustancias en la misma direcci\'{o}n.
  \item[b)] Antiportadores: Son los que transportan las dos sustancias en direcciones contrarias.
  \end{enumerate}
- \item[2.b] Uniportadores: Se da por difusi\'{o}n facilitada, esto es, la prote\'{i}na facilita la difusi\'{o}n a favor del gradiente de concentraci\'{o}n, se presenta debido a que algunas sustancias no son solubles en l\'{i}pidos (iones o sustancias polares) o su tama\~{n}o molecular no les permite pasar.
+ \item[2.b] Uniportadores: Transportan un solo soluto. Se da por difusi\'{o}n facilitada, esto es, la prote\'{i}na facilita la difusi\'{o}n a favor del gradiente de concentraci\'{o}n, se presenta debido a que algunas sustancias no son solubles en l\'{i}pidos (iones o sustancias polares) o su tama\~{n}o molecular no les permite pasar.
  \end{enumerate}
  \item  \textbf{Canales i\'{o}nicos}: Los canales se diferencian de los portadores en que no necesitan energ\'{i}a metab\'{o}lica para transportar los iones. Adicional a esto, la raz\'{o}n a la que transportan los iones, es de $10^6$ iones/segundo  (muy alta).
  \end{enumerate}
-
+ En la figura \ref{fig:por} se muestra el mecanismo bajo el cual operan los uniportadores, los simportadores y los antiportadores. Ha de notarse que en el modelo mecanicista el ion se une al simportador antes que el sustrato, hay un tiempo de la reacci\'{o}n en que aparecen los dos unidos al simportador y primero sale el ion. En los antiportadores no se unen los dos al mismo tiempo.\\
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{Kap3/porters.png}
+\caption{Modelo mecanicista para los uniportadores, simportadores y antiportadores, mostrando las posibles direcciones en que se den las reacciones. Imagen obtenida de \cite{KelliNicoleKazmier2013}}\label{fig:por}
+\end{figure}
 
 \section{Simportadores de Sodio Soluto}
 Hacia la d\'{e}cada de los a\~{n}os sesenta Robert Crane, ver \cite{Hamilton2013}, estableci\'{o} una relaci\'{o}n acoplada o de \textit{cotransporte} entre el ion de sodio y la glucosa los cuales son absorbidos por el intestino delgado. El conocimiento de este mecanismo ha permitido realizar el tratamiento de la diarrea y del c\'{o}lera mediante la rehidrataci\'{o}n oral. La hip\'{o}tesis del cotransporte ha sido numerosamente validada y ha sido una piedra angular para el entendimiento de el metabolismo de los carbohidratos, claves en la energ\'{e}tica celular. La hip\'{o}tesis del cotransporte tambi\'{e}n se ha extendido a otros organismos vivos, con la diferencia de que el acoplamiento del sodio se puede dar con cualquier otro soluto org\'{a}nico \cite{Faham2008}.\\
@@ -270,7 +275,7 @@ En la base de datos del PDB, se encuentra la estructura de vSGLT  como un tetr\'
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.1]{Kap3/3dh4tetra.png}
-\caption{Tetr\'{a}mero del cotransportador vSGLT (C\'{o}digo pdb 3dh4) como aparece cristalizado.}\label{fig:3dh4}
+\caption{Tetr\'{a}mero del cotransportador vSGLT (C\'{o}digo pdb 3dh4) como aparece cristalizado. Imagen obtenida con PyMOL \cite{PyMOL}.}\label{fig:3dh4}
 \end{figure}
 La conformaci\'{o}n con la cual se obtuvo la estructura cristalina del simportador fue la conformaci\'{o}n hacia adentro cerrada, es decir, con la galactosa ocluida dentro del simportador tal como se muestra en la figura \ref{fig:3dh4_2}. El sitio del sodio fue determinado de acuerdo a la arquitectura central (core structure) que comparte el simportador con los simportadores que pertenecen a la superfamilia del plegamiento de LeuT, la cual es cercana al sitio Na2 de LeuT. La distancia a la que se encuentran el sodio (ion) y la galactosa (substrato) es $\sim 10 \AA$\\
 \begin{figure}[H]
@@ -299,18 +304,13 @@ En la figura \ref{fig:2xq2} se muestra la unidad asim\'{e}trica (celda unitaria)
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.2]{Kap3/2xq2.png}
-\caption{Unidad asim\'{e}trica del mutante K294A del cotransportador vSGLT mostrando la cadana principal en forma de "cartoon" }\label{fig:2xq2}
+\caption{Unidad asim\'{e}trica del mutante K294A del cotransportador vSGLT mostrando la cadana principal en forma de "cartoon".Imagen obtenida con PyMOL \cite{PyMOL}. }\label{fig:2xq2}
 \end{figure}
 \section{Estudios computacionales del Co-transportador vSGLT}
 La estructura del mutante K294A, junto con una nueva caracterizaci\'{o}n bioqu\'{i}mica y simulaciones por din\'{a}mica molecular, todas encontradas en \cite{Watanabe2010} muestran que cuando sale el sodio, la h\'{e}lice 2 (tomada para ellos como 1) se reorienta, permitiendo que se abra la compuerta para que salga posteriormente la galactosa. Al realizar las simulaciones por din\'{a}mica molecular se encuentra que a los $\sim 52$ns la Tyr263 hace su transici\'{o}n entre dos rot\'{a}meros para dejar pasar la galactosa al espacio intracelular,  tal como se muestra en la figura \ref{fig:Y263}.\\
 \begin{figure}[ht]
 \centering%
-<<<<<<< HEAD
 \includegraphics[scale=0.5]{Kap3/Y263.png}%
 \caption{Abertura de la compuerta Tyr263 para dejar la galactosa en el citoplasma.Figura tomada de \cite{Watanabe2010}} \label{fig:Y263}
-=======
-\includegraphics[scale=0.4]{Kap3/Y263.png}%
-\caption{Abertura de la compuerta Tyr263 para dejar la galactosa en el citoplasma.Tomada de \cite{Watanabe2010}} \label{fig:Y263}
->>>>>>> acb4642ec1ddb65da513f3d66a48f5bd6a383c6a
 \end{figure}
 Posteriormente \cite{Adelman2016}, v\'{i}a simulaciones de din\'{a}mica molecular  encontraron que no existe no existe un orden espec\'{i}fico en que salgan el sodio y la galactosa.
