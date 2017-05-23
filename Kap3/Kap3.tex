@@ -270,12 +270,11 @@ En la caracterizaci\'{o}n de vSGLT, se encuentra reportada una  masa de 60676 Da
 
 La estructura tridimensional de vSGLT \cite{Faham2008} se obtiene por difracci\'{o}n de rayos x con un espaciamiento de Bragg entre $2.7\AA$ y $3\AA$ (mejor y peor direcci\'{o}n) y  a una temperatura de $T=100$K. Esta  resoluci\'{o}n es la dada por los rayos x emitidos de una placa de cobre y corresponde al tama\~{n}o al que se alcanzan a percibir los residuos en una prote\'{i}na con posibles errores en los rotameros de las cadenas laterales peque\~{n}as \cite{Huang2007}. Se pasaron por el difract\'{o}metro tres tipos de estructuras cristalinas \ce{P1}, \ce{P2_{1}},  \ce{P2_{1}P2_{1}P2_{1}} que corresponden a los sistemas tricl\'{i}nico, monocl\'{i}nico y ortorr\'{o}mbico \footnote{Existen 7 sistemas cristalinos, cada uno de los cuales cumple una simetr\'{i}a diferente. Cada uno de estos sistemas contiene varios tipos de redes, llamadas redes de Bravais. De acuerdo a la notaci\'{o}n de Germann-Mauguin una celda primitiva se representa con la letra P, ver \cite{VainshteinModernCrystallography}.} respectivamente.\\
 
-En la base de datos del PDB, se encuentra la estructura de vSGLT  como un tetr\'{a}mero con el c\'{o}digo PDB 3DH4, ver figura \ref{fig:3dh4}. La estructura tetram\'{e}rica es la de la celda unitaria. Mientras que en su ensamblaje biol\'{o}gico forma un d\'{i}mero, figura \label{fig:complejo} (a).
-
+En la base de datos del PDB, se encuentra la estructura de vSGLT  como un tetr\'{a}mero con el c\'{o}digo PDB 3DH4. La estructura tetram\'{e}rica es la de la celda unitaria. Mientras que en su ensamblaje biol\'{o}gico forma un d\'{i}mero, ver figura \ref{fig:3dh4}.
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.1]{Kap3/3dh4tetra.png}
-\caption{Tetr\'{a}mero del cotransportador vSGLT (C\'{o}digo pdb 3dh4) como aparece cristalizado. Imagen obtenida con PyMOL \cite{PyMOL}.}\label{fig:3dh4}
+\includegraphics[scale=0.1]{Kap3/chainAB.png}
+\caption{D\'{i}mero del cotransportador vSGLT (C\'{o}digo pdb 3dh4) como aparece en su forma biol\'{o}gica. Imagen obtenida con PyMOL \cite{PyMOL}.}\label{fig:3dh4}
 \end{figure}
 La conformaci\'{o}n con la cual se obtuvo la estructura cristalina del simportador fue la conformaci\'{o}n hacia adentro cerrada, es decir, con la galactosa ocluida dentro del simportador tal como se muestra en la figura \ref{fig:3dh4_2}. El sitio del sodio fue determinado de acuerdo a la arquitectura central (core structure) que comparte el simportador con los simportadores que pertenecen a la superfamilia del plegamiento de LeuT, la cual es cercana al sitio Na2 de LeuT. La distancia a la que se encuentran el sodio (ion) y la galactosa (substrato) es $\sim 10 \AA$\\
 \begin{figure}[H]
@@ -292,9 +291,11 @@ La conformaci\'{o}n con la cual se obtuvo la estructura cristalina del simportad
 \caption{14 segmentos transmembranales de vSGLT con sus $\alpha$ h\'{e}lices representadas por cilindros. La galactosa se muestra  ocluida.(a) Vista desde el periplasma; %(b) vista desde el citoplasma; (c)
 (b) vista lateral. Figura tomada de \cite{Faham2008}}\label{fig:3dh4_2}
 \end{figure}
-El n\'{u}mero de segmentos transmembranales TM es de 14, los cuales est\'{a}n formados por una o a lo sumo dos $\alpha$ h\'{e}lices unidas por lazos. Los segmentos TM est\'{a}n distribuidos entre los residuos \cite{Lomize2012OPMMembranes}:\\
+El n\'{u}mero de segmentos transmembranales TM es de 14, los cuales est\'{a}n formados por una o a lo sumo dos $\alpha$ h\'{e}lices unidas por lazos. De acuerdo a la base de datos OPM (Orientation in Transmembrane Proteins) \cite{Lomize2012OPMMembranes}, los segmentos TM est\'{a}n distribuidos entre los residuos :\\
 
-TM1(4-18), TM2(53-77), TM3(82-99), TM4(129-155), TM5(162-177), TM6(188-205), TM7(255-267), TM8(286-305), TM9(348-377), TM10(397-418), TM11(423-443), TM12(458-472), TM13(479-496), TM14(524-545).\\
+Cadena A: TM1(4-18), TM2(53-77), TM3(82-99), TM4(129-155), TM5(162-177), TM6(188-205), TM7(255-267), TM8(286-305), TM9(348-377), TM10(397-418), TM11(423-443), TM12(458-472), TM13(479-496), TM14(524-545).\\
+
+Cadena B: 1(4-18), 2(53-64), 3(67-77), 4(82-99), 5(129-155), 6(162-177), 7(188-205), 8(255-267), 9(286-305), 10(348-377), 11(397-418), 12(423-443), 13(458-472), 14(479-496), 15(524-545).\\
 
 Debe tenerse en cuenta que el TM2 est\'{a} fragmentado en dos partes:  TM2E(53-64), TM2I(67-77).\\
 
@@ -306,6 +307,10 @@ En la figura \ref{fig:2xq2} se muestra la unidad asim\'{e}trica (celda unitaria)
 \includegraphics[scale=0.2]{Kap3/2xq2.png}
 \caption{Unidad asim\'{e}trica del mutante K294A del cotransportador vSGLT mostrando la cadana principal en forma de "cartoon".Imagen obtenida con PyMOL \cite{PyMOL}. }\label{fig:2xq2}
 \end{figure}
+El n\'{u}mero de segmentos TM encontrado para esta estructura es de 15. Uno adicional en la \'{u}ltima h\'{e}lice con respecto a la estructura 3DH4. En la base de datos del OPM se encuentran las posiciones de los segmentos transmembranales como sigue:\\
+
+Cadena A: 1( 11- 30), 2( 53- 77), 3( 81- 98), 4( 129- 154), 5( 162- 179), 6( 186- 205), 7( 249- 264), 8( 286- 306), 9( 350- 377), 10( 398- 418), 11( 422- 440), 12( 458- 472), 13( 479- 494), 14( 526- 544), 15(548- 572)\\
+Cadena B: 1( 13- 27), 2( 53- 77), 3( 81- 98), 4( 129- 154), 5( 162- 179), 6( 186- 205), 7( 249- 264), 8( 286- 306), 9( 350- 377), 10( 398- 418), 11( 422- 440), 12( 458- 472), 13( 479- 494), 14( 526- 544), 15(548- 572)
 \section{Estudios computacionales del Co-transportador vSGLT}
 La estructura del mutante K294A, junto con una nueva caracterizaci\'{o}n bioqu\'{i}mica y simulaciones por din\'{a}mica molecular, todas encontradas en \cite{Watanabe2010} muestran que cuando sale el sodio, la h\'{e}lice 2 (tomada para ellos como 1) se reorienta, permitiendo que se abra la compuerta para que salga posteriormente la galactosa. Al realizar las simulaciones por din\'{a}mica molecular se encuentra que a los $\sim 52$ns la Tyr263 hace su transici\'{o}n entre dos rot\'{a}meros para dejar pasar la galactosa al espacio intracelular,  tal como se muestra en la figura \ref{fig:Y263}.\\
 \begin{figure}[ht]
