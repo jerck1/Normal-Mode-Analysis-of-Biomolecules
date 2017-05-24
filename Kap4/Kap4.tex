@@ -11,32 +11,43 @@ En la figura \ref{fig:flujo} se encuentra un esquema de la entrada y salida de d
 \end{figure}
 
 \section{NMA previo de vSGLT}
-Mediante el servidor ANM, se ha realizado un estudio previo del simportador vSGLT, ver \cite{Cabrera2017}, en el cual se utiliza el archivo de entrada 3dh4.pdb \cite{Faham2008} encontrado en la base de datos del PDB el cual, aparece como tetr\'{a}mero. En este archivo pdb no se determinan los residuos de la primera h\'{e}lice en cada subunidad. Aunque aparecen las posiciones de los residuos, el ANM server los ignora, haciendo el c\'{a}lculo \'{u}nicamente con los residuos conocidos.\\
+Mediante el servidor ANM, se ha realizado un estudio previo del simportador vSGLT \cite{Cabrera2017}, en el cual se utiliza el archivo de entrada 3dh4.pdb \cite{Faham2008} encontrado en la base de datos del PDB como tetr\'{a}mero. En este archivo pdb no se determinan los residuos de la primera h\'{e}lice en cada subunidad. Aunque aparecen las posiciones de los residuos, el ANM server los ignora, haciendo el c\'{a}lculo \'{u}nicamente con los residuos conocidos.\\
 
-Una vez ingresado el archivo pdb se selecciona el modelo de la estructura. Inicialmente se toman s\'{o}lamente los carbonos $\alpha$ del co-transportador, luego  se seleccionan distancias de corte $r_c$ entre $7\AA$ y $14\AA$ y en la cadena A. Luego se calculan los modos normales $(\lambda_k,a_k)$ (autovalores, autovectores) y los factores b.\\
+Una vez ingresado el archivo pdb se selecciona el modelo de la estructura. Inicialmente se toman s\'{o}lamente los carbonos $\alpha$ del co-transportador, se seleccionan distancias de corte $R_c$ entre $7\AA$ y $14\AA$. Luego se calculan los modos normales $(\lambda_k,a_k)$ (autovalores, autovectores) y los factores b. Se hace otro NMA agregando los \'{a}tomos de la galactosa (sin hidr\'{o}genos), agregando el sodio y luego agregando los dos.\\
 
-Los c\'{a}lculos de salida mostrados son los factores b por cada n\'{u}mero de residuo y para cada distancia de corte $r_c$, entre $7\AA$ y $14\AA$ y en la cadena A, ver figura \ref{fig:ANM_pre}. Ha de notarse que para distancias de corte menores o iguales a $7\AA$,no se encontraron todos  los autovalores, ni autovectores, ni factores b, lo cual se evidencia en la gr\'{a}fica para  $R_c=7\AA$ de la figura \ref{fig:ANM_pre}. Esto se debe a que los no todos los AUTOVALORES no convergen. Para distancias de corte mayores a $8\AA$, se encontraron todos los factores b.\\
+En la figura \ref{fig:ANM_pre} se muestran los factores b por cada n\'{u}mero de residuo y para cada distancia de corte $R_c$, entre $8\AA$ y $14\AA$ de la cadena A. Ha de notarse que para distancias de corte menores o iguales a $7\AA$,no se encontraron todos  los autovalores, ni autovectores, ni factores b, ya que los no todos los autovalores convergen \cite{Zimmermann2011}.\\
+
+Para distancias de corte mayores a $8\AA$, se encontraron todos los factores b.\\
 \begin{figure}[ht]
  \centering
-    \includegraphics[scale=0.2]{./Kap4/ANM/ANM_server/grafica_7_A_n.png} 
-\put(-50,-2){$R_c=7\AA$}
  \includegraphics[scale=0.2]{./Kap4/ANM/ANM_server/grafica_8_A_n.png}
   \put(-50,-2){$R_c=8\AA$}
    \includegraphics[scale=0.2]{./Kap4/ANM/ANM_server/grafica_9_A_n.png}
   \put(-50,-2){$R_c=9\AA$}
-  \vspace{1mm}
+\caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=8\AA$ y $R_c= 9\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pre1}
+\end{figure}
+\begin{figure}[ht]
+ \centering
     \includegraphics[scale=0.2]{./Kap4/ANM/ANM_server/grafica_10_A_n.png}
    \put(-50,-2){$R_c=10\AA$}
+\caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=10\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pre1}
+\end{figure}
+\begin{figure}[ht]
+ \centering
      \includegraphics[scale=0.2]{./Kap4/ANM/ANM_server/grafica_11_A_n.png}
     \put(-50,-2){$R_c=11\AA$}
       \includegraphics[scale=0.2]{./Kap4/ANM/ANM_server/grafica_12_A_n.png}
      \put(-50,-2){$R_c=12\AA$}
-       \vspace{1mm}
+\caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=11\AA$ y $R_c= 12\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pre1}
+\end{figure}
+\begin{figure}[ht]
+ \centering
        \includegraphics[scale=0.2]{./Kap4/ANM/ANM_server/grafica_13_A_n.png}
      \put(-50,-2){$R_c=13\AA$}
        \includegraphics[scale=0.2]{./Kap4/ANM/ANM_server/grafica_14_A_n.png}
 \put(-50,-2){$R_c=14\AA$}
-\caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo entre $7\AA\leq R_c\leq 14\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pre}
+
+\caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=13\AA$ y $R_c= 14\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pre1}
 \end{figure}
  VSGLT es m\'{a}s flexible con uno o ambos sitios activos ocupados que vSGLT sin sustratos.\\
 Los movimientos globales de simportador no se afectan significativamente si el ion, el soluto o ambos est\'{a}n unidos. Sugiere que Na + y galactosa no son de alta cooperaci\'{o}n.\\
@@ -51,8 +62,6 @@ Ya que en el mutante de vSGLT en la posici\'{o}n K294A, llamado 2XQ2 aparece res
 
 \begin{figure}[h]
  \centering
-  \includegraphics[scale=0.2]{./Kap4/ANM/ANM_s_nuevo/grafica_7_A_n.png}
-   \put(-50,-2){$R_c=7\AA$}
  \includegraphics[scale=0.2]{./Kap4/ANM/ANM_s_nuevo/grafica_8_A_n.png}
   \put(-50,-2){$R_c=8\AA$}
   \includegraphics[scale=0.2]{./Kap4/ANM/ANM_s_nuevo/grafica_9_A_n.png}
