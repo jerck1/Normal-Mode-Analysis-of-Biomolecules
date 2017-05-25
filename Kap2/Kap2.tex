@@ -38,7 +38,7 @@ V_{elec}(r)&=&\sum_{j=1}^{N-1}\sum_{i=j+1}^{N}\frac{q_iq_j}{4\pi\epsilon_0\epsil
 \end{eqnarray}
 \end{itemize}
 Las constantes $k_r,k_\theta,f_{ij},\epsilon_{ij},r_{0ij},$ son constantes emp\'{i}ricas definidas de manera diferente en cada uno de los programas que realizan din\'{a}mica molecular \cite{Amber2016}.\\
-
+\subsubsection{Din\'{a}mica Molecular}
 Las interacciones consideradas son las mismas que forman y pliegan una prote\'{i}na  en todos sus niveles de estructura, tal como aparece descrito en la secci\'{o}n \ref{ssec:Estruc}. Estas interacciones no forman una estructura tridimensional est\'{a}tica sino din\'{a}mica, es por esto que se resuelven las ecuaciones de movimiento para estos potenciales:
 
 \begin{equation}\label{eq:50}
@@ -324,7 +324,7 @@ El c\'{a}lculo de la matriz de segundas derivadas $\mathbf{U}$ para el an\'{a}li
 \mathbf{\mathcal{H}}=\{H_{ij}\} \mbox{		con	}i,j=1,...,N
 \end{equation}
 Los elementos de $\mathbf{H}_{ij}$ son:
-\begin{equation}\label{eq:35}
+\begin{equation}\label{eq:hes}
 \mathbf{H}_{ij}=\left(
 \begin{array}{ccc}
  \partial_{xi}\partial_{xj} V & \partial_{xi}\partial_{yj} V & \partial_{xi}\partial_{zj} V \\
@@ -387,7 +387,7 @@ Escribiendo \eqref{eq:34} en forma matricial se tiene:
 \begin{equation}\label{eq:35}
 V_{GNM}=\frac{\gamma}{2}\left(\Delta\mathbf{X}^T\mathbf{\Gamma}\Delta\mathbf{X}+\Delta\mathbf{Y}^T\mathbf{\Gamma}\Delta\mathbf{Y}+\Delta\mathbf{Z}^T\mathbf{\Gamma}\Delta\mathbf{Z} \right)
 \end{equation}
-Con $\Delta\mathbf{X}^T$ un vector $N$ dimensional con componentes:$\Delta\mathbf{X}^T=\left(\Delta x_1,...,\Delta x_N\right)$ y $\mathbf{\Gamma}$ la matriz de Kirchhoff que se discutir\'{a} en o que sigue con el fin de entender la expresi\'{o}n \eqref{eq:35}.\\
+Con $\Delta\mathbf{X}^T$ un vector $N$ dimensional con componentes:$\Delta\mathbf{X}^T=\left(\Delta x_1,...,\Delta x_N\right)$ y $\mathbf{\Gamma}$ la matriz de Kirchhoff que se discutir\'{a} en lo que sigue con el fin de entender la expresi\'{o}n \eqref{eq:35}.\\
 
 Para garantizar que $\Gamma_{ij}$ sea adimensional, se escogen (no de forma \'{u}nica) los elementos fuera de la diagonal de acuerdo al procedimiento descrito a continuaci\'{o}n.\\
 
@@ -509,4 +509,12 @@ A modo de resumen, en la figura \ref{fig:movs} se muestra un mapa conceptual en 
 \end{figure}
 \section{M\'{e}todos de C\'{a}lculo para NMA}
 
-Existen varios programas que permiten realizar NMA tanto en prote\'{i}nas como en \'{a}cidos nucl\'{e}icos. Algunos de ellos son los desarrollados por la universidad de Pittsburgh: ANM server, oGNM server, iGNM server.
+Existen varios programas que permiten realizar NMA tanto en prote\'{i}nas como en \'{a}cidos nucl\'{e}icos. A continuaci\'{o}n se listan algunos de ellos \cite{Ramon}, \cite{Zimmermann2011}, \cite{Eyal2015}.\\
+
+\begin{itemize}
+ \item Bahar Lab: ANM server, oGNM server, iGNM server, dynomics 
+ \item Jeringan Lab: MAVEN
+ \item ElN\'{e}mo:
+ \item Chacon Lab \cite{Ramon}: Actualmente funciona el servidor \textit{imods} \footnote{ \url{http://chaconlab.org}}, el cual permite seleccionar varios tipos de NMA,
+\end{itemize}
+
