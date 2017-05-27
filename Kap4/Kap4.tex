@@ -12,7 +12,7 @@ En la figura \ref{fig:flujo} se encuentra un esquema de la entrada y salida de d
 
 \section{NMA previo de vSGLT}
 \subsection{Metodolog\'{i}a}
-Mediante el servidor ANM, se ha realizado un estudio previo del simportador vSGLT \cite{Cabrera2017} , en el cual se utiliza el archivo de entrada 3dh4.pdb \cite{Faham2008} encontrado en la base de datos del PDB como tetr\'{a}mero. En este archivo pdb no se determinan los residuos de la primera h\'{e}lice en cada subunidad. Aunque aparecen las posiciones de los residuos, el ANM server los ignora, haciendo el c\'{a}lculo \'{u}nicamente a a partir del residuo 47.\\
+Mediante el servidor ANM, se ha realizado un estudio previo del simportador vSGLT   \cite{Cabrera2017} , en el cual se utiliza el archivo de entrada 3dh4.pdb \cite{Faham2008} encontrado en la base de datos del PDB como tetr\'{a}mero. En este archivo pdb no se determinan los residuos de la primera h\'{e}lice en cada subunidad. Aunque aparecen las posiciones de los residuos, el ANM server los ignora, haciendo el c\'{a}lculo \'{u}nicamente a a partir del residuo 47.\\
 
 Una vez ingresado el archivo pdb se selecciona el modelo de la estructura. Inicialmente se toman s\'{o}lamente los carbonos $\alpha$ del co-transportador, se seleccionan distancias de corte $R_c$ entre $7\AA$ y $14\AA$. Adem\'{a}s el factor de peso aplicado a las distancias de corte es $s=0$, es decir, las distancias de corte en el hessiano \eqref{eq:hes} son fijas \cite{Zimmermann2011}. Luego se calculan los modos normales $(\lambda_k,a_k)$ (autovalores, autovectores) y los factores b. Se hace otro NMA agregando los \'{a}tomos de la galactosa (sin hidr\'{o}genos), agregando el sodio y luego agregando los dos.\\
 \subsection{Resultados}
@@ -59,7 +59,7 @@ Para $Rc = 8\AA$ y $Rc = 9\AA$, los movimientos en TM7 (entre los residuos 192-2
 For $Rc=8\AA$,  $9\AA$ and $11\AA$, the motions in TM6 (residues 161-167), especially T162 and TM13 in residue F496  when Na+ and Gal are bound are more rigid than  motions of vSGLT alone.\\
 Para $Rc = 8\AA$, $9\AA$ y $11\AA$, hay otros residuos involucrados en cambios de movimientos, estos son en segmentos mencionados anteriormente.\\
 
-\section{ANM para vSGLT}
+\section{ANM de vSGLT con la Estructura Completa}
 \subsection{Preparaci\'{o}n del PDB}
 Ya que en el mutante de vSGLT en la posici\'{o}n K294A, llamado 2XQ2 aparece resuelta la estructura cristalina del TM1 perteneciente a la cadena A, se usa el programa PyMol, y como archivos de entrada los pdbs 3DH4 y el de su mutante 2XQ2, para crear un archivo que sea cercano a la estructura real objeto de estudio, esto es, al cotransportador vSGLT. 
 \subsection{Resultados}
@@ -98,8 +98,3 @@ Ya que en el mutante de vSGLT en la posici\'{o}n K294A, llamado 2XQ2 aparece res
 \put(-50,-2){$R_c=20\AA$}
  \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo entre $7\AA\leq R_c\leq 20\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos}
 \end{figure}
-
-
-\section{Modelo GNM de vSGLT}
-
-\section{Mutante K294A de vSGLT con C-$\alpha$}

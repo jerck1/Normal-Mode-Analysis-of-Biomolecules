@@ -42,7 +42,7 @@ Las constantes $k_r,k_\theta,f_{ij},\epsilon_{ij},r_{0ij},$ son constantes emp\'
 Las interacciones consideradas son las mismas que forman y pliegan una prote\'{i}na  en todos sus niveles de estructura, tal como aparece descrito en la secci\'{o}n \ref{ssec:Estruc}. Estas interacciones no forman una estructura tridimensional est\'{a}tica sino din\'{a}mica, es por esto que se resuelven las ecuaciones de movimiento para estos potenciales:
 
 \begin{equation}\label{eq:50}
-m_i\frac{\mathrm{d}\mathbf{r_i}}{\mathrm{d}t}=\mathbf{nabla}_\mathbf{r_i} V_i
+m_i\frac{\mathrm{d}\mathbf{r_i}}{\mathrm{d}t}=\mathbf{\nabla}_\mathbf{r_i} V_i
 \end{equation}
 En este caso $i$ indexa cada \'{a}tomo, $r_i$ su posici\'{o}n y $V_i$ el potencial que se ejerce sobre cada \'{a}tomo.\\
 
@@ -507,14 +507,15 @@ A modo de resumen, en la figura \ref{fig:movs} se muestra un mapa conceptual en 
 \includegraphics[scale=0.5, angle=-90]{Kap2/mapa.png}%
 \caption{Mapa conceptual en el que se dividen los movimientos locales de los movimientos globales, mostrando los tipos de movimientos globales utilizados} \label{fig:movs}
 \end{figure}
+\newpage
 \section{M\'{e}todos de C\'{a}lculo para NMA}
 
 Existen varios programas que permiten realizar NMA tanto en prote\'{i}nas como en \'{a}cidos nucl\'{e}icos. A continuaci\'{o}n se listan algunos de ellos \cite{Ramon}, \cite{Zimmermann2011}, \cite{Eyal2015}.\\
 
 \begin{itemize}
  \item Bahar Lab: ANM server, oGNM server, iGNM server, dynomics 
- \item Jeringan Lab: MAVEN
- \item ElN\'{e}mo:
+ \item Jeringan Lab: MAVEN \cite{Zimmermann2011}.
+ \item ElN\'{e}mo \footnote{Recurso disponible en \url{http://www.sciences.univ-nantes.fr/elnemo/index.html}}: Calcula los modos de baja frecuencia usando el modelo de redes anisotr\'{o}picas.
  \item Chacon Lab \cite{Ramon}: Actualmente funciona el servidor \textit{imods} \footnote{ \url{http://chaconlab.org}}, el cual permite seleccionar varios tipos de NMA,
 \end{itemize}
 
