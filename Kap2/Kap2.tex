@@ -23,7 +23,7 @@ Seg\'{u}n el tipo de modelo a escoger, las soluciones a las ecuaciones de movimi
 \section{Movimientos Locales}
 Los movimientos locales hacen referencia a las simulaciones en las que se incluyen todos los \'{a}tomos junto con las interacciones presentes, es decir, en las que se analizan los \textit{cambios locales}. Estas se pueden simular a un orden de magnitud de los nanosegundos en una m\'{a}quina usual, ver \cite{Gur2013}.\\
 \subsection{Campos de Fuerza}
-Existen simulaciones MD usando todos los \'{a}tomos (Full atomic MD) o usando los movimientos globales (Coarse-grained models). En general se pueden considerar los campos de fuerza usados en el modelo de Amber \cite{Amber2016}. El modelo de Amber tiene en cuenta las contribuciones debidas a:
+Existen simulaciones MD usando todos los \'{a}tomos (Full atomic MD) o usando modelos simplificados (Coarse-grained models). En general se pueden considerar los campos de fuerza usados en el modelo de Amber \cite{Amber2016}. El modelo de Amber tiene en cuenta las contribuciones debidas a:
  \begin{itemize}
 \item Interacciones intermoleculares: Son las producidas por los enlaces covalentes entre grupos de \'{a}tomos, las interacciones de valencia y las torsiones.
 \begin{eqnarray}
@@ -37,7 +37,7 @@ V_{len}(r)&=&\sum_{j=1}^{N+1}\sum_{i=j+1}^N f_{ij}\left\{\epsilon_{ij}\left[\lef
 V_{elec}(r)&=&\sum_{j=1}^{N-1}\sum_{i=j+1}^{N}\frac{q_iq_j}{4\pi\epsilon_0\epsilon_R r_{ij}}
 \end{eqnarray}
 \end{itemize}
-Las constantes $k_r,k_\theta,f_{ij},\epsilon_{ij},r_{0ij},$ son constantes emp\'{i}ricas definidas de manera diferente en cada uno de los programas que realizan din\'{a}mica molecular com AMBER \cite{Amber2016}, NAMD, CHARMm, entre otros..\\
+Las constantes $k_r,k_\theta,f_{ij},\epsilon_{ij},r_{0ij},$ son constantes emp\'{i}ricas definidas de manera diferente en cada uno de los programas que realizan din\'{a}mica molecular com AMBER \cite{Amber2016}, NAMD \cite{Phillips2005ScalableNAMD}, CHARMm \cite{Brooks2009CHARMM:Program}, entre otros.\\
 \subsubsection{Din\'{a}mica Molecular}
 Las interacciones consideradas son las mismas que forman y pliegan una prote\'{i}na  en todos sus niveles de estructura, tal como aparece descrito en la secci\'{o}n \ref{ssec:Estruc}. Estas interacciones no forman una estructura tridimensional est\'{a}tica sino din\'{a}mica, es por esto que se resuelven las ecuaciones de movimiento para estos potenciales:
 
@@ -512,10 +512,36 @@ A modo de resumen, en la figura \ref{fig:movs} se muestra un mapa conceptual en 
 
 Existen varios programas que permiten realizar NMA tanto en prote\'{i}nas como en \'{a}cidos nucl\'{e}icos. A continuaci\'{o}n se listan algunos de ellos \cite{Ramon}, \cite{Zimmermann2011}, \cite{Eyal2015}.\\
 
-\begin{itemize}
- \item Bahar Lab: ANM server, oGNM server, iGNM server, dynomics 
- \item Jeringan Lab: MAVEN \cite{Zimmermann2011}.
- \item ElN\'{e}mo \footnote{Recurso disponible en \url{http://www.sciences.univ-nantes.fr/elnemo/index.html}}: Calcula los modos de baja frecuencia usando el modelo de redes anisotr\'{o}picas.
- \item Chacon Lab \cite{Ramon}: Actualmente funciona el servidor \textit{imods} \footnote{ \url{http://chaconlab.org}}, el cual permite seleccionar varios tipos de NMA,
-\end{itemize}
-
+%\begin{itemize}
+ %\item Bahar Lab: ANM server, oGNM server, iGNM server, dynomics 
+ %\item Jeringan Lab: MAVEN \cite{Zimmermann2011}.
+ %\item ElN\'{e}mo \footnote{Recurso disponible en \url{http://www.sciences.univ-nantes.fr/elnemo/index.html}}: Calcula los modos de baja frecuencia usando el modelo de redes anisotr\'{o}picas.
+ %\item Chacon Lab \cite{Ramon}: Actualmente funciona el servidor \textit{imods} \footnote{ \url{http://chaconlab.org}}, el cual permite seleccionar varios tipos de NMA,
+%\end{itemize}
+ \begin{longtable}[l]{|l|l|l|}\hline
+   \textbf{Software} & \textbf{P\'{a}gina Web}&\textbf{Comentarios} \\ [0.5ex] \hline% 
+  \endfirsthead%
+ \textbf{Software} & \textbf{P\'{a}gina Web}&\textbf{Comentarios} \\[0.5ex] \hline%
+ \endhead%
+\renewcommand{\arraystretch}{1.4}\label{tab:software}
+Bahar&\url{http://www.csb.pitt.edu/Faculty/bahar/index.php}&A\\
+Chacon&\url{http://chaconlab.org/}&R\\
+ElN\'{e}mo&\url{http://www.igs.cnrs-mrs.fr/elnemo}&N\\
+MAVEN&\url{http://maven.sourceforge.net}&\\
+FlexServ&\url{http://mmb.irbbarcelona.org/FlexServ/}&D\\
+Gerstein&\url{http://molmovdb.org}&C\\
+HingeProt&\url{http://www.prc.boun.edu.tr/appserv/prc/hingeprot/}&E\\
+Hinsen&\url{http://dirac.cnrs-orleans.fr/plone/software}&Q\\
+KOSMOS&\url{http://bioengineering.skku.ac.kr/kosmos/}&G\\
+%\columnbreak
+NMSim&\url{http://cpclab.uni-duesseldorf.de/nmsim}&H\\
+NOMAD-Ref&\url{http://lorentz.immstr.pasteur.fr/nma/ submission.php}&I\\
+PARS&\url{http://bioinf.uab.cat/pars}&L\\
+ProMode&Lys&K\\
+SPACER&\url{http://allostery.bii.a-star.edu.sg}&M\\
+TMM@&\url{http://services.cbu.uib.no/tools/tmma}&F\\
+WebNM@&\url{http://apps.cbu.uib.no/webnma/home}&P\\
+Zheng's&\url{http://enm.lobos.nih.gov}&S\\
+\hline
+\caption{Lista de algunos servidores NMA con licencia libre. Tabla tomada de \cite{Ramon}}
+\end{longtable}
