@@ -510,7 +510,7 @@ A modo de resumen, en la figura \ref{fig:movs} se muestra un mapa conceptual en 
 \newpage
 \section{M\'{e}todos de C\'{a}lculo para NMA}
 
-Existen varios programas que permiten realizar NMA tanto en prote\'{i}nas como en \'{a}cidos nucl\'{e}icos. A continuaci\'{o}n se listan algunos de ellos \cite{Ramon}, \cite{Zimmermann2011}, \cite{Eyal2015}.\\
+Existen varios programas que permiten realizar NMA tanto en prote\'{i}nas como en \'{a}cidos nucleicos. A continuaci\'{o}n se listan algunos de ellos \cite{Ramon}, \cite{Zimmermann2011}, \cite{Eyal2015}.\\
 
 %\begin{itemize}
  %\item Bahar Lab: ANM server, oGNM server, iGNM server, dynomics 
@@ -518,30 +518,38 @@ Existen varios programas que permiten realizar NMA tanto en prote\'{i}nas como e
  %\item ElN\'{e}mo \footnote{Recurso disponible en \url{http://www.sciences.univ-nantes.fr/elnemo/index.html}}: Calcula los modos de baja frecuencia usando el modelo de redes anisotr\'{o}picas.
  %\item Chacon Lab \cite{Ramon}: Actualmente funciona el servidor \textit{imods} \footnote{ \url{http://chaconlab.org}}, el cual permite seleccionar varios tipos de NMA,
 %\end{itemize}
- \begin{longtable}[l]{|l|l|l|}\hline
+ \begin{longtable}[l]{p{2cm}p{6cm}p{8cm}}\hline
    \textbf{Software} & \textbf{P\'{a}gina Web}&\textbf{Comentarios} \\ [0.5ex] \hline% 
   \endfirsthead%
  \textbf{Software} & \textbf{P\'{a}gina Web}&\textbf{Comentarios} \\[0.5ex] \hline%
  \endhead%
 \renewcommand{\arraystretch}{1.4}\label{tab:software}
-Bahar&\url{http://www.csb.pitt.edu/Faculty/bahar/index.php}&A\\
-Chacon&\url{http://chaconlab.org/}&R\\
-ElN\'{e}mo&\url{http://www.igs.cnrs-mrs.fr/elnemo}&N\\
-MAVEN&\url{http://maven.sourceforge.net}&\\
-FlexServ&\url{http://mmb.irbbarcelona.org/FlexServ/}&D\\
-Gerstein&\url{http://molmovdb.org}&C\\
-HingeProt&\url{http://www.prc.boun.edu.tr/appserv/prc/hingeprot/}&E\\
-Hinsen&\url{http://dirac.cnrs-orleans.fr/plone/software}&Q\\
-KOSMOS&\url{http://bioengineering.skku.ac.kr/kosmos/}&G\\
+Bahar&\url{http://www.csb.pitt.edu/Faculty/bahar/index.php}&\textit{ProDy}: Contiene una librer\'{i}a libre para NMA (ANM, GNM) y PCA de prote\'{i}nas\newline\textit{NMWiz}:NMA y PCA plugin para VMD.\newline\textit{oGNM}:Servidor GNM para prote\'{i}nas y \'{a}cidos nucleicos.\newline\textit{ANM}:ANM interactivo para prote\'{i}nas con inclusi\'{o}n de \'{a}cidos nucleicos.\newline\textit{coMD}:MD h\'{i}brida con NMA para generar trayectorias de transici\'{o}n.
+\\
+Chacon&\url{http://chaconlab.org/}&\textit{iMODS} Servidor NMA interactivo que genera la trayectoria de transici\'{o}n en coordenadas dih\'{e}dricas para prote\'{i}nas y \'{a}cidos nucleicos.\newline\textit{iMOD}: NMA y trayectoria de transici\'{o}n en coordenadas dih\'{e}dricas para prote\'{i}nas y \'{a}cidos nucleicos.\newline\textit{iMODFIT}:Ajuste flexible de estructura de prote\'{i}nas y de \'{a}cidos nucleicos dentro de mapas de microscop\'{i}a electr\'{o}nica EM en coordenadas dih\'{e}dricas.
+\\
+ElN\'{e}mo&\url{http://www.igs.cnrs-mrs.fr/elnemo}&Servidor no interactivo de NMA para prote\'{i}nas y \'{a}cidos nucleicos.
+\\
+MAVEN&\url{http://maven.sourceforge.net}&'' Plataforma de an\'{a}lisis de movimiento y visualizaci\'{o}n de redes el\'{a}sticas y ensambles estructurales".
+\\
+FlexServ&\url{http://mmb.irbbarcelona.org/FlexServ/}&Servidor interactivo de NMA para prote\'{i}nas.
+\\
+Gerstein&\url{http://molmovdb.org}&\textit{MolMovDB}:Base de datos de movimientos macromoleculares y servidor NMA no interactivo para prote\'{i}nas\newline\textit{Stone Hinge}:Predicci\'{o}n de bisagras en prote\'{i}nas.
+\\
+HingeProt&\url{http://www.prc.boun.edu.tr/appserv/prc/hingeprot/}&Servidor interactivo de NMA para la predicci\'{o}n de bisagras en prote\'{i}nas.
+\\
+Hinsen&\url{http://dirac.cnrs-orleans.fr/plone/software}&\textit{MMTK} Librer\'{i}a libre para modelamiento molecular\newline\textit{Domain Finder}: Programa basado en NMA para caracterizar propiedades din\'{a}micas de dominios proteicos.
+\newline\textit{DensityFit}:Ajuste flexible de estructuras at\'{o}micas en mapas de EM.\\
+KOSMOS&\url{http://bioengineering.skku.ac.kr/kosmos/}&Servidor NMA interactivo generador de trayectorias de transici\'{o}n para prote\'{i}nas y \'{a}cidos nucleicos.\\
 %\columnbreak
-NMSim&\url{http://cpclab.uni-duesseldorf.de/nmsim}&H\\
-NOMAD-Ref&\url{http://lorentz.immstr.pasteur.fr/nma/ submission.php}&I\\
-PARS&\url{http://bioinf.uab.cat/pars}&L\\
-ProMode&Lys&K\\
-SPACER&\url{http://allostery.bii.a-star.edu.sg}&M\\
-TMM@&\url{http://services.cbu.uib.no/tools/tmma}&F\\
-WebNM@&\url{http://apps.cbu.uib.no/webnma/home}&P\\
-Zheng's&\url{http://enm.lobos.nih.gov}&S\\
+NMSim&\url{http://cpclab.uni-duesseldorf.de/nmsim}&Servidor NMA interactivo que genera trayectorias de transici\'{o}n basado en simulaciones geom\'{e}tricas.\\
+NOMAD-Ref&\url{http://lorentz.immstr.pasteur.fr/nma/ submission.php}&Servidor no interactivo de NMA para prote\'{i}nas y \'{a}cidos nucleicos.\\
+PARS&\url{http://bioinf.uab.cat/pars}&Predicci\'{o}n de sitios alost\'{e}ricos y regulatorios en prote\'{i}nas.\\
+SPACER&\url{http://allostery.bii.a-star.edu.sg}&Analiza la comunicaci\'{o}n alost\'{e}rica entre diferentes sitios.\\
+TMM@&\url{http://services.cbu.uib.no/tools/tmma}&Servidor NMA para el an\'{a}lisis de $\alpha$ h\'{e}lices transmembranales.\\
+WebNM@&\url{http://apps.cbu.uib.no/webnma/home}&Servidor NMA interactivo para prote\'{i}nas.\\
+Zheng's&\url{http://enm.lobos.nih.gov}&Servidores basados en NMA o ENMs:\newline\textit{AD-ENM}: SErvidor interactivo de NMA para prote\'{i}nas y \'{a}cidos nucleicos.\newline\textit{DC-ENM}: Construye modelos at\'{o}micos para prote\'{i}nas y \'{a}cidos nucl\'{e}icos  que satisfacen ligaduras de distancia.\newline\textit{PATH-ENM} y \textit{iENM}: Genera trayectorias de transici\'{o}n.\newline\textit{EMFF}: Servidor de ajuste flexible para estructuras at\'{o}micas en los mapas EM.
+\\
 \hline
-\caption{Lista de algunos servidores NMA con licencia libre. Tabla tomada de \cite{Ramon}}
+\caption{Lista de algunos servidores y programas de NMA con licencia libre. Tabla traducida y actualizada de \cite{Ramon}.}
 \end{longtable}
