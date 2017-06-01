@@ -315,7 +315,7 @@ Cadena B: 1(4-18), 2(53-77), 3(82-99), 4(129-155), 5(162-177), 6(188-205), 7(255
 Posteriormente en \cite{Watanabe2010} aparece una nueva estructura del cotransportador vSGLT mutada en la posici\'{o}n K294A. Esta estructura aparece en su conformaci\'{o}n hacia adentro pero abierta o no ocluida, es decir, con el sustrato liberado. En la base de datos del PDB se encuentra reposada dicha estructura con el c\'{o}digo 2XQ2. Esta estructura difiere de 3DH4 en que all\'{i} se resuelve el segmento TM1, que aunque en la figura \ref{fig:3dh4_2} aparece como una h\'{e}lice, en esta no se conocen las posiciones de los residuos. Adicionalmente, se encuentra una he\'{e}lice adicional al final de la secuencia.\\
 
 En la figura \ref{fig:2xq2} se muestra la unidad asim\'{e}trica (celda unitaria) obtenida por cristalograf\'{i}a de rayos x a una resoluci\'{o}n de $2.73\AA$. La unidad asim\'{e}trica est\'{a} formada por un d\'{i}mero del vSGLT. Cada mon\'{o}mero tiene 15 segmentos transmembranales.\\
-\begin{figure}[H]
+\begin{figure}
 \centering
 \includegraphics[scale=0.2]{Kap3/2xq2.png}
 \caption{Unidad asim\'{e}trica del mutante K294A del cotransportador vSGLT mostrando la cadana principal en forma de "cartoon".Imagen de la base de datos del PDB.}\label{fig:2xq2}
@@ -325,10 +325,19 @@ El n\'{u}mero de segmentos TM encontrado para esta estructura es de 15. Uno adic
 Cadena A: 1( 11- 30), 2( 53- 77), 3( 81- 98), 4( 129- 154), 5( 162- 179), 6( 186- 205), 7( 249- 264), 8( 286- 306), 9( 350- 377), 10( 398- 418), 11( 422- 440), 12( 458- 472), 13( 479- 494), 14( 526- 544), 15(548- 572)\\
 Cadena B: 1( 13- 27), 2( 53- 77), 3( 81- 98), 4( 129- 154), 5( 162- 179), 6( 186- 205), 7( 249- 264), 8( 286- 306), 9( 350- 377), 10( 398- 418), 11( 422- 440), 12( 458- 472), 13( 479- 494), 14( 526- 544), 15(548- 572)\\
 \section{Estudios computacionales del Co-transportador vSGLT}
-La estructura del mutante K294A, junto con una nueva caracterizaci\'{o}n bioqu\'{i}mica y simulaciones por din\'{a}mica molecular, todas encontradas en \cite{Watanabe2010} muestran que cuando sale el sodio, la h\'{e}lice 2 (tomada para ellos como 1) se reorienta, permitiendo que se abra la compuerta para que salga posteriormente la galactosa. Al realizar las simulaciones por din\'{a}mica molecular se encuentra que a los $\sim 52$ns la Tyr263 hace su transici\'{o}n entre dos rot\'{a}meros para dejar pasar la galactosa al espacio intracelular,  tal como se muestra en la figura \ref{fig:Y263}.\\
-\begin{figure}[ht]
+De acuerdo a estudios experimentales \cite{Veenstra2004LocalCotransporter.}, en el espacio extracelular de la membrana, el sodio se une antes que la galactosa al cotransportador. Sin embargo, el ingreso de los solutos hacia el espacio intermembranal a\'{u}n no ha sido aclarado.\\
+
+La estructura del mutante K294A mostrada en la figura \ref{fig:2xq2}, junto con una nueva caracterizaci\'{o}n bioqu\'{i}mica y simulaciones por din\'{a}mica molecular, todas encontradas en \cite{Watanabe2010} muestran que cuando sale el sodio hacia el espacio intracelular, la h\'{e}lice 2 (tomada en la figura \ref{fig:h2xq23dh4} como h\'{e}lice 1) se reorienta, permitiendo que se abra la compuerta para que salga posteriormente la galactosa. Al realizar las simulaciones por din\'{a}mica molecular se encuentra que a los $\sim 52$ns la Tyr263 hace su transici\'{o}n entre dos rot\'{a}meros para dejar pasar la galactosa al espacio intracelular,  tal como se muestra en la figura \ref{fig:Y263}.\\
+\begin{figure}[h]
+ \centering
+ \includegraphics[scale=0.3]{Kap3/helice2.png}
+ % helice2.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Transici\'{o}n entre el estado de conformaci\'{o}n hacia adentro ocluido (gris) y el abierto (colores). Figura tomada de \cite{Watanabe2010}}
+ \label{fig:h2xq23dh4}
+\end{figure}
+\begin{figure}[h]
 \centering%
 \includegraphics[scale=0.5]{Kap3/Y263.png}%
-\caption{Abertura de la compuerta Tyr263 para dejar la galactosa en el citoplasma.Figura tomada de \cite{Watanabe2010}} \label{fig:Y263}
+\caption{Abertura de la compuerta Tyr263 para dejar la galactosa en el citoplasma. Figura tomada de \cite{Watanabe2010}} \label{fig:Y263}
 \end{figure}
 Posteriormente \cite{Adelman2016}, v\'{i}a simulaciones de din\'{a}mica molecular  encontraron que no existe no existe un orden espec\'{i}fico en que salgan el sodio y la galactosa.
