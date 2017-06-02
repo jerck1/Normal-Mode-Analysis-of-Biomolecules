@@ -34,13 +34,13 @@ Los picos correspondientes a los residuos S209 y F210 tambi\'{e}n muestran cambi
 El co-transportador es m\'{a}s flexible cuando al menos uno de los sustratos se encuentra unido al simportador. Pero los movimientos globales de simportador no difieren significativamente cuando el ion, el soluto o ambos est\'{a}n unidos. Esto podr\'{i}a sugerir que el \ce{Na^{+}} y la galactosa no son de alta cooperaci\'{o}n.\\
 
 Para comprobar esta afirmaci\'{o}n se hace una mirada detallada a las regiones alrededor de los residuos Ile253, Glu88, Phe479, Ile438 y la regi\'{o}n con los residuos Glu384,Tyr385 y Ile386.\\
-\begin{figure}[ht]
+\begin{figure}[h]
  \centering
     \includegraphics[scale=0.35]{./Kap4/ANM/ANM_server/grafica_10_A_n.png}
    \put(-28,-4){(a)$R_c=10\AA$}
 \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=10\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pre2}
 \end{figure}
-\begin{figure}[ht]
+\begin{figure}[h]
  \centering
      \includegraphics[scale=0.35]{./Kap4/ANM/ANM_server/grafica_11_A_n.png}
     \put(-28,-4){(a)$R_c=11\AA$}
@@ -48,7 +48,7 @@ Para comprobar esta afirmaci\'{o}n se hace una mirada detallada a las regiones a
      \put(-28,-4){(a)$R_c=12\AA$}
 \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=11\AA$ y $R_c= 12\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pre3}
 \end{figure}
-\begin{figure}[ht]
+\begin{figure}[h]
  \centering
        \includegraphics[scale=0.35]{./Kap4/ANM/ANM_server/grafica_13_A_n.png}
      \put(-28,-4){(a)$R_c=13\AA$}
@@ -65,18 +65,27 @@ Para $Rc = 8\AA$, $9\AA$ y $11\AA$, hay otros residuos involucrados en cambios d
 
 \section{ANM de vSGLT con la Estructura Completa}
 \subsection{Preparaci\'{o}n del PDB}
-Ya que en el mutante de vSGLT en la posici\'{o}n K294A, llamado 2XQ2 aparece resuelta la estructura cristalina del TM1 perteneciente a la cadena A, se usa el programa PyMol, y como archivos de entrada los pdbs 3DH4 y el de su mutante 2XQ2, para crear un archivo que sea cercano a la estructura real objeto de estudio, esto es, al cotransportador vSGLT. 
-\subsection{Resultados}
-\begin{figure}[ht]
+Ya que en el mutante de vSGLT en la posici\'{o}n K294A, llamado 2XQ2 aparece resuelta la estructura cristalina del TM1 perteneciente a la cadena A, se usa el programa PyMol, y como archivos de entrada los pdbs 3DH4 y el de su mutante 2XQ2, para crear un archivo que sea cercano a la estructura real objeto de estudio, esto es, al cotransportador vSGLT. Se a\~{n}ade a 3DH4 la h\'{e}lice 1 resuelta, tal como aparece en la figura 
+\begin{figure}[H]
  \centering
- \includegraphics[scale=0.35]{./Kap4/ANM/ANM_server/grafica_8_A_n.png}
+ \includegraphics[scale=0.3]{Kap4/vSGLT_n.png}
+ % vSGLT_n.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Estructura del cotransportador vSGLT en su conformaci\'{o}n ocluida junto con las h\'{e}lices 1 y 15 a\~{n}adidas mediante PyMol.}
+ \label{fig:vSGLT_in_2}
+\end{figure}
+
+\subsection{Resultados}
+En la figuras \ref{fig:ANM_pos1}, \ref{fig:ANM_pos2}, \ref{fig:ANM_pos3} y \ref{fig:ANM_pos4} se muestran los factores b por cada n\'{u}mero de residuo (entre 47 y 545) y para cada distancia de corte $R_c$, entre $8\AA$ y $20\AA$ de la cadena A. Ha de notarse que al igual que el ANM previo, para distancias de corte menores o iguales a $7\AA$,no se encontraron todos  los autovalores, ni autovectores, ni factores b, ya que no todos los autovalores convergen \cite{Zimmermann2011}.\\
+\begin{figure}[h]
+ \centering
+ \includegraphics[scale=0.3]{./Kap4/ANM/ANM_server/grafica_8_A_n.png}
   \put(-28,-4){(a) $R_c=8\AA$}
-   \includegraphics[scale=0.35]{./Kap4/ANM/ANM_server/grafica_9_A_n.png}
+   \includegraphics[scale=0.3]{./Kap4/ANM/ANM_server/grafica_9_A_n.png}
   \put(-28,-4){(b) $R_c=9\AA$}
 \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=8\AA$ y $R_c= 9\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos1}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[h]
  \centering
     \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_10_A_n.png}
    \put(-28,-4){(a)$R_c=10\AA$}
@@ -89,7 +98,7 @@ Ya que en el mutante de vSGLT en la posici\'{o}n K294A, llamado 2XQ2 aparece res
      \put(-28,-4){(d)$R_c=13\AA$}
 \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=10\AA$ y $R_c= 13\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos2}
 \end{figure}
-\begin{figure}[ht]
+\begin{figure}[h]
  \centering
     \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_14_A_n.png}
    \put(-28,-4){(a)$R_c=14\AA$}
@@ -102,7 +111,7 @@ Ya que en el mutante de vSGLT en la posici\'{o}n K294A, llamado 2XQ2 aparece res
      \put(-28,-4){(d)$R_c=17\AA$}
 \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=14\AA$ y $R_c= 17\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos3}
 \end{figure}
-\begin{figure}[ht]
+\begin{figure}[h]
  \centering
     \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_18_A_n.png}
    \put(-28,-4){(a)$R_c=18\AA$}

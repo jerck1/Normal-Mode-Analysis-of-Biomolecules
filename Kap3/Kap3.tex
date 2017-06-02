@@ -311,6 +311,10 @@ Cadena A: TM1(4-18), TM2(53-77)\footnote{Debe tenerse en cuenta que el TM2 est\'
 
 Cadena B: 1(4-18), 2(53-77), 3(82-99), 4(129-155), 5(162-177), 6(188-205), 7(255-267), 8(286-305), 9(348-377), 10(397-418), 11(423-443), 12(458-472), 13(479-496), 14(524-545).\\
 
+Los residuos clave, que coordinan con la galactosa son, de acuerdo a \cite{Faham2008}:\\
+
+Y263, W264 del segmento TM7E, M73 del segmento TM2, Y87 del segmento TM7, F424 del segmento TM11, Y263 del segmento TM7, Q428 del segmento TM11, Q69 del segmento TM2, K294 del segmento TM8 y S91 del segmento TM3\\
+
 
 Posteriormente en \cite{Watanabe2010} aparece una nueva estructura del cotransportador vSGLT mutada en la posici\'{o}n K294A. Esta estructura aparece en su conformaci\'{o}n hacia adentro pero abierta o no ocluida, es decir, con el sustrato liberado. En la base de datos del PDB se encuentra reposada dicha estructura con el c\'{o}digo 2XQ2. Esta estructura difiere de 3DH4 en que all\'{i} se resuelve el segmento TM1, que aunque en la figura \ref{fig:3dh4_2} aparece como una h\'{e}lice, en esta no se conocen las posiciones de los residuos. Adicionalmente, se encuentra una he\'{e}lice adicional al final de la secuencia.\\
 
@@ -325,19 +329,32 @@ El n\'{u}mero de segmentos TM encontrado para esta estructura es de 15. Uno adic
 Cadena A: 1( 11- 30), 2( 53- 77), 3( 81- 98), 4( 129- 154), 5( 162- 179), 6( 186- 205), 7( 249- 264), 8( 286- 306), 9( 350- 377), 10( 398- 418), 11( 422- 440), 12( 458- 472), 13( 479- 494), 14( 526- 544), 15(548- 572)\\
 Cadena B: 1( 13- 27), 2( 53- 77), 3( 81- 98), 4( 129- 154), 5( 162- 179), 6( 186- 205), 7( 249- 264), 8( 286- 306), 9( 350- 377), 10( 398- 418), 11( 422- 440), 12( 458- 472), 13( 479- 494), 14( 526- 544), 15(548- 572)\\
 \section{Estudios computacionales del Co-transportador vSGLT}
-De acuerdo a estudios experimentales \cite{Veenstra2004LocalCotransporter.}, en el espacio extracelular de la membrana, el sodio se une antes que la galactosa al cotransportador. Sin embargo, el ingreso de los solutos hacia el espacio intermembranal a\'{u}n no ha sido aclarado.\\
+De acuerdo a estudios experimentales \cite{Veenstra2004LocalCotransporter.} y \cite{Adelman2016}, en el espacio extracelular de la membrana el sodio se une antes que la galactosa al cotransportador. Sin embargo, el ingreso de los solutos hacia el espacio intermembranal a\'{u}n no ha sido aclarado.\\
 
 La estructura del mutante K294A mostrada en la figura \ref{fig:2xq2}, junto con una nueva caracterizaci\'{o}n bioqu\'{i}mica y simulaciones por din\'{a}mica molecular, todas encontradas en \cite{Watanabe2010} muestran que cuando sale el sodio hacia el espacio intracelular, la h\'{e}lice 2 (tomada en la figura \ref{fig:h2xq23dh4} como h\'{e}lice 1) se reorienta, permitiendo que se abra la compuerta para que salga posteriormente la galactosa. Al realizar las simulaciones por din\'{a}mica molecular se encuentra que a los $\sim 52$ns la Tyr263 hace su transici\'{o}n entre dos rot\'{a}meros para dejar pasar la galactosa al espacio intracelular,  tal como se muestra en la figura \ref{fig:Y263}.\\
+
+Adicionalmente, las simulaciones MD de \cite{Watanabe2010} encontr\'{o} que el tiempo de ingreso del \ce{Na^{+}} al espacio intermembranal es de $9$ns, mientras que el de la galactosa es de $110$ns. Es decir el tiempo de ingreso de la galactosa es mucho mayor que el tiempo que dura el \ce{Na^{+}} unido al simportador.\\
 \begin{figure}[h]
  \centering
- \includegraphics[scale=0.3]{Kap3/helice2.png}
+ \includegraphics[scale=0.5]{Kap3/helice2.png}
  % helice2.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
  \caption{Transici\'{o}n entre el estado de conformaci\'{o}n hacia adentro ocluido (gris) y el abierto (colores). Figura tomada de \cite{Watanabe2010}}
  \label{fig:h2xq23dh4}
 \end{figure}
 \begin{figure}[h]
 \centering%
-\includegraphics[scale=0.5]{Kap3/Y263.png}%
+\includegraphics[scale=0.3]{Kap3/Y263.png}%
 \caption{Abertura de la compuerta Tyr263 para dejar la galactosa en el citoplasma. Figura tomada de \cite{Watanabe2010}} \label{fig:Y263}
 \end{figure}
-Posteriormente \cite{Adelman2016}, v\'{i}a simulaciones de din\'{a}mica molecular  encontraron que no existe no existe un orden espec\'{i}fico en que salgan el sodio y la galactosa.
+Posteriormente en \cite{Adelman2016} encontraron por medio de 21 simulaciones MD y modelos de estado de Markov, que no existe un orden de entrada para el sodio y la galactosa al espacio intracelular, es decir, es aleatorio. M\'{a}s a\'{u}n, de las 21 MD que fueron realizadas con tiempos de simulaci\'{o}n entre 100 y 500 ns, se encontr\'{o} que (Ver figura ) en 4 de \'{e}stas la galactosa  sale antes que el \ce{Na^{+}} y en una salen al mismo tiempo. En otras se encontr\'{o} que habiendo saldio el \ce{Na^{+}}, la galactosa no sal\'{i}a antes de los tiempos de simulaci\'{o}n. Aunque en 10 situaciones el \ce{Na^{+}} sale antes que la galactosa los tiempos de salida del \ce{Na^{+}} son del orden de los $\sim 100$ns que son dos \'{o}rdenes de magnitud mayores a los encontrados anteriormente en \cite{Watanabe2010}  .\\
+\begin{figure}
+ \centering
+ \includegraphics[scale=0.3]{Kap3/exit_t.png}
+ % exit_t.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Tiempos en que el \ce{Na^{+}} y la galactosa permanecen unidos al cotransportador vSGLT. Cada punto corresponde a una simulaci\'{o}n de las 21 realizadas. La flecha hacia arriba indica que la galactosa nunca se desprendi\'{o} del cotransportador durante la simulaci\'{o}n, la flecha horizontal que el \ce{Na^{+}} nunca se desprendi\'{o} durante la simulaci\'{o}n. Figura tomada de \cite{Adelman2016}}
+ \label{fig:exit}
+\end{figure}
+
+En \cite{Adelman2016} se sugiere que al no verse afectada la rotaci\'{o}n del residuo Tyr263 por la ocupaci\'{o}n del \ce{Na^{+}} en el sitio Na2 \footnote{Nombre dado al sitio que ocupa el sodio por la similitud con los transportadores que comparten el plegamiento de LeuT} y al ser posible el ingreso de la galactosa antes que el \ce{Na^{+}}, entonces la coordinaci\'{o}n entre el \ce{Na^{+}} y la galactosa es baja y \textit{los cambios globales en la conformaci\'{o}n de la prote\'{i}na son bajos}.\\
+
+Tambi\'{e}n se realizan simulaciones por MD incluyendo le h\'{e}lice 1, resuelta en la estructura m\'{a}s reciente de vSGLT, figura \ref{fig:2xq2}. Se encuentra que la h\'{e}lice adicional no es suficiente para aumentar la estabilidad del \ce{Na^{+}} en la estructura.\\
