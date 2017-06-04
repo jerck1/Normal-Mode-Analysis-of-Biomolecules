@@ -17,11 +17,11 @@ Mediante el servidor ANM, se ha realizado un estudio previo del simportador vSGL
 Una vez ingresado el archivo pdb se selecciona el modelo de la estructura. Inicialmente se toman s\'{o}lamente los carbonos $\alpha$ del co-transportador, se seleccionan las distancias de corte $R_c$ entre $7\AA$ y $14\AA$. Adem\'{a}s, el factor de peso aplicado a las distancias de corte es $s=0$, es decir, las distancias de corte en el hessiano \eqref{eq:hes} son fijas \cite{Zimmermann2011}. Luego se calculan los modos normales $(\lambda_k,a_k)$ (autovalores, autovectores) y los factores b mediante la parte del c\'{o}digo escrita en Fortran. Se hace otro NMA agregando los \'{a}tomos de la galactosa (sin hidr\'{o}genos), agregando el sodio y luego agregando tanto el ion como el sustrato.\\
 \begin{figure}[h]
  \centering
-    \includegraphics[scale=0.4]{./Kap4/Ca_8_Na_8.png}
+    \includegraphics[scale=0.2]{./Kap4/Ca_8_Na_8.png}
     \put(-28,-4){(a)}
-    \includegraphics[scale=0.4]{./Kap4/Ca_15_Na_15.png} 
+    \includegraphics[scale=0.2]{./Kap4/Ca_15_Na_15.png} 
     \put(-28,-4){(b)}
-   \caption{Modelo de grano grueso mostrando (a) la cadena principal mostrando los carbonos $\alpha$ y conectada por enlaces pept\'{i}dicos . (b) los \'{a}tomos de carbono y el ion de sodio conectados mediante resorten a una distancia de corte de $15\AA$. Imagenes obtenidas con el ANM server.}\label{fig:modelo}
+   \caption{Modelo de grano grueso de vSGLT mostrando (a) la cadena principal mostrando los carbonos $\alpha$ conectados por enlaces pept\'{i}dicos. (b) los \'{a}tomos de carbono y el ion de sodio conectados mediante resorten a una distancia de corte de $15\AA$. Imagenes obtenidas con el ANM server.}\label{fig:modelo}
 \end{figure}
 \subsection{Resultados}
 En la figuras \ref{fig:ANM_pre1}, \ref{fig:ANM_pre2}, \ref{fig:ANM_pre3} y \ref{fig:ANM_pre4} se muestran los factores b por cada n\'{u}mero de residuo (entre 47 y 545) y para cada distancia de corte $R_c$, entre $8\AA$ y $14\AA$ de la cadena A. Ha de notarse que para distancias de corte menores o iguales a $7\AA$,no se encontraron todos  los autovalores, ni autovectores, ni factores b, ya que no todos los autovalores convergen \cite{Zimmermann2011}.\\
