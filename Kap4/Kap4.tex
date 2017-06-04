@@ -34,6 +34,11 @@ Los picos correspondientes a los residuos S209 y F210 tambi\'{e}n muestran cambi
 El co-transportador es m\'{a}s flexible cuando al menos uno de los sustratos se encuentra unido al simportador. Pero los movimientos globales de simportador no difieren significativamente cuando el ion, el soluto o ambos est\'{a}n unidos. Esto podr\'{i}a sugerir que el \ce{Na^{+}} y la galactosa no son de alta cooperaci\'{o}n.\\
 
 Para comprobar esta afirmaci\'{o}n se hace una mirada detallada a las regiones alrededor de los residuos Ile253, Glu88, Phe479, Ile438 y la regi\'{o}n con los residuos Glu384,Tyr385 y Ile386.\\
+
+Los residuos Glu384, Tyr385 y Ile386 corresponden a la regi\'{o}n desordenada comprendida entre los segmentos TM9 y TM10, que como se espera, es m\'{a}s flexible que las $\alpha$ h\'{e}lices y por esta raz\'{o}n los cambios en los movimientos son mayores .\\
+
+M\'{a}s interesante es el segmento TM7, donde se encuentra Ile253. Esta regi\'{o}n es m\'{a}s r\'{i}gida cuando el cotransportador est\'{a} libre (color rojo) teniendo la conformaci\'{o}n ocluida. Cuando se une el \ce{Na^{+}}, TM7 se vuelve $\sim 3$ veces m\'{a}s flexible (color verde) pero cuando se une tanto el sodio como la galactosa TM7 se vuelve m\'{a}s r\'{i}gido.\\
+El segmento TM7 es importante porque Y263 act\'{u}an como una compuerta que permite el paso de la galactosa.\\
 \begin{figure}[h]
  \centering
     \includegraphics[scale=0.35]{./Kap4/ANM/ANM_server/grafica_10_A_n.png}
@@ -54,15 +59,10 @@ Para comprobar esta afirmaci\'{o}n se hace una mirada detallada a las regiones a
      \put(-28,-4){(a)$R_c=13\AA$}
        \includegraphics[scale=0.35]{./Kap4/ANM/ANM_server/grafica_14_A_n.png}
 \put(-28,-4){(a)$R_c=14\AA$}
-
 \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=13\AA$ y $R_c= 14\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pre4}
 \end{figure}
- 
-
-Para $Rc = 8\AA$ y $Rc = 9\AA$, los movimientos en TM7 (entre los residuos 192-214), TM11 (residuos 372-393), TM12 (residuos 423-493) cuando Na + y Gal est\'{a}n unidos son ligeramente menos r\'{i}gidos ($<5\%$ ) Que los movimientos de vSGLT con un sitio ocupado. TM7 regi\'{o}n es importante porque Y263 act\'{u}an como una puerta y Gal interact\'{u}a con Y263 y N260.\\
-For $Rc=8\AA$,  $9\AA$ and $11\AA$, the motions in TM6 (residues 161-167), especially T162 and TM13 in residue F496  when Na+ and Gal are bound are more rigid than  motions of vSGLT alone.\\
 Para $Rc = 8\AA$, $9\AA$ y $11\AA$, hay otros residuos involucrados en cambios de movimientos, estos son en segmentos mencionados anteriormente.\\
-
+%\newpage
 \section{ANM de vSGLT con la Estructura Completa}
 \subsection{Preparaci\'{o}n del PDB}
 Ya que en el mutante de vSGLT en la posici\'{o}n K294A, llamado 2XQ2 aparece resuelta la estructura cristalina del TM1 perteneciente a la cadena A, se usa el programa PyMol, y como archivos de entrada los pdbs 3DH4 y el de su mutante 2XQ2, para crear un archivo que sea cercano a la estructura real objeto de estudio, esto es, al cotransportador vSGLT. Se a\~{n}ade a 3DH4 la h\'{e}lice 1 resuelta, tal como aparece en la figura 
@@ -75,50 +75,81 @@ Ya que en el mutante de vSGLT en la posici\'{o}n K294A, llamado 2XQ2 aparece res
 \end{figure}
 
 \subsection{Resultados}
-En la figuras \ref{fig:ANM_pos1}, \ref{fig:ANM_pos2}, \ref{fig:ANM_pos3} y \ref{fig:ANM_pos4} se muestran los factores b por cada n\'{u}mero de residuo (entre 47 y 545) y para cada distancia de corte $R_c$, entre $8\AA$ y $20\AA$ de la cadena A. Ha de notarse que al igual que el ANM previo, para distancias de corte menores o iguales a $7\AA$,no se encontraron todos  los autovalores, ni autovectores, ni factores b, ya que no todos los autovalores convergen \cite{Zimmermann2011}.\\
+En la figura \label{fig:ANM_pos}
+%\ref{fig:ANM_pos1}, \ref{fig:ANM_pos2}, \ref{fig:ANM_pos3} y \ref{fig:ANM_pos4}
+se muestran los factores b por cada n\'{u}mero de residuo (entre 47 y 545) y para cada distancia de corte $R_c$, entre $8\AA$ y $20\AA$ de la cadena A. Ha de notarse que al igual que el ANM previo, para distancias de corte menores o iguales a $7\AA$,no se encontraron todos  los autovalores, ni autovectores, ni factores b, ya que no todos los autovalores convergen \cite{Zimmermann2011}.\\
+
+En general se observa que la adici\'{o}n de las $\alpha$ h\'{e}lices generan una disminuci\'{o}n en los cambios de los movimientos globales, esto debido a que una $alpha$ h\'{e}lice es una estructura estable y r\'{i}gida, comparada con las regiones desordenadas y con las hojas $\beta$. Este resultado es acorde con los resultados presentados en \cite{Adelman2016}, en donde al incluir las $\alpha$ h\'{e}lices resueltas, hay una mayor estabilidad del cotransportador en presencia del ion.\\
 \begin{figure}[h]
- \centering
- \includegraphics[scale=0.3]{./Kap4/ANM/ANM_server/grafica_8_A_n.png}
-  \put(-28,-4){(a) $R_c=8\AA$}
-   \includegraphics[scale=0.3]{./Kap4/ANM/ANM_server/grafica_9_A_n.png}
-  \put(-28,-4){(b) $R_c=9\AA$}
-\caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=8\AA$ y $R_c= 9\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos1}
+\includegraphics[scale=0.2]{./Kap4/ANM/ANM_s_nuevo/grafica_7_A_n.png}
+   \put(-50,-2){$R_c=7\AA$}
+ \includegraphics[scale=0.2]{./Kap4/ANM/ANM_s_nuevo/grafica_8_A_n.png}
+  \put(-50,-2){$R_c=8\AA$}
+  \includegraphics[scale=0.2]{./Kap4/ANM/ANM_s_nuevo/grafica_9_A_n.png}
+  \put(-50,-2){$R_c=9\AA$}
+  \vspace{1mm}
+   \includegraphics[scale=0.2]{./Kap4/ANM/ANM_s_nuevo/grafica_10_A_n.png}
+   \put(-50,-2){$R_c=10\AA$}
+    \includegraphics[scale=0.2]{./Kap4/ANM/ANM_s_nuevo/grafica_11_A_n.png}
+    \put(-50,-2){$R_c=11\AA$}
+     \includegraphics[scale=0.2]{./Kap4/ANM/ANM_s_nuevo/grafica_12_A_n.png}
+    \put(-50,-2){$R_c=12\AA$}
+    \vspace{1mm}
+      \includegraphics[scale=0.2]{./Kap4/ANM/ANM_s_nuevo/grafica_13_A_n.png}
+      \put(-50,-2){$R_c=13\AA$}
+      \includegraphics[scale=0.2]{./Kap4/ANM/ANM_s_nuevo/grafica_14_A_n.png}
+\put(-50,-2){$R_c=14\AA$}
+      \includegraphics[scale=0.2]{./Kap4/ANM/ANM_s_nuevo/grafica_15_A_n.png}
+\put(-50,-2){$R_c=15\AA$}
+\vspace{1mm}
+      \includegraphics[scale=0.2]{./Kap4/ANM/ANM_s_nuevo/grafica_16_A_n.png}
+\put(-50,-2){$R_c=16\AA$}
+       \includegraphics[scale=0.2]{./Kap4/ANM/ANM_s_nuevo/grafica_17_A_n.png}
+\put(-50,-2){$R_c=17\AA$}
+      \includegraphics[scale=0.2]{./Kap4/ANM/ANM_s_nuevo/grafica_18_A_n.png}
+\put(-50,-2){$R_c=18\AA$}
+\vspace{1mm}
+      \includegraphics[scale=0.2]{./Kap4/ANM/ANM_s_nuevo/grafica_19_A_n.png}
+% \put(-50,-2){$R_c=19\AA$}
+      \includegraphics[scale=0.2]{./Kap4/ANM/ANM_s_nuevo/grafica_20_A_n.png}
+\put(-50,-2){$R_c=20\AA$}
+ \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo entre $8\AA\leq R_c\leq 20\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos}
 \end{figure}
 
-\begin{figure}[h]
- \centering
-    \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_10_A_n.png}
-   \put(-28,-4){(a)$R_c=10\AA$}
-     \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_11_A_n.png}
-    \put(-28,-4){(b)$R_c=11\AA$}
-     \vspace{1mm}
-      \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_12_A_n.png}
-     \put(-28,-4){(c)$R_c=12\AA$}
-       \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_13_A_n.png}
-     \put(-28,-4){(d)$R_c=13\AA$}
-\caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=10\AA$ y $R_c= 13\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos2}
-\end{figure}
-\begin{figure}[h]
- \centering
-    \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_14_A_n.png}
-   \put(-28,-4){(a)$R_c=14\AA$}
-     \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_15_A_n.png}
-    \put(-28,-4){(b)$R_c=15\AA$}
-    \vspace{1mm}
-      \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_16_A_n.png}
-     \put(-28,-4){(c)$R_c=16\AA$}
-       \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_17_A_n.png}
-     \put(-28,-4){(d)$R_c=17\AA$}
-\caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=14\AA$ y $R_c= 17\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos3}
-\end{figure}
-\begin{figure}[h]
- \centering
-    \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_18_A_n.png}
-   \put(-28,-4){(a)$R_c=18\AA$}
-     \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_19_A_n.png}
-    \put(-28,-4){(b)$R_c=19\AA$}
-     \vspace{1mm}
-      \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_20_A_n.png}
-     \put(-28,-4){(c)$R_c=20\AA$}
-\caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=18\AA$ y $R_c=20\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos4}
-\end{figure}
+% % \begin{figure}[h]
+%  \centering
+%     \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_10_A_n.png}
+%    \put(-28,-4){(a)$R_c=10\AA$}
+%      \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_11_A_n.png}
+%     \put(-28,-4){(b)$R_c=11\AA$}
+%      \vspace{1mm}
+%       \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_12_A_n.png}
+%      \put(-28,-4){(c)$R_c=12\AA$}
+%        \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_13_A_n.png}
+%      \put(-28,-4){(d)$R_c=13\AA$}
+% \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=10\AA$ y $R_c= 13\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos2}
+% \end{figure}
+% \begin{figure}[h]
+% %  \centering
+%     \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_14_A_n.png}
+%    \put(-28,-4){(a)$R_c=14\AA$}
+%      \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_15_A_n.png}
+%     \put(-28,-4){(b)$R_c=15\AA$}
+%     \vspace{1mm}
+%       \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_16_A_n.png}
+%      \put(-28,-4){(c)$R_c=16\AA$}
+%        \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_17_A_n.png}
+%      \put(-28,-4){(d)$R_c=17\AA$}
+% \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=14\AA$ y $R_c= 17\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos3}
+% \end{figure}
+% \begin{figure}[h]
+%  \centering
+%     \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_18_A_n.png}
+%    \put(-28,-4){(a)$R_c=18\AA$}
+%      \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_19_A_n.png}
+%     \put(-28,-4){(b)$R_c=19\AA$}
+%      \vspace{1mm}
+%       \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_20_A_n.png}
+%      \put(-28,-4){(c)$R_c=20\AA$}
+% \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=18\AA$ y $R_c=20\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos4}
+% \end{figure}
