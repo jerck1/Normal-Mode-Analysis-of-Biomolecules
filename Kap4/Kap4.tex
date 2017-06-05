@@ -1,15 +1,15 @@
 \chapter{An\'{a}lisis de Modos Normales para vSGLT}\label{ch:4}
 
-\section{Introducci\'{o}n}
+\section{ANM server}
 Se estudia el cotransportador vSGLT mediante el servidor ANM (En ingl\'{e}s Anisotropic Network Model server) de la universidad de Pittsburgh \cite{Eyal2015}\footnote{Recurso disponible en \url{http://anm.csb.pitt.edu/cgi-bin/anm2/anm2.cgi}}. El servidor ANM, como su nombre lo indica, es un servidor web que procesa la informaci\'{o}n de entrada del lado del cliente, en este caso, la informaci\'{o}n de entrada ser\'{a} el pdb y los par\'{a}metros de entrada para realizar los c\'{a}lculos del ANM, mientras que del lado del servidor se procesa la informaci\'{o}n suministrada v\'{i}a un c\'{o}digo escrito en C, MATLAB y Fortran que permite calcular los $n$ primeros modos normales, los factores b, las constantes el\'{a}sticas, las correlaciones entre distintas partes de la mol\'{e}cula y permite visualizar los modos de vibraci\'{o}n mediante java o pymol. Tambi\'{e}n es posible descargar el c\'{o}digo fuente desde la p\'{a}gina del servidor.\\
 
-En la figura \ref{fig:flujo} se encuentra un esquema de la entrada y salida de datos
+En la figura \ref{fig:flujo} se encuentra un esquema de la entrada y salida de datos.\\
 \begin{figure}[h]
  \centering
-    \includegraphics[scale=0.6]{./Kap4/flujo.pdf} 
+    \includegraphics[scale=0.5]{./Kap4/flujo.pdf} 
 \caption{Esquema de entrada y salida del servidor ANM}\label{fig:flujo}
 \end{figure}
-
+El PDB original se convierte a un modelo en el que se utilizan los carbonos $\alpha$ encontrados en la cadena principal de la prote\'{i}na y si el archivo pdb tiene \'{a}cidos nucl\'{e}icos estos pueden incluidos en el modelo. En el modelo tambi\'{e}n se pueden incluir los ligandos como iones y substratos.\\
 \section{NMA previo de vSGLT}
 \subsection{Metodolog\'{i}a}
 Mediante el servidor ANM, se ha realizado un estudio previo del simportador vSGLT   \cite{Cabrera2017} , en el cual se utiliza el archivo de entrada 3dh4.pdb \cite{Faham2008} encontrado en la base de datos del PDB como tetr\'{a}mero. En este archivo pdb no se determinan los residuos de la primera h\'{e}lice en cada subunidad. Aunque aparecen las posiciones de los residuos, el ANM server los ignora, haciendo el c\'{a}lculo \'{u}nicamente a partir del residuo 47.\\
@@ -21,7 +21,7 @@ Una vez ingresado el archivo pdb se selecciona el modelo de la estructura. Inici
     \put(-28,-4){(a)}
     \includegraphics[scale=0.2]{./Kap4/Ca_15_Na_15.png} 
     \put(-28,-4){(b)}
-   \caption{Modelo de grano grueso de vSGLT mostrando (a) la cadena principal mostrando los carbonos $\alpha$ conectados por enlaces pept\'{i}dicos. (b) los \'{a}tomos de carbono y el ion de sodio conectados mediante resorten a una distancia de corte de $15\AA$. Imagenes obtenidas con el ANM server.}\label{fig:modelo}
+   \caption{Modelo de grano grueso de vSGLT mostrando (a) la cadena principal con los carbonos $\alpha$ conectados por enlaces pept\'{i}dicos. (b) los \'{a}tomos de carbono y el ion de sodio conectados mediante resortes a una distancia de corte de $15\AA$. Imagenes obtenidas con el ANM server \cite{Zimmermann2011}.}\label{fig:modelo}
 \end{figure}
 \subsection{Resultados}
 En la figuras \ref{fig:ANM_pre1}, \ref{fig:ANM_pre2}, \ref{fig:ANM_pre3} y \ref{fig:ANM_pre4} se muestran los factores b por cada n\'{u}mero de residuo (entre 47 y 545) y para cada distancia de corte $R_c$, entre $8\AA$ y $14\AA$ de la cadena A. Ha de notarse que para distancias de corte menores o iguales a $7\AA$,no se encontraron todos  los autovalores, ni autovectores, ni factores b, ya que no todos los autovalores convergen \cite{Zimmermann2011}.\\
@@ -37,9 +37,9 @@ En la figuras \ref{fig:ANM_pre1}, \ref{fig:ANM_pre2}, \ref{fig:ANM_pre3} y \ref{
 
 Para distancias de corte entre $8\AA$ y $9\AA$, se observa en las gr\'{a}ficas \ref{fig:ANM_pre1} (a) y (b) que la prote\'{i}na  es menos flexible cuando est\'{a} sin unirse a los sustratos (color rojo) desde el segmento TM2 hasta el final del segmento TM14. La excepci\'{o}n es el pico presente en el residuo W543 (Cuyo factor b est\'{a} en tabla \ref{tab:flu2} del anexo \ref{AnexoB}) que presenta mucha m\'{a}s flexibilidad. Esto se debe a que el segmento TM14 est\'{a} lejos tanto del sitio activo de la prote\'{i}na como de la segunda subunidad como se observa en la figura \ref{fig:complejo} donde TM14 es la $\alpha$ h\'{e}lice de color rojo.\\
 
-Los picos correspondientes a los residuos S209 y F210 tambi\'{e}n muestran cambios significativos de la fluctuaciones ms antes y despu\'{e}s de unirse alguno de los sustratos. Estos picos corresponden al comienzo al lazo $\omega$ comprendido entre las segmentos TM6 y TM7.\\
+Los picos correspondientes a los residuos S209 y F210 tambi\'{e}n muestran cambios significativos de la fluctuaciones ms antes y despu\'{e}s de unirse alguno de los sustratos. Estos picos corresponden al comienzo del lazo $\omega$ comprendido entre las segmentos TM6 y TM7.\\
 
-El co-transportador es m\'{a}s flexible cuando al menos uno de los sustratos se encuentra unido al simportador. Pero los movimientos globales de simportador no difieren significativamente cuando el ion, el soluto o ambos est\'{a}n unidos. Esto podr\'{i}a sugerir que el \ce{Na^{+}} y la galactosa no son de alta cooperaci\'{o}n.\\
+El co-transportador es m\'{a}s flexible cuando al menos uno de los sustratos se encuentra unido a este. Pero los movimientos globales de simportador no difieren significativamente cuando el ion, el soluto o ambos est\'{a}n unidos. Esto podr\'{i}a sugerir que el \ce{Na^{+}} y la galactosa no son de alta cooperaci\'{o}n.\\
 
 Para comprobar esta afirmaci\'{o}n se hace una mirada detallada a las regiones alrededor de los residuos Ile253, Glu88, Phe479, Ile438 y la regi\'{o}n con los residuos Glu384,Tyr385 y Ile386.\\
 
