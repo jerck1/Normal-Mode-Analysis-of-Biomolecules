@@ -53,9 +53,9 @@ M\'{a}s interesante es el segmento TM7, donde se encuentra Ile253. Esta regi\'{o
 En la figura \ref{fig:Gal_h7} se muestra como cambia la flexibilidad del segmento TM7 cuando el cotransportador s\'{o}lo tiene los C-$\alpha$ y cuando est\'{a} con unido tanto al \ce{Na^{+}} como a la galactosa. El color azul oscuro indica que inicialmente el segmento TM7 de vSGLT era menos flexible pero posteriormente TM7 se volvi\'{o} m\'{a}s flexible.\\
 \begin{figure}[h]
  \centering
-    \includegraphics[scale=0.2]{./Kap4/h7_label.png}
+    \includegraphics[scale=0.18]{./Kap4/h7_label.png}
     \put(-28,-4){(a) S\'{o}lo C$\alpha$}
-    \includegraphics[scale=0.2]{./Kap4/h7_2_label.png}
+    \includegraphics[scale=0.18]{./Kap4/h7_2_label.png}
    \put(-28,-4){(b) C$\alpha+$Na$+$Gal}
 \caption{Sitio activo de la galactosa mostrando las $\alpha$ h\'{e}lices involucradas hasta una distancia de $12\AA$. Los colores representan los factores B donde Morado$<$Azul$<$Verde$<$Amarillo$<$Naranja$<$Rojo. El segmento TM7 es m\'{a}s r\'{i}gido pero presenta mayores cambios. En (a) no se muestra el segmento TM3. Imagenes obtenidas con PyMol.}\label{fig:Gal_h7}
 \end{figure}
@@ -64,14 +64,21 @@ Tambi\'{e}n se observa que la galactosa est\'{a} rodeada por los segmentos Tyr26
 
 \subsubsection{Distancia de corte $R_c=10\AA$}
 
-La distancia de corte de $R_c=10\AA$ es una distancia interesante ya que es la distancia aproximada a la que se encuentran el ion \ce{Na^{+}} y la galactosa.
+La distancia de corte de $R_c=10\AA$ es una distancia interesante ya que es la distancia aproximada a la que se encuentran el ion \ce{Na^{+}} y la galactosa.\\
 \begin{figure}[h]
  \centering
     \includegraphics[scale=0.35]{./Kap4/ANM/ANM_server/grafica_10_A_n.png}
    \put(-28,-4){(a)$R_c=10\AA$}
 \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=10\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pre2}
 \end{figure}
-
+Al comparar la figura \ref{fig:ANM_pre1} con la figura \ref{fig:ANM_pre2} hay una disminuci\'{o}n en la amplitud de las fluctuaciones al final de la cadena, es decir, en el residuo W543. Al observar esta regi\'{o}n mostrada en la figura \ref{fig:W543}, se encuentra que el residuo W543 es estabilizado por los residuos adyacentes, los cuales pertenecen a $\alpha$ h\'{e}lices ubicadas entre los segmentos TM6 y TM7. Sin embargo, estos no forman interacciones electrost\'{a}ticas con el residuo W543 debido a que este es un residuo arom\'{a}tico no polar y a que la parte de su cadena principal est\'{a} a m\'{a}s de $3\AA$ de otras cadenas.\\
+\begin{figure}[h]
+ \centering
+ \includegraphics[scale=0.18]{Kap4/W543_label.png}
+ % W543_label.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Contactos del residuo W543 a $10\AA$. No se observan interacciones de este residuo con sus vecinos. Imagen y puentes de hidr\'{o}geno obtenidos mediante PyMol.}
+ \label{fig:W543}
+\end{figure}
 
 \subsubsection{Distancias de corte $R_c=11\AA$ y $R_c= 12\AA$}
 \begin{figure}[h]
