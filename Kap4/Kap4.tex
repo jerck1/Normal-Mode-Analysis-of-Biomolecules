@@ -26,6 +26,9 @@ Una vez ingresado el archivo pdb se selecciona el modelo de la estructura. Inici
 \subsection{Resultados}
 En la figuras \ref{fig:ANM_pre1}, \ref{fig:ANM_pre2}, \ref{fig:ANM_pre3} y \ref{fig:ANM_pre4} se muestran los factores b por cada n\'{u}mero de residuo (entre 47 y 545) y para cada distancia de corte $R_c$, entre $8\AA$ y $14\AA$ de la cadena A. Ha de notarse que para distancias de corte menores o iguales a $7\AA$,no se encontraron todos  los autovalores, ni autovectores, ni factores b, ya que no todos los autovalores convergen \cite{Zimmermann2011}.\\
 
+En todas las distancias de corte se encontraron 5 picos alrededor de los residuos 253
+\subsubsection{Distancias de corte $R_c=8\AA$ y $R_c=9\AA$}
+
 \begin{figure}[ht]
  \centering
  \includegraphics[scale=0.35]{./Kap4/ANM/ANM_server/grafica_8_A_n.png}
@@ -54,17 +57,23 @@ En la figura \ref{fig:Gal_h7} se muestra como cambia la flexibilidad del segment
     \put(-28,-4){(a) S\'{o}lo C$\alpha$}
     \includegraphics[scale=0.2]{./Kap4/h7_2_label.png}
    \put(-28,-4){(b) C$\alpha+$Na$+$Gal}
-\caption{Sitio activo de la galactosa mostrando las $\alpha$ h\'{e}lices involucradas hasta una distancia de $12\AA$. Los colores representan los factores B donde Morado$<$Azul$<$Verde$<$Amarillo$<$Naranja$<$Rojo. El segmento TM7 es m\'{a}s r\'{i}gido pero presenta mayores cambios. En (a) no se muestra el segmento TM3}\label{fig:Gal_h7}
+\caption{Sitio activo de la galactosa mostrando las $\alpha$ h\'{e}lices involucradas hasta una distancia de $12\AA$. Los colores representan los factores B donde Morado$<$Azul$<$Verde$<$Amarillo$<$Naranja$<$Rojo. El segmento TM7 es m\'{a}s r\'{i}gido pero presenta mayores cambios. En (a) no se muestra el segmento TM3. Imagenes obtenidas con PyMol.}\label{fig:Gal_h7}
 \end{figure}
 
-Tambi\'{e}n se observa que la galactosa est\'{a} rodeada por los segmentos Tyr263, Trp264 y Asn260.Se observa que Tyr263 y Trp264 son m\'{a}s flexibles, indicando que de acuerdo a la literatura (en especial Tyr263), act\'{u}an como una compuerta que permite el paso de la galactosa,  ver \ref{fig:exit}.\\
+Tambi\'{e}n se observa que la galactosa est\'{a} rodeada por los segmentos Tyr263, Trp264 y Asn260.Se observa que Tyr263 y Trp264 son m\'{a}s flexibles, indicando que de acuerdo a la literatura (en especial Tyr263), act\'{u}an como una compuerta que permite el paso de la galactosa,  ver figura \ref{fig:exit}.\\
 
+\subsubsection{Distancia de corte $R_c=10\AA$}
+
+La distancia de corte de $R_c=10\AA$ es una distancia interesante ya que es la distancia aproximada a la que se encuentran el ion \ce{Na^{+}} y la galactosa.
 \begin{figure}[h]
  \centering
     \includegraphics[scale=0.35]{./Kap4/ANM/ANM_server/grafica_10_A_n.png}
    \put(-28,-4){(a)$R_c=10\AA$}
 \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=10\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pre2}
 \end{figure}
+
+
+\subsubsection{Distancias de corte $R_c=11\AA$ y $R_c= 12\AA$}
 \begin{figure}[h]
  \centering
      \includegraphics[scale=0.35]{./Kap4/ANM/ANM_server/grafica_11_A_n.png}
@@ -73,6 +82,9 @@ Tambi\'{e}n se observa que la galactosa est\'{a} rodeada por los segmentos Tyr26
      \put(-28,-4){(a)$R_c=12\AA$}
 \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=11\AA$ y $R_c= 12\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pre3}
 \end{figure}
+
+\subsubsection{Distancias de corte $R_c=13\AA$ y $R_c= 14\AA$}
+
 \begin{figure}[h]
  \centering
        \includegraphics[scale=0.35]{./Kap4/ANM/ANM_server/grafica_13_A_n.png}
