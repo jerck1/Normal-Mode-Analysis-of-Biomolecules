@@ -26,7 +26,7 @@ Una vez ingresado el archivo pdb se selecciona el modelo de la estructura. Inici
 \subsection{Resultados}
 En la figuras \ref{fig:ANM_pre1}, \ref{fig:ANM_pre2}, \ref{fig:ANM_pre3} y \ref{fig:ANM_pre4} se muestran los factores b por cada n\'{u}mero de residuo (entre 47 y 545) y para cada distancia de corte $R_c$, entre $8\AA$ y $14\AA$ de la cadena A. Ha de notarse que para distancias de corte menores o iguales a $7\AA$,no se encontraron todos  los autovalores, ni autovectores, ni factores b, ya que no todos los autovalores convergen \cite{Zimmermann2011}.\\
 
-En todas las distancias de corte se encontraron 5 picos alrededor de los residuos  S209, M318, T343, I386 y W543 . Exceptuando T343, sus factores B est\'{a} en la tabla \ref{tab:flu2} del anexo \ref{AnexoB}). S209 est\'{a} al final del segmento TM6, M318 est\'{a} al final del segmento TM8 (Este lugar queda en el espacio intermembranal y es donde se dobla TM8), T343 en una peque\~{n}a h\'{e}lice encontrada entre TM8 y TM9, I386 en la regi\'{o}n desordenada entre TM9 y TM10 (en el periplasma) y W543 al final de la cadena A.\\
+En todas las distancias de corte se encontraron 5 picos alrededor de los residuos  S209, M318, T343, I386 y W543 . Exceptuando T343, sus factores B est\'{a} en la tabla \ref{tab:flu2} del anexo \ref{AnexoB}). S209 est\'{a} al final del segmento TM6, M318 est\'{a} al final del segmento TM8 (Este lugar queda en el citoplasma y es donde se dobla TM8), T343 en una peque\~{n}a h\'{e}lice encontrada entre TM8 y TM9, I386 en la regi\'{o}n desordenada entre TM9 y TM10 (en el periplasma) y W543 al final de la cadena A.\\
 \subsubsection{Distancias de corte $R_c=8\AA$ y $R_c=9\AA$}
 
 \begin{figure}[ht]
@@ -129,33 +129,40 @@ Ya que en el mutante de vSGLT en la posici\'{o}n K294A, llamado 2XQ2 aparece res
  \label{fig:vSGLT_in_2}
 \end{figure}
 \subsection{Metodolog\'{i}a}
-Mediante el servidor ANM, se ha realizado un estudio del simportador vSGLT en la conformaci\'{o}n hacia adentro y a\~{n}adiendo las nuevas h\'{e}lices encontradas (color amarillo figura \ref{fig:vSGLT_in_2}), el pdb obtenido con PyMol tiene forma de d\'{i}mero, como aparece biol\'{o}gicamente. \\
+Mediante el servidor ANM, se ha realizado un estudio del simportador vSGLT en la conformaci\'{o}n hacia adentro y a\~{n}adiendo las nuevas h\'{e}lices encontradas (color marr\'{o}n figura \ref{fig:vSGLT_in_2}), el pdb obtenido con PyMol tiene forma de d\'{i}mero, como aparece biol\'{o}gicamente. \\
 
 Una vez ingresado el archivo pdb se selecciona el modelo de la estructura. Inicialmente se toman s\'{o}lamente los carbonos $\alpha$ del co-transportador, se seleccionan las distancias de corte $R_c$ entre $7\AA$ y $20\AA$. Adem\'{a}s, el factor de peso aplicado a las distancias de corte es $s=0$, es decir, las distancias de corte en el hessiano \eqref{eq:hes} son fijas \cite{Zimmermann2011}. Luego se calculan los modos normales $(\lambda_k,a_k)$ (autovalores, autovectores) y los factores b mediante la parte del c\'{o}digo escrita en Fortran. Se hace otro NMA agregando los \'{a}tomos de la galactosa (sin hidr\'{o}genos), agregando el sodio y luego agregando tanto el ion como el sustrato.\\
 \subsection{Resultados}
 En la figuras% \label{fig:ANM_pos}
 \ref{fig:ANM_pos1}, \ref{fig:ANM_pos2} y \ref{fig:ANM_pos3} %y \ref{fig:ANM_pos4}
-se muestran los factores b por cada n\'{u}mero de residuo (entre 9 y 572) y para cada distancia de corte $R_c$, entre $8\AA$ y $20\AA$ \footnote{S\'{o}lamente se muestran las distancias de corte $R_c=9\AA$, $R_c=12\AA$ y $R_c=18\AA$ debido a que el resultado de $R_c=8\AA$ es similar al de $R_c=9\AA$, los resultados desde $R_c=10\AA$ hasta $R_c=16\AA$ son similares a los de $R_c=12\AA$ y los resultados desde $R_c=17\AA$ hasta $R_c=20\AA$ son similares a los de $R_c=18\AA$} de la cadena A. Ha de notarse que al igual que el ANM previo, para distancias de corte menores o iguales a $7\AA$,no se encontraron todos  los autovalores, ni autovectores, ni factores b, ya que no todos los autovalores convergen \cite{Zimmermann2011}.\\
+se muestran los factores b por cada n\'{u}mero de residuo (entre 9 y 560) y para cada distancia de corte $R_c$, entre $8\AA$ y $20\AA$ \footnote{S\'{o}lamente se muestran las distancias de corte $R_c=9\AA$, $R_c=12\AA$ y $R_c=18\AA$ debido a que el resultado de $R_c=8\AA$ es similar al de $R_c=9\AA$, los resultados desde $R_c=10\AA$ hasta $R_c=16\AA$ son similares a los de $R_c=12\AA$ y los resultados desde $R_c=17\AA$ hasta $R_c=20\AA$ son similares a los de $R_c=18\AA$} de la cadena A. Ha de notarse que al igual que el ANM previo, para distancias de corte menores o iguales a $7\AA$,no se encontraron todos  los autovalores, ni autovectores, ni factores b, ya que no todos los autovalores convergen \cite{Zimmermann2011}.\\
 
 En las tres gr\'{a}ficas se observa que la adici\'{o}n de las $\alpha$ h\'{e}lices genera una disminuci\'{o}n en los cambios de los movimientos globales, esto debido a que una $\alpha$ h\'{e}lice es una estructura estable y r\'{i}gida, comparada con las regiones desordenadas y con las hojas $\beta$. Este resultado es acorde con los resultados presentados en \cite{Adelman2016}, en donde al incluir las $\alpha$ h\'{e}lices resueltas, hay una mayor estabilidad del cotransportador en presencia del ion.\\
 
-  \begin{figure}[h]
+De acuerdo a la tabla \ref{tab:flu4} del anexo \ref{AnexoB}, en todos los casos se encuentran picos que corresponden a las regiones entre los residuos Ala47 y Gly48\footnote{Ya que a\'{u}n son desconocidas las posiciones de los residuos entre 29 y 47 se le suma 17 a cada valor de la tabla. Ejemplo: $30+17=47$, $31+17=48$, $301+17=318$, $526+17=542$ y as\'{i} a partir del residuo 29}, Met318, Phe542 y Gly556.\\
+ \begin{figure}[h]
   \centering
      \includegraphics[scale=0.25]{./Kap4/ANM/ANM_s_nuevo/grafica_9_A_n.png}
-    \put(-28,-4){(a)$R_c=9\AA$}
- \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=10\AA$ y $R_c= 13\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos1}
+    \put(-28,-4){$R_c=9\AA$}
+ \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $R_c=9\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos1}
  \end{figure}
+ Ala47 y Gly48 est\'{a}n justo antes del segmento TM2 en una regi\'{o}n desordenada del periplasma. Sus altas fluctuaciones para $R_c=9\AA$ son naturales debido a que de acuerdo al modelo no aparecen conectados los segmentos TM1 y TM2. Sin embargo, al aumentar la distancia de corte las fluctuaciones ms de este pico disminuyen como consecuencia del aumento en el n\'{u}mero de restricciones de estos residuos.\\
  \begin{figure}[h]
   \centering
        \includegraphics[scale=0.25]{./Kap4/ANM/ANM_s_nuevo/grafica_12_A_n.png}
-      \put(-28,-4){(a)$R_c=12\AA$}
- \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=14\AA$ y $R_c= 17\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos2}
+      \put(-28,-4){$R_c=12\AA$}
+ \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $R_c=12\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos2}
  \end{figure}
+  
+ El residuo Met318 est\'{a} en una peque\~{n}a $\alpha$ h\'{e}lice que une los segmentos TM8 y TM9. Esta peque\~{n}a $\alpha$ h\'{e}lice se encuentra en el citoplasma, por eso es m\'{a}s flexible. Sorpresivamente se encuentra que a medida que aumenta la distancia de corte, esta regi\'{o}n aumenta sus fluctuaciones, volvi\'{e}ndose m\'{a}s flexible.\\
+ El residuo Phe542 est\'{a} en el segmento TM14 que se encuentra dentro del citoplasma, como se mencion\'{o} en el ANM previo, ver figura \ref{fig:W543}. Como TM4 no se conecta con sus residuos a distancias de corte bajas es m\'{a}s flexible que cuando se incrementa la distancia de corte.\\
+ 
+ Para $R_c=12\AA$ se detecta un m\'{i}nimo con cambios alrededor del residuo Gln69 (En la gr\'{a}fica residuo 52) que se encuentra dentro del segmento TM2, este segmento es el que act\'{u}a como bolsillo para el sodio y la galactosa.\\ 
  \begin{figure}[h]
   \centering
      \includegraphics[scale=0.25]{./Kap4/ANM/ANM_s_nuevo/grafica_18_A_n.png}
-    \put(-28,-4){(a)$R_c=18\AA$}
- \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=18\AA$ y $R_c=20\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos3}
+    \put(-28,-4){$R_c=18\AA$}
+ \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $R_c=18\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos3}
  \end{figure}
  
  %\begin{figure}[h]
