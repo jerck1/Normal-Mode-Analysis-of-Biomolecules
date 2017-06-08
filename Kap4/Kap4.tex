@@ -118,6 +118,31 @@ La secuencia de los movimientos de los segmentos TM3 y TM7 ser\'{i}a la siguient
 \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=13\AA$ y $R_c= 14\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pre4}
 \end{figure}
 %\newpage
+\subsection{Modos Normales}
+En la figura \ref{fig:modos} se muestran los primeros modos de vibraci\'{o}n correspondientes a autovalores no nulos para vSGLT tomado tal como aparece en el archivo PDB 3DH4. Las modos calculados corresponden a rotaciones r\'{i}gidas de las subunidades alrededor de un eje. En el primer modo se observa una rotaci\'{o}n alrededor del eje perpendicular a la membrana, mientras que en el segundo modo la rotaci\'{o}n es alrededor de un eje paralelo a la membrana. En el primer modo los autovectores de cadenas adyacentes van en direcciones contrarias produciendo rotaciones de cada cadena en sentidos opuestos (desfase de $180\textdegree$ en el movimiento).\\
+
+El modo 3 tiene el mismo eje de rotaci\'{o}nque el modo 2 result\'{o} siendo id\'{e}ntico al modo 3. En el modo 4 se alcanzan a visualizar deformaciones de la cadena, en especial entre el centro y los extremos, es decir las cadenas polipept\'{i}dicas ya no se ven tan r\'{i}gidas.\\
+En el modo 5 es m\'{a}s notoria la flexibilidad en distintos puntos de la estructura, movi\'{e}ndose m\'{a}s las partes de la cadena que unen los segmentos TM de la cadena C (Arriba izquierda). En el modo 6 las cadenas horizontales adyacentes tienen a acercarse y alejarse.\\
+A excepci\'{o}n del modo 5 en los otros modos hay un lazo que se mueve en direcci\'{o}n diferente a las cadenas que lo contienen.
+\begin{figure}[h]
+ \centering
+ \includegraphics[scale=0.13]{Kap4/modos/modo1.png}
+ \put(-30,-4){Modo 1}
+ \includegraphics[scale=0.13]{Kap4/modos/modo2.png}
+ \put(-30,-4){Modo 2}
+ \includegraphics[scale=0.13]{Kap4/modos/modo3.png}
+ \put(-30,-4){Modo 3}
+ \vspace{1mm}
+ \includegraphics[scale=0.21]{Kap4/modos/modo4.png}
+ \put(-30,-4){Modo 4}
+ \includegraphics[scale=0.21]{Kap4/modos/modo5.png}
+ \put(-30,-4){Modo 5}
+ \includegraphics[scale=0.21]{Kap4/modos/modo6.png}
+ \put(-30,-4){Modo 6}
+ % modo1.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Primeros 6 modos de vibraci\'{o}n del cotransportador vSGLT como tetr\'{a}mero para $R_c=9\AA$.}
+ \label{fig:modos}
+\end{figure}
 \section{ANM de vSGLT con la Estructura Completa}
 \subsection{Preparaci\'{o}n del PDB}
 Ya que en el mutante de vSGLT en la posici\'{o}n K294A, llamado 2XQ2 aparece resuelta la estructura cristalina del TM1 perteneciente a la cadena A, se usa el programa PyMol, y como archivos de entrada los pdbs 3DH4 y el de su mutante 2XQ2, para crear un archivo que sea cercano a la estructura real objeto de estudio, esto es, al cotransportador vSGLT. Se a\~{n}ade a 3DH4 la h\'{e}lice 1 resuelta, tal como aparece en la figura \ref{fig:vSGLT_in_2}.\\
@@ -158,12 +183,12 @@ De acuerdo a la tabla \ref{tab:flu4} del anexo \ref{AnexoB}, en todos los casos 
  El residuo Phe542 est\'{a} en el segmento TM14 que se encuentra dentro del citoplasma, como se mencion\'{o} en el ANM previo, ver figura \ref{fig:W543}. Como TM4 no se conecta con sus residuos a distancias de corte bajas es m\'{a}s flexible que cuando se incrementa la distancia de corte.\\
  
  Para $R_c=12\AA$ se detecta un m\'{i}nimo con cambios alrededor del residuo Gln69 (En la gr\'{a}fica residuo 52) que se encuentra dentro del segmento TM2, este segmento es el que act\'{u}a como bolsillo para el sodio y la galactosa. En efecto, la glutamina interact\'{u}a con la galactosa ya que es un residuo polar descargado. Por otro lado, los residuos mostrados en forma de varillas en la figura \ref{fig:Na_Gal} est\'{a}n conectados a $R_c=12\AA$ con el sodio. Cuando el cotransportador est\'{a} solo o tiene el sodio no hay diferencias significativas, pero cuando se unen tanto el sodio como la galactosa las fluctuaciones ms disminuyen.\\ 
- \begin{figure}[h]
+ \begin{figure}[ht]
   \centering
      \includegraphics[scale=0.1]{./Kap4/h2_label.png}
  \caption{Contactos entre el \ce{Na^{+}}, la galactosa y el segmento TM2.}\label{fig:Na_Gal}
  \end{figure}
- \begin{figure}[h]
+ \begin{figure}[ht]
   \centering
      \includegraphics[scale=0.25]{./Kap4/ANM/ANM_s_nuevo/grafica_18_A_n.png}
     \put(-28,-4){$R_c=18\AA$}
@@ -206,15 +231,4 @@ De acuerdo a la tabla \ref{tab:flu4} del anexo \ref{AnexoB}, en todos los casos 
 % \put(-50,-2){$R_c=20\AA$}
 %  \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo entre $8\AA\leq R_c\leq 20\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos}
 % \end{figure}
-\subsection{Modos Normales}
-En la figura \ref{fig:modos} se muestran los primeros modos de vibraci\'{o}n correspondientes a autovalores no nulos para vSGLT tomado tal como aparece en el archivo PDB 3DH4. Las modos calculados corresponden a rotaciones r\'{i}gidas de las subunidades alrededor de un eje. En el primer modo se observa una rotaci\'{o}n alrededor del eje perpendicular a la membrana, mientras que en el segundo modo la rotaci\'{o}n es alrededor de un eje paralelo a la membrana. En el primer modo los autovectores de cadenas adyacentes van en direcciones contrarias produciendo rotaciones de cada cadena en sentidos opuestos (desfase de $180\textdegree$ en el movimiento)
-\begin{figure}[h]
- \centering
- \includegraphics[scale=0.1]{Kap4/modos/modo1.png}
- \put(-50,-2){Modo 1}
- \includegraphics[scale=0.1]{Kap4/modos/modo2.png}
- \put(-50,-2){Modo 2}
- % modo1.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
- \caption{Primeros 6 modos de vibraci\'{o}n del cotransportador vSGLT como tetr\'{a}mero para $R_c=9\AA$.}
- \label{fig:modos}
-\end{figure}
+
