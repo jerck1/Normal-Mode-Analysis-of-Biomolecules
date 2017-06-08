@@ -135,10 +135,30 @@ Una vez ingresado el archivo pdb se selecciona el modelo de la estructura. Inici
 \subsection{Resultados}
 En la figuras% \label{fig:ANM_pos}
 \ref{fig:ANM_pos1}, \ref{fig:ANM_pos2} y \ref{fig:ANM_pos3} %y \ref{fig:ANM_pos4}
-se muestran los factores b por cada n\'{u}mero de residuo (entre 47 y 545) y para cada distancia de corte $R_c$, entre $8\AA$ y $20\AA$ de la cadena A. Ha de notarse que al igual que el ANM previo, para distancias de corte menores o iguales a $7\AA$,no se encontraron todos  los autovalores, ni autovectores, ni factores b, ya que no todos los autovalores convergen \cite{Zimmermann2011}.\\
+se muestran los factores b por cada n\'{u}mero de residuo (entre 9 y 572) y para cada distancia de corte $R_c$, entre $8\AA$ y $20\AA$ \footnote{S\'{o}lamente se muestran las distancias de corte $R_c=9\AA$, $R_c=12\AA$ y $R_c=18\AA$ debido a que el resultado de $R_c=8\AA$ es similar al de $R_c=9\AA$, los resultados desde $R_c=10\AA$ hasta $R_c=16\AA$ son similares a los de $R_c=12\AA$ y los resultados desde $R_c=17\AA$ hasta $R_c=20\AA$ son similares a los de $R_c=18\AA$} de la cadena A. Ha de notarse que al igual que el ANM previo, para distancias de corte menores o iguales a $7\AA$,no se encontraron todos  los autovalores, ni autovectores, ni factores b, ya que no todos los autovalores convergen \cite{Zimmermann2011}.\\
 
-En general se observa que la adici\'{o}n de las $\alpha$ h\'{e}lices generan una disminuci\'{o}n en los cambios de los movimientos globales, esto debido a que una $alpha$ h\'{e}lice es una estructura estable y r\'{i}gida, comparada con las regiones desordenadas y con las hojas $\beta$. Este resultado es acorde con los resultados presentados en \cite{Adelman2016}, en donde al incluir las $\alpha$ h\'{e}lices resueltas, hay una mayor estabilidad del cotransportador en presencia del ion.\\
-%\begin{figure}[h]
+En las tres gr\'{a}ficas se observa que la adici\'{o}n de las $\alpha$ h\'{e}lices genera una disminuci\'{o}n en los cambios de los movimientos globales, esto debido a que una $\alpha$ h\'{e}lice es una estructura estable y r\'{i}gida, comparada con las regiones desordenadas y con las hojas $\beta$. Este resultado es acorde con los resultados presentados en \cite{Adelman2016}, en donde al incluir las $\alpha$ h\'{e}lices resueltas, hay una mayor estabilidad del cotransportador en presencia del ion.\\
+
+  \begin{figure}[h]
+  \centering
+     \includegraphics[scale=0.25]{./Kap4/ANM/ANM_s_nuevo/grafica_9_A_n.png}
+    \put(-28,-4){(a)$R_c=9\AA$}
+ \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=10\AA$ y $R_c= 13\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos1}
+ \end{figure}
+ \begin{figure}[h]
+  \centering
+       \includegraphics[scale=0.25]{./Kap4/ANM/ANM_s_nuevo/grafica_12_A_n.png}
+      \put(-28,-4){(a)$R_c=12\AA$}
+ \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=14\AA$ y $R_c= 17\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos2}
+ \end{figure}
+ \begin{figure}[h]
+  \centering
+     \includegraphics[scale=0.25]{./Kap4/ANM/ANM_s_nuevo/grafica_18_A_n.png}
+    \put(-28,-4){(a)$R_c=18\AA$}
+ \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=18\AA$ y $R_c=20\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos3}
+ \end{figure}
+ 
+ %\begin{figure}[h]
 %\centering
 %\includegraphics[scale=0.2]{./Kap4/ANM/ANM_s_nuevo/grafica_7_A_n.png}
  %  \put(-50,-2){$R_c=7\AA$}
@@ -174,22 +194,3 @@ En general se observa que la adici\'{o}n de las $\alpha$ h\'{e}lices generan una
 % \put(-50,-2){$R_c=20\AA$}
 %  \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo entre $8\AA\leq R_c\leq 20\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos}
 % \end{figure}
-
-  \begin{figure}[h]
-  \centering
-     \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_9_A_n.png}
-    \put(-28,-4){(a)$R_c=9\AA$}
- \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=10\AA$ y $R_c= 13\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos1}
- \end{figure}
- \begin{figure}[h]
-  \centering
-       \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_12_A_n.png}
-      \put(-28,-4){(c)$R_c=12\AA$}
- \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=14\AA$ y $R_c= 17\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos2}
- \end{figure}
- \begin{figure}[h]
-  \centering
-     \includegraphics[scale=0.35]{./Kap4/ANM/ANM_s_nuevo/grafica_18_A_n.png}
-    \put(-28,-4){(a)$R_c=18\AA$}
- \caption{Fluctuaciones ms normalizadas en funci\'{o}n del n\'{u}mero de residuo para $ R_c=18\AA$ y $R_c=20\AA$ usando  los primeros 100 modos. Los diferentes colores indican si la simulaci\'{o}n fue realizada sin el ion, el sustrato, con alguno de ellos o ambos.}\label{fig:ANM_pos3}
- \end{figure}
